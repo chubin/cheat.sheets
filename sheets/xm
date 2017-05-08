@@ -1,0 +1,82 @@
+# Shows information about the Xen host
+xm info
+
+# Shows information about doms (states include r for running, b for blocked, c for crashed, p for paused and the worse, d for dying).
+xm list
+
+# Shows virtual interfaces for doms
+xm network-list
+
+# Shows information from the Xen logs
+xm log
+
+# Reboots a VM
+xm reboot
+
+# Shows dom virtual processors
+xm vcpu-list
+
+# Shows hosts and domains similar to how top works in *nix
+xm top
+
+# Shows uptime
+xm uptime
+
+# Shows the send message buffer
+xm dmesg
+
+# Create a node called ${domain_name}
+xm create ${domain_name}
+
+# Attach to the console of the ${domain_name} node
+xm console ${domain_name}
+
+# Deletes that newly created ${domain_name} node
+xm destroy ${domain_name}
+
+# Invoke an interactive shell environment of your xend
+xm shell
+
+# Turn off a VM
+xm shutdown
+
+# Rather than shut the VM down, just pause it (starts back up much faster),
+# but if the host is rebooted then state is lost (otherwise use suspend)
+xm pause
+
+# Suspends a VM, which writes the data to disk, so changes wouldn't be lost on restart.
+xm suspend
+
+# Rename installed VMs
+xm rename
+
+# If a VM is paused, fire it up
+xm resume
+
+# Similar to suspend except with user definable state file
+xm save
+
+# Similar to resume except restoreable with exports that used the save verb
+xm restore
+
+# Dumps core per domain
+xm dump-core
+
+# Sends system requests per domain
+xm sysrq
+
+# Lists block devices per domain
+xm block-list
+
+# Configure the maximum memory for a domain
+xm mem-max
+
+# Configure the current memory allowance for a domain
+xm mem-set
+
+# Configure active processors for a domain
+xm vcpu-set
+
+# Move a domain to another server (e.g. using the -l operator to do so live)
+xm migrate
+

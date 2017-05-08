@@ -1,0 +1,6 @@
+# highlight syntax: use go lexer, style monokai, 256 colors terminal
+pygmentize -f terminal256 -l go -g -P style=monokai
+
+# use filter (keywordcase), will change keywords to upper case
+pygmentize -f html -l pascal -F keywordcase:case=upper main.pas
+

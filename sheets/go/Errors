@@ -1,0 +1,19 @@
+// There is no exception handling.
+// Functions that might produce an error just declare an additional return value of type `Error`.
+// This is the `Error` interface:
+type error interface {
+    Error() string
+}
+//
+// A function that might return an error:
+func doStuff() (int, error) {
+}
+//
+func main() {
+    result, error := doStuff()
+    if (error != nil) {
+        // handle error
+    } else {
+        // all is good, use result
+    }
+}

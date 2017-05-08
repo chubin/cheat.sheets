@@ -1,0 +1,8 @@
+# spell check a single file
+aspell check ${somefile}
+
+# list mispelled words from standard input
+cat ${somefile} | aspell list
+
+# check for known dictionary files
+spell dicts

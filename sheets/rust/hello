@@ -1,0 +1,7 @@
+// to install rust: 
+// curl https://sh.rustup.rs -sSf | sh
+// to compile: 
+// rustc main.rs
+fn main() {
+    println!("Hello, world!");
+}

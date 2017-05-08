@@ -1,0 +1,5 @@
+# Usage is similar to nmap. To scan a network segment for some ports
+masscan -p80,8000-8100 10.0.0.0/8
+
+# scan the entire Internet excluding exclude.txt
+masscan 0.0.0.0/0 -p0-65535 --excludefile exclude.txt --max-rate 100000

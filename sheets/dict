@@ -1,0 +1,8 @@
+# A list of all the available dictionaries can be queried by executing
+dict -I
+
+# translate "understand" to dutch
+dict -d fd-eng-nld understand
+
+# show available dict databases
+dict -D

@@ -1,0 +1,9 @@
+# create a new MBR/msdos partition table for BIOS systems
+(parted) mklabel msdos
+
+# create a new GPT partition table for UEFI systems instead, use:
+(parted) mklabel gpt
+
+# grow a partition
+(parted) resizepart ${number} ${end}
+

@@ -1,0 +1,29 @@
+// use case in function args for pattern matching.
+(xs zip ys) map { case (x,y) => x*y }   // GOOD 
+(xs zip ys) map( (x,y) => x*y )         // BAD 
+
+// "v42" is interpreted as a name matching any Int value, and "42" is printed.
+// BAD
+val v42 = 42
+Some(3) match {
+  case Some(v42) => println("42")
+  case _ => println("Not 42")
+}
+
+// "`v42`" with backticks is interpreted as the existing val v42, and “Not 42” is printed.
+// GOOD
+val v42 = 42
+Some(3) match {
+  case Some(`v42`) => println("42")
+  case _ => println("Not 42")
+}
+
+// UppercaseVal is treated as an existing val, rather than a new pattern variable, because it starts with an uppercase letter.
+// Thus, the value contained within UppercaseVal is checked against 3, and “Not 42” is printed.
+// GOOD
+val UppercaseVal = 42
+Some(3) match {
+  case Some(UppercaseVal) => println("42")
+  case _ => println("Not 42")
+}
+

@@ -1,0 +1,14 @@
+# to recover a file in /home/SomeUserName/, assuming /home is on its own partition, run:
+extundelete /dev/sda4 --restore-file SomeUserName/SomeDirectory
+
+# Recover an entire directory
+extundelete /dev/sda4 --restore-directory SomeUserName/SomeDirectory
+
+# For advanced users, to manually recover blocks or inodes with extundelete,
+# debugfs can be used to find the inode to be recovered;
+# Additional inodes to recover can be listed in an unspaced, comma-separated fashion.
+extundelete --restore-inode inode
+
+# recover all deleted files from an entire partition
+extundelete /dev/sda4 --restore-all
+

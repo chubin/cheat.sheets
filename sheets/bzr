@@ -1,0 +1,13 @@
+# Install bazaar fastimport plugin
+cd ~/.bazaar/plugins
+bzr branch lp:bzr-fastimport fastimport
+# you can do it manually:
+# pip install 
+# python setup.py build_ext -i
+# mv ... ~/.bazaar/plugins
+# probably you will need this patch:
+# https://launchpadlibrarian.net/174264005/fix-1314771.debdiff
+
+# How to migrate from Bazaar to git:
+git init
+bzr fast-export --plain . | git fast-import

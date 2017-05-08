@@ -1,0 +1,38 @@
+# install aws cli
+pip install awscli
+
+# configure AWS CLI
+aws configure
+
+# describe instances in the current account
+aws ec2 describe-instances --instance-ids i-01234567
+
+# list public IP addresses of instances
+aws ec2 describe-instances \
+  --query "Reservations[*].Instances[*].PublicIpAddress" \
+  --output=text
+
+# start instance with the specified id
+aws ec2 start-instances --instance-ids i-12345678c
+
+# copy directory to S3
+aws s3 cp ${directory} s3://${bucket}/${directory} --recursive
+
+# sync directory with S3
+aws s3 sync ${directory} s3://${bucket}/${directory} --exclude *.tmp
+
+# list s3 buckets
+aws s3 ls
+
+# remove s3 bucket
+aws s3 rb --force s3://${bucket_name}
+
+# get bucket logging
+aws s3api get-bucket-logging --bucket ${bucket_name}
+
+# AWS cloudformation list stacks
+aws cloudformation list-stacks \
+ --stack-status-filter [ CREATE_COMPLETE | UPDATE_COMPLETE | etc.. ]
+
+# other useful commands:
+# https://github.com/toddm92/aws/wiki/AWS-CLI-Cheat-Sheet

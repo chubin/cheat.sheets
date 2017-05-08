@@ -1,0 +1,3 @@
+# find out the arch of the efi firmware in a Ma
+ioreg -l -p IODeviceTree | grep firmware-abi
+

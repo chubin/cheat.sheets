@@ -1,0 +1,8 @@
+# list partitions
+fdisk -l /dev/sda
+
+# delete a partition
+fdisk /dev/sda
+Command (m for help): d
+Partition number (1-9): XXX
+

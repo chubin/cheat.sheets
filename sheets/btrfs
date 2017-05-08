@@ -1,0 +1,55 @@
+# Create a btrfs file system on /dev/sdb, /dev/sdc, and /dev/sdd
+mkfs.btrfs /dev/sdb /dev/sdc /dev/sdd
+
+# btrfs with just one hard drive, metadata not redundant 
+# (this is danegerous: if your metadata is lost, your data is lost as well)
+mkfs.btrfs -m single /dev/sdb
+
+# data to be redundant and metadata to be non-redundant:
+mkfs.btrfs -m raid0 -d raid1 /dev/sdb /dev/sdc /dev/sdd
+
+# both data and metadata to be redundan
+mkfs.btrfs -d raid1 /dev/sdb /dev/sdc /dev/sdd
+
+# To get a list of all btrfs file systems
+btrfs filesystem show
+
+# detailed df for a fileesystem (mounted in /mnt)
+btrfs filesystem df /mnt
+
+# resize btrfs online (-2g decreases, +2g increases)
+btrfs filesystem resize -2g /mnt
+
+# use maximum space
+btrfs filesystem resize max /mnt
+
+# add new device to a filesystem
+btrfs device add /dev/sdf /mnt
+
+# remove devices from a filesystem
+btrfs device delete missing /mnt
+
+# create the subvolume /mnt/sv1 in the /mnt volume
+btrfs subvolume create /mnt/sv1
+
+# list subvolumes
+btrfs subvolume list /mnt
+
+# mount subvolume without mounting the main filesystem
+mount -o subvol=sv1 /dev/sdb /mnt
+
+# delete subvolume
+btrfs subvolume delete /mnt/sv1
+
+# taking snapshot of a subvolume
+btrfs subvolume snapshot /mnt/sv1 /mnt/sv1_snapshot
+
+# taking snapshot of a file (copy file by reference)
+cp --reflink /mnt/sv1/test1 /mnt/sv1/test3
+
+# convert ext3/ext4 to btrfs
+btrfs-convert /dev/sdb1
+
+# convert btrfs to ext3/ext4
+btrfs-convert -r /dev/sdb1
+
