@@ -1,0 +1,32 @@
+# prints 21 evenly spaced numbers increasing from -1  to  1
+jot 21 -1 1.00
+
+# Show the ASCII character set
+jot -c 128 0
+
+# strings xaa through xaz with
+jot -w xa%c 26 a
+
+# 20 random 8-letter strings are produced with
+jot -r -c 160 a z | rs -g 0 8
+
+# Infinitely many yes's may be obtained through
+jot -b yes 0
+
+# thirty ed(1) substitution commands applying to lines 2, 7, 12, etc.
+jot -w %ds/old/new/ 30 2 - 5
+
+# The stuttering sequence 9, 9, 8, 8, 7, etc. can be produced by suitable
+# choice of precision and step size, as in
+jot 0 9 -  -.5
+
+# Generate a file containing exactly 1024 bytes is created with
+jot -b x 512 > block
+
+# set tabs four spaces apart starting from column 10 and
+# ending in column 132
+expand   -`jot -s, - 10 132 4`
+
+# print all lines 80 characters or longer
+grep `jot -s "" -b . 80`
+

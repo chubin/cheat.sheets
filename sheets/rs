@@ -1,0 +1,9 @@
+# reshape data: number of rows and columns
+jot 36 | rs 4 9
+
+# 0 is a dummy value for either the row or column count
+# (4 columns)
+jot 36 | rs 0 4
+
+# transpose output
+jot 36 | rs -t 0 4

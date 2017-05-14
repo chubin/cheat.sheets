@@ -1,0 +1,6 @@
+# get information about hard disks
+hdparm -I /dev/sda
+
+# perform timings of device/cache reads for benchmark and comparison purposes
+hdparm -tT /dev/sda
+

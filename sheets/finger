@@ -1,0 +1,9 @@
+# Produces a multi-line format displaying all of the information described for
+# the -s option as well as the user's home directory, home phone number, login
+# shell, mail status, and the contents of the files “.plan”, “.project”,
+# “.pgpkey” and “.forward” from the user's home directory.
+finger -s username
+
+# weather report in console (for nuremberg in this case)
+finger nuremberg@graph.no
+

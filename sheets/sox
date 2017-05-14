@@ -1,0 +1,39 @@
+# sox
+# Sound eXchange: play, record and convert audio files.
+# Audio formats are identified by the extension.
+
+# Merge two audio files into one:
+sox -m ${input_audiofile1} ${input_audiofile2} ${output_audiofile}
+
+# Trim an audio file to the specified times:
+sox ${input_audiofile} ${output_audiofile} trim ${start} ${end}
+
+# Normalize an audio file (adjust volume to the maximum peak level, without clipping):
+sox --norm ${input_audiofile} ${output_audiofile}
+
+# Reverse and save an audio file:
+sox ${input_audiofile} ${output_audiofile} reverse
+
+# Print statistical data of an audio file:
+sox ${input_audiofile} -n stat
+
+# Increase the volume of an audio file by 2x:
+sox -v 2.0 ${input_audiofile} ${output_audiofile}
+
+# Changing sample rate of a file
+sox ${input_file} -r 16000 ${output_file}
+
+# Changing the Number of Channels
+# For example: convert mono audio files to stereo
+sox ${mono_wav} -c 2 ${stereo_wav}
+
+# Generate Different Types of Sounds
+# ${len} - length of audio to synthesize, hh:mm:ss.frac
+# ${freq} - frequencies at the beginning/end of synthesis in Hz
+# ${type} is one of sine, square, triangle, sawtooth, trapezium, exp, 
+#   [white]noise, pinknoise, brown-noise
+# sox -n synth ${len} ${type} ${freq}
+sox -r 8000 -n output.wav synth 3 sine 300-3300
+
+# Speed up the Sound in an Audio File
+sox input.wav output.wav speed 2.0

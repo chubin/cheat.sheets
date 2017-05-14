@@ -1,0 +1,10 @@
+# Dump $url, do not show links urls
+lynx -dump -nolist $url
+
+# Use lynx to run repeating website actions
+# For creating your keystroke file, use:
+#   lynx -cmd_log yourfile
+lynx -accept_all_cookies -cmd_script=/your/keystroke-file
+
+# convert html to text
+lynx -force_html -stdin -dump -nolist

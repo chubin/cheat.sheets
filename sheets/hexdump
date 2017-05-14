@@ -1,0 +1,12 @@
+# side-by-side hexadecimal and ascii view of the first 128 bytes of a file
+hexdump -C -n128 /etc/passwd
+
+# Convert a binary file to C Array
+hexdump -v -e '16/1 "0x%02X, "' -e '"\n"' file.bin > hexarray.h
+
+# Convert a binary file to Shell code
+hexdump -v -e '"\\""x" 1/1 "%02x" ""'
+
+# Generate random MAC address
+hexdump -n6 -e '/1 ":%02X"' /dev/random|sed s/^://g
+
