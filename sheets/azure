@@ -21,9 +21,15 @@ do
     azure vm disk delete --blob-delete "$disk"
 done
 
-# create storage acout $myacct in location 'West US'
-azure storage account create ${myacct} --label $myacct --location 'West US'
+# Create storage acount $myacct in location 'West US'
+azure storage account create ${storage_account} --label ${storage_account} --location 'West US'
 
-# set default account environment variables
+# Set default account environment variables
 export AZURE_STORAGE_ACCOUNT=$account_name
 export AZURE_STORAGE_ACCESS_KEY=$account_key
+
+# Create a VM image based on a storage file
+azure vm image create ${image_name} --os linux  -l 'West Europe' --blob-url https://${storage_account}.blob.core.windows.net:443/vms/${image_name}.vhd -v
+
+# Share a file (a vm image for example) with the world:
+azure storage blob sas create -a ${storage_account} --container ${container} --blob ${filename} --permissions r
