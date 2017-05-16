@@ -20,3 +20,10 @@ for disk in $(azure vm disk list | grep LABEL | awk '{print $2}')
 do 
     azure vm disk delete --blob-delete "$disk"
 done
+
+# create storage acout $myacct in location 'West US'
+azure storage account create ${myacct} --label $myacct --location 'West US'
+
+# set default account environment variables
+export AZURE_STORAGE_ACCOUNT=$account_name
+export AZURE_STORAGE_ACCESS_KEY=$account_key
