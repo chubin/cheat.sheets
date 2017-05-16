@@ -166,3 +166,8 @@ git reset --hard HEAD~1
 # master
 git reset HEAD~1
 
+# list files changed in ${commit_id}
+git diff-tree --no-commit-id --name-only -r ${commit_id}
+
+# list files changed in ${commit_id}, porcelain way, meant to be user facing
+git show --pretty="" --name-only bd61ad98
