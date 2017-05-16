@@ -12,6 +12,12 @@ azure login -u <your organizational ID email address>
 # This will login in using a service principal
 azure login -u "<service-principal-id>" -p "<key>" --service-principal --tenant "<tenant-id>"
 
+# find images with Linux in name
+azure vm image list | grep "Linux"
+
+# start a new VM (in asm mode)
+azure vm create ${vm_name} ${image_name} -u ${azureuser} -p "${password}" -z "Small" -e -l "West US"
+
 # List VMs disks
 azure vm disk list
 
