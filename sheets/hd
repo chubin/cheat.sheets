@@ -1,0 +1,2 @@
+# show hex dump of 20 bytes of /etc/passwd (skip 10 first bytes)
+hd -s 10 -n 20 /etc/passwd
