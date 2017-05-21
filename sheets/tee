@@ -1,0 +1,16 @@
+# To tee stdout to a file:
+ls | tee outfile.txt
+
+# To tee stdout and append to a file:
+ls | tee -a outfile.txt
+
+# tee would take the output of the first command in the pipeline and copy it 
+# to standard output (the terminal) while also making copies of it in the files one, two and three:
+somecommand | tee one two three
+
+# write 3 to /proc/sys/vm/drop_caches (with root rights)
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+
+# in Vim:
+# The structure :w !cmd means "write the current buffer piped through command".
+:w !sudo tee %
