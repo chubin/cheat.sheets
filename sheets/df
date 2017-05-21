@@ -1,0 +1,14 @@
+# Printout disk free space in a human readable format
+df -h
+
+# Disk free space for ext2 file systems
+df -t ext2
+
+# Disk free space for file systems except ext2
+df -x ext2
+
+# Show inode usage
+df -i
+
+# Show information about a distinct file system /path
+df /path
