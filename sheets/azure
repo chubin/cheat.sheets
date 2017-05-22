@@ -39,3 +39,11 @@ azure vm image create ${image_name} --os linux  -l 'West Europe' --blob-url http
 
 # Share a file (a vm image for example) with the world:
 azure storage blob sas create -a ${storage_account} --container ${container} --blob ${filename} --permissions r
+
+# Download a file from a blob storage using curl/wget
+# values of the header variables can be calculated like here: https://gist.github.com/jrwren/ff46f4ba177f042ccdc48c080c198f60
+curl -v \
+  -H "$x_ms_date_h" \
+  -H "$x_ms_version_h" \
+  -H "$authorization_header" \
+"$URL"
