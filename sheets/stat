@@ -1,0 +1,2 @@
+# display numerical values for file permissions
+stat -c '%a %n' *
