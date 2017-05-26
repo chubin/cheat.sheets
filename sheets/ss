@@ -3,7 +3,7 @@
 # Options:
 #   -4/-6   list ipv4/ipv6 sockets
 #   -n      numeric addresses instead of hostnames
-#   -l      list listing sockets
+#   -l      list listening sockets
 #   -u/-t/-x list udp/tcp/unix sockets
 #   -p      Show process(es) that using socket
 
