@@ -1,9 +1,0 @@
-// There's only `for`, no `while`, no `until`
-for i := 1; i < 10; i++ {
-}
-for ; i < 10;  { // while - loop
-}
-for i < 10  { // you can omit semicolons if there is only a condition
-}
-for { // you can omit the condition ~ while (true)
-}
