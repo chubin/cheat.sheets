@@ -1,4 +1,12 @@
 // file: hello.go
+// to install go:
+//      download go from https://golang.org/dl/
+//      extract it somewhere (say to $HOME/go1.X)
+//      export GOROOT=$HOME/go1.X
+//      export PATH=$PATH:$GOROOT/bin
+// to compile:  go build hello.go
+// to run:      go run hello.go
+// or           ./hello
 
 package main
 
@@ -8,4 +16,4 @@ func main() {
     fmt.Println("Hello Go")
 }
 
-// to run: $ go run hello.go
+// to run: 
