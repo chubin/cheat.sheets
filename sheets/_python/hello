@@ -1,0 +1,6 @@
+# to install: python is normally already installed
+#             if not, install it this way:
+#             (Debian/Ubuntu) apt-get install python
+#             (Fedora/CentOS) yum install python
+# to execute: python my_script.py
+print "Hello, World!"
