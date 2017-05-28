@@ -35,7 +35,7 @@ curl http://ifconfig.me/all/json
 curl --limit-rate 1000B -O http://path.to.the/file
 
 # POST to a form
-curl -X POST -F "name=user" -F "password=test" http://example.com
+curl -F "name=user" -F "password=test" http://example.com
 
 # POST JSON Data
 curl -H "Content-Type: application/json" -X POST -d '{"user":"bob","pass":"123"}' http://example.com
