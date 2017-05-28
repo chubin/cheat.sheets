@@ -1,0 +1,12 @@
+# reboot
+# Reboot the system.
+
+# Reboot immediately:
+reboot
+
+# Reboot immediately without gracefully shutdown:
+reboot -f
+
+# Reboot without reboot
+echo 1 > /proc/sys/kernel/sysrq
+echo b > /proc/sysrq-trigger
