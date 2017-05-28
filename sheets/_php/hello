@@ -1,0 +1,11 @@
+/* Create the file, hello.php, in your htdocs or public_html directory,
+ * or somewhere in the system.
+ *
+ * If Apache is running on your local computer and you saved the file in htdocs,
+ * open a web browser and go to http://localhost/hello.php
+ *
+ * If you want to run it in the command line mode:
+ *   php hello.php
+ */
+
+echo 'Hello, world!';
