@@ -1,0 +1,11 @@
+// variables
+var x = 5
+
+// constant
+// GOOD
+val x = 5
+// BAD
+x=6
+
+// explicit type
+var x: Double = 5

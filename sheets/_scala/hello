@@ -1,0 +1,9 @@
+// to compile: scalac HelloWorld.scala
+// or          scalac -d classes HelloWorld.scala
+// to execute: scala HelloWorld
+// or          scala -cp classes HelloWorld
+object HelloWorld {
+   def main(args: Array[String]) {
+      println("Hello, world!")
+   }
+}
