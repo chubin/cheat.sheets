@@ -1,0 +1,13 @@
+# Get the documentation string for an python object from shell
+# we use itertools.starmap as an example
+python -c 'import inspect; import itertools; print inspect.getdoc(itertools.starmap)'
+
+# Get the documentation string for an object from python
+# we use itertools.starmap as an example
+print inspect.getdoc(itertools.starmap)
+
+# In a interactive python shell
+help(itertools.starmap)
+
+# In a interactive IPython shell
+itertools.starmap?
