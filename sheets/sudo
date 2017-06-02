@@ -27,3 +27,7 @@ echo "foo bar" | sudo tee -a /path/to/some/file
 
 # run root shell
 sudo -i
+
+# to disable password for sudo for user superuser add
+# superuser ALL=(ALL) NOPASSWD:ALL
+# in /etc/sudoers
