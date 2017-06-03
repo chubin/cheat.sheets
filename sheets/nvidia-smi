@@ -1,0 +1,12 @@
+# list all available NVIDIA devices
+nvidia-smi -L
+
+# list certain details about each GPU
+nvidia-smi --query-gpu=index,name,uuid,serial --format=csv
+
+# list GPU details
+nvidia-smi -i 0 -q
+
+# show system topology
+nvidia-smi topo --matrix
+
