@@ -1,0 +1,17 @@
+# ri displays information about Ruby classes, modules, and methods
+
+# show help for the File class
+ri File
+
+# show help for the File class on the stdout stream
+# do not start a pager for it
+ri --no-pager File
+
+# show help for the File.directory? method
+ri File.directory?
+
+# start an interactive Ruby documentation repl
+ri -i
+
+# Generate the missing ri docs for all your installed gems
+gem rdoc --all --ri --no-rdoc
