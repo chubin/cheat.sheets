@@ -1,5 +1,5 @@
 # xctool
-# Tool for building Xcode projects.
+# Tool for building Xcode projects (Mac OS X)
 
 # Build a single project without any workspace:
 xctool -project YourProject.xcodeproj -scheme YourScheme build
