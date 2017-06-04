@@ -1,3 +1,6 @@
-# find out the arch of the efi firmware in a Ma
+# ioreg 
+# show I/O Kit registry (Mac OS X)
+
+# find out the arch of the efi firmware in a Mac
 ioreg -l -p IODeviceTree | grep firmware-abi
 
