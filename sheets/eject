@@ -1,0 +1,19 @@
+# eject
+# eject removable media
+# You can also close the tray using certain options.
+
+# Eject any available device
+# CD-ROM, floppy disk, tape, or JAZ or ZIP disk
+eject
+
+# Eject a device by its name
+eject /dev/cdrom
+
+# Close the tray using eject command
+eject -t
+
+# Lock the hardware eject button
+eject -i on
+
+# Unlock the hardware eject button
+eject -i off
