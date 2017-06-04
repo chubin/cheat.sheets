@@ -1,0 +1,22 @@
+# Ruby is a dynamic, reflective, object-oriented, general-purpose programming language
+# ruby is a ruby interpreter
+
+# invoke Ruby from the command line to run the script foo.rb
+ruby foo.rb
+
+# pass code as an argument
+ruby -e 'puts "Hello world"'
+
+# The -n switch acts as though the code you pass to Ruby was wrapped in the following:
+# while gets
+#  # code here
+#  end
+ruby -ne 'puts $_' file.txt
+
+# The -p switch acts similarly to -n, in that it loops over each of the lines in the input
+# after your code has finished, it always prints the value of $_
+# Example: replace e with a
+echo "eats, shoots, and leaves" | ruby -pe '$_.gsub!("e", "a")'
+
+# BEGIN block executed before the loop
+echo "foo\nbar\nbaz" | ruby -ne 'BEGIN { i = 1 }; puts "#{i} #{$_}"; i += 1'

@@ -1,0 +1,10 @@
+# to install: ruby is usually already installed
+#             if not, install it this way:
+#             (Debian/Ubuntu) apt-get install ruby
+#             (Fedora/CentOS) yum install ruby
+# to execute: ruby hello.rb
+puts "Hello world!"
+# or
+$stdout.puts "Hello world!"
+# or
+STDOUT.write "Hello world!\n"
