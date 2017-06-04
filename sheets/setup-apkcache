@@ -1,0 +1,10 @@
+# apk is the tool used to install, upgrade, or delete software on a running sytem
+# of Alpine Linux package management
+
+# To enable local APK cache run
+setup-apkcache
+
+# If you've installed Alpine to your hard drive (as 'sys'),
+# then create a cache dir and then an /etc/apk/cache symlink pointing to that dir:
+mkdir -p /var/cache/apk
+ln -s /var/cache/apk /etc/apk/cache

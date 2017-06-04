@@ -1,0 +1,23 @@
+# apk is the tool used to install, upgrade, or delete software on a running sytem
+# of Alpine Linux package management
+
+# Install a package
+apk add $package
+
+# Remove a package
+apk del $package
+
+# Update repos
+apk update
+
+# Upgrade all packages
+apk upgrade
+
+# Find a package
+apk search $package
+
+# To list all installed packages, use:
+apk info
+
+# To determine which package a file belongs to:
+apk info --who-owns /sbin/lbu
