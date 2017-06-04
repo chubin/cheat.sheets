@@ -16,6 +16,10 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 # Pretty print a json
 python -mjson.tool
 
+# Zen of Python
+# or just 'import this' in python
+python -mthis
+
 # See also:
 #   Python language cheat sheets at /python/
 #   list of pages:      /python/:list
