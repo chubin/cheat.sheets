@@ -1,0 +1,12 @@
+# dscacheutil
+# Gather information, statistics and initiate queries to the Directory Service cache.
+
+# Flush the DNS cache
+# in OS X 10.9 Mavericks
+dscacheutil -flushcache
+
+# to clear DNS cache in 10.7 and 10.8
+killall -HUP mDNSResponder
+
+# Show DNS resolver statistics (Mac OS X)
+dscacheutil -statistics
