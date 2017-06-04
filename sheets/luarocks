@@ -1,0 +1,13 @@
+# LuaRocks is the package manager for Lua modules
+
+# install luarocks
+wget https://luarocks.org/releases/luarocks-2.4.1.tar.gz
+tar zxpf luarocks-2.4.1.tar.gz
+cd luarocks-2.4.1
+./configure; sudo make bootstrap
+
+# install lua package
+luarocks install luasocket
+
+# search for lua package
+luarocks search luasec
