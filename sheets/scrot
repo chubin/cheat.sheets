@@ -1,0 +1,13 @@
+# GUI screenshot tool for taking, editing screenshots
+
+# Take screenshot of the current window
+scrot -u
+
+# Take screenshot of the current window including border
+scrot -ub
+
+# Interactively select a window or rectangle with the mouse
+scrot -s
+
+# Capture the screenshot after 5 seconds, display countdown time
+scrot -u -d 5 -c
