@@ -1,0 +1,5 @@
+cal
+date
+hwclock
+timedatectl
+ntp

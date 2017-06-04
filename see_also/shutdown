@@ -1,0 +1,4 @@
+reboot
+halt
+shutdown
+sysrq-trigger

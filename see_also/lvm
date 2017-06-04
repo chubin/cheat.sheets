@@ -1,0 +1,4 @@
+lvm
+lvcreate
+pvcreate
+vgcreate
