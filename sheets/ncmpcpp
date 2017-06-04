@@ -1,3 +1,16 @@
+# ncmpcpp is an mpd client (compatible with mopidy) with a UI very similar to ncmpc,
+# but it provides new useful features such as support for regular expressions for library searches,
+# extended song format, items filtering, the ability to sort playlists, and a local filesystem browser. 
+
+# configure ncmpcpp
+mkdir ~/.ncmpcpp
+cat <<EOF > ~/.ncmpcpp/config
+ncmpcpp_directory =         "~/.ncmpcpp"
+mpd_host =                  "127.0.0.1"
+mpd_port =                  "6600"
+mpd_music_dir =             "/var/lib/mpd/music/"
+EOF
+
 # Movement
     Up k               Move cursor up
     Down j             Move cursor down
