@@ -1,18 +1,14 @@
+# diskutil
+# Utility to manage local disks and volumes (Mac OS X)
 
-  diskutil
+# List all currently available disks, partitions and mounted volumes:
+diskutil list
 
-  Utility to manage local disks and volumes.
+# Repair the file system data structures of a volume:
+diskutil repairVolume /dev/diskX
 
-  - List all currently available disks, partitions and mounted volumes:
-    diskutil list
+# Unmount a volume:
+diskutil unmountDisk /dev/diskX
 
-  - Repair the file system data structures of a volume:
-    diskutil repairVolume /dev/diskX
-
-  - Unmount a volume:
-    diskutil unmountDisk /dev/diskX
-
-  - Eject a CD/DVD (unmount first):
-    diskutil eject /dev/disk1
-
-
+# Eject a CD/DVD (unmount first):
+diskutil eject /dev/disk1
