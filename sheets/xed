@@ -1,0 +1,13 @@
+# xed
+# Opens files for editing in XCode.
+
+# Open file in XCode
+xed ${filename}
+
+# Open file(s) in XCode, create if it doesn't exist:
+xed -c ${filename}
+
+# Open a file in XCode and jump to line number 75:
+xed -l 75 ${filename}
+
+
