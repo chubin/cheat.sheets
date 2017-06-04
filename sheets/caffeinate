@@ -1,12 +1,10 @@
+# caffeinate
+# Prevent a system from sleeping (Mac OS X)
 
-  caffeinate
+# Prevent mac from sleeping for 1 hour (3600 seconds):
+caffeinate -u -t 3600
 
-  Prevent a system from sleeping.
-
-  - Prevent mac from sleeping for 1 hour (3600 seconds):
-    caffeinate -u -t 3600
-
-  - Prevent mac from sleeping until a command completes:
-    caffeinate -s command
+# Prevent mac from sleeping until a command completes:
+caffeinate -s command
 
 
