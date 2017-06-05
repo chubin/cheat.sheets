@@ -1,0 +1,6 @@
+# identify 
+#
+# describes the format and characteristics of one or more image files
+
+# show width and height of the image
+identify -format '%w %h' ${img}
