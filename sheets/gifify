@@ -1,0 +1,19 @@
+# gifify
+#
+# Convert any video file to an optimized animated GIF
+
+# convert MP4 ${input_mp4} to GIF ${output_gif}
+gifify ${input_mp4} --from 00:00:01.200 -o ${output_gif}
+
+#  convert MP4 ${input_mp4} to GIF ${output_gif}, skip first 1.2 seconds
+gifify ${input_mp4} --from 00:00:01.200 -o ${output_gif}
+
+#  convert MP4 ${input_mp4} to GIF ${output_gif}, resize it to width 800
+gifify /tmp/output.mp4 --resize 800:-1 -o /tmp/output.gif
+
+# convert MP4 to GIF and add subtitles from the ASS file
+gifify ${input_mp4} -o ${output_gif} --subtitles ${file_ass}
+
+# convert MP4 to GIF and add text "${subtitle_text}" as a subtitle
+gifify ${input_mp4} -o ${output_gif} --text "${subtitle_text}"
+
