@@ -1,0 +1,13 @@
+# percol
+#
+# adds flavor of interactive filtering to the traditional pipe concept of UNIX shell 
+
+# to install percol
+sudo pip install percol
+
+# interactive pgrep version
+ps aux | percol | awk '{ print $2 }'
+
+# interactive pkill version
+ps aux | percol | awk '{ print $2 }' | xargs kill
+
