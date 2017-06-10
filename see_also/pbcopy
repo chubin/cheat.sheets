@@ -1,3 +1,4 @@
 pbcopy
 pbpaste
 xclip
+xsel
