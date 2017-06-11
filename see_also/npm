@@ -5,3 +5,5 @@ nvm
 yarn
 pm2
 sails
+jslint
+jshint
