@@ -1,0 +1,10 @@
+// to install kotlin:
+//   curl -s https://get.sdkman.io | bash
+//   sdk install kotlin
+// to compile:
+//   kotlinc hello.kt -include-runtime -d hello.jar
+// to run:
+//   java -jar hello.jar
+fun main(args: Array<String>){
+    println("Hello World")
+}
