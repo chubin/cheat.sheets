@@ -1,0 +1,17 @@
+# jslint
+# 
+# The JavaScript Code Quality Tool written by Dougls Crockford
+
+# to install jslint
+sudo npm install jslint -g
+
+# lint all the JavaScript files in the current directory:
+find . -name '*.js' -print0 | xargs -0 jslint
+
+# lint all the JavaScript files in a targeted directory:
+find ./public/javascripts/ -name '*.js' -print0 | xargs -0 jslint
+
+# Parameter-less options passed to jslint are all set to true by default,
+# if you want to set it false, just specify 'false' after the option
+jslint --bitwise false hello.js
+
