@@ -1,0 +1,24 @@
+# js
+#
+# JavaScript often abbreviated as "JS", is a high-level, dynamic, untyped, interpreted run-time language.
+# It has been standardized in the ECMAScript language specification.
+#
+# js is a JavaScript shell, part of SpiderMonkey
+# to install spidermonkey: (in Debian) apt-get install libmozjs-24-bin
+
+# Run the shell in interactive mode
+js
+
+# Run the JavaScript code in the file hello.js
+js hello.js
+
+# Run hello.js then drop into the interactive shell
+js -f hello.js -i
+
+# See also:
+#   JavaScript language cheat sheets at /js/
+#   list of pages:      /js/:list
+#   learn JavaScript:   /js/:learn
+#   JS one-liners:      /js/1line
+#   JS weirdness:       /js/weirdness
+#   search in pages:    /js/~keyword

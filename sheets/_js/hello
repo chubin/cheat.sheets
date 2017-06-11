@@ -1,0 +1,16 @@
+// JavaScript is available in most web browsers
+// For standalong JavaScript usage
+// install Node.js or SpiderMonkey
+
+// Works with web browsers
+document.write("Hello world!");
+
+// Works with NJS (0.2.5), Rhino, SpiderMonkey
+print('Hello world!');
+
+// Works with JScript
+WScript.Echo("Hello world!");
+
+// Works with Node.js
+console.log("Hello world!")
+
