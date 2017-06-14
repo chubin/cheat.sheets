@@ -1,0 +1,10 @@
+# swipl
+# SWI-Prolog is a versatile implementation of the Prolog language.
+
+# run plolog interpreter in interactive mode
+swipl
+
+# consult file.pl, run goal mygoal(3,foo)
+# and then halt the interpreter without entering interactive mode
+swipl -s file.pl -g "mygoal(3,foo)." -t halt.
+
