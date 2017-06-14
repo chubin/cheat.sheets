@@ -1,0 +1,24 @@
+# OCaml
+# OCaml, originally named Objective Caml, is the main implementation of the programming language Caml.
+# A member of the ML language family.
+# The Perl 5 language interpreter.
+
+# Compile into a bytecode executable:
+ocamlc hello.ml -o hello
+
+# Compile into an optimized native-code executable:
+ocamlopt hello.ml -o hello
+
+# Start ocaml interactive shell
+ocaml
+
+# Start the shiny frontend to the ocaml interactive shell, utop
+# to install it: opam install utop
+utop
+
+# See also:
+#   OCaml language cheat sheets at /ocaml/
+#   list of pages:      /ocaml/:list
+#   learn perl:         /ocaml/:learn
+#   ocaml one-liners:   /ocaml/1line
+#   search in pages:    /ocaml/~keyword

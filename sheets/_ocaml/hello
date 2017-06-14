@@ -1,0 +1,8 @@
+# To compile into a bytecode executable:
+#   ocamlc hello.ml -o hello
+# To compile into an optimized native-code executable:
+#   ocamlopt hello.ml -o hello
+# Start ocaml interactive shell
+#   ocaml
+#
+print_endline "Hello World!\n" ;;
