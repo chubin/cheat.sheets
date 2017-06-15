@@ -1,0 +1,15 @@
+# Julia 
+# high-level dynamic programming language designed to address the needs of high-performance numerical analysis
+# and computational science while also being effective for general-purpose programming
+
+# Execute script from the file; pass aditional arguments
+julia script.jl arg1 arg2
+
+# Execute command like arguments like script
+julia -e 'for x in ARGS; println(x); end' foo bar
+
+# See also:
+#   Julia language cheat sheets at /julia/
+#   list of pages:      /julia/:list
+#   learn julia:        /julia/:learn
+#   search in pages:    /julia/~keyword

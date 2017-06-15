@@ -1,0 +1,8 @@
+# to install:
+#   (Debian/Ubuntu) apt-get install julia
+#   (Fedora/CentOS) dnf install julia
+#   (ArchLinux)     pacman -S julia
+# to execute:
+#   julia hello_world.jl
+#
+println("hello world")
