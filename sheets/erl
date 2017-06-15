@@ -1,0 +1,10 @@
+# erl
+#
+# Start Erlang runtime system
+
+# Execute compiled BEAM file (helloworld.beam)
+erl -noshell -s helloworld start -s init stop
+
+# Run code from the command line
+erl -noshell -eval 'io:fwrite("Hello, World!\n"), init:stop().'
+

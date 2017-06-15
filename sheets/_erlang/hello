@@ -1,0 +1,11 @@
+% to install:
+%   sudo apt-get install erlang-ic
+% to compile:
+%   erlc helloworld.erl
+% to run:
+%   erl -noshell -s helloworld hello_world -s init stop
+
+-module(helloworld).
+-export([hello_world/0]).
+
+hello_world() -> io:fwrite("hello, world\n").
