@@ -1,0 +1,18 @@
+# To install:
+#   Go to http://elm-lang.org/install
+#   and download the appropriate installer for your system.
+# To create a project:
+#	mkdir hello
+#	cd hello
+#	elm package install elm-lang/html
+# after that create Hello.elm in this directory
+# To start:
+#	elm reactor        
+# Read more here:
+#   https://www.elm-tutorial.org/en/01-foundations/01-hello.html
+module Hello exposing (..)
+
+import Html exposing (text)
+
+main =
+    text "Hello"

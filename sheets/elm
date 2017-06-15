@@ -1,0 +1,29 @@
+# Elm
+# Domain-specific programming language for declaratively creating web browser-based graphical user interfaces. 
+
+# Start Elm REPL
+elm repl
+
+# Default compilation 
+elm make HelloWorld.elm -> index.html
+
+# Custom name
+elm make HelloWorld.elm --output hw.js
+
+# Compile multiple files
+elm make HelloWorld.elm MyModule.elm --output hw.js
+
+# Compile with warnings
+elm make HelloWorld.elm --warn
+
+# Save result to a HTML
+elm make HelloWorld.elm --output hw.html
+
+# Install a package
+elm package install evancz/elm-html
+
+# See also:
+#   Elm language cheat sheets at /elm/
+#   list of pages:      /elm/:list
+#   learn Elm:          /elm/:learn
+#   search in pages:    /elm/~keyword
