@@ -1,0 +1,15 @@
+
+# Abort the whole script from a function
+#
+trap "exit 1" TERM
+export TOP_PID=$$
+#
+function fatal()
+{
+  echo "Goodbye"
+  kill -s TERM $TOP_PID
+}
+#
+echo "Function call will abort"
+echo $(func)
+echo "This will never be printed"
