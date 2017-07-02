@@ -1,0 +1,91 @@
+# jq
+# A lightweight and flexible command-line JSON processor.
+
+# Output a JSON file, in pretty-print format:
+jq
+
+# Output all elements from arrays
+# (or all key-value pairs from objects) in a JSON file:
+jq .[]
+
+# Read JSON objects from a file into an array, and output it (inverse of jq .[]):
+jq --slurp
+
+# Output the first element in a JSON file:
+jq .[0]
+
+# Output the value of a given key of the first element in a JSON file:
+jq .[0].key_name
+
+# Output the value of a given key of each element in a JSON file:
+jq 'map(.key_name)'
+#
+# [ { foo: 1 }, { foo: 2 } ] => [1, 2]
+
+# Extract as stream of values instead of a list
+jq '.[] | .foo'
+#
+# [ { "foo": 1 }, { "foo": 2 } ] => 1, 2
+
+# Slicing
+jq '.[1:2]'
+#
+# [ { "foo": 1 }, { "foo": 2 } ] => { "foo": 2 }
+
+# Dictionary subset shorthand
+jq 'map({ a, b })'
+#
+# [ { "a": 1, "b": 2, "c": 3 }, ...] => [ { "a": 1, "b": 2 }, ...]
+
+# Parsing json
+jq 'with_entries(.value |= fromjson)' --sort-keys
+#
+# { "b": "{}", "a": "{}" }
+#   =>  { "a": {}, "b": {} }
+
+# Serializing json
+#
+jq 'with_entries(.value |= tojson)' --sort-keys
+#
+# { "a": {}, "b": {} }
+# => { "a": "{}", "b": "{}" }
+
+# Flattening json
+jq 'flatten(1)'
+#
+# [[1], [2]]
+# => [1, 2]
+
+# Converting to csv
+jq '.[] | [.foo, .bar] | @csv' -r
+# 
+# [{ "foo": 1, "bar": 2, "baz":3 }]
+# => 1,2
+
+# Sort
+jq 'sort'
+# [3, 2, 1]
+# => [1, 2, 3]
+
+# Deleting duplicates (dedup / uniq)
+jq unique
+#
+# [1, 1, 2, 1]
+# => [1, 2]
+
+# Sort lines of a file
+jq --slurp '. | sort | .[]'
+
+# Converting arbitrary data to json
+jq -r '(map(keys) | add | unique | sort) as $cols | .[] as $row | $cols | map($row[.]) | @csv'
+# [ { "foo": 1, "bar": 2}, { "foo": 3, "baz": 4}]
+#
+# => 2,,1
+#    ,4,3
+
+# Convert an array to a stream of json records one per line
+jq -rc '.[]'
+
+Suitable for stream. See record stream
+
+
