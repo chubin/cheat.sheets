@@ -82,10 +82,3 @@ jq -r '(map(keys) | add | unique | sort) as $cols | .[] as $row | $cols | map($r
 #
 # => 2,,1
 #    ,4,3
-
-# Convert an array to a stream of json records one per line
-jq -rc '.[]'
-
-Suitable for stream. See record stream
-
-
