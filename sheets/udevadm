@@ -1,0 +1,15 @@
+# udevadm
+# udev management tool
+
+# Reload udev rules without reboot
+udevadm control --reload-rules && udevadm trigger
+
+# Get sysfs path of a device
+udevadm info -q path -n /dev/sda
+
+# Get a list of attributes for a specific device
+udevadm info -a -p  $(udevadm info -q path -n /dev/sdb)
+
+# Get an entry for each action taken by KERNEL and UDEV
+udevadm monitor --property
+

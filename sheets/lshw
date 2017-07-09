@@ -1,0 +1,33 @@
+# lshw
+# Get hardware information on Linux
+
+# Generate full information report about all detected hardware
+lshw
+
+# Display hardware information in short
+lshw -short
+
+# Display only memory information
+lshw -short -class memory
+
+# Display processor information
+lshw -class processor
+
+# Display the disk drives with the disk class
+lshw -short -class disk
+
+# Display information about the partitions and controllers also,
+# specify the storage and volume class along with the disk class
+lshw -short -class disk -class storage -class volume
+
+# Network adapter information
+lshw -class network
+
+# Display the address details of pci, usb, scsi and ide devices
+lshw -businfo
+
+# Generate report in html format
+lshw -html > hardware.html
+
+# Generate report in xml format
+lshw -html > hardware.html
