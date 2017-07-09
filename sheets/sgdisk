@@ -1,3 +1,6 @@
+# sgdisk
+# Command-line GUID partition table (GPT) manipulator for Linux and Unix
+
 # convert an MBR partition table to GPT, use sgdisk
 sgdisk -g /dev/sda
 
@@ -8,7 +11,6 @@ sgdisk -m /dev/sda
 # Sort GPT partitions
 # when a new partition is created in the space between two partitions or a partition is deleted
 sgdisk -s /dev/sda
-
 
 # Using sgdisk you can create a binary backup consisting of the protective MBR,
 # the main GPT header, the backup GPT header, and one copy of the partition table
