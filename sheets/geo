@@ -1,3 +1,6 @@
+# Geo
+Description: Provides quick access for wan, lan, router, dns, mac, and ip geolocation data.
+
 # Get your wireless area network ip address
 geo -w
 

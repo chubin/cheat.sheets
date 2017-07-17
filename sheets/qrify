@@ -1,3 +1,6 @@
+# Qrify
+Description: Converts strings or urls into a qr code.
+
 # Encode a single lined string into a qr code
 qrify This is an example string
 
