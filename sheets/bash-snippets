@@ -1,0 +1,32 @@
+# Bash-Snippets
+A collection of bash tools for heavy terminal users
+
+# Tools
+Cloudup:     Backs up a users github repositories to your bitbucket account.
+Crypt:       A wrapper around openssl that facilitates encrypting and decrypting files.
+Currency:    A realtime currency converter.
+Geo:         Provides quick access for wan, lan, router, dns, mac, and ip geolocation data.
+Movies:      Provides relevant information about a certain movie.
+Qrify:       Converts strings or urls into a qr code.
+Short:       Unmasks shortended urls.
+Siteciphers: Checks the available ciphers for the SSL of an https site.
+Stocks:      Finds the latest information on a certain stock.
+Taste:       A recommendation engine that provides 3 similar items based on some input topic.
+Todo:        A simplistic commandline todo list.
+Weather:     Provides a 3 day forecast on your current location or a specified location.
+Ytview:      Search and play youtube videos right from the terminal.
+
+# Compatibility
+All *nix machines (including Windows 10 bash subsystem)
+
+# Install
+https://github.com/alexanderepstein/Bash-Snippets#installing
+
+# Upgrade
+https://github.com/alexanderepstein/Bash-Snippets#updating
+
+# Uninstall
+https://github.com/alexanderepstein/Bash-Snippets#uninstalling
+
+# License
+MIT

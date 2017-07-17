@@ -1,3 +1,6 @@
+# Cloudup
+Description: Backs up a users github repositories to your bitbucket account.
+
 # Backup all of a single github users repositories
 cloudup -a
 

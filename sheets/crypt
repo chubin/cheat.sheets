@@ -1,3 +1,6 @@
+# Crypt
+Description: A wrapper around openssl that facilitates encrypting and decrypting files.
+
 # Encrypt a file
 crypt -e fileToEncrypt outputFile
 
