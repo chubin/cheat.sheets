@@ -1,0 +1,20 @@
+# Get your wireless area network ip address
+geo -w
+
+# Get your local area network ip address(es)
+geo -l
+
+# Get your router ip address
+geo -r
+
+# Get your DNS name server
+geo -d
+
+# Get mac address for supplied interface
+geo -m eth0
+
+# Get your current ip address geodata
+geo -g
+
+# Combine options
+geo -wlrdgm eth0

@@ -1,0 +1,5 @@
+# Encrypt a file
+crypt -e fileToEncrypt outputFile
+
+# Decrypt a file
+crypt -d fileToDecrypt outputFile

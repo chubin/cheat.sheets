@@ -1,0 +1,6 @@
+# To convert between currencies (guided)
+currency
+
+# To convert between currencies (by supplying arguments)
+# First argument is base currency second is the currency being exchanged to
+currency USD EUR 14.38

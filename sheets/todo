@@ -1,0 +1,11 @@
+# Add a task to your todo list
+todo -a This is an example task
+
+# Print the current task list
+todo -g
+
+# Remove a single task from the list
+todo -r [taskNumber]
+
+# To clear all tasks
+todo -c or todo clear

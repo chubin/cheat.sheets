@@ -1,0 +1,8 @@
+# Backup all of a single github users repositories
+cloudup -a
+
+# Backup a single github repository
+cloudup
+
+# Backup a single github repository (supplying the name of repo as argument)
+cloudup repositoryName

@@ -1,0 +1,8 @@
+# Search for youtube videos by title
+ytview This is my search query
+
+# Search for youtbe videos by specifying a channel
+ytview -c numberphile
+
+# After using one of the two above commands you will be able
+# To pick from a list of videos and play it from the terminal
