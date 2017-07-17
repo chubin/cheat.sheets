@@ -1,0 +1,5 @@
+# Determine the available SSL ciphers for an https website
+siteciphers github.com
+
+# Determine the ciphers setting the delay between requests (default is 1 sec)
+siteciphers -d 0.75 travis-ci.org

@@ -1,0 +1,8 @@
+# Get the names of three recommendations based on supplied item
+taste Catcher in the Rye
+
+# Get the names and information on three recommendations based on supplied item
+taste -i Kendrick Lamar
+
+# Get information on the supplied item
+taste -s Red Hot Chili Peppers

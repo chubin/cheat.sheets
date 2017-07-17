@@ -1,0 +1,3 @@
+# Unmask the true url behind a shortened link
+Input: short tinyurl.com/jhkj
+Output: http://possiblemaliciouswebsiteornot.com

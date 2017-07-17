@@ -1,0 +1,8 @@
+# Encode a single lined string into a qr code
+qrify This is an example string
+
+# Encode a multiple lined string into a qr code
+qrify -m "This should be \n two lines"
+
+# Encode a url into a qr code
+github.com

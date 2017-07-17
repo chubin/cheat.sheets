@@ -1,0 +1,8 @@
+# Get a 3 day forecast for your current location as determined by your ip address
+weather
+
+# Get a 3 day forecast for any location
+weather Tokyo
+
+# Get the current moon phase
+weather Moon
