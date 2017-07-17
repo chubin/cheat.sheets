@@ -1,0 +1,16 @@
+# Bash-Snippets
+# A collection of bash tools for heavy terminal users
+# https://github.com/alexanderepstein/Bash-Snippets
+
+# To install
+git clone https://github.com/alexanderepstein/Bash-Snippets
+cd Bash-Snippets
+./install.sh all
+# or to install an individual script
+# ./install.sh stocks
+
+# To uninstall
+git clone https://github.com/alexanderepstein/Bash-Snippets
+cd Bash-Snippets
+./uninstall.sh
+
