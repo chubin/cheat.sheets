@@ -1,5 +1,5 @@
-# Stocks
-Description: Finds the latest information on a certain stock.
+# stocks (Bash-Snippets)
+# Finds the latest information on a certain stock
 
 # Determine the latest stock information searching by company
 stocks Tesla

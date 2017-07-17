@@ -1,5 +1,5 @@
-# Todo
-Description: A simplistic commandline todo list.
+# Todo (Bash-Snippets)
+# A simplistic commandline todo list
 
 # Add a task to your todo list
 todo -a This is an example task

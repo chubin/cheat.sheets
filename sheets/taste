@@ -1,5 +1,5 @@
-# Taste
-Description: A recommendation engine that provides 3 similar items based on some input topic.
+# taste (Bash-Snippets)
+# A recommendation engine that provides 3 similar items based on some input topic.
 
 # Get the names of three recommendations based on supplied item
 taste Catcher in the Rye

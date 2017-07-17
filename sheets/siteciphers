@@ -1,5 +1,5 @@
-# Siteciphers
-Description: Checks the available ciphers for the SSL of an https site.
+# siteciphers (Bash-Snippets)
+# Checks the available ciphers for the SSL of an https site.
 
 # Determine the available SSL ciphers for an https website
 siteciphers github.com

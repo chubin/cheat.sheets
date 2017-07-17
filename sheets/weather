@@ -1,5 +1,5 @@
-# Weather
-Description: Provides a 3 day forecast on your current location or a specified location.
+# weather (Bash-Snippets)
+# Provides a 3 day forecast on your current location or a specified location
 
 # Get a 3 day forecast for your current location as determined by your ip address
 weather
