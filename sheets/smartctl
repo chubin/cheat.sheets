@@ -1,0 +1,17 @@
+# smartctl
+# get SMART status information on your hard drives
+
+# Quickly check the overall health of a drive
+smartctl -H /dev/sda
+
+# Obtain information on the drive: view the type of drive, its serial number, and so forth
+smartctl -i /dev/sda
+
+# initiate short tests for the drive
+smartctl --test=short /dev/sda
+
+# initiate long tests for the drive
+smartctl --test=long /dev/sda
+
+# abort the test
+smartctl -X
