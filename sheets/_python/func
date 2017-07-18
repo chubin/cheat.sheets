@@ -1,0 +1,15 @@
+# Simple function
+def functionName():
+    return True
+
+# Function with parameters 
+def functionName(a, b): 
+	if(a < b): 
+		return a
+	else: 
+		return b
+
+# Return multiple values 
+def functionName(a, b, c): 
+	return (a, b, c) 											// Returns a tuple
+	return {'return_a':a, 'return_b':b ,'return_c':c }			// Returns a dictionary 
