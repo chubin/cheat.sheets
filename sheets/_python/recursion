@@ -1,0 +1,15 @@
+# For what Recursion is, please check recursion 
+
+# Simple Factorial Python Recursion 
+def factorial(n) : 
+    if n == 0 : 
+        return 1 
+    else : 
+        return n * factorial(n-1)
+
+# Simple Greatest Common Divisor Recursion 
+def gcd(x, y) : 
+    if y == 0 : 
+        return x 
+    else : 
+        return gcd(y, x%y) 
