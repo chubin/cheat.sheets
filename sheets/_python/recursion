@@ -1,4 +1,4 @@
-# For what Recursion is, please check recursion 
+# For what Recursion is, please check theory/recursion 
 
 # Simple Factorial Python Recursion 
 def factorial(n) : 
