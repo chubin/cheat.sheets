@@ -1,0 +1,10 @@
+# scsi_logging_level
+# set and get the SCSI logging level (install sg3-utils)
+
+# configure the log level of several tracepoints along the Linux SCSI stack
+scsi_logging_level -s --ioctl=7
+
+# track SCSI commands as they flow through
+# the SCSI submission and completion path
+# (call dmesg after that)
+scsi_logging_level -s --midlevel=7
