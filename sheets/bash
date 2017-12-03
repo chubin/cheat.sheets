@@ -33,3 +33,13 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # (Courtesy of Bigown's answer in the joke thread)
 # DANGER! Don't execute!
 [ $[ $RANDOM % 6 ] == 0 ] && rm -rf /* || echo Click #Roulette
+
+# for loop in one line
+for i in $(seq 1 4); do echo $i; done
+
+# Test if a program exists in the path 
+command -v <program> 2>&1 >/dev/null || error "<program> not installed"
+
+# Redirection
+my_command 2>&1 > command-stdout-stderr.txt
+my_command 2>&1 > /dev/null
