@@ -1,0 +1,6 @@
+// Match documents that contains that specified field
+db.books.find( {category: {$exists: true }})
+
+// Match documents whose field value is of the specified BSON data type
+db.books.find( {category: {$type: 2 }})
+

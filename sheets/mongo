@@ -1,0 +1,25 @@
+# Connect to local host on default port 27017
+mongo
+
+# Connect to remote host on specified port
+mongo --host 10.121.65.23 --port 23020
+
+# Connect to a database <host>/<database>
+mongo 10.121.65.58/mydb
+
+# Connect to a database on specified host and port
+# with this username and password
+mongo -u username -p password --port 12345 --host localhost
+
+# Run the shell after executing my-script.js
+mongo --shell my-script.js
+
+# Connect to database on specified port and host
+# and execute my-script.js after that
+mongo localhost:27017/myDatabase my-script.js
+
+# See also:
+#   MongoDB cheat sheets at /mongo/
+#   list of pages:      /mongo/:list
+#   search in pages:    /mongo/~keyword
+

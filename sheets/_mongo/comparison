@@ -1,0 +1,24 @@
+// equals to
+db.books.find({year: {$eq: 2016}})
+
+// less than
+db.books.find({year: {$lt: 2010}})
+
+// less than or equal to
+db.books.find({year: {$lte: 2008}})
+
+// greater than
+db.books.find({year: {$gt: 2014}})
+
+// greater than or equal to
+db.books.find({year: {$gte: 2008}})
+
+// not equal to
+db.books.find({year: {$ne: 2008}})
+
+// value in
+db.books.find({year: {$in: [2008, 2016]}})
+
+// value not in
+db.books.find({year: {$nin: [2008, 2016]}})
+

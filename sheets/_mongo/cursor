@@ -1,0 +1,16 @@
+// Show number of documents in the collection
+db.books.find().count()
+
+// Limit the number of documents to return
+db.books.find().limit(2)
+
+// Return the result set after skipping the first n number of documents
+db.books.find().skip(2)
+
+// Sort the documents in a result set in ascending or descending order of field values
+db.books.find().sort( {title : 1} )
+// value = 1 for ascending, -1 for descending
+
+// Display formatted (more readable) result
+db.books.find({}).pretty()
+

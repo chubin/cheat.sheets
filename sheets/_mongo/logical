@@ -1,0 +1,12 @@
+// OR
+db.books.find( { $or: [{year: {$lte: 2008}}, {year: {$eq: 2016}}]} )
+
+// AND
+db.books.find( { $and: [{year: {$eq: 2008}}, {category: {$eq: "Fiction"}}]} )
+
+// NOT
+db.books.find( {$not: {year: {$eq: 2016} }})
+
+// NOR
+db.books.find( { $nor: [{year: {$lte: 2008}}, {year: {$eq: 2016}}]} )
+

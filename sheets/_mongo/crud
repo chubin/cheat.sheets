@@ -1,0 +1,41 @@
+// Insert a new document in a collection
+db.books.insert({"isbn": 9780060859749, "title": "After Alice: A Novel", "author": "Gregory Maguire", "category": "Fiction", "year":2016})
+
+// Insert multiple documents into a collection
+db.books.insert([
+    { "isbn":"9781853260001", "title": "Pride and Prejudice", "author": "Jane Austen", "category": "Fiction"},
+    {"isbn": "9780743273565", "title": "The Great Gatsby", "author": "F. Scott Fitzgerald"}
+    ])
+
+// Show all documents in the collection
+db.collection.find()
+
+// Filter documents by field value condition
+db.books.find({"title":"Treasure Island"})
+
+// Show only some fields of matching documents
+db.books.find({"title":"Treasure Island"}, {title:true, category:true, _id:false})
+
+// Show the first document that matches the query condition
+db.books.findOne({}, {_id:false})
+
+// Update specific fields of a single document that match the query condition
+db.books.update({title : "Treasure Island"}, {$set : {category :"Adventure Fiction"}})
+
+// Remove certain fields of a single document the query condition:
+// $unset
+db.books.update({title : "Treasure Island"}, {$unset : {category:""}})
+
+// Remove certain fields of all documents that match the query condition
+// $unset, {multi:true}
+db.books.update({category : "Fiction"}, {$unset : {category:""}}, {multi:true})
+
+// Delete a single document that match the query condition
+// {justOne:true}
+db.books.remove({title :"Treasure Island"}, {justOne:true})
+
+// Delete all documents matching a query condition
+db.books.remove({"category" :"Fiction"})
+
+// Delete all documents in a collection
+db.books.remove({})

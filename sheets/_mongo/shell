@@ -1,0 +1,30 @@
+// Show current database
+db
+
+// Select or switch database
+use mydb
+
+// Execute a JavaScript file
+load(myscript.js)
+
+// Display help
+help
+
+// Display help on DB methods
+db.help()
+
+// Display help on Collection
+db.mycol.help()
+
+// Show all databases
+show dbs
+
+// Show all collections in current database
+show collections
+
+// Show all users on current database
+show users
+
+// Show all roles on current database
+show roles
+

@@ -1,0 +1,19 @@
+// Create an index
+db.books.createIndex({title:1})
+// Type 1 means ascending; -1 means descending
+
+// Create a unique index
+db.books.createIndex( {isbn:1},{unique:true} )
+
+// Create a index on multiple fields (compound index)
+db.books.createIndex({title:1, author:-1})
+
+// Show all indexes in a collection
+db.books.getIndexes()
+
+// Drop an index
+db.books.dropIndex({author:-1})
+
+// Show index statistics
+db.books.stats()
+
