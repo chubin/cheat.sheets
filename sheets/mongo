@@ -1,3 +1,6 @@
+# mongo
+# MongoDB interactive shell client.
+
 # Connect to local host on default port 27017
 mongo
 
@@ -17,6 +20,9 @@ mongo --shell my-script.js
 # Connect to database on specified port and host
 # and execute my-script.js after that
 mongo localhost:27017/myDatabase my-script.js
+
+# Evaluate a javascript expression on the database:
+mongo --eval 'JSON.stringify(db.foo.findOne())' database
 
 # See also:
 #   MongoDB cheat sheets at /mongo/
