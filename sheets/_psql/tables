@@ -1,0 +1,32 @@
+# Create a new table or a temporary table
+CREATE [TEMP] TABLE [IF NOT EXISTS] table_name(
+   pk SERIAL PRIMARY KEY,
+   c1 type(size) NOT NULL,
+   c2 type(size) NULL,
+   ...
+);
+
+# Add a new column into a table
+ALTER TABLE table_name ADD COLUMN new_column_name TYPE;
+
+# Drop a column in a table
+ALTER TABLE table_name DROP COLUMN column_name;
+
+# Rename a column
+ALTER TABLE table_name RENAME column_name TO new_column_name;
+
+# Set or remove a default value for a column
+ALTER TABLE table_name ALTER COLUMN [SET DEFAULT value | DROP DEFAULT]
+
+# Add a primary key to a table
+ALTER TABLE table_name ADD PRIMARY KEY (column,...);
+
+# Remove the primary key from a table
+ALTER TABLE table_name 
+DROP CONSTRAINT primary_key_constraint_name;
+
+# Rename a table
+ALTER TABLE table_name RENAME TO new_table_name;
+
+# Drop a table and its dependent objects:
+DROP TABLE [IF EXISTS] table_name CASCADE;

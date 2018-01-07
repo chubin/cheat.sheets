@@ -1,0 +1,8 @@
+# Show the query plan for a query
+EXPLAIN query;
+
+# Show and execute the query plan for a query
+EXPLAIN ANALYZE query;
+
+# Collect statistics
+ANALYZE table_name;

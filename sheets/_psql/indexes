@@ -1,0 +1,6 @@
+# Creating an index with the specified name on a table
+CREATE [UNIQUE] INDEX index_name
+ON table (column,...)
+
+# Removing a specified index from table
+DROP INDEX index_name;

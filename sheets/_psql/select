@@ -1,0 +1,74 @@
+# Query all data from a table
+SELECT * FROM table_name;
+
+Query data from specified columns of all rows in a table
+SELECT column, column2... FROM table;
+
+# Query data and select only unique rows
+SELECT DISTINCT (column) FROM table;
+
+# Query data from a table with a filter
+SELECT * FROM table WHERE condition;
+
+# Set an alias for a column in the result set
+SELECT column_1 AS new_column_1, ...
+FROM table;
+
+# Query data using the LIKE operator
+SELECT * FROM table_name
+WHERE column LIKE '%value%'
+
+# Query data using the BETWEEN operator
+SELECT * FROM table_name
+WHERE column BETWEEN low AND high;
+
+# Query data using the IN operator
+SELECT * FROM table_name
+WHERE column IN (value1, value2,...);
+
+# Constrain the returned rows with LIMIT clause
+SELECT * FROM table_name
+LIMIT limit OFFSET offset
+ORDER BY column_name;
+
+# Query data from multiple using the inner join, left join, full outer join, cross join and natural join:
+SELECT * FROM table1 INNER JOIN table2 ON conditions
+SELECT * FROM table1 LEFT JOIN table2 ON conditions
+SELECT * FROM table1 FULL OUTER JOIN table2 ON conditions
+SELECT * FROM table1 CROSS JOIN table2;
+SELECT * FROM table1 NATURAL JOIN table2;
+
+# Return the number of rows of a table.
+SELECT COUNT (*)
+FROM table_name;
+
+# Sort rows in ascending or descending order
+SELECT column, column2, ...
+FROM table
+ORDER BY column ASC [DESC], column2 ASC [DESC],...;
+
+# Group rows using GROUP BY clause.
+SELECT *
+FROM table
+GROUP BY column_1, column_2, ...;
+
+# Filter groups using the HAVING clause.
+SELECT *
+FROM table
+GROUP BY column_1
+HAVING condition;
+
+# Combine the result set of two or more queries with UNION operator:
+SELECT * FROM table1
+UNION
+SELECT * FROM table2;
+
+# Minus a result set using EXCEPT operator:
+SELECT * FROM table1
+EXCEPT
+SELECT * FROM table2;
+
+# Get intersection of the result sets of two queries:
+SELECT * FROM table1
+INTERSECT
+SELECT * FROM table2;

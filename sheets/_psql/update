@@ -1,0 +1,27 @@
+# Insert a new row into a table
+INSERT INTO table(column1,column2,...)
+VALUES(value_1,value_2,...);
+
+# Insert multiple rows into a table
+INSERT INTO table_name(column1,column2,...)
+VALUES(value_1,value_2,...),
+      (value_1,value_2,...),
+      (value_1,value_2,...)...
+
+# Update data for all rows
+UPDATE table_name
+SET column_1 = value_1,
+    ...;
+
+# Update data for a set of rows specified by a condition in WHERE clause
+UPDATE table
+SET column_1 = value_1,
+    ...
+WHERE condition;
+
+# Delete all rows of a table
+DELETE FROM table_name;
+
+# Delete specific rows based on a condition
+DELETE FROM table_name
+WHERE condition;

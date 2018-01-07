@@ -1,0 +1,11 @@
+# List roles
+SELECT rolname FROM pg_roles;
+
+# Create user
+CREATE USER <user_name> WITH PASSWORD '<password>';
+
+# Drop user
+DROP USER IF EXISTS <user_name>;
+
+# Alter user password
+ALTER ROLE <user_name> WITH PASSWORD '<password>';

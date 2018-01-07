@@ -1,0 +1,10 @@
+# List schemas
+\dn
+SELECT schema_name FROM information_schema.schemata;
+SELECT nspname FROM pg_catalog.pg_namespace;
+
+# Create schema
+CREATE SCHEMA IF NOT EXISTS <schema_name>;
+
+# Drop schema
+DROP SCHEMA IF EXISTS <schema_name> CASCADE;

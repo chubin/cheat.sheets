@@ -1,0 +1,22 @@
+# Add column
+ALTER TABLE <table_name> IF EXISTS
+ADD <column_name> <data_type> [<constraints>];
+
+# Update column
+ALTER TABLE <table_name> IF EXISTS
+ALTER <column_name> TYPE <data_type> [<constraints>];
+
+# Delete column
+ALTER TABLE <table_name> IF EXISTS
+DROP <column_name>;
+
+# Update column to be an auto-incrementing primary key
+ALTER TABLE <table_name>
+ADD COLUMN <column_name> SERIAL PRIMARY KEY;
+
+# Insert into a table, with an auto-incrementing primary key
+INSERT INTO <table_name>
+VALUES (DEFAULT, <value1>);
+#
+INSERT INTO <table_name> (<column1_name>,<column2_name>)
+VALUES ( <value1>,<value2> );
