@@ -1,0 +1,15 @@
+# redis
+# Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker
+
+# connect to redis server (port 6397)
+nc localhost 6397
+
+# Connect to the local server using redis-cli:
+redis-cli
+
+# See also:
+#   redis cheat sheets at /redis/
+#   list of pages:      /redis/:list
+#   search in pages:    /mongo/~keyword
+#   redis-cli usage at  /redis-cli
+
