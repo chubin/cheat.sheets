@@ -1,0 +1,18 @@
+# rclone is a command line tool, similar to rsync, with the difference that
+# it can sync, move, copy, and in general do other file operations on cloud services
+
+# Config rclone
+rclone config
+
+# Lists a re
+rclone ls remote:path
+
+# Copy /local/path to the remote
+rclone copy /local/path remote:path
+
+# Sync /local/path to the remote
+rclone sync /local/path remote:path 
+
+# Server side Copy
+rclone copy s3:oldbucket s3:newbucket
+
