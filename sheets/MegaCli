@@ -1,0 +1,24 @@
+# MegaCli introduced by LSI as a command line administration of LSI MegaRaid controllers.
+# With megacli we can create physical raids, gather info about raids and monitor raids. 
+
+# Install MegaCLI
+yum install MegaCli # CentOS
+apt-get install megacli # Ubuntu
+
+# Controller information
+MegaCli -AdpAllInfo -aALL
+MegaCli -CfgDsply -aALL
+
+# Enclosure information
+MegaCli -EncInfo -aALL
+
+# Virtual drive information
+MegaCli -LDInfo -Lall -aALL
+
+# Physical drive information
+MegaCli -PDList -aALL
+MegaCli -PDInfo -PhysDrv [E:S] -aALL
+
+# Battery backup information
+MegaCli -AdpBbuCmd -aALL
+
