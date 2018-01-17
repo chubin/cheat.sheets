@@ -1,11 +1,11 @@
-# Create a new role
+-- Create a new role
 CREATE ROLE role_name;
 
-# Create a new role with a username and password:
+-- Create a new role with a username and password:
 CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
 
-# Change role for current sesion to the new_role:
+-- Change role for current sesion to the new_role:
 SET ROLE new_role;
 
-# Allow role_1 to set its role as role_2:
+-- Allow role_1 to set its role as role_2:
 GRANT role_2 TO role_1;

@@ -1,25 +1,25 @@
-# Create a view
+-- Create a view
 CREATE OR REPLACE view_name AS
 query;
 
-# Create a recurisve view:
+-- Create a recurisve view:
 CREATE RECURSIVE VIEW view_name(columns) AS
 SELECT columns;
 
-# Create a materialized view:
+-- Create a materialized view:
 CREATE MATERIALIZED VIEW view_name
 AS
 query
 WITH [NO] DATA;
 
-# Refresh a materialized view
+-- Refresh a materialized view
 REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;
 
-# Drop a view
+-- Drop a view
 DROP VIEW [ IF EXISTS ] view_name;
 
-# Drop a materialized view
+-- Drop a materialized view
 DROP MATERIALIZED VIEW view_name;
 
-# Rename a view
+-- Rename a view
 ALTER VIEW view_name RENAME TO new_name;

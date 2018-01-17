@@ -1,5 +1,5 @@
-# Create a new database
+-- Create a new database
 CREATE DATABASE [IF NOT EXISTS] db_name;
 
-# Delete a database permanently
+-- Delete a database permanently
 DROP DATABASE [IF EXISTS] db_name;

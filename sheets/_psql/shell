@@ -1,48 +1,48 @@
-# Connect to a specific database
+-- Connect to a specific database
 \c database_name
 
-# To quite the psql
+-- To quite the psql
 \q
 
-# List all databases in the PostgreSQL database server
+-- List all databases in the PostgreSQL database server
 \l
 
-# List all schemas
+-- List all schemas
 \dn
 
-# List all stored procedures and functions
+-- List all stored procedures and functions
 \df
 
-# List all views
+-- List all views
 \dv
 
-# Lists all tables in a current database
+-- Lists all tables in a current database
 \dt
 
-# Get more information on tables in the current database
+-- Get more information on tables in the current database
 \dt+
 
-# Get detailed information on a table
+-- Get detailed information on a table
 \d+ table_name
 
-# Show a stored procedure or function code
+-- Show a stored procedure or function code
 \df+ function_name
 
-# Show query output in the pretty-format
+-- Show query output in the pretty-format
 \x
 
-# List all users
+-- List all users
 \du
 
-# Export table into CSV file
+-- Export table into CSV file
 \copy <table_name> TO '<file_path>' CSV
 
-# Export table, only specific columns, to CSV file
+-- Export table, only specific columns, to CSV file
 \copy <table_name>(<column_1>,<column_1>,<column_1>) TO '<file_path>' CSV
 
-# Import CSV file into table
+-- Import CSV file into table
 \copy <table_name> FROM '<file_path>' CSV
 
-# Import CSV file into table, only specific columns
+-- Import CSV file into table, only specific columns
 \copy <table_name>(<column_1>,<column_1>,<column_1>) FROM '<file_path>' CSV
 
