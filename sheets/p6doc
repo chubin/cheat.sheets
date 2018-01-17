@@ -1,0 +1,12 @@
+# p6doc
+# Perl 6 documentation
+
+# Build index
+p6doc build
+
+# to get information about the function
+p6doc -f slurp
+
+# if the function name is ambiguous use it with the class name
+p6doc -f Type::IO.slurp
+
