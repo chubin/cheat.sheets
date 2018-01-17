@@ -1,0 +1,29 @@
+# perl6
+# The Perl 6 Language Implementation
+
+# to install perl6 (in Debian/Ubuntu)
+apt-get install rakudo 
+
+# To install rakudobrew and zef (perl 6 package management)
+git clone https://github.com/tadzik/rakudobrew ~/.rakudobrew
+export PATH=~/.rakudobrew/bin:$PATH
+# or fish shell: set -U fish_user_paths ~/.rakudobrew/bin/ $fish_user_paths
+rakudobrew init # Instructions for permanent installation.
+# to install vm:
+rakudobrew list-available
+rakudobrew build moar 2017.12
+# to install package manager zef
+rakudobrew build zef
+# after zef is installed you can build and install perl6 packages
+zef install p6doc
+# After you have installed new modules and scripts with zef or panda
+# to make the scripts available in ~/.rakudobrew/bin and thus your PATH
+rakudobrew rehash
+
+# See also:
+#   Perl language cheat sheets at /perl6/
+#   list of pages:      /perl6/:list
+#   learn perl:         /perl6/:learn
+#   perl one-liners:    /perl6/1line
+#   search in pages:    /perl6/~keyword
+
