@@ -1,3 +1,15 @@
 # Set the keyboard layout for the current X session 
 setxkbmap -layout "us,ru"
 setxkbmap -option "grp:caps_toggle,grp_led:scroll,compose:ralt"
+
+# Configure compose
+git clone https://github.com/kragen/xcompose/
+cd xcompose
+bash install
+cat <<EOF >> ~/.profile
+input_module=xim
+export GTK_IM_MODULE=$input_module
+export XMODIFIERS=@im=$input_module
+export QT_IM_MODULE=$input_module
+EOF
+
