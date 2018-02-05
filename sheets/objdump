@@ -1,0 +1,47 @@
+# objdump 
+# program for displaying various information about object files
+
+# Display the contents of the overall file header
+objdump -f executable
+
+# Display object format specific file header contents
+objdump -p executable
+
+# Display the contents of the section headers
+objdump -h executable
+
+# Display assembler contents of executable sections
+objdump -d executable
+
+# Display assembler contents of all sections
+objdump -D executable
+
+# Display the full contents of all sections
+objdump -s executable
+
+# Display all the header information
+objdump -x executable
+
+# Display debug information
+objdump -g executable
+
+# Display the contents of symbol table (or tables)
+objdump -t executable
+
+# Display the contents of dynamic symbol table
+# Dynamic symbols are those which are resolved during run time
+objdump -T executable
+
+# Display the dynamic relocation entries in the file
+objdump -R executable
+
+# Display section of interest
+# (extremely useful when you know the section related
+# to which the information is required)
+objdump -s -j.rodata executable
+
+# Use the older disassembly format
+objdump  -D --prefix-addresses executable
+
+# Execute the objdump by calling the options.txt file
+objdump @options.txt
