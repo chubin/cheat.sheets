@@ -1,0 +1,37 @@
+# nm
+# List symbol names in object files
+
+# Demangle C++ symbols (make them readable):
+nm --demangle file.o
+
+# Display object files that refer to a symbol
+nm  -A ./*.o | grep func
+
+# Display all undefined symbols in a file
+nm -u executable
+
+# List all symbols, even debugging symbols:
+nm -a executable
+
+# Display all symbols in executable
+# (sorted in order of their addresses)
+nm -n executable
+
+# Search for a symbols and display its size
+nm  -S 1 | grep abc
+
+# Display dynamic symbols in executable
+nm -D executable
+
+# Change the format of the nm output
+# (display the output of nm command in posix style)
+nm -u -f posix executable
+
+# Display only the external symbols of executable
+nm -g executable
+
+# Sort the nm output by the symbol size
+nm -g --size-sort executable
+
+# Specify nm options in a file
+nm @nm_file
