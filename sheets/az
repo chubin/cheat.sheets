@@ -1,3 +1,6 @@
+# Microsoft Azure CLI 2.0
+# Command-line tools for Azure
+
 # Install Azure CLI 2.0 with one curl command.
 curl -L https://aka.ms/InstallAzureCli | bash
 
@@ -5,4 +8,32 @@ curl -L https://aka.ms/InstallAzureCli | bash
 az group create -n MyResourceGroup -l westus2 
 
 # create a Linux VM using the UbuntuTLS image, with two attached storage disks of 10 GB and 20 GB
-az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
+az vm create -n MyLinuxVM -g MyResourceGroup --ssh-key-value $HOME/.ssh/id_rsa.pub --image UbuntuLTS --data-disk-sizes-gb 10 20
+
+# list VMs
+az vm list --output table
+
+# list only VMs having distinct state
+az vm list -d --query "[?powerState=='VM running']" --output table
+
+# delete VM (with the name MyLinuxVM in the group MyResourceGroup)
+az vm delete -g MyResourceGroup -n MyLinuxVM --yes
+
+# Delete all VMs in a resource group
+az vm delete --ids $(az vm list -g MyResourceGroup --query "[].id" -o tsv)
+
+# Create an Image based on a running VM
+az vm deallocate -g MyResourceGroup -n MyLinuxVM
+az vm generalize -g MyResourceGroup -n MyLinuxVM
+az image create --resource-group MyResourceGroup --name MyTestImage --source MyLinuxVM
+
+# Running VM based on a VHD
+az storage blob upload --account-name "${account_name}"  \
+   --account-key "${account_key}" --container-name "${container_name}" --type page \
+   --file "${file}" --name "${vhd_name}"
+az disk create \
+   --resource-group ${resource_group} \
+   --name myManagedDisk \
+   --source https://${account_name}.blob.core.windows.net/${container_name}/${vhd_name}
+
+
