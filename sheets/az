@@ -36,4 +36,5 @@ az disk create \
    --name myManagedDisk \
    --source https://${account_name}.blob.core.windows.net/${container_name}/${vhd_name}
 
-
+# open port
+az vm open-port --resource-group MyResourceGroup --name MyLinuxVM --port 443 --priority 899
