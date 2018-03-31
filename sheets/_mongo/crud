@@ -39,3 +39,6 @@ db.books.remove({"category" :"Fiction"})
 
 // Delete all documents in a collection
 db.books.remove({})
+
+// Drop a collection
+db.books.drop()
