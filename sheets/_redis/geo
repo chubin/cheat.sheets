@@ -1,0 +1,18 @@
+# Add one or more geospatial items in the geospatial index represented using a sorted set
+GEOADD key longitude latitude member [longitude latitude member ...]
+
+# Returns members of a geospatial index as standard geohash strings
+GEOHASH key member [member ...]
+
+# Returns longitude and latitude of members of a geospatial index
+GEOPOS key member [member ...]
+
+# Returns the distance between two members of a geospatial index
+GEODIST key member1 member2 [unit]
+
+# Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a point
+GEORADIUS key longitude latitude radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]
+
+# Query a sorted set representing a geospatial index to fetch members matching a given maximum distance from a member
+GEORADIUSBYMEMBER key member radius m|km|ft|mi [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]
+

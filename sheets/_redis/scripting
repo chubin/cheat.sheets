@@ -1,0 +1,21 @@
+# Execute a Lua script server side
+EVAL script numkeys key [key ...] arg [arg ...]
+
+# Execute a Lua script server side
+EVALSHA sha1 numkeys key [key ...] arg [arg ...]
+
+# Set the debug mode for executed scripts.
+SCRIPT DEBUG YES|SYNC|NO
+
+# Check existence of scripts in the script cache.
+SCRIPT EXISTS sha1 [sha1 ...]
+
+# Remove all the scripts from the script cache.
+SCRIPT FLUSH
+
+# Kill the script currently in execution.
+SCRIPT KILL
+
+# Load the specified Lua script into the script cache.
+SCRIPT LOAD script
+

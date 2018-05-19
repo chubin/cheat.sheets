@@ -1,0 +1,51 @@
+# Remove and get the first element in a list, or block until one is available
+BLPOP key [key ...] timeout
+
+# Remove and get the last element in a list, or block until one is available
+BRPOP key [key ...] timeout
+
+# Pop a value from a list, push it to another list and return it; or block until one is available
+BRPOPLPUSH source destination timeout
+
+# Get an element from a list by its index
+LINDEX key index
+
+# Insert an element before or after another element in a list
+LINSERT key BEFORE|AFTER pivot value
+
+# Get the length of a list
+LLEN key
+
+# Remove and get the first element in a list
+LPOP key
+
+# Prepend one or multiple values to a list
+LPUSH key value [value ...]
+
+# Prepend a value to a list, only if the list exists
+LPUSHX key value
+
+# Get a range of elements from a list
+LRANGE key start stop
+
+# Remove elements from a list
+LREM key count value
+
+# Set the value of an element in a list by its index
+LSET key index value
+
+# Trim a list to the specified range
+LTRIM key start stop
+
+# Remove and get the last element in a list
+RPOP key
+
+# Remove the last element in a list, prepend it to another list and return it
+RPOPLPUSH source destination
+
+# Append one or multiple values to a list
+RPUSH key value [value ...]
+
+# Append a value to a list, only if the list exists
+RPUSHX key value
+

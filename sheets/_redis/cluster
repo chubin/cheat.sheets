@@ -1,0 +1,60 @@
+# Assign new hash slots to receiving node
+CLUSTER ADDSLOTS slot [slot ...]
+
+# Return the number of failure reports active for a given node
+CLUSTER COUNT-FAILURE-REPORTS node-id
+
+# Return the number of local keys in the specified hash slot
+CLUSTER COUNTKEYSINSLOT slot
+
+# Set hash slots as unbound in receiving node
+CLUSTER DELSLOTS slot [slot ...]
+
+# Forces a slave to perform a manual failover of its master.
+CLUSTER FAILOVER [FORCE|TAKEOVER]
+
+# Remove a node from the nodes table
+CLUSTER FORGET node-id
+
+# Return local key names in the specified hash slot
+CLUSTER GETKEYSINSLOT slot count
+
+# Provides info about Redis Cluster node state
+CLUSTER INFO
+
+# Returns the hash slot of the specified key
+CLUSTER KEYSLOT key
+
+# Force a node cluster to handshake with another node
+CLUSTER MEET ip port
+
+# Get Cluster config for the node
+CLUSTER NODES
+
+# Reconfigure a node as a slave of the specified master node
+CLUSTER REPLICATE node-id
+
+# Reset a Redis Cluster node
+CLUSTER RESET [HARD|SOFT]
+
+# Forces the node to save cluster state on disk
+CLUSTER SAVECONFIG
+
+# Set the configuration epoch in a new node
+CLUSTER SET-CONFIG-EPOCH config-epoch
+
+# Bind a hash slot to a specific node
+CLUSTER SETSLOT slot IMPORTING|MIGRATING|STABLE|NODE [node-id]
+
+# List slave nodes of the specified master node
+CLUSTER SLAVES node-id
+
+# Get array of Cluster slot to node mappings
+CLUSTER SLOTS
+
+# Enables read queries for a connection to a cluster slave node
+READONLY
+
+# Disables read queries for a connection to a cluster slave node
+READWRITE
+

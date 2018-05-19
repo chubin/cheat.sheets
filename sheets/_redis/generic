@@ -1,0 +1,72 @@
+# Delete a key
+DEL key [key ...]
+
+# Return a serialized version of the value stored at the specified key.
+DUMP key
+
+# Determine if a key exists
+EXISTS key [key ...]
+
+# Set a key's time to live in seconds
+EXPIRE key seconds
+
+# Set the expiration for a key as a UNIX timestamp
+EXPIREAT key timestamp
+
+# Find all keys matching the given pattern
+KEYS pattern
+
+# Atomically transfer a key from a Redis instance to another one.
+MIGRATE host port key|"" destination-db timeout [COPY] [REPLACE] [KEYS key [key ...]]
+
+# Move a key to another database
+MOVE key db
+
+# Inspect the internals of Redis objects
+OBJECT subcommand [arguments [arguments ...]]
+
+# Remove the expiration from a key
+PERSIST key
+
+# Set a key's time to live in milliseconds
+PEXPIRE key milliseconds
+
+# Set the expiration for a key as a UNIX timestamp specified in milliseconds
+PEXPIREAT key milliseconds-timestamp
+
+# Get the time to live for a key in milliseconds
+PTTL key
+
+# Return a random key from the keyspace
+RANDOMKEY
+
+# Rename a key
+RENAME key newkey
+
+# Rename a key, only if the new key does not exist
+RENAMENX key newkey
+
+# Create a key using the provided serialized value, previously obtained using DUMP.
+RESTORE key ttl serialized-value [REPLACE]
+
+# Sort the elements in a list, set or sorted set
+SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]
+
+# Alters the last access time of a key(s). Returns the number of existing keys specified.
+TOUCH key [key ...]
+
+# Get the time to live for a key
+TTL key
+
+# Determine the type stored at key
+TYPE key
+
+# Delete a key asynchronously in another thread. Otherwise it is just as DEL, but non blocking.
+UNLINK key [key ...]
+
+# Wait for the synchronous replication of all the write commands sent in the context of the current connection
+WAIT numslaves timeout
+
+# Incrementally iterate the keys space
+SCAN cursor [MATCH pattern] [COUNT count]
+

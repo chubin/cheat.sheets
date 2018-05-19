@@ -1,0 +1,15 @@
+# Discard all commands issued after MULTI
+DISCARD
+
+# Execute all commands issued after MULTI
+EXEC
+
+# Mark the start of a transaction block
+MULTI
+
+# Forget about all watched keys
+UNWATCH
+
+# Watch the given keys to determine execution of the MULTI/EXEC block
+WATCH key [key ...]
+

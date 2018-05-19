@@ -1,0 +1,45 @@
+# Delete one or more hash fields
+HDEL key field [field ...]
+
+# Determine if a hash field exists
+HEXISTS key field
+
+# Get the value of a hash field
+HGET key field
+
+# Get all the fields and values in a hash
+HGETALL key
+
+# Increment the integer value of a hash field by the given number
+HINCRBY key field increment
+
+# Increment the float value of a hash field by the given amount
+HINCRBYFLOAT key field increment
+
+# Get all the fields in a hash
+HKEYS key
+
+# Get the number of fields in a hash
+HLEN key
+
+# Get the values of all the given hash fields
+HMGET key field [field ...]
+
+# Set multiple hash fields to multiple values
+HMSET key field value [field value ...]
+
+# Set the string value of a hash field
+HSET key field value
+
+# Set the value of a hash field, only if the field does not exist
+HSETNX key field value
+
+# Get the length of the value of a hash field
+HSTRLEN key field
+
+# Get all the values in a hash
+HVALS key
+
+# Incrementally iterate hash fields and associated values
+HSCAN key cursor [MATCH pattern] [COUNT count]
+

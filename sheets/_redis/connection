@@ -1,0 +1,18 @@
+# Authenticate to the server
+AUTH password
+
+# Echo the given string
+ECHO message
+
+# Ping the server
+PING [message]
+
+# Close the connection
+QUIT
+
+# Change the selected database for the current connection
+SELECT index
+
+# Swaps two Redis databases
+SWAPDB index index
+

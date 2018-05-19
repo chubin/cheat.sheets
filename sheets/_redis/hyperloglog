@@ -1,0 +1,9 @@
+# Adds the specified elements to the specified HyperLogLog.
+PFADD key element [element ...]
+
+# Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).
+PFCOUNT key [key ...]
+
+# Merge N different HyperLogLogs into a single one.
+PFMERGE destkey sourcekey [sourcekey ...]
+

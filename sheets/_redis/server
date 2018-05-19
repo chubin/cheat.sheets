@@ -1,0 +1,93 @@
+# Asynchronously rewrite the append-only file
+BGREWRITEAOF
+
+# Asynchronously save the dataset to disk
+BGSAVE
+
+# Kill the connection of a client
+CLIENT KILL [ip:port] [ID client-id] [TYPE normal|master|slave|pubsub] [ADDR ip:port] [SKIPME yes/no]
+
+# Get the list of client connections
+CLIENT LIST
+
+# Get the current connection name
+CLIENT GETNAME
+
+# Stop processing commands from clients for some time
+CLIENT PAUSE timeout
+
+# Instruct the server whether to reply to commands
+CLIENT REPLY ON|OFF|SKIP
+
+# Set the current connection name
+CLIENT SETNAME connection-name
+
+# Get array of Redis command details
+COMMAND
+
+# Get total number of Redis commands
+COMMAND COUNT
+
+# Extract keys given a full Redis command
+COMMAND GETKEYS
+
+# Get array of specific Redis command details
+COMMAND INFO command-name [command-name ...]
+
+# Get the value of a configuration parameter
+CONFIG GET parameter
+
+# Rewrite the configuration file with the in memory configuration
+CONFIG REWRITE
+
+# Set a configuration parameter to the given value
+CONFIG SET parameter value
+
+# Reset the stats returned by INFO
+CONFIG RESETSTAT
+
+# Return the number of keys in the selected database
+DBSIZE
+
+# Get debugging information about a key
+DEBUG OBJECT key
+
+# Make the server crash
+DEBUG SEGFAULT
+
+# Remove all keys from all databases
+FLUSHALL [ASYNC]
+
+# Remove all keys from the current database
+FLUSHDB [ASYNC]
+
+# Get information and statistics about the server
+INFO [section]
+
+# Get the UNIX time stamp of the last successful save to disk
+LASTSAVE
+
+# Listen for all requests received by the server in real time
+MONITOR
+
+# Return the role of the instance in the context of replication
+ROLE
+
+# Synchronously save the dataset to disk
+SAVE
+
+# Synchronously save the dataset to disk and then shut down the server
+SHUTDOWN [NOSAVE|SAVE]
+
+# Make the server a slave of another instance, or promote it as master
+SLAVEOF host port
+
+# Manages the Redis slow queries log
+SLOWLOG subcommand [argument]
+
+# Internal command used for replication
+SYNC
+
+# Return the current server time
+TIME
+

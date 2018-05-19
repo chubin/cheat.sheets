@@ -1,0 +1,72 @@
+# Append a value to a key
+APPEND key value
+
+# Count set bits in a string
+BITCOUNT key [start end]
+
+# Perform arbitrary bitfield integer operations on strings
+BITFIELD key [GET type offset] [SET type offset value] [INCRBY type offset increment] [OVERFLOW WRAP|SAT|FAIL]
+
+# Perform bitwise operations between strings
+BITOP operation destkey key [key ...]
+
+# Find first bit set or clear in a string
+BITPOS key bit [start] [end]
+
+# Decrement the integer value of a key by one
+DECR key
+
+# Decrement the integer value of a key by the given number
+DECRBY key decrement
+
+# Get the value of a key
+GET key
+
+# Returns the bit value at offset in the string value stored at key
+GETBIT key offset
+
+# Get a substring of the string stored at a key
+GETRANGE key start end
+
+# Set the string value of a key and return its old value
+GETSET key value
+
+# Increment the integer value of a key by one
+INCR key
+
+# Increment the integer value of a key by the given amount
+INCRBY key increment
+
+# Increment the float value of a key by the given amount
+INCRBYFLOAT key increment
+
+# Get the values of all the given keys
+MGET key [key ...]
+
+# Set multiple keys to multiple values
+MSET key value [key value ...]
+
+# Set multiple keys to multiple values, only if none of the keys exist
+MSETNX key value [key value ...]
+
+# Set the value and expiration in milliseconds of a key
+PSETEX key milliseconds value
+
+# Set the string value of a key
+SET key value [EX seconds] [PX milliseconds] [NX|XX]
+
+# Sets or clears the bit at offset in the string value stored at key
+SETBIT key offset value
+
+# Set the value and expiration of a key
+SETEX key seconds value
+
+# Set the value of a key, only if the key does not exist
+SETNX key value
+
+# Overwrite part of a string at key starting at the specified offset
+SETRANGE key offset value
+
+# Get the length of the value stored in a key
+STRLEN key
+

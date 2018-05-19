@@ -1,0 +1,45 @@
+# Add one or more members to a set
+SADD key member [member ...]
+
+# Get the number of members in a set
+SCARD key
+
+# Subtract multiple sets
+SDIFF key [key ...]
+
+# Subtract multiple sets and store the resulting set in a key
+SDIFFSTORE destination key [key ...]
+
+# Intersect multiple sets
+SINTER key [key ...]
+
+# Intersect multiple sets and store the resulting set in a key
+SINTERSTORE destination key [key ...]
+
+# Determine if a given value is a member of a set
+SISMEMBER key member
+
+# Get all the members in a set
+SMEMBERS key
+
+# Move a member from one set to another
+SMOVE source destination member
+
+# Remove and return one or multiple random members from a set
+SPOP key [count]
+
+# Get one or multiple random members from a set
+SRANDMEMBER key [count]
+
+# Remove one or more members from a set
+SREM key member [member ...]
+
+# Add multiple sets
+SUNION key [key ...]
+
+# Add multiple sets and store the resulting set in a key
+SUNIONSTORE destination key [key ...]
+
+# Incrementally iterate Set elements
+SSCAN key cursor [MATCH pattern] [COUNT count]
+

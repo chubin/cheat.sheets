@@ -1,0 +1,18 @@
+# Listen for messages published to channels matching the given patterns
+PSUBSCRIBE pattern [pattern ...]
+
+# Inspect the state of the Pub/Sub subsystem
+PUBSUB subcommand [argument [argument ...]]
+
+# Post a message to a channel
+PUBLISH channel message
+
+# Stop listening for messages posted to channels matching the given patterns
+PUNSUBSCRIBE [pattern [pattern ...]]
+
+# Listen for messages published to the given channels
+SUBSCRIBE channel [channel ...]
+
+# Stop listening for messages posted to the given channels
+UNSUBSCRIBE [channel [channel ...]]
+
