@@ -10,6 +10,9 @@ curl -O URLOfFirstFile -O URLOfSecondFile
 # Download all sequentially numbered files (1-24)
 curl http://example.com/pic[1-24].jpg
 
+# Download a file and follow redirects
+curl -L http://example.com/file
+
 # Download a file and pass HTTP Authentication
 curl -u username:password URL 
 
