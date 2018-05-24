@@ -1,0 +1,4 @@
+# dhcpdump is good for sniffing and displaying DHCP packets on the network
+
+# sniff DHCP traffic on interface eth0
+dhcpdump -i eth0
