@@ -38,3 +38,54 @@ az disk create \
 
 # open port
 az vm open-port --resource-group MyResourceGroup --name MyLinuxVM --port 443 --priority 899
+
+# Show storage accounts
+az storage account list --output table
+
+# Show contaniers for an account
+az storage container list --account-name mystorageaccount --output table
+
+# Show blobs in a container
+az storage blob list --account-name mystorageaccount --container-name mycontainer  --output table
+
+# list account keys
+az storage account keys list  --account-name STORAGE_NAME --resource-group RESOURCE_GROUP
+
+# Show own images
+az image list --output table
+
+# Configure default storage location
+az configure --defaults location=eastus2
+
+# Show disks
+az disk list --output table
+
+# Copy blob
+az storage blob copy start \
+	--source-uri 'https://md-ldh5nknx2rkz.blob.core.windows.net/jzwuuuzzapn0/abcd?sv=2017-04-17&sr=b&si=68041718-6828-4f5e-9e6e-a1b719975062&sig=XXX' \
+	--account-key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX== \
+	--account-name destaccount \
+	--destination-container vms \
+	--destination-blob DESTINATION-blob.vhd
+
+# List virtual networks
+az network vnet list --output table
+
+# List virtual networks adapters
+az network nic list --output table
+
+# List public IP addresses used by the VMs
+az vm list-ip-addresses --output table
+
+# create snapshot
+az snapshot create --resource-group IC-EXASOL-001 --source vm1-disk1 -n vm1-snap1
+
+# create SAS url for a snapshot
+az snapshot grant-access --resource-group IC-EXASOL-001 --name vm1-snap1 --duration-in-seconds 36000 --query '[accessSas]' -o tsv
+
+# attach disk
+az vm disk attach --vm-name vm1 -g RESOURCE_GROUP --disk DISK1_ID
+
+# detach disk
+az vm disk detach --vm-name vm1 -g RESOURCE_GROUP --name DISK1_ID
+
