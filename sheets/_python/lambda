@@ -2,9 +2,9 @@
 # Therefore they are not bound to a name 
 
 # Simple Lambda Function 
-a = lambda para1: para1 + 40
+a = lambda parameter: parameter + 40
 #
-print g(2)                       # Outputs 42
+print (a(2))                    # Outputs 42
 
 # Lambda Functions Inside Real Functions
 def subtract_func(n) : 
@@ -14,7 +14,7 @@ a = subtract_func(1)            # Sets n to 1 for a
 b = subtract_func(2)            # Sets n to 2 for b 
 #
 print(a(-4))                    # Outputs -5 ( -5 = -4 - 1 )
-print(a(-2))                    # Outputs -4 ( -4 = -2 - 2 )
+print(b(-2))                    # Outputs -4 ( -4 = -2 - 2 )
 
 # Lambda Function with Multiple Parameters 
 f = lambda x, y : x + y 
