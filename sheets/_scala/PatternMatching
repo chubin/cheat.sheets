@@ -27,3 +27,20 @@ Some(3) match {
   case _ => println("Not 42")
 }
 
+// Creating an alias for a match
+// This will maintain the original value passed into the match function, using the '@' symbol, and print "Matched Some(3)"
+Some(3) match {
+	case foundSome @ Some(_) => println("Matched " + foundSome)
+	case _ => println("Matched nothing")
+}
+
+// Case Classes
+// This method allows you to match on any combination of properties of a case class
+case class Example(a: Int, b: String, c: Boolean)
+Example(1, "word", true) match {
+	case Example(3, _, _)         => println("Matches any Example where a = 3")
+	case Example(_, "foo", _)     => println("Matches any Example where b = foo")
+	case Example(_, _, false)     => println("Matches any Example where c = false")
+	case Example(1, "word", true) => println("Matches our Example")
+	case Example(_, _, _)         => println("Matches any other Example")
+}

@@ -1,0 +1,17 @@
+// Optional values
+val s: Option[Int] = Some(22)
+val n: Option[Int] = None
+
+// Removing optional values from a collection
+val listOfOptions: List[Option[Int]] = List(Some(1), None, Some(2), None, None, Some(3))
+listOfOptions.flatten    // returns List(1, 2, 3)
+
+// Get the value out of an option
+Some(5).get    // returns 5
+
+// Handling None
+// BAD
+None.get    // This will throw java.util.NoSuchElementException
+// GOOD
+None.getOrElse(1)    // This will handle the exception and return 1
+
