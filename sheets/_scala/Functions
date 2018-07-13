@@ -58,6 +58,10 @@ def zscore(mean:R, sd:R)(x:R) = (x-mean)/sd
 // need trailing underscore to get the partial, only for the sugar version.
 val normer = zscore(7, 0.4) _
 
+// using curried parameters with a partially applied function
+// can be called as "add(1)(2)" to return "3"
+def add(x: Int) = x + (_: Int)
+
 // generic type.
 def mapmake[T](g:T=>T)(seq: List[T]) = seq.map(g)
 
@@ -68,4 +72,13 @@ def mapmake[T](g:T=>T)(seq: List[T]) = seq.map(g)
 // varargs
 def sum(args: Int*) = args.reduceLeft(_+_)
 
+// default parameters
+def countTo(i: Int = 5) = 1 to i
+countTo(3) = Range(1,2,3)
+countTo()  = Range(1,2,3,4,5)
 
+// higher order functions
+// as long as a function returns the correct type, it can be used as a parameter in another function
+def sum(a: Int, b: Int): Int = a + b
+def double(x: Int): Int = x * 2
+double(sum(1, 1)) // returns 4

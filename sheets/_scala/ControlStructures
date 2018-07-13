@@ -5,6 +5,9 @@ if (check) happy else sad
 if (check) happy // same as
 if (check) happy else () 
 
+// multiple conditions
+if (check) happy else if(secondCheck) lessHappy else ()
+
 // while loop
 while (x < 5) { println(x); x += 1}
 
@@ -51,4 +54,18 @@ for (i <- 1 until 5) {
   println(i)
 }
 
+// recursion
+// can yield a "java.lang.StackOverflowError" with large lists
+// this is because each recursive call of the function is waiting for the evaluation of the next
+def sum(ints: List[Int]): Int = ints match { 
+  case Nil => 0
+  case x :: tail => x + sum(tail)
+}
 
+// tail recursion
+// this type of recursion will not throw StackOverflowError
+// this is because each recursive call of the function is fully evaluated
+def sum(ints: List[Int], accum: Int): Int = ints match {
+  case Nil => accum
+  case x :: tail => sum(tail, accum + x)
+}

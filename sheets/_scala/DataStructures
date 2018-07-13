@@ -1,6 +1,10 @@
 // tuple literal. (Tuple3)
 (1,2,3)
 
+// tuple sugar
+(1 -> 2) //same as
+(1, 2)
+
 // destructuring bind: tuple unpacking via pattern matching.
 var (x,y,z) = (1,2,3)
 
@@ -15,6 +19,10 @@ var xs = List(1,2,3)
 // more on it: https://www.slideshare.net/Odersky/fosdem-2009-1013261/27
 xs(2)
 
+// map (Immutable)
+Map(1 -> 'a', 2 -> 'b', 3 -> 'c') //same as
+Map((1, 'a'), (2, 'b'), (3, 'c'))
+
 // cons.
 1 :: List(2,3)
 
@@ -25,5 +33,3 @@ xs(2)
 
 // sole member of the Unit type (like C/Java void).
 () //(empty parens)
-
-
