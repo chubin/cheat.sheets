@@ -1,0 +1,34 @@
+# git add
+
+# Adds changed files to the index.
+
+# Add a file to the index:
+  git add path/to/file
+
+# Add all files (tracked and untracked):
+  git add -A
+
+# Only add already tracked files:
+  git add -u
+
+# Also add ignored files:
+  git add -f
+
+# Add parts of a file interactively:
+  git add -p path/to/file
+
+# git add question answers:
+#   y stage this hunk for the next commit
+#   n do not stage this hunk for the next commit
+#   q quit; do not stage this hunk or any of the remaining hunks
+#   a stage this hunk and all later hunks in the file
+#   d do not stage this hunk or any of the later hunks in the file
+#   g select a hunk to go to
+#   / search for a hunk matching the given regex
+#   j leave this hunk undecided, see next undecided hunk
+#   J leave this hunk undecided, see next hunk
+#   k leave this hunk undecided, see previous undecided hunk
+#   K leave this hunk undecided, see previous hunk
+#   s split the current hunk into smaller hunks
+#   e manually edit the current hunk
+#   ? print hunk help
