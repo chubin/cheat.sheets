@@ -1,0 +1,202 @@
+// map
+// works by applying a function to each element in the list
+val l = List(1,2,3,4,5)
+l map (num => num * 2)  //returns List(2,4,6,8,10)
+
+// wildcard sugar with map
+// this subsititutes "_" for the current value when iterating over the collection
+l map (_ * 2)           //returns List(2,4,6,8,10)
+
+// map with partial functions
+// allows the ability to provide different map functions for different discrete cases
+// this example will increment odd numbers by one, but double even numbers
+l map {    //note: the curly brackets allow us to make the map multi-line and use 'case' statements (see PatternMatching)
+	case num if num % 2 == 0 => num * 2
+	case other => other + 1
+}                       //returns List(2,4,4,8,6)
+
+// filter
+// removes elements from a collection where the filter function returns false
+l filter (_ % 2 == 0)   //returns List(2,4)
+
+// filterNot
+l filter (_ % 2 == 0)   //returns List(1,3,5)
+
+// collect
+// this is like a combination of filter and map
+// this example shows that collect essentially filters by "i < 3" then maps with "_ + 20"
+l collect {    //note: collect requires a partial function, so we have to use curly brackets and 'case' statements
+	case i if i < 3 => i + 20
+}                       //returns List(21, 22)
+
+// find
+// this will return the first element (going left to right) that returns true
+// it returns an option to handle the case where no element is found
+l find (_ % 2 == 0)  //returns Some(2)
+l find (_ == 55)     //returns None
+
+// exists
+// similar to find but returns a boolean instead if an element exists rather than an option
+l exists (_ % 2 == 0)  //returns true
+l exists (_ % 2 != 0)  //returns true
+l exists (_ == 10)     //returns false
+
+// forall
+// very similar to exists. Will check a condition applies to all elements on a collection and return a boolean
+List(1,2,3) forall (_ < 5)  //returns true
+List(1,2,6) forall (_ < 5)  //returns false
+
+// reduce
+// collapses a collection into a single element using a given function (this will fail with an empty list)
+// operates on two elements at a time, "reducing" them into one, so only one element is returned
+l reduce ( (a, b) => a + b ) //same as
+l reduce (_ + _)            //returns 15, the result of adding 1, 2, 3, 4 and 5
+
+// fold
+// this is the same as reduce except a "default" is provided, in case of an empty list.
+List(1,2,3,4,5).fold(50)(_ + _)  //returns 15
+List()         .fold(50)(_ + _)  //returns 50, the default
+
+// flatten
+// must be used on something in the shape F[F[A]] eg. List[List[Int]]
+// squashes two-dimensional collections into one-dimensional collections
+List(List(1,2,3), List(4,5)).flatten  //returns List(1,2,3,4,5)
+
+// flatMap
+// maps then flattens in one function
+// in this example, we will map and flatMap a List[Int] using a function that turns each Int into a List[Int]
+List(1,2,3) map {
+	num => List(num, num)
+}
+// for this example, mapping returns List(List(1,1),List(2,2),List(3,3)) 
+//vs
+List(1,2,3) flatMap {
+	num => List(num, num)
+} // returns List(1,1,2,2,3,3)
+
+// isEmpty
+// returns true if the collections is empty
+List(1,2,3).isEmpty  // returns false
+List().isEmpty  // returns true, same as
+Nil.isEmpty
+//note: All lists terminate with "Nil" meaning that List() == List.empty == Nil
+
+// diff
+// returns the "difference" of two collections, these are the elements that exist in the first but not the second
+val oneToSix   = List(1, 2, 3, 4, 5, 6)
+val fourToNine = List(4, 5, 6, 7, 8, 9)
+oneToSix diff (fourToNine)  //returns List(1,2,3)
+fourToNine diff (oneToSix)  //returns List(7,8,9)
+
+// intersect
+// returns the "intersection" of two collections, these are the elements that exist in both collections 
+val oneToSix   = List(1, 2, 3, 4, 5, 6)
+val fourToNine = List(4, 5, 6, 7, 8, 9)
+oneToSix intersect (fourToNine)  //returns List(4,5,6)
+fourToNine intersect (oneToSix)  //returns List(4,5,6)
+ 
+// union
+// returns the concatenation of the two lists
+val oneToSix   = List(1, 2, 3, 4, 5, 6)
+val fourToNine = List(4, 5, 6, 7, 8, 9)
+oneToSix union fourToNine  //same as
+oneToSix ++ fourToNine     //returns List(1, 2, 3, 4, 5, 6, 4, 5, 6, 7, 8, 9)
+
+// distinct
+// removes duplicates from a collection
+List(1,1,2,3,3,4,5).distinct  //returns List(1,2,3,4,5)
+
+// drop
+// this will remove a given amount of elements from the front of a collection
+List(1,2,3,4,5).drop(1)  //returns List(2,3,4,5)
+List(1,2,3,4,5).drop(3)  //returns List(4,5)
+
+// dropWhile
+// this will continue to remove elements until the condition returns false
+List(1,2,3,4,5).dropWhile(_ < 4)       //returns List(4,5), removing all elements smaller than four
+List(1,2,3,4,5).dropWhile(_ % 2 == 0)  //returns List(1,2,3,4,5), it removes nothing as the first element returned false
+
+// take
+// the opposite of drop, returns the given number of elements from the front of a collection
+List(1,2,3,4,5).take(1)  //returns List(1)
+List(1,2,3,4,5).take(3)  //returns List(1,2,3)
+
+// takeWhile
+// this will continue to take elements until the condition returns false
+List(1,2,3,4,5).takeWhile(_ < 4)       //returns List(1,2,3), taking all elements smaller than four
+List(1,2,3,4,5).takeWhile(_ % 2 == 0)  //returns List(), it takes nothing as the first element returned false
+
+// fill
+// this will create a List of a given length, filled with given elements
+List.fill(3)(5)    //returns List(5,5,5)
+List.fill(5)(3)    //returns List(3,3,3,3,3)
+List.fill(3)("a")  //returns List("a", "a", "a")
+
+// size
+// returns the length of a collection
+List(1,2,3,2).size  //returns 4
+
+// min
+// returns the minimum value
+List(1,2,3).min  //returns 1
+
+// max
+// returns the maximum value
+List(1,2,3).min  //returns 3
+
+// partition
+// returns two collections as a Tuple2 eg. (List[Int], List[Int]), see DataStructures for more on Tuple
+one collection containing all the "false" and another containing all the "true" elements
+List(1,2,3,4).partition(_ % 2 == 0)  //returns (List(2,4), List(1,3))
+List(1,2,3,4).partition(_ < 4)       //returns (List(1,2,3), List(4))
+
+// span
+// similar to partition, will split the list at the point that a condition returns false
+List(1,3,5,4,2).span(_ < 3)   //returns (List(1), List(3,5,4,2))
+List(1,3,5,4,2).span(_ != 5)  //returns (List(1, 3), List(5,4,2))
+
+// groupBy
+// returns two collections as a Map
+List(1,2,3,4).groupBy(_ % 2 == 0)  //returns Map(false -> List(1,3), true -> List(2,4))
+List(1,2,3,4).groupBy(identity)    //returns Map(1 -> List(1), 2 -> List(2), 3 -> List(3), 4 -> List(4))
+
+// splitAt
+// splits a collection before the given index
+List(1,7,4,6,5).splitAt(2)  //returns (List(1,7), List(4,6,5))
+
+// slice
+// returns a subset a collection between two indexes
+List("a","b","c","d","e").slice(2,4)  //returns List("c","d")
+
+// zip
+// joins two collections as a List of Tuple2, joining index 0 from one list to index 0 of the second list, 1 to 1, 2 to 2 etc.
+List(1,2,3) zip List("x", "y", "z")      //returns List((1,"a"), (2,"b"), (3,"c"))
+List(1,2,3,4,5) zip List("x", "y", "z")  //returns List((1,"a"), (2,"b"), (3,"c")) as there are only 3 elements to zip with
+
+// zipWithIndex
+// adds index numbers to a collection, returning a List of Tuple2
+List("a", "b", "c").zipWithIndex  //returns List(("a",0), ("b",1), ("c", 2))
+
+// unzip
+// opposite of zip, converts a List of Tuple2 into a Tuple2 of Lists
+List(("a",0), ("b",1), ("c", 2)).unzip  //returns (List("a", "b", "c"), List(0, 1, 2))
+
+// reverse
+List(1,2,3).reverse  //returns List(3,2,1)
+
+// head
+// returns the first element of a collection
+List(1,2,3).head  //returns 1
+
+// headOption
+// returns the first element of a collection as an Option, returns None in the case of an empty collection
+List(1,2,3).headOption  //returns Some(1)
+List().headOption       //returns None
+
+// tail
+// returns everything after the Head of a collection
+List(1,2,3).tail        //returns List(2,3), same as
+List(1,2,3).drop(1)
+
+// last
+List(1,2,3).last  //returns 3
