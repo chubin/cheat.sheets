@@ -1,7 +1,12 @@
-// tuple literal. (Tuple3)
+// sole member of the Unit type (like C/Java void).
+() //(empty parens)
+
+// tuple literal
+// This example would be a Tuple3
 (1,2,3)
 
-// tuple sugar
+// tuple sugar 
+// This example would be a Tuple2
 (1 -> 2) //same as
 (1, 2)
 
@@ -19,17 +24,19 @@ var xs = List(1,2,3)
 // more on it: https://www.slideshare.net/Odersky/fosdem-2009-1013261/27
 xs(2)
 
+// cons.
+1 :: List(2,3)
+
 // map (Immutable)
 Map(1 -> 'a', 2 -> 'b', 3 -> 'c') //same as
 Map((1, 'a'), (2, 'b'), (3, 'c'))
 
-// cons.
-1 :: List(2,3)
+// range
+// accepts start, end and step parameters
+Range(1, 5)     //returns Range(1,2,3,4,5)
+Range(1, 10, 2) //returns Range(1,3,5,7,9)
 
 // range sugar.
 1 to 5 // same as
 1 until 6
 1 to 10 by 2
-
-// sole member of the Unit type (like C/Java void).
-() //(empty parens)
