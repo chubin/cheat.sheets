@@ -1,7 +1,7 @@
-# Send a mail with a subject, cc and an attachement
+# Send a mail with a subject, cc, and an attachment
 mutt -s "Site Backup" -a backup.tar -c user@example.com user2@example.com
 
-# Send a mail with a blind carbony copy (bcc)
+# Send a mail with a blind carbon copy (bcc)
 mutt -s "hello" -b user2@example.com user@example.com
 
 #

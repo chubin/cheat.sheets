@@ -27,7 +27,7 @@ do
     azure vm disk delete --blob-delete "$disk"
 done
 
-# Create storage acount $myacct in location 'West US'
+# Create storage account $myacct in location 'West US'
 azure storage account create ${storage_account} --label ${storage_account} --location 'West US'
 
 # Set default account environment variables
