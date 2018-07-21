@@ -1,0 +1,59 @@
+#
+# BASIC DATA STRUCTURE
+# -------------------------
+
+# Swap two numbers
+a, b = b, a
+
+# List flattening
+print(list(itertools.chain(*my_list)))
+
+# Merge two dicts
+[**d1, **d2]
+
+# Reverse key, value in a dict
+{v: k for k, v in d.items()}
+
+# Transpose a matrix
+list(zip(*matrix))
+
+#
+# OOP
+# -------------------------
+
+# One-Line Constructors
+class A(object):
+    def __init__(self, a, b, c, d, e, f):
+        self.__dict__.update({k: v for k, v in locals().items() if k != 'self'})
+
+#
+# FILE MANIPULATION
+# -------------------------
+
+# Reading lines as arrays from a file
+lines = [line.strip() for line in open('foo.txt')]
+
+# Read rows of a csv file
+with open('foo.csv', 'r') as f: rows = [line.strip().split(',') for line in f.readlines()]
+
+# CSV file to json
+python -c "import csv,json;print(json.dumps(list(csv.reader(open('2017.csv')))))"
+
+#
+# MISC
+# -------------------------
+
+# Print a 9 * 9 multiplication table
+print('\n'.join([' '.join([f'{x}*{y}={x*y}' for x in range(1,y+1)]) for y in range(1,10)]))
+
+# Print a heart
+print('\n'.join([''.join([('OhMyLove'[(x-y)%8]if((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3<=0 else' ')for x in range(-30,30)])for y in range(15,-15,-1)]))
+
+# Generate an infinite maze
+python -c "while 1:import random;print(random.choice('|| __'), end='')" 
+
+# Simulate a slot machine
+python -c "import random;p=lambda:random.choice('7♪♫♣♠♦♥◄☼☽');[print('|'.join([p(),p(),p()]),end='\r') for i in range(8**5)]"
+
+# Guess number game
+python -c "import random;n=random.randint(1,99);[(lambda a:print('Y' if a==n else 'H' if a>n else 'L'))(int(input())) for i in range(6)]"
