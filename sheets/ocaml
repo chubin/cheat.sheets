@@ -1,7 +1,6 @@
 # OCaml
 # OCaml, originally named Objective Caml, is the main implementation of the programming language Caml.
 # A member of the ML language family.
-# The Perl 5 language interpreter.
 
 # Compile into a bytecode executable:
 ocamlc hello.ml -o hello
