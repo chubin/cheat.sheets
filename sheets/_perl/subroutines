@@ -1,67 +1,58 @@
 # The reserved word 'sub' defines a subroutine.
 
 # Basic subroutine with on parameter:
-
 sub mysub {
    my $param = shift;
-
+   #
    # Do stuff here
-
    return $myvalue
 }
-
 $x = mysub( "value" )
 
 # Named parameters to subroutines:
-
 sub named_params_example {
    my ( $arg ) = @_;
    # Use my ( $self, $arg ) = @_; if you are in object land.
-
+   #
    say $arg->{one};
    say $arg->{two};
 }
-
-# Calling the above subrouting:
-
+#
+# Calling the above subroutine:
 named_params_example({
    one => "First argument",
    two => "Second argument"
 });
 
 # Named parameters with default values:
-
 sub named_params_with_defaults {
    my ( $arg ) = @_;
    # Use my ( $self, $arg ) = @_; if you are in object land.
-   
+   # 
    # Set defaults
    #         If option given      Use options   Else
    my $one = exists $arg->{one} ? $arg->{one} : "default1";
    my $two = exists $arg->{two} ? $arg->{two} : "default2";
 }
-
+#
 named_params_with_defaults({ one => "override arg 'one'" });
 
 # Return named params from a subroutine:
-
 sub foo {
    my $clause = 'This is a clause';
    my @param = qw/ one two thee /;
-
    return ({
       clause => $clause,
       params => \@param
    });
 }
-
+#
 my $r = foo();
-
+#
 say "clause = [$r->{clause}]";
 for my $p ( @{ $r->{params} } ) {
    say "param = [$p]";
 }
 
 # More help with Perl's fabulous perldoc command:
-
 perldoc sub
