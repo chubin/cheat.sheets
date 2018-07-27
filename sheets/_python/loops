@@ -51,7 +51,7 @@ for i in x:
 	if i == 0:
 		break
 else:
-	print('found')
+	print('not found')
 
 '''
 # Equivalent of:
@@ -60,8 +60,8 @@ for i in x:
 	if i == 0:
 		flag = True
 		break
-if flag
-	print('found')
+if not flag:
+	print('not found')
 '''
 
 # Basic 'while' loop:
