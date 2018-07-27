@@ -129,6 +129,9 @@ git checkout --orphan branch_name
 # Checkout a new branch from a different starting point
 git checkout -b master upstream/master
 
+# Reset local branch to upstream branch and then checkout it
+git checkout -B master upstream/master
+
 # Remove all stale branches (ones that have been deleted on remote)
 # So if you have a lot of useless branches, delete them on Github and then run this
 git remote prune origin
