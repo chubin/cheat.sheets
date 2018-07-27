@@ -1,13 +1,82 @@
-# Basic 
-if x > 0: 
-    print(x) 
-else: 
-    print(-x)
+# Basic conditional:
+if x > 0:
+	print(x)
 
-# if else 
+# 'if else'
 if x > 0: 
-    print(x) 
-elif x == 0: 
-    print(420) 
+	print(x)
 else: 
-    print(-x)
+	print(-x)
+
+#ternary operator
+parity = 'even' if x % 2 == 0 else 'odd'
+
+'''
+# Equivalent of:
+if x % 2 == 0:
+	parity = 'even'
+else:
+	parity = 'odd'
+'''
+
+# multiple conditions:
+if x > 0:
+	print(x)
+elif x == 0:
+	print(420)
+elif x == 1:
+	print(421)
+else:
+	print(-x)
+
+# Basic 'for' loop:
+for i in range(6):
+	print(i) #prints 0, 1, 2, 3, 4, 5
+
+for i in range(2, 6):
+	print(i) #prints 2, 3, 4, 5
+
+for i in range(3, 10, 2):
+	print(i) #prints 3, 5, 7, 9
+
+# Iterating through collections:
+for i in [0, 1, 1, 2, 3, 5]:
+	print(i) #prints 0, 1, 1, 2, 3, 5
+
+for i in 'qwerty':
+	print(i) #prints q, w, e, r, t, y
+
+# 'for else':
+for i in x:
+	if i == 0:
+		break
+else:
+	print('found')
+
+'''
+# Equivalent of:
+flag = False
+for i in x:
+	if i == 0:
+		flag = True
+		break
+if flag
+	print('found')
+'''
+
+# Basic 'while' loop:
+x = 0
+while x < 6:
+	print(i)
+	x += 2
+# prints 0, 2, 4
+
+# No 'do while' loop in Python.
+# Equivalent with 'while' loop:
+x = 4
+while True:
+	print(x)
+	x += 1
+	if x >= 4:
+		break
+# prints 4
