@@ -69,10 +69,10 @@ git push git@github.com:username/project.git
 # To delete the branch "branch_name"
 git branch -D branch_name
 
-# To make an exisiting branch track a remote branch
+# To make an existing branch track a remote branch
 git branch -u upstream/foo
 
-# To see who commited which line in a file
+# To see who committed which line in a file
 git blame filename
 
 # To sync a fork with the master repo:
@@ -146,7 +146,7 @@ git checkout -p HEAD^ -- /path/to/file
 # Revert a commit and keep the history of the reverted change as a separate revert commit
 git revert <commit SHA>
 
-# Pich a commit from a branch to current branch. This is different than merge as
+# Pick a commit from a branch to current branch. This is different than merge as
 # this just applies a single commit from a branch to current branch
 git cherry-pick <commit SHA1>
 

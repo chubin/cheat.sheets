@@ -1,4 +1,4 @@
-# apk is the tool used to install, upgrade, or delete software on a running sytem
+# apk is the tool used to install, upgrade, or delete software on a running system
 # of Alpine Linux package management
 
 # To enable local APK cache run

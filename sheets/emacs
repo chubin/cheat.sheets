@@ -34,7 +34,7 @@
     C-k         kill line
 #
     C-Space     Set beginning mark (for region marking for example)
-    C-W         "kill" (delete) the marked region region
+    C-W         "kill" (delete) the marked region
     M-W         copy the marked region
     C-y         "yank" (paste) the copied/killed region/line
     M-y         yank earlier text (cycle through kill buffer)
@@ -211,7 +211,7 @@
 # Macro-commands
     C-x (       start macro definition
     C-x )       end of macro definition
-    C-x e       execute last definied macro
+    C-x e       execute last defined macro
     M-n C-x e   execute last defined macro n times
     M-x name-last-kbd-macro
                 give name to macro (for saving)
@@ -243,7 +243,7 @@
                 collapses function definitions in a file to a mere {...}
     M-x show-subtree 
                 If you are in one of the collapsed functions, this un-collapses it
-# In order to achive some of the feats coming up now you have to run etags *.c *.h *.cpp
+# In order to achieve some of the feats coming up now you have to run etags *.c *.h *.cpp
 # (or what ever ending you source files have) in the source directory
     M-.         (Meta dot) If you are in a function call, this will take you to it\'s definition
     M-x tags-search ENTER 

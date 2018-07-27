@@ -2,7 +2,7 @@
 # high-level dynamic programming language designed to address the needs of high-performance numerical analysis
 # and computational science while also being effective for general-purpose programming
 
-# Execute script from the file; pass aditional arguments
+# Execute script from the file; pass additional arguments
 julia script.jl arg1 arg2
 
 # Execute command like arguments like script

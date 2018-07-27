@@ -14,7 +14,7 @@ ss -tlp
 ss -t dst 192.168.2.1:80
 
 # show all ssh related connection
-# documentation on the filter synax: sudo apt-get install iproute2-doc
+# documentation on the filter syntax: sudo apt-get install iproute2-doc
 ss -t state established '( dport = :ssh or sport = :ssh )'
 
 # Display timer information

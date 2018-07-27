@@ -386,7 +386,7 @@ perl -ne 'if ($p) { print; $p = 0 } $p++ if /regex/'
 # Print lines that match regex AAA and regex BBB in any order
 perl -ne '/AAA/ && /BBB/ && print'
 
-# Print lines that don't match match regexes AAA and BBB
+# Print lines that don't match regexes AAA and BBB
 perl -ne '!/AAA/ && !/BBB/ && print'
 
 # Print lines that match regex AAA followed by regex BBB followed by CCC
