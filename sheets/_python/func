@@ -1,15 +1,40 @@
 # Simple function
 def functionName():
-    return True
+	return True
 
-# Function with parameters 
+# Function with parameters
 def functionName(a, b): 
-	if(a < b): 
+	if a < b: 
 		return a
 	else: 
 		return b
 
-# Return multiple values 
+# Return multiple values
 def functionName(a, b, c): 
-	return (a, b, c) 											// Returns a tuple
-	return {'return_a':a, 'return_b':b ,'return_c':c }			// Returns a dictionary 
+	return a, b, c										# Returns a tuple
+	return {'return_a':a, 'return_b':b ,'return_c':c }	# Returns a dictionary 
+
+# Function with default parameters
+def functionName(a=0, b=1): 
+	print(a, b)
+functionName()		# 0 1
+functionName(3)		# 3 1
+functionName(3, 4)	# 3 4
+
+# Calling parameters by name
+def functionName(a, b, c): 
+	print(a, b, c)
+functionName(0, 1, 2)		# 0 1 2
+functionName(a=2, c=3, b=4)	# 2 4 3
+functionName(2, 3, c=4)		# 2 3 4
+
+# Arbitrary number of parameters
+def functionName(*args):
+	...
+functionName(*[1, 2])		# Equivalent of functionName(1, 2)
+functionName(*[1, 2, 3])	# Equivalent of functionName(1, 2, 3)
+
+# Arbitrary number of parameters with arbitrary name
+def functionName(**kwargs):
+	...
+functionName(**{'a' : 3, 'b' : 4})	# Equivalent of functionName(a=3, b=4)
