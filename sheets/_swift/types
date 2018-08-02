@@ -40,7 +40,7 @@
 // * On a 32-bit platform, UInt is the same size as UInt32.
 // * On a 64-bit platform, UInt is the same size as UInt64.
 // * Int8, Int16, Int32, Int64 can be used to represent
-/    8 Bit, 16 Bit, 32 Bit, and 64 Bit forms of signed integer.
+//    8 Bit, 16 Bit, 32 Bit, and 64 Bit forms of signed integer.
 // * UInt8, UInt16, UInt32, and UInt64 can be used to represent
 //   8 Bit, 16 Bit, 32 Bit and 64 Bit forms of unsigned integer.
 // 
