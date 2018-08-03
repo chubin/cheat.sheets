@@ -174,3 +174,15 @@ git diff-tree --no-commit-id --name-only -r ${commit_id}
 
 # list files changed in ${commit_id}, porcelain way, meant to be user facing
 git show --pretty="" --name-only bd61ad98
+
+# See everything you have done, across branches, in a glance,
+# then go to the place right before you broke everything
+git reflog
+git reset HEAD@{hash}
+
+# To move your most recent commit from one branch and stage it on TARGET branch
+git reset HEAD~ --soft
+git stash
+git checkout TARGET
+git stash pop
+git add .
