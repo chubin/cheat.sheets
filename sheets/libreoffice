@@ -1,0 +1,9 @@
+# Convert documents to PDF
+libreoffice --headless --convert-to pdf *.pptx
+
+# Save them to a different directory?
+libreoffice --headless --convert-to pdf *.docx --outdir ~/docs/
+
+# Convert files nested inside folders? 
+# This uses sharkdp/fd, you could use GNU find, xargs etc.
+fd -e doc -e docx -x libreoffice --headless --convert-to pdf --outdir {//} {}
