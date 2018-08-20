@@ -50,10 +50,22 @@
         fn get_bar(self) -> T {
             self.bar
         }
+
+        // Static methods don't take a `self` parameter, but can still
+        // use the generic `T` type.
+        fn do_baz(msg: &str, baz: T) -> T {
+            println!("{}", msg);
+            baz
+        }
     }
 
+    // Here `T` is inferred to be some integer type
     let a_foo = Foo { bar: 1 };
     println!("{}", a_foo.get_bar()); // 1
+
+    // `T` can be whatever you want, using "turbofish" syntax
+    // The statement below prints "Hello" and sets `result` to 24
+    let result: i32 = Foo::<i32>::do_baz("Hello", 24);
 
     // Traits (known as interfaces or typeclasses in other languages) //
 
