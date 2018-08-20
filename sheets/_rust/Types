@@ -43,7 +43,10 @@
     // Methods //
 
     impl<T> Foo<T> {
-        // Methods take an explicit `self` parameter
+        // Instance methods take an explicit `self` parameter.
+        // Using `self` on its own will consume the caller, while
+        // `&self` or `&mut self` will create immutable and mutable
+        // references, respectively.
         fn get_bar(self) -> T {
             self.bar
         }
