@@ -45,3 +45,8 @@ command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
 # Please note that 2>&1 goes after
 my_command > command-stdout-stderr.txt 2>&1
 my_command > /dev/null 2>&1
+# Redirect stdout and stderr of cmd1 to cmd2
+cmd1 |& cmd2
+
+# Convert spaces to underscores in filenames
+for name in *\ *; do mv -vn "$name" "${name// /_}"; done
