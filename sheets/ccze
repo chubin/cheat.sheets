@@ -1,0 +1,4 @@
+# ccze usage with named pipe for coloring tail of multiple logfiles at once:
+mkfifo pipe
+tail -s .5 -n 120 -f httpd_access_log httpd_error_log httpd_modsec_audit_log >pipe &
+ccze < pipe
