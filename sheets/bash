@@ -45,3 +45,13 @@ command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
 # Please note that 2>&1 goes after
 my_command > command-stdout-stderr.txt 2>&1
 my_command > /dev/null 2>&1
+# Redirect stdout and stderr of cmd1 to cmd2
+cmd1 |& cmd2
+
+# Convert spaces to underscores in filenames
+for name in *\ *; do mv -vn "$name" "${name// /_}"; done
+
+# ccze usage with named pipe for coloring tail of multiple logfiles at once:
+mkfifo pipe
+tail -s .5 -n 120 -f httpd_access_log httpd_error_log httpd_modsec_audit_log >pipe &
+ccze < pipe
