@@ -1,0 +1,2 @@
+# extract initrd/initramfs in current directory
+/usr/lib/dracut/skipcpio /boot/initramfs-$(uname -r).img | zcat | cpio -ivd
