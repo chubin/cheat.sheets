@@ -17,7 +17,7 @@ nmap -oN [output.txt] [target]
 nmap -oX [output.xml] [target]
 
 # Scan a specific port:
-nmap -source-port [port] [target]
+nmap -p [port] [target]
 
 # Do an aggressive scan:
 nmap -A [target]
