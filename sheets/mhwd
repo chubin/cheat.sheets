@@ -1,0 +1,21 @@
+# Manjaro Hardware Detection
+# https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview
+
+# An overview of hardware
+mhwd
+
+# List hardware information
+# in detailed mode (-d)
+mhwd -lh -d
+
+# List installed driver information
+mhwd -li -d
+
+# Automated detection and installation of Graphics Drivers
+# https://wiki.manjaro.org/index.php?title=Configure_Graphics_Cards
+
+# Best available proprietary driver for a pci-connected graphics card
+sudo mhwd -a pci nonfree 0300
+
+# Best available free driver for a pci-connected graphics card
+sudo mhwd -a pci free 0300
