@@ -1,0 +1,5 @@
+# Dump information about ext2/3/4 file systems
+
+# Begins with info on Mount path, Inode count etc.
+# Then lists the block group information - free inodes etc.
+dumpe2fs /dev/sdb1 | less
