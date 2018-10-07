@@ -1,0 +1,23 @@
+# Cargo is the Rust package manager
+# Cargo downloads your Rust project's dependencies,
+# compiles your project, makes packages, and upload them to crates.io
+
+# To start a new project 
+cargo new hello_world --bin     # program
+cargo new hello_world --lib     # library
+
+# Build a project
+cargo build
+
+# Build a project with optimizations turned on
+cargo build --release
+
+# Updates dependencies in Cargo.lock
+cargo update            # update all
+cargo update -p rand    # updates just “rand”
+
+# run the project tests (from src/ and tests/)
+cargo test
+
+# search for a package
+cargo search
