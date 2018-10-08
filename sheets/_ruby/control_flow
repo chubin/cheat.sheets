@@ -11,10 +11,10 @@ end
 
 # Using .each looks neater and it allows for powerful chaining
 # of enumerable types.
-
+#
 # This example maps the array to [2, 4, 6] and prints each element.
 [1, 2, 3].map { |i| i * 2 }.each { |i| puts i }
-
+#
 # Another kind of loop with specified iterations
 10.times { puts 'test' }
 10.times do |n|
@@ -22,7 +22,6 @@ end
 end
 
 # Conditionals
-
 if 2 * 4 == 8
   puts 'thank goodness'
 else
