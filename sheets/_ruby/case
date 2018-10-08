@@ -1,0 +1,33 @@
+# Similar to a switch statement if you've used C/C++/Java, but Ruby's
+# is a bit more powerful.
+
+# Basic value tests
+num = 5
+case num
+when 1
+  puts "it's one"
+when 3
+  puts "wow, it's three"
+when 5
+  puts "five golden rings"
+end
+
+# Ranges
+num = 25
+case num
+when 1..10
+  puts "between one and ten"
+when 20..30
+  puts "between twenty and thirty"
+else
+  puts "must be between ten and twenty"
+end
+
+# Regular expressions
+str = "doe, a deer"
+case str
+when /food/
+  puts "i'm hungry"
+when /doe/
+  puts "#{str}, a female deer"
+end
