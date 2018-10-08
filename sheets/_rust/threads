@@ -1,0 +1,28 @@
+// Basic threading
+use std::thread;
+
+fn main() {
+    // Spawn a new thread to do some work
+    let t = thread::spawn(|| {
+        println!("In a new thread!");
+    });
+
+    // Wait for execution of spawned thread to join back up with main thread
+    let result = t.join();
+
+    // Create a bunch of threads, stored in a Vec
+    let mut threads = vec![];
+    for i in 0..10 {
+        threads.push(thread::spawn(|| {
+            println!("Doing some work!");
+        }));
+    }
+
+    // Wait for all of those to finish
+    for t in threads {
+        let result = t.join();
+    }
+}
+
+// Check out rayon https://docs.rs/rayon/ for more advanced tools like parallel
+// iterators and sort algorithms.
