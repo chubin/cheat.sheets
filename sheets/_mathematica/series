@@ -1,0 +1,21 @@
+Generate a Taylor series expansion of cos(x) using x, expanding about x = 0 and
+continuing until a term with x^6. Taylor series about x = 0 are called Maclaurin
+series.
+
+Series[Cos[x], {x, 0, 6}]
+1 - x^2/2 + x^4/24 - x^6/720 + O[x]^7
+
+The 'O[x]^7' just represents the rest of the series, which we don't care about.
+If you don't want it displayed, just wrap the call to Series inside a call to
+Normal: Normal[Series[...]]. This is useful for plotting series.
+
+Here's the same function, but expanded about a different point, x = 3pi/2:
+
+Series[Cos[x], {x, 3 Pi/2, 6}]
+(x-3pi/2) - 1/6*(x-3pi/2)^3 + 1/120*(x-3pi/2)^5 + O[x-3pi/2]^7
+
+When plotting series, remember to wrap the function in both a call to Normal AND
+a call to Evaluate: this strips the extra term mentioned previously and tells
+Mathematica to actually evaluate the function rather than hold it as an expression.
+
+Plot[Evaluate[Normal[Series[Cos[x], {x, 0, 6}]]], {x, 0, 1}]
