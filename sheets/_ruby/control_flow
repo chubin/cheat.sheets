@@ -1,0 +1,49 @@
+# Basic iteration
+
+# Good ol' for-loop
+for i in [1, 2, 3]
+  puts i
+end
+
+# Typically we don't use for-loops in Ruby, though.
+# Rubyists tend to prefer .each
+[1, 2, 3].each { |i| puts i }
+
+# Using .each looks neater and it allows for powerful chaining
+# of enumerable types.
+#
+# This example maps the array to [2, 4, 6] and prints each element.
+[1, 2, 3].map { |i| i * 2 }.each { |i| puts i }
+#
+# Another kind of loop with specified iterations
+10.times { puts 'test' }
+10.times do |n|
+  puts "number #{n}"
+end
+
+# Conditionals
+if 2 * 4 == 8
+  puts 'thank goodness'
+else
+  puts 'error between keyboard and chair'
+end
+
+# Add an extra condition
+if 1 == 0
+  puts 'oh no'
+elsif 1 == 1
+  puts "that's better"
+else
+  puts 'cut it out'
+end
+
+# unless means 'if not'
+unless 1 == 0
+  puts 'everything is ok'
+end
+
+# If the condition is short you can put it on one line.
+happiness = 0 if 'my life'.empty?
+
+# Or use ternary operator
+happiness = 'my life'.empty? ? 0 : 100
