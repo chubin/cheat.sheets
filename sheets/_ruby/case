@@ -3,7 +3,6 @@
 
 # Basic value tests
 num = 5
-
 case num
 when 1
   puts "it's one"
@@ -15,7 +14,6 @@ end
 
 # Ranges
 num = 25
-
 case num
 when 1..10
   puts "between one and ten"
@@ -27,7 +25,6 @@ end
 
 # Regular expressions
 str = "doe, a deer"
-
 case str
 when /food/
   puts "i'm hungry"
