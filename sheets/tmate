@@ -1,0 +1,24 @@
+# tmate - Instant terminal sharing 
+# tmux fork for screen sharing - https://tmate.io/
+tmate
+
+# see tmate's log messages, including the ssh connection string.
+tmate show-messages
+
+# Launch tmate in a detached state
+tmate -S /tmp/tmate.sock new-session -d      
+
+# Blocks until the SSH connection is established
+tmate -S /tmp/tmate.sock wait tmate-ready
+
+# Prints the SSH connection string
+tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+
+# Prints the read-only SSH connection string
+tmate -S /tmp/tmate.sock display -p '#{tmate_ssh_ro}'
+
+# Prints the web connection string
+tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
+
+# Prints the read-only web connection string
+tmate -S /tmp/tmate.sock display -p '#{tmate_web_ro}'
