@@ -1,0 +1,21 @@
+(* Standard levelspec for things like Map, Apply, Position, etc *)
+(* n - levels 1 through n *)
+Map[f,l,3]
+
+(* Infinity - levels 1 through infinity *)
+Map[f,l,Infinity]
+
+(* {n} - level n only *)
+Map[f,l,{3}]
+
+(* {n1,n2} - levels n1 through n2 *)
+Map[f,l,{2,5}]
+
+(* The default levelspec is {1} *)
+Map[f,l]===Map[f,l,{1}]
+
+(* 
+A positive level n consists of all parts of expr specified by n indices.
+A negative level -n consists of all parts of expr with depth n.
+Level 0 corresponds to the whole expression.
+*)
