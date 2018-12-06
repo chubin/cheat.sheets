@@ -1,0 +1,7 @@
+# fio
+# flexible I/O tester
+
+# Spawn a number of threads or processes doing a particular type of I/O action
+# iodepth = Number of I/O units to keep in flight against the file
+# (can be used to initialize an AWS EBS volume)
+fio --filename=/dev/xvdf --rw=read --bs=128k --iodepth=32 --ioengine=libaio --direct=1 --name=volume-initialize
