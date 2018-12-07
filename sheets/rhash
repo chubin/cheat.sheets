@@ -1,0 +1,13 @@
+# utility for computing hash sums https://sf.net/p/rhash/
+
+# compute sha256 for a file and store checksum in a file:
+rhash --sha256 file.txt > file.sha256
+
+# verify the file(s):
+rhash -c file.sha256
+
+# Generate a SHA256 hash file for all files in a directory tree:
+rhash -r --sha256 directory/ > directory.sha256
+
+# Verify all .sha256 files in a directory tree:
+rhash -cr --crc-accept=sha256 directory/
