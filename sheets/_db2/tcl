@@ -1,0 +1,11 @@
+--Commit changes
+COMMIT
+
+--Create a savepoint
+SAVEPOINT sp1 ON ROLLBACK RETAIN CURSORS
+
+--Undo changes until savepoint
+ROLLBACK TO SAVEPOINT sp1
+
+--Undo changes
+ROLLBACK
