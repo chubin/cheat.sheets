@@ -1,0 +1,35 @@
+--Define a terminator character
+--#SET TERMINATOR @
+
+--List all databases (aliases)
+LIST DB DIRECTORY
+
+--Connect to a database (alias)
+CONNECT TO mydb
+
+--Disconnect from a database
+CONNECT RESET
+TERMINATE
+
+--Get values from the environment (registry values)
+-- Current timestamp
+VALUES CURRENT TIMESTAMP
+
+-- Connected user
+VALUES CURRENT USER
+
+-- Current database
+VALUES CURRENT SERVER
+
+--Change current schema
+SET CURRENT SCHEMA otherschema
+
+--Change the isolation level
+SET ISOLATION RR
+
+--Get help for a Db2 command
+? command
+
+--Get help for a SQL code (SQLXXXX) or SQLstate (YYYYY)
+? SQLXXX
+? YYYYY

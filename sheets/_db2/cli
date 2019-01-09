@@ -1,0 +1,5 @@
+# Execution of a file in the console (db2clp)
+# Semi-colon separated sentences:
+db2 -t
+# At sign separated sentences (when there is SQL PL code):
+db2 -td@

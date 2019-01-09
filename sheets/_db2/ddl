@@ -1,0 +1,62 @@
+--Create a schema
+CREATE SCHEMA myschema
+
+--Create a table in a specific tablespace
+CREATE TABLE mytable1 (mycol1 SMALLINT NOT NULL, mycol2 VARCHAR(16)) IN ts1 INDEX IN ts2
+CREATE TABLE myschema.othertable (mycol1 SMALLINT)
+
+--Create a table like another one
+CREATE TABLE mytable2 LIKE mytable1 IN ts1 INDEX IN ts2
+
+--Comment on table and column
+COMMENT ON TABLE mytable1 IS 'This is the comment of the table'
+COMMENT ON COLUMN mytable1.mycol1 IS 'Description of the field'
+
+--Declare a temporary table
+DECALRE GLOBAL TEMPORARY TABLE mytemptab1 (col1 SMALLINT, col2 TIMESTAMP, col3 VARCHAR(50))
+
+--Create a global temporary tablespace
+CREATE GLOBAL TEMPORARY TABLE tmptable (col1 INTEGER)
+
+--Create an index
+CREATE INDEX myidx ON mytable1 (mycol1)
+
+--Create a primary key constraint
+ALTER TABLE mytable1 ADD CONSTRAINT pkmytable PRIMARY KEY (mycol1)
+
+--Create a foreign key
+ALTER TABLE mytable2 ADD CONSTRAINT fkmytable FOREIGN KEY (mycol1) REFERENCES mytable1 (mycol1)
+
+--Create a check constraint
+ALTER TABLE mytable1 ADD CONSTRAINT chk CHECK (mycol2 in ('a', 'b', 'c', 'd', 'e', 'f', 'g'))
+
+--Enforce a constraint
+ALTER TABLE mytable2 ALTER FOREIGN KEY fkmytable ENFORCED
+ALTER TABLE mytable1 ALTER CHECK chk ENFORCED
+
+--Not enforce a constraint
+ALTER TABLE mytable2 ALTER FOREIGN KEY fkmytable NOT ENFORCED
+
+--Drop a table
+DROP TABLE mytable
+
+--Rename a table
+RENAME TABLE mytable2 AS myothertable
+
+--Truncate a table
+TRUNCATE TABLE mytable1 IMMEDIATE
+
+--Create a sequence
+CREATE SEQUENCE myseq AS INTEGER
+
+--Restart sequence
+ALTER SEQUENCE myseq RESTART WITH 15
+
+--Crete a stored procedure
+CREATE OR REPLACE PROCEDURE myproc (IN val SMALLINT, OUT ret VARCHAR(16)) SPECIFIC myproc1 BEGIN SET ret = (SELECT mycol2 FROM mytable1 WHERE mycol1 = val); END @
+
+--Create a trigger
+CREATE TRIGGER copy_value AFTER INSERT ON mytable1 REFERENCING NEW AS N FOR EACH ROW INSERT INTO mytable2 VALUES (N.mycol1, N.mycol2)
+
+--Create a view
+CREATE VIEW VW1 AS SELECT mycol2 FROM mytable1

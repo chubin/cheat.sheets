@@ -1,0 +1,13 @@
+--List all tables
+LIST TABLES
+LIST TABLES FOR SCHEMA myuser
+LIST TABLES FOR ALL
+
+--List all tablespaces with their status
+LIST TABLESPACES
+
+--Describe the estructure of the table
+DESCRIBE TABLE mytable
+
+--Describe the result of a query
+DESCRIBE SELECT * FROM mytable
