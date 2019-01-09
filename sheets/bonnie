@@ -1,0 +1,7 @@
+# Bonnie++ 
+# disk and file system benchmarking tool for measuring I/O performance
+
+# benchmark disk mounted at /tmp/; use `user` for that
+# skip per char IO test (-f)
+# no write buffering (-b)
+bonnie++ -d /tmp -s 16000M -n 0 -m TEST -f -b -u user
