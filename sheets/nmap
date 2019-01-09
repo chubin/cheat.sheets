@@ -4,6 +4,9 @@ nmap [target]
 # Scan from a list of targets:
 nmap -iL [list.txt]
 
+# Scan port for all available A records (useful when multiple A records are returned by the DNS server)
+nmap --script resolveall --script-args newtargets,resolveall.hosts=[target] -p [port]
+
 # iPv6:
 nmap -6 [target]
 
