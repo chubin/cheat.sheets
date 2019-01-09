@@ -1,0 +1,42 @@
+--Insert values on a table
+INSERT INTO mytable1 (mycol1, mycol2) VALUES (1, 'a')
+INSERT INTO mytable1 VALUES (2, 'b')
+INSERT INTO mytable1 VALUES (3, 'c'), (4, 'd'), (5, 'e') --Atomic
+
+--Insert certain columns
+INSERT INTO mytabl1 (mycol1) VALUES (6)
+
+--Insert values from a select
+INSERT INTO myothertable SELECT mycol1, mycol2 FROM mytable1
+
+--Update fields
+UPDATE mytable1 SET mycol1 = 5, mycol2 = 'e' –all table
+UPDATE mytable1 SET mycol2 = 'd' WHERE mycol1 = 7
+
+--Merge (upsert)
+MERGE INTO mytable1 AS t USING (SELECT mycol1 FROM myothertable) s ON (t.mycol1 = s.mycol1) WHEN MATCHED THEN UPDATE SET mycol2 = 'X' WHEN NOT MATCHED THEN INSERT VALUES (10, 'X')
+
+--Delete rows
+DELETE FROM mytable1 –all table
+DELETE FROM mytable1 WHERE mycol1 > 5
+
+--Export
+EXPORT TO myfile OF DEL SELECT * FROM mytable1
+
+--Import
+IMPORT FROM myfile OF DEL INSERT INTO mytable1
+
+--Load
+LOAD FROM myfile OF DEL INSERT INTO mytable1
+--Query the status of the load in a table 
+LOAD QUERY TABLE mytable1
+
+--Set integrity
+SET INTEGRITY FOR mytable IMMEDIATE CHECKED
+
+--Ingest
+INGEST FROM FILE my_file.txt FORMAT DELIMITED INSERT INTO my_table
+
+--Get the next value from a sequence
+VALUES NEXT VALUE FOR myseq 
+INSERT INTO mytabl1 (mycol1) VALUES (NEXT VALUE FOR myseq)

@@ -1,0 +1,9 @@
+--Grant on a table
+GRANT SELECT, INSERT ON TABLE mytable TO GROUP recur
+
+--Grant execution on a stored procedure
+GRANT EXECUTE ON PROCEDURE myproc(SMALLINT, VARCHAR(16)) TO USER jdoe
+GRANT EXECUTE ON SPECIFIC PROCEDURE myproc1 TO USER jdoe
+
+--Revoke on a table
+REVOKE UPDATE, DELETE ON TABLE mytable FROM GROUP recur
