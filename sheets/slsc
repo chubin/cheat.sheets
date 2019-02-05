@@ -1,0 +1,26 @@
+# slsc
+# SpreadSheet for console, written using libslang (legacy)
+
+# to install
+http://jedsoft.org/snapshots/slsc-pre0.3.0-2.tar.gz
+./configure
+make
+
+# Inside slsc:
+# 
+#     /               Menu cursor to move, return to select
+#                     OR select by first letter
+#     ?               Help (for further help see section help below)
+#     First letters of a topic+Enter are enough
+#     Enter           to go back
+# 
+#     CTRL+G          mark region ends with CTRL+G
+# 
+# Start a text/Enter in a field:
+# 
+#     < or >          to align a text field to left or right
+#     =               to enter a number or a formula
+#     TAB             to edit the text of a cell
+#     Backspace (<-)  do delete the cell content
+# 
+# The config file is ~/.slscrc
