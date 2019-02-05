@@ -2,7 +2,10 @@
 # SpreadSheet for console, written using libslang (legacy)
 
 # to install
-http://jedsoft.org/snapshots/slsc-pre0.3.0-2.tar.gz
+# * install libslang-dev first
+wget http://jedsoft.org/snapshots/slsc-pre0.3.0-2.tar.gz
+tar xf slsc*.tar.gz
+cd slsc*/
 ./configure
 make
 
