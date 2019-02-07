@@ -1,0 +1,11 @@
+# xfs_repair
+# repair an XFS filesystem 
+
+# rapair a XFS filesystem
+xfs_repair /dev/dm-0
+
+# last resort option:
+# -L: Force Log Zeroing. zero the log even if it is dirty (contains metadata changes).
+# When using this option the filesystem will likely appear to be corrupt,
+# and can cause the loss of user files and/or data.
+xfs_repair -v -L /dev/dm-0
