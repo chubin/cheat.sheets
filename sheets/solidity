@@ -3,3 +3,9 @@
 
 # To create a contract, declare which solidity version the source code is written for
 pragma solidity ^0.4.0;
+
+# See also:
+#   Solidity language cheat sheets at /solidity/
+#   list of pages:    /solidity/:list
+#   learn solidity:   /solidity/:learn
+#   search in pages:  /solidity/~keyword
