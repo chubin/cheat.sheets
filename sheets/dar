@@ -1,0 +1,22 @@
+# dar
+# (disk archive), command-line archiving tool intended as a replacement for tar
+
+# Create an archive of everything below source_dir
+dar -R source_dir -c archive
+
+# Extract an entire archive to a destination
+dar -x archive dest_dir
+
+# List the files in an archive
+dar -l archive
+
+# Extract a specific file from an archive into the
+# current directory
+dar -x archive -g file
+
+# multiple files
+dar -x archive -g file1 -g file2 -g file3
+
+# For troubleshooting:
+# --dry-run
+# --verbose
