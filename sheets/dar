@@ -1,3 +1,6 @@
+# dar
+# (disk archive), command-line archiving tool intended as a replacement for tar
+
 # Create an archive of everything below source_dir
 dar -R source_dir -c archive
 
