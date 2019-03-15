@@ -12,3 +12,6 @@ printf '1 2 3' | awk 'BEGIN {OFS=":"}; {print $1,$2,$3}'
 
 # search for a paragraph containing string
 awk -v RS='' '/42B/' file
+
+# display only first column from multi-column text
+echo "first-column  second-column  third-column" | awk '{print $1}'
