@@ -5,7 +5,7 @@ find -name \*.pdf | xargs rm
 # (bulletproof version: handles filenames with \n and skips *.pdf directories)
 # -r = --no-run-if-empty
 # -n10 = group by 10 files
-find -name \*.pdf -type f -print0 | xargs -0rn10
+find -name \*.pdf -type f -print0 | xargs -0rn10 rm
 
 # if file name contains spaces you should use this instead
 find -name \*.pdf | xargs -I{} rm -rf '{}'
