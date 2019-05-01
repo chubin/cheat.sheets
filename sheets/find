@@ -49,3 +49,6 @@ find . -type f -exec chmod 644 {} \;
 # To find files with extension '.txt.' and edit all of them with vim
 # vim is started only once for all files
 find . -iname '*.txt' -exec vim {} \+
+
+# To find all files with extension '.png' and rename them by changing extension to '.jpg' (base name is preserved)
+find . -type f -iname "*.png" -exec bash -c 'mv "$0" "${0%.*}.jpg"' {} \;
