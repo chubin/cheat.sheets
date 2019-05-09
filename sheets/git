@@ -72,6 +72,9 @@ git branch -D branch_name
 # To make an existing branch track a remote branch
 git branch -u upstream/foo
 
+# To list all local and remote branches
+git branch -a
+
 # To see who committed which line in a file
 git blame filename
 
