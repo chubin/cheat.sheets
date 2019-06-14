@@ -1,0 +1,18 @@
+# kafka-topics
+#
+# Comamnd-line tool to manage Kafka topics
+
+# list topics
+kafka-topics --zookeeper localhost:2181 --list
+
+# create a topic
+kafka-topics --zookeeper localhost:2181 --create --topic logs --partitions 3 --replication-factor 2
+
+# view topic
+kafka-topics --zookeeper localhost:2181 --describe --topic logs
+
+# update a topic
+kafka-topics --zookeeper localhost:2181 --alter --topic logs --config cleanup.policy=compact
+
+# delete a topic
+kafka-topics --zookeeper localhost:2181 --delete --topic logs
