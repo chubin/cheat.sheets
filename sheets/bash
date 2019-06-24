@@ -37,6 +37,11 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # for loop in one line
 for i in $(seq 1 4); do echo $i; done
 
+# Check to see if a variable equals a specified integer
+if [ "$var" -eq "0" ]; then
+    echo "var equals zero";
+fi
+
 # Test if a program exists in the path
 # There are false positives: aliases and functions
 command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
