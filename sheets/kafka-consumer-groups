@@ -1,0 +1,34 @@
+# kafka-consumer-groups
+#
+# A command-line tool to manage Kafka consumer groups
+#
+# see https://kafka.apache.org/documentation/#basic_ops_consumer_group
+
+# list all consumer groups
+kafka-consumer-groups --bootstrap-server localhost:9092 --list
+
+# describe a consumer group
+kafka-consumer-groups --bootstrap-server localhost:9092 \
+                      --group group-name \
+                      --describe
+
+# reset consumer offsets for a topic to the earliest offset
+kafka-consumer-groups --bootstrap-server localhost:9092 \
+                      --group group-name \
+                      --reset-offsets \
+                      --to-earliest \
+                      --topic topic-name \
+                      --execute
+
+# reset consumer offsets for all topics to the earliest offset
+kafka-consumer-groups --bootstrap-server localhost:9092 \
+                      --group group-name \
+                      --reset-offsets \
+                      --to-earliest \
+                      --all-topics \
+                      --execute
+
+# delete a consumer group
+kafka-consumer-groups --bootstrap-server localhost:9092 \
+                      --group group-name \
+                      --delete
