@@ -1,0 +1,4 @@
+# To run the program:
+#   nim c -r --verbosity:0 helloworld.nim
+# (presuming its code was saved in helloworld.nim)
+echo "Hello World"
