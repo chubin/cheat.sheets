@@ -5,4 +5,4 @@ aspell check ${somefile}
 cat ${somefile} | aspell list
 
 # check for known dictionary files
-spell dicts
+aspell dicts
