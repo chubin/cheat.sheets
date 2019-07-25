@@ -9,7 +9,7 @@ a, b = b, a
 print(list(itertools.chain(*my_list)))
 
 # Merge two dicts
-[**d1, **d2]
+{**d1, **d2}
 
 # Reverse key, value in a dict
 {v: k for k, v in d.items()}
