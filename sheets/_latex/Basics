@@ -1,0 +1,17 @@
+# Basic document structure
+\documentclass[a4paper,12pt]{article}
+\begin{document}
+A sentence of text.
+\end{document}
+
+# Document comments
+% this text is a comment because the line begins with a %
+
+# Comment blocks
+\usepackage{comment}
+\begin{comment}
+This is a larger block of commented text
+that can span multiple lines and is ignored
+by the compiler.
+\end{comment}
+
