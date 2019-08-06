@@ -1,0 +1,18 @@
+// Using the Cargo package manager
+// See also: https://doc.rust-lang.org/cargo/
+
+// Create a new package with Cargo
+cargo new hello_world
+
+// Build a package with Cargo
+cargo build
+
+// Build and run a package with Cargo
+cargo run
+
+// Build a package with Cargo for release
+cargo build --release
+
+// Clean all output build files and targets
+cargo clean
+
