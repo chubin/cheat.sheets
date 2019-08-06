@@ -1,5 +1,5 @@
 # To find files by case-insensitive extension (ex: .jpg, .JPG, .jpG):
-find . -iname "*.jpg"
+find . -iname '*.jpg'
 
 # To find directories:
 find . -type d
@@ -51,4 +51,4 @@ find . -type f -exec chmod 644 {} \;
 find . -iname '*.txt' -exec vim {} \+
 
 # To find all files with extension '.png' and rename them by changing extension to '.jpg' (base name is preserved)
-find . -type f -iname "*.png" -exec bash -c 'mv "$0" "${0%.*}.jpg"' {} \;
+find . -type f -iname '*.png' -exec bash -c 'mv "$0" "${0%.*}.jpg"' {} \;
