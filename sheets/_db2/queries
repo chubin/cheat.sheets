@@ -1,17 +1,17 @@
 --Put a lock at table level
-LOCK TABLE mytable1 IN EXCLUSIVE MODE
+LOCK TABLE tbl1 IN EXCLUSIVE MODE
 
 --Execute a query without regard of commit rows
-SELECT * FROM mytable WITH UR
+SELECT * FROM tbl1 WITH UR --RR,RS,CS
 
 --Execute a query with only 5 rows
-SELECT * FROM mytable FETCH FIRST 5 ROWS ONLY
+SELECT * FROM tbl1 FETCH FIRST 5 ROWS ONLY
 
 --Perform a query to a dummy table (dual)
 SELECT 'Any string' FROM SYSIBM.SYSDUMMY1
 
 --Perform a query calling a function
-SELECT HEX(mycol2) FROM mytable1
+SELECT HEX(col2) FROM tbl5
 
 --Call a function
 VALUES HEX('AnyText')
@@ -30,12 +30,3 @@ VALUES 'Sinead o''Connor'
 SELECT * FROM SYSCAT.TABLES
 SELECT * FROM SYSCAT.TABAUTH
 SELECT * FROM SYSCAT.ROUTINES
-
---Create a compound statement – Anonymous block
-BEGIN DECLARE val SMALLINT; SET val = 1; WHILE (val <= 5) DO INSERT INTO mytable VALUES (val, val); SET val = val + 1; END WHILE; END @
-
---Perform a reorg via ADMIN_CMD
-CALL SYSPROC.ADMIN_CMD('REORG TABLE mytable')
-
---Call a stored procedure with an IN and an OUTPUT parameter
-CALL myproc(5, ?)
