@@ -1,42 +1,49 @@
 --Insert values on a table
-INSERT INTO mytable1 (mycol1, mycol2) VALUES (1, 'a')
-INSERT INTO mytable1 VALUES (2, 'b')
-INSERT INTO mytable1 VALUES (3, 'c'), (4, 'd'), (5, 'e') --Atomic
+INSERT INTO tbl3 VALUES (2, 'b')
+INSERT INTO tbl3 VALUES (3, 'c'), (4, 'd'), (5, 'e') --Atomic
 
 --Insert certain columns
-INSERT INTO mytabl1 (mycol1) VALUES (6)
+INSERT INTO tbl1 (col1) VALUES (6)
 
 --Insert values from a select
-INSERT INTO myothertable SELECT mycol1, mycol2 FROM mytable1
+INSERT INTO tbl6 SELECT col1 FROM tbl1
+
+--Insert in temporary table
+INSERT INTO session.tmp1 VALUES (1)
 
 --Update fields
-UPDATE mytable1 SET mycol1 = 5, mycol2 = 'e' –all table
-UPDATE mytable1 SET mycol2 = 'd' WHERE mycol1 = 7
+UPDATE tbl3 SET col1 = 5, mycol2 = 'e' -–all table
+UPDATE tbl3 SET col2 = 'd' WHERE col1 = 7
 
 --Merge (upsert)
-MERGE INTO mytable1 AS t USING (SELECT mycol1 FROM myothertable) s ON (t.mycol1 = s.mycol1) WHEN MATCHED THEN UPDATE SET mycol2 = 'X' WHEN NOT MATCHED THEN INSERT VALUES (10, 'X')
+MERGE INTO tbl3 AS t USING (SELECT col1 FROM tbl1) s ON (t.col1 = s.col1) WHEN MATCHED THEN UPDATE SET col2 = 'X' WHEN NOT MATCHED THEN INSERT VALUES (10, 'X')
 
 --Delete rows
-DELETE FROM mytable1 –all table
-DELETE FROM mytable1 WHERE mycol1 > 5
+DELETE FROM tbl1 -–all table
+DELETE FROM tbl1 WHERE col1 > 5
 
 --Export
-EXPORT TO myfile OF DEL SELECT * FROM mytable1
+EXPORT TO myfile OF DEL SELECT * FROM tbl1
 
 --Import
 IMPORT FROM myfile OF DEL INSERT INTO mytable1
 
+--Cursor
+DECLARE cur1 CURSOR FOR SELECT * FROM tbl1
+
 --Load
-LOAD FROM myfile OF DEL INSERT INTO mytable1
---Query the status of the load in a table 
-LOAD QUERY TABLE mytable1
+LOAD FROM myfile OF DEL INSERT INTO tbl1
+LOAD FROM cur1 OF CURSOR INSERT INTO tbl1
+
+--Query the status of the load in a table
+LOAD QUERY TABLE tbl1
 
 --Set integrity
-SET INTEGRITY FOR mytable IMMEDIATE CHECKED
+SET INTEGRITY FOR tbl1 IMMEDIATE CHECKED
 
 --Ingest
-INGEST FROM FILE my_file.txt FORMAT DELIMITED INSERT INTO my_table
+INGEST FROM FILE myfile FORMAT DELIMITED INSERT INTO tbl1
 
 --Get the next value from a sequence
-VALUES NEXT VALUE FOR myseq 
-INSERT INTO mytabl1 (mycol1) VALUES (NEXT VALUE FOR myseq)
+VALUES NEXT VALUE FOR seq
+INSERT INTO tbl3 (col1) VALUES (NEXT VALUE FOR seq)

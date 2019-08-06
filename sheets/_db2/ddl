@@ -1,62 +1,106 @@
 --Create a schema
-CREATE SCHEMA myschema
+CREATE SCHEMA sch1
 
---Create a table in a specific tablespace
-CREATE TABLE mytable1 (mycol1 SMALLINT NOT NULL, mycol2 VARCHAR(16)) IN ts1 INDEX IN ts2
-CREATE TABLE myschema.othertable (mycol1 SMALLINT)
+--Create a table specifying primary key
+CREATE TABLE tbl1 (col1 CHAR(1) NOT NULL PRIMARY KEY)
+CREATE TABLE tbl2 (col1 INT NOT NULL, col2 DATE NOT NULL, PRIMARY KEY (col1, col2))
+
+--Create a table specifying tablespaces
+CREATE TABLE tbl3 (col1 INT NOT NULL, col2 CHAR(1)) IN ts1 INDEX IN ts2
+
+--Create a table specifying schema
+CREATE TABLE sch1.tbl4 (col1 INT)
+
+--Create a table with auto incremental column
+CREATE TABLE tbl5 (col1 INT NOT NULL GENERATED AS IDENTITY)
 
 --Create a table like another one
-CREATE TABLE mytable2 LIKE mytable1 IN ts1 INDEX IN ts2
+CREATE TABLE tbl6 LIKE tbl1 IN ts1 INDEX IN ts2
 
 --Comment on table and column
-COMMENT ON TABLE mytable1 IS 'This is the comment of the table'
-COMMENT ON COLUMN mytable1.mycol1 IS 'Description of the field'
+COMMENT ON TABLE tbl1 IS 'Comment in table'
+COMMENT ON COLUMN tbl1.col1 IS 'Description of the field'
 
---Declare a temporary table
-DECALRE GLOBAL TEMPORARY TABLE mytemptab1 (col1 SMALLINT, col2 TIMESTAMP, col3 VARCHAR(50))
+--Declare a temporary table (session schema)
+DECLARE GLOBAL TEMPORARY TABLE tmp1 (col1 INT, col2 DATE) ON COMMIT PRESERVE ROWS
 
 --Create a global temporary tablespace
-CREATE GLOBAL TEMPORARY TABLE tmptable (col1 INTEGER)
+CREATE GLOBAL TEMPORARY TABLE tmp2 (col1 INT)
 
 --Create an index
-CREATE INDEX myidx ON mytable1 (mycol1)
+CREATE INDEX idx1 ON tbl2 (col2)
+
+--Create a unique index
+CREATE UNIQUE INDEX idx2 ON tbl5 (col1)
+
+--Drop an index
+DROP INDEX idx1
+
+--Add a column (requires Reorg table)
+ALTER TABLE tbl1 ADD COLUMN col3 timestamp
+
+--Change nullability
+ALTER TABLE tbl1 ALTER COLUMN col3 SET NOT NULL
+
+--Drop nullability
+ALTER TABLE tbl1 ALTER COLUMN col3 DROP NOT NULL
+
+--Rename a column
+ALTER TABLE tbl1 RENAME COLUMN col3 TO new3
+
+--Drop column
+ALTER TABLE tbl1 DROP COLUMN new3
 
 --Create a primary key constraint
-ALTER TABLE mytable1 ADD CONSTRAINT pkmytable PRIMARY KEY (mycol1)
+ALTER TABLE tbl5 ADD CONSTRAINT pkt5 PRIMARY KEY (col1)
+
+--Drop primary key
+ALTER TABLE tbl5 DROP PRIMARY KEY
+
+--Add identity
+ALTER TABLE tbl2 ALTER col1 SET GENERATED ALWAYS AS IDENTITY
+
+--Restart identity
+ALTER TABLE tbl2 ALTER col1 RESTART WITH 1
+
+--Drop identity
+ALTER TABLE tbl2 ALTER col1 DROP IDENTITY
 
 --Create a foreign key
-ALTER TABLE mytable2 ADD CONSTRAINT fkmytable FOREIGN KEY (mycol1) REFERENCES mytable1 (mycol1)
+ALTER TABLE tbl5 ADD CONSTRAINT fkt5 FOREIGN KEY (col1) REFERENCES tbl11 (col1)
 
 --Create a check constraint
-ALTER TABLE mytable1 ADD CONSTRAINT chk CHECK (mycol2 in ('a', 'b', 'c', 'd', 'e', 'f', 'g'))
+ALTER TABLE tbl1 ADD CONSTRAINT chk CHECK (col1 in ('a', 'b', 'c'))
 
 --Enforce a constraint
-ALTER TABLE mytable2 ALTER FOREIGN KEY fkmytable ENFORCED
-ALTER TABLE mytable1 ALTER CHECK chk ENFORCED
+ALTER TABLE tbl1 ALTER CHECK chk ENFORCED
 
 --Not enforce a constraint
-ALTER TABLE mytable2 ALTER FOREIGN KEY fkmytable NOT ENFORCED
+ALTER TABLE tbl5 ALTER FOREIGN KEY fkt5 NOT ENFORCED
+
+--Change the granularity of the locks
+ALTER TABLE tbl1 LOCKSIZE TABLE
 
 --Drop a table
-DROP TABLE mytable
+DROP TABLE tbl1
 
 --Rename a table
-RENAME TABLE mytable2 AS myothertable
+RENAME TABLE tbl2 TO table2
 
 --Truncate a table
-TRUNCATE TABLE mytable1 IMMEDIATE
+TRUNCATE TABLE tbl1 IMMEDIATE
 
 --Create a sequence
-CREATE SEQUENCE myseq AS INTEGER
+CREATE SEQUENCE seq AS INTEGER
 
 --Restart sequence
-ALTER SEQUENCE myseq RESTART WITH 15
+ALTER SEQUENCE seq RESTART WITH 15
 
---Crete a stored procedure
-CREATE OR REPLACE PROCEDURE myproc (IN val SMALLINT, OUT ret VARCHAR(16)) SPECIFIC myproc1 BEGIN SET ret = (SELECT mycol2 FROM mytable1 WHERE mycol1 = val); END @
+--Create a stored procedure
+CREATE OR REPLACE PROCEDURE prc1 (IN val INT, OUT ret DATE) SPECIFIC mypr BEGIN SET ret = (SELECT col2 FROM tbl2 WHERE col1 = val); END @
 
 --Create a trigger
-CREATE TRIGGER copy_value AFTER INSERT ON mytable1 REFERENCING NEW AS N FOR EACH ROW INSERT INTO mytable2 VALUES (N.mycol1, N.mycol2)
+CREATE TRIGGER cp_val AFTER INSERT ON tbl1 REFERENCING NEW AS n FOR EACH ROW INSERT INTO tbl2 VALUES (n.col1, n.col2)
 
 --Create a view
-CREATE VIEW VW1 AS SELECT mycol2 FROM mytable1
+CREATE VIEW vw1 AS SELECT col2 FROM tbl1

@@ -1,0 +1,8 @@
+--Create a compound statement – Anonymous block
+BEGIN DECLARE val SMALLINT; SET val = 1; WHILE (val <= 5) DO INSERT INTO tbl5 VALUES (val, val); SET val = val + 1; END WHILE; END @
+
+--Perform a reorg via ADMIN_CMD (Sometimes required after “alter table”)
+CALL SYSPROC.ADMIN_CMD('REORG TABLE tbl1')
+
+---Call a stored procedure with an IN and an OUTPUT parameter
+CALL prc1(5, ?)
