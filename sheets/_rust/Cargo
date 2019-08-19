@@ -1,18 +1,30 @@
-// Using the Cargo package manager
-// See also: https://doc.rust-lang.org/cargo/
+# Cargo is the Rust package manager
+# Cargo downloads your Rust project's dependencies,
+# compiles your project, makes packages, and upload them to crates.io
+# See also: https://doc.rust-lang.org/cargo/
 
-// Create a new package with Cargo
-cargo new hello_world
+# To start a new project
+cargo new hello_world --bin     # program
+cargo new hello_world --lib     # library
 
-// Build a package with Cargo
+# Build a project without optimizations (in debug mode)
 cargo build
 
-// Build and run a package with Cargo
-cargo run
-
-// Build a package with Cargo for release
+# Build a project with optimizations turned on
 cargo build --release
 
-// Clean all output build files and targets
+# Build and run (without optimizations) a package with Cargo
+cargo run
+
+# Updates dependencies in Cargo.lock
+cargo update            # update all
+cargo update -p rand    # updates just “rand” crate
+
+# run the project tests (from src/ and tests/)
+cargo test
+
+# Clean all output build files and targets
 cargo clean
 
+# search for a package
+cargo search
