@@ -1,0 +1,10 @@
+# PostgreSQL database administration
+
+# check connection to a database on host `localhost` and port `5432`
+pg_isready -h localhost -p 5432
+
+# backup database named `anitya`, add CREATE statement
+sudo -u postgres pg_dump -C anitya > anitya.dump
+
+# restore database
+sudo -u postgres pqsql -f anitya.dump
