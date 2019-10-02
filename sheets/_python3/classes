@@ -1,0 +1,24 @@
+# Classes and methods
+
+class Dog:
+    # __init__ is the constructor, run on instantiation
+    # The 'self' parameter refers to the calling instance of the class.
+    # It's automatically provided to methods called on an instance of this 
+    # class. It can be named anything, but 'self' is the convention.
+    def __init__(self, name):
+        self.name = name
+
+    # Class methods (or static methods) are created by adding the staticmethod
+    # decorator. The 'self' parameter is not passed to these methods. 
+    @staticmethod
+    def unrelated_class_method():
+        print('this is not an instance method')
+
+    # __str__ returns the string representation of an object of this class
+    def __str__(self):
+        return self.name
+
+d = Dog('Fido') # 'self' parameter is implicit
+print(d) # prints 'Fido'
+Dog.unrelated_class_method() # prints 'this is not an instance method'
+d.unrelated_class_method() # also works, but does not provide implicit 'self'
