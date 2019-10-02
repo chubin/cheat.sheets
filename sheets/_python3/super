@@ -1,0 +1,25 @@
+# Superclasses and a useful pattern
+
+# Dog inherits from Animal
+class Dog(Animal):
+    # When defining the constructor for Dog, you should also run the
+    # constructor for Animal by calling super().__init__
+    #
+    # Using *args and **kwargs allows Animal to change its constructor
+    # while your code stays the same.
+    def __init__(self, bark_volume, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.bark_volume = bark_volume
+
+# This *args, **kwargs pattern is useful if, for example, you want to
+# subclass Thread
+from threading import Thread
+
+class SpecializedThread(Thread):
+    def __init__(self, special_param, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # do something with special_param
+
+# Now we can pass in arguments we usually give to the Thread constructor,
+# like the 'daemon' keyword argument
+s = SpecializedThread('special value', daemon=True)
