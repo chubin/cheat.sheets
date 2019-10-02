@@ -1,0 +1,25 @@
+import threading
+import time
+import random
+
+# Create a function to do our computationally expensive work.
+# We'll just simulate a long calculation with time.sleep
+def do_work(number):
+    time.sleep(random.random() * 3)
+    print(number, 'is done')
+
+# Using a list comprehension, we create a list of 4 threads that each run the
+# do_work function and pass in a value for its 'number' parameter.
+threads = [threading.Thread(target=do_work, args=(i,)) for i in range(1, 5)]
+
+# Start execution of all the threads in parallel. They'll likely finish out
+# of order.
+[t.start() for t in threads]
+# 1 is done
+# 3 is done
+# 4 is done
+# 2 is done
+
+# The main thread is not blocked while the other threads are running. If you
+# want to block the main thread until another thread completes, call join()
+# on the other thread.
