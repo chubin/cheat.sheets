@@ -1,0 +1,12 @@
+# List comprehensions are a compact way to define a list
+squares = [x**2 for x in range(1, 10)]
+# squares = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# You can also add a condition to filter out some of the elements
+evens = [i for i in range(1, 10) if i % 2 == 0]
+# evens = [2, 4, 6, 8]
+
+# If your list is multi-dimensional, you can nest for-loops
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [val for row in matrix for val in row]
+# flattened = [1, 2, 3, 4, 5, 6, 7, 8, 9]
