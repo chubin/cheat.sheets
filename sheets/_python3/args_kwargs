@@ -1,0 +1,27 @@
+# Representing a variable-length argument list
+
+# Think of 'args' as a tuple of positional arguments
+def add(*args):
+    return sum(args)
+
+# This function works with any number of positional arguments
+add(1, 2, 3, 4, 5)
+# 15
+
+# You can also use the '*' operator to 'explode' a list of arguments
+numbers = [1, 2, 3, 4, 5]
+add(*numbers) # unpacks the list into an argument list for the function
+# 15
+
+# Now we have args (one '*') and kwargs (two '*'s)
+# args is a tuple just like before, kwargs is a dictionary of the provided
+# keyword arguments
+def dump_it(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+# Any number of positional arguments or keyword arguments will work here
+dump_it(1, 2, 3, color='blue')
+# (1, 2, 3)
+# {'color': 'blue'}
+
