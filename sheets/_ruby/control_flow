@@ -22,13 +22,6 @@ end
 end
 
 # Conditionals
-if 2 * 4 == 8
-  puts 'thank goodness'
-else
-  puts 'error between keyboard and chair'
-end
-
-# Add an extra condition
 if 1 == 0
   puts 'oh no'
 elsif 1 == 1
