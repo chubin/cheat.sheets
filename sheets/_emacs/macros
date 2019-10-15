@@ -1,0 +1,13 @@
+# Macro-commands
+C-x (       start macro definition
+C-x )       end of macro definition
+C-x e       execute last defined macro
+M-n C-x e   execute last defined macro n times
+M-x name-last-kbd-macro
+            give name to macro (for saving)
+M-x insert-keyboard-macro
+            save named macro into file
+M-x load-file
+            load macro
+M-x macroname
+            execute macroname
