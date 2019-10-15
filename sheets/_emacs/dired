@@ -1,0 +1,39 @@
+# DIRectory EDitor (dired)
+C-x d       start up dired
+C (large C) copy
+d           mark for erase
+D           delete right away
+e or f      open file or directory
+g           reread directory structure from file
+G           change group permissions (chgrp)
+k           delete line from listing on screen (don\'t actually delete)
+m           mark with *
+n           move to next line
+o           open file in other window and go there
+C-o open file in other window but don\'t change there
+P           print file
+q           quit dired
+Q           do query-replace in marked files
+R           rename file
+u           remove mark
+v           view file content
+x           delete files marked with D
+z           compress file
+M-Del       remove all marks (whatever kind)
+~ mark backup files (name~ files) for deletion
+# mark auto-save files (#name#) for deletion
+*/          mark directory with * (C-u * removes that mark again)
+=           compare this file with marked file
+M-=         compare this file with it\'s backup file
+!           apply shell command to this file
+M-}         change to the next file marked with * od D
+M-{         change to the previous file marked with * od D
+% d         mark files described through regular expression for deletion
+% m         mark files described through regular expression for deletion (with *)
++           create directory
+>           changed to next dir
+<           change to previous dir
+s           toggle between sorting by name or date
+
+#
+M-x speedbar starts up a separate window with a directory view

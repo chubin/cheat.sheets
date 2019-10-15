@@ -1,0 +1,9 @@
+# Telnet
+M-x telnet  starts up telnet-modus
+C-d         either delete char or send EOF
+C-c C-c     stop running job (similar to C-c under unix)
+C-c C-d     send EOF
+C-c C-o     clear output of last command
+C-c C-z     suspend execution of command
+C-c C-u     kill line backwards
+M-p         recall previous command
