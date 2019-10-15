@@ -31,3 +31,16 @@ when /food/
 when /doe/
   puts "#{str}, a female deer"
 end
+
+# Please note that `case` uses `===` operator to match values.
+# The following are equivalent:
+case x
+when Integer then "I'm a number"
+when String then "I'm a text"
+end
+
+if Integer === x
+  "I'm a number"
+elsif String === x
+  "I'm a text"
+end
