@@ -1,13 +1,17 @@
-# find all file name ending with .pdf and remove them
+# Find all file names ending with .pdf and remove them
 find -name \*.pdf | xargs rm
+# The above, however, is preferable written without xargs:
+find -name \*.pdf -exec rm {} \+
+# Or, for find's own functionality, it's best as:
+find -name \*.pdf -delete
 
-# find all file name ending with .pdf and remove them
+# Find all file name ending with .pdf and remove them
 # (bulletproof version: handles filenames with \n and skips *.pdf directories)
 # -r = --no-run-if-empty
 # -n10 = group by 10 files
 find -name \*.pdf -type f -print0 | xargs -0rn10 rm
 
-# if file name contains spaces you should use this instead
+# If file name contains spaces you should use this instead
 find -name \*.pdf | xargs -I{} rm -rf '{}'
 
 # Will show every .pdf like:
@@ -15,6 +19,8 @@ find -name \*.pdf | xargs -I{} rm -rf '{}'
 #	&titi.pdf=
 # -n1 => One file by one file. ( -n2 => 2 files by 2 files )
 find -name \*.pdf | xargs -I{} -n1 echo '&{}='
+# The above is, however, much faster and easier without xargs:
+find -name \*.pdf -printf "%p\n"
 
-# group words by three in a string
-seq 1 10 | xargs -n3 echo
+# Group words by three in a string
+seq 1 10 | xargs -n3
