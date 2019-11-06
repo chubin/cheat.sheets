@@ -1,0 +1,15 @@
+# /proc is a pseudo-file system location that
+# contains information about a running process by PID
+
+# See the commandline arguments that started the process
+cat /proc/<pid>/cmdline
+
+# See the process's environment variables
+cat /proc/<pid>/environ
+
+# See the process's status and usage information
+# such as CPU and memory
+cat /proc/<pid>/status
+
+# See every file the process has open
+ls -l /proc/<pid>/fd
