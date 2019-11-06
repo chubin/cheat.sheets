@@ -21,3 +21,6 @@ awk BEGIN'{printf("Example text.\n")}'
 
 # Accessing environment variables from within awk.
 awk 'BEGIN{print ENVIRON["LS_COLORS"]}'
+
+# One method to count the number of lines; in this case, read from STDIN.
+free | awk '{i++} END{print i}'
