@@ -1,0 +1,7 @@
+# Number lines given to `nl` via STDIN.
+printf "Here\nis\nsome\nexample\ntext." | nl
+
+# Number (all) lines given to `nl` via provided file(s).
+nl -b a /path/to/file
+# The above can also be achieved with `cat`, which is perhaps more portable:
+cat -n /path/to/file

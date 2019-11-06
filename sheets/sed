@@ -1,0 +1,2 @@
+# Edit a file, via substitution, in-place; changes are made to the file(s).
+sudo sed -i 's/Name=Xfce Session/Name=Xfce_Session/' /usr/share/xsessions/xfce.desktop

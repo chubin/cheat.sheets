@@ -1,24 +1,21 @@
-# To resize an image to a fixed width and proportional height:
+# Resize an image to a fixed width and proportional height:
 convert original-image.jpg -resize 100x converted-image.jpg
 
-# To resize an image to a fixed height and proportional width:
+# Resize an image to a fixed height and proportional width:
 convert original-image.jpg -resize x100 converted-image.jpg
 
-# To resize an image to a fixed width and height:
+# Resize an image to a fixed width and height:
 convert original-image.jpg -resize 100x100 converted-image.jpg
 
-# To resize an image and simultaneously change its file type:
+# Resize an image and simultaneously change its file type:
 convert original-image.jpg -resize 100x converted-image.png
 
-# To resize all of the images within a directory:
-# To implement a for loop:
-for file in `ls original/image/path/`;
-    do new_path=${file%.*};
-    new_file=`basename $new_path`;
-    convert $file -resize 150 conerted/image/path/$new_file.png;
+# Resize all of the images within a directory, using a for loop:
+for file in original/image/path/*; do
+    convert "$file" -resize 150 converted/image/path/"$file"
 done
 
-# Make text annotatation (text = Flower)
+# Make text annotation (text = Flower)
 convert flower.jpg -font courier -fill white -pointsize 20 -annotate +50+50 'Flower' flower_annotate1.jpg
 
 # Crop an image
@@ -33,3 +30,5 @@ convert -border 1x1 -bordercolor "#FFFFFF" image.png new-image.png
 # Convert PNG to JPEG (with 70% quality)
 convert -quality 70 image.png new_image.jpg
 
+# Apply vignette and grayscale effects to all JPGs in the CWD, using a for loop.
+for FILE in *.jpg; { convert -background black -colorspace gray -vignette 200x100 "$FILE" "$FILE"; }
