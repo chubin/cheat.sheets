@@ -56,3 +56,6 @@ find . -type f -iname '*.png' -exec bash -c 'mv "$0" "${0%.*}.jpg"' {} \;
 
 # Use logic and grouping to delete extension-specific files.
 find \( -iname "*.jpg" -or -iname "*.sfv" -or -iname "*.xspf" \) -type f -delete
+
+# List all executable files, by basename, found within PATH.
+find ${PATH//:/ } -type f -executable -printf "%P\n"
