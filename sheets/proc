@@ -12,4 +12,4 @@ cat /proc/<pid>/environ
 cat /proc/<pid>/status
 
 # See every file the process has open
-ls -l /proc/<pid>fd
+ls -l /proc/<pid>/fd
