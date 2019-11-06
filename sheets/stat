@@ -1,2 +1,5 @@
 # display numerical values for file permissions
 stat -c '%a %n' *
+
+# Display only the octal permissions for the given directory. Great for tests.
+stat --format='%a' /boot

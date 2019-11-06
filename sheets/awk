@@ -15,3 +15,12 @@ awk -v RS='' '/42B/' file
 
 # display only first column from multi-column text
 echo "first-column  second-column  third-column" | awk '{print $1}'
+
+# Use awk solo; without the need for something via STDIN.
+awk BEGIN'{printf("Example text.\n")}'
+
+# Accessing environment variables from within awk.
+awk 'BEGIN{print ENVIRON["LS_COLORS"]}'
+
+# One method to count the number of lines; in this case, read from STDIN.
+free | awk '{i++} END{print i}'
