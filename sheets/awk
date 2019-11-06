@@ -18,3 +18,6 @@ echo "first-column  second-column  third-column" | awk '{print $1}'
 
 # Use awk solo; without the need for something via STDIN.
 awk BEGIN'{printf("Example text.\n")}'
+
+# Accessing environment variables from within awk.
+awk 'BEGIN{print ENVIRON["LS_COLORS"]}'
