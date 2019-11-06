@@ -53,3 +53,6 @@ find . -iname '*.txt' -exec vim {} \+
 # Find all files with extension '.png' and rename them by changing extension to
 # '.jpg' (base name is preserved)
 find . -type f -iname '*.png' -exec bash -c 'mv "$0" "${0%.*}.jpg"' {} \;
+
+# Use logic and grouping to delete extension-specific files.
+find \( -iname "*.jpg" -or -iname "*.sfv" -or -iname "*.xspf" \) -type f -delete
