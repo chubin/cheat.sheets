@@ -1,0 +1,18 @@
+# Unless configured otherwise, this will set the umask ("user mask" or "file mode
+# creation mask") for only the current user, and only his or her current session.
+# The (one) leading zero is optional, unless you otherwise need it.
+#
+# This umask setting is actually recommended for security by RHEL, and is also
+# mentioned and I believe recommended in the Arch Linux Wiki.
+#
+# The result of '0077' being -- and I'll use standard octal with which we're all
+# probably familiar -- that all new files are created using the '600'
+# permissions, and directories are '700'.
+#
+# Remember, the standard format means 4=read, 2=write, and 1=execute. However, the
+# umask uses the same, but is inverted, so a umask of '077' would be 700, and
+# correctly lowers to 600 when it's just a file.
+umask 0077
+
+# Akin to above, but instead, output the current umask setting.
+umask
