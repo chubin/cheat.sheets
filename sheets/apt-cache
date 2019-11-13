@@ -1,0 +1,9 @@
+# Search for package PKG. Both package names and their descriptions are searched
+# for a REGEX match; to avoid this behavior, you may use the `-n` flag, which will
+# only look for a match in the package name.
+apt-cache search 'PKG'
+
+# Regarding the above, although multiple package names may not be specified, it's
+# possible to use ERE to easily and quickly get around this limitation. Here, all
+# 3 packages (PKG1, PKG2, and PKG3) will be sought.
+apt-cache search '(PKG1|PKG2|PKG3)'
