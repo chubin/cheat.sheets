@@ -1,0 +1,10 @@
+# Build a DEB package using the provided directory.
+dpkg-deb -b /path/to/directory
+
+# List out the contents of an existing DEB package.
+dpkg-deb -c /path/to/package.deb
+
+# Extract the contents of an existing DEB package. If no destination is provided
+# for the extracted files, then they will be extracted to the CWD. Will also create
+# the specified directory if it's not found, but it won't create its parents.
+dpkg-deb -x /path/to/package.deb /path/to/destination/

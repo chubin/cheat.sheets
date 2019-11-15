@@ -1,0 +1,6 @@
+# This is a shell builtin available in bash, but not in the Bourne Shell (`sh`).
+# The contents of FILE (assuming shell script) will be sourced into the current
+# session, allowing external use of things like its functions and variables.
+source FILE
+# The above can be written in short-hand, for the same effect:
+. FILE

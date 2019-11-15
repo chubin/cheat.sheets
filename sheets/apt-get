@@ -1,0 +1,53 @@
+# Update the local database of available packages, as discovered from package index
+# file found in their sources. This does not actually update your installed
+# software! For that, keeping reading.
+apt-get update
+
+# Upgrade installed packages, but there may be exceptions, such as important kernel
+# packages. Also, packages will not be removed, like if they're deprecated, with
+# this method.
+apt-get upgrade
+
+# Unlike the above, this will upgrade all of the installed packages, and perform
+# other actions required for a successful and thorough upgrade. This will also
+# allow for upgrading to the next minor release of your distributions, such as from
+# Ubuntu '16.04.1' to '16.04.2'.
+apt-get dist-upgrade
+
+# Clean out (completely) the follow locations of saved DEB files:
+#
+#   /var/cache/apt/archives/* /var/cache/apt/archives/partial/
+#   /var/lib/apt/lists/partial/
+#   /var/cache/apt/pkgcache.bin /var/cache/apt/srcpkgcache.bin
+#
+# This will also, thanks to the provided flag, be somewhat verbose.
+sudo apt-get clean -s
+
+# View the changelog for the firefox package. Useful prior to or after upgrade.
+apt-get changelog firefox
+
+# Download PKG (one or more) without actually installing or extracting them. A good
+# use for this might be to upgrade an offline system, by downloading the packages
+# on a system using an Internet-able machine. Files are downloaded into the CWD.
+apt-get download PKG
+
+# Install PKG (one or more), bringing in dependencies and, provided settings allow
+# it, install recommended and/or suggested packages.
+apt-get install PKG
+
+# At times, dependencies won't be installed, yet you still need them; the following
+# command will often fix this, and is usually suggested to the user.
+apt-get -f install
+
+# Remove PKG, while also purging system-wide configuration files for it.
+apt-get purge PKG
+# Alternative syntax:
+apt-get remove --purge PKG
+
+# Often used to first update the local database of packages, then, only if
+# successful, a full system upgrade is started.
+apt-get update && apt-get dist-upgrade
+
+# Download specified package (firefox, in this example) and all packages marked
+# thereby as important or dependencies. Files are downloaded into the CWD.
+apt-get download firefox `apt-cache --important depends firefox | awk '{if(NR>1){printf("%s ", $2)}}'`

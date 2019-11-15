@@ -1,0 +1,20 @@
+# Output low-level information for the provided block device and partition.
+udisksctl info -b /dev/sdd1
+
+# Mount partition on the given block device. This will by default use '/media', and
+# on typical systems won't even require root privileges.
+udisksctl mount -b /dev/sd??
+
+# Set up a loop device using 'imagefile'. This only sets it up, so you will
+# probably also want to mount it thereafter, using the device given to you after
+# executing this command. often, if not always, this is '/dev/loopX', where X is
+# the loop device number.
+udisksctl loop-setup -f image file
+
+# Like the above, except this will delete the loop device (assuming 'loop0' was
+# previously created) but note that this will NOT delete the image file. Be sure to
+# unmount the filesystem(s) on the device first, before deleting it.
+udisksctl loop-delete -b /dev/loop0
+
+# Power off a block device. May not work for all devices, and may vary in effect.
+udisksctl power-off -b /dev/sdb
