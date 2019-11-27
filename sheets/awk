@@ -35,3 +35,6 @@ awk '{NR!=1&&A[$1]=$2} END{print(A["Mem:"])}' <(free -h)
 # While below is an easier and simpler solution to the above, it's not at all the
 # same, and in other cases, the above is definitely preferable; more accurate.
 awk '/^Mem:/{print($2)}' <(free -h)
+
+# Output a unique-d list of uppercase-only, sigil-omitted variables used in [FILE].
+awk '{for(F=0; F<NF; F++){if($F~/^\$[A-Z_]+$/){A[$F]++}}} END{for(I in A){X=substr(I, 2, length(I)); printf("%s\n", X)}}' [FILE]
