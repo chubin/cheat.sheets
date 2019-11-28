@@ -21,7 +21,7 @@ lvcreate -L 10G -s -n lvsnap /dev/vgA/lv1
 
 # Clone LVM volume: test => testCopy
 lvconvert --type mirror --alloc anywhere -m1 /dev/mylv/test
-lvs -a -o +devices | egrep "LV|test"
+lvs -a -o +devices | grep -E "LV|test"
 # After Cpy%Sync is 100% finished:
 lvconvert --splitmirrors 1 --name testCopy /dev/rootvg/test
 

@@ -24,3 +24,17 @@ awk 'BEGIN{print ENVIRON["LS_COLORS"]}'
 
 # One method to count the number of lines; in this case, read from STDIN.
 free | awk '{i++} END{print i}'
+
+# Output a (unique) list of available sections under which to create a DEB package.
+awk '!A[$1]++{print($1)}' <<< "$(dpkg-query --show -f='${Section}\n')"
+
+# Using process substitution (`<()` is NOT command substitution), with AWK and its
+# associative array variables, we can print just column 2 for lines whose first
+# column is equal to what's between the double-quotes.
+awk '{NR!=1&&A[$1]=$2} END{print(A["Mem:"])}' <(free -h)
+# While below is an easier and simpler solution to the above, it's not at all the
+# same, and in other cases, the above is definitely preferable; more accurate.
+awk '/^Mem:/{print($2)}' <(free -h)
+
+# Output a unique-d list of uppercase-only, sigil-omitted variables used in [FILE].
+awk '{for(F=0; F<NF; F++){if($F~/^\$[A-Z_]+$/){A[$F]++}}} END{for(I in A){X=substr(I, 2, length(I)); printf("%s\n", X)}}' [FILE]

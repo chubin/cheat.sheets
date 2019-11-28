@@ -8,3 +8,6 @@ dpkg-deb -c /path/to/package.deb
 # for the extracted files, then they will be extracted to the CWD. Will also create
 # the specified directory if it's not found, but it won't create its parents.
 dpkg-deb -x /path/to/package.deb /path/to/destination/
+
+# Output a (unique) list of available sections under which to create a DEB package.
+awk '!A[$1]++{print($1)}' <<< "$(dpkg-query --show -f='${Section}\n')"
