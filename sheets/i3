@@ -62,11 +62,11 @@
 # You can focus multiple windows at once.
 # For example with this layout with two windows:
 +-------+-------+
-+ . . . | . . . |
-+ . . . | . . . |
-+ . 1 . | . 2 . |
-+ . . . | . . . |
-+ . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
+| . 1 . | . 2 . |
+| . . . | . . . |
+| . . . | . . . |
 +-------+-------+
 # One can select both windows at once and split them vertically,
 # so the new window will take half of whole screen.
@@ -75,11 +75,11 @@
 # Vertically spawn new terminal window: ◆+v, ◆+Enter
 # Result:
 +-------+-------+
-+ . . . | . . . |
-+ . 1 . | . 2 . |
+| . . . | . . . |
+| . 1 . | . 2 . |
 +-------+-------+
-+ . . . 3 . . . |
-+ . . . . . . . |
+| . . . 3 . . . |
+| . . . . . . . |
 +---------------+
 # Whenever you split window in half by spawning new window,
 # both windows will be placed in an invisible container.
