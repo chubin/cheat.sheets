@@ -85,7 +85,6 @@
 # both windows will be placed in an invisible container.
 # One can focus parent container with ◆+a.
 
-
 # i3 configuration
 # Configuration files can be found at following locations (ordered by priority):
 ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config)
