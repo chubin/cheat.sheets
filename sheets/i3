@@ -95,12 +95,15 @@
 # Most configuration options can be inferred from default configuration
 # Default configuration path:
 /etc/i3/config
+
 # Keys can be binded with bindsym like this:
 bindsym $mod+4 workspace $ws4
 bindsym $mod+Shift+R exec custom-script-in-path.sh --flag1 --flag2
 bindcode 172 exec playerctl play-pause
+
 # Always execute code when i3 starts:
 exec --no-startup-id ~/.config/polybar/launch.sh
+
 # One can make special modes (much like resize mode)
 set $gamingMode "gaming_mode"
 bindsym $mod+g mode $gamingMode
@@ -110,5 +113,6 @@ mode $gamingMode {
    # Don't forget to add option to return from this mode!
    bindsym $mod+Escape mode default
 }
+
 # Move workspace between multiple monitors
 bindsym $mod+x move workspace to output right
