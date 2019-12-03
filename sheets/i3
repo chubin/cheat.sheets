@@ -1,0 +1,86 @@
+# Note: most i3 keybindings use ⊞ mod key. This is `Alt` key by default,
+# but is frequently swapped with Meta (windows) key.
+
+# Open new terminal
+⊞ + Enter
+
+# Open application launcher
+⊞ + d
+
+# Change where new window is opened:
+# Horizontal split
+⊞ + h
+# Vertical split
+⊞ + v
+
+# Movement
+# (like in vim, but one key to right)
+    ^
+    l
+< j   ; >
+    k
+    V
+
+# Switch focus around windows in workspace
+⊞ + <movement key>
+
+# Move windows around workspace
+⊞ + Shift + <movement key>
+
+# Workspaces
+# i3 has by default 10 workspaces, labeled 1,2,...,9,0
+# Each opened window resides in one of the workspaces
+
+# Change workspace
+⊞ + 0-9
+
+# Send focused window to workspace
+⊞ + Shift + 0-9
+
+# Toggle fullscreen
+⊞ + f
+
+# Enter resize mode (resize with movement/arrow keys, exit with Esc)
+⊞ + r
+
+# Change container layout
+# default: next to each other
+⊞ + e
+# stacked: all windows but one are minimized
+⊞ + s
+# tabbed: like browser tabs
+⊞ + w
+# floating window (drag with ⊞ + LeftClick):
+⊞ + Shift + Space
+
+# Guide: precise positioning of newly spawned windows
+#
+# When creating new window, currently focused window
+# will be split in half and one half will be used by new window.
+# You can control whether it will split horiontally or
+# vertically with ⊞+v or ⊞+h.
+# You can focus multiple windows at once.
+# For example with this layout with two windows:
++-------+-------+
++ . . . | . . . |
++ . . . | . . . |
++ . 1 . | . 2 . |
++ . . . | . . . |
++ . . . | . . . |
++-------+-------+
+# One can select both windows at once and split them vertically,
+# so the new window will take half of whole screen.
+# Select parent container (both windows 1 and 2):
+⊞ + a
+# Vertically spawn new terminal window: ⊞+v, ⊞+Enter
+# Result:
++-------+-------+
++ . . . | . . . |
++ . 1 . | . 2 . |
++-------+-------+
++ . . . 3 . . . |
++ . . . . . . . |
++---------------+
+# Whenever you split window in half by spawning new window,
+# both windows will be placed in an invisible container.
+# One can focus parent container with ⊞+a.
