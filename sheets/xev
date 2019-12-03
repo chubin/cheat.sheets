@@ -7,7 +7,6 @@ awk '
 	/^KeyPress/ {
 		A[NR+2]
 	}
-
 	NR in A {
 		B=substr($7, 0, length($7) - 2)
 		printf("%3d %s\n", $4, B)
