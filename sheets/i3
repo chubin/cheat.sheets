@@ -1,17 +1,17 @@
-# Note: most i3 keybindings use ⊞ mod key. This is `Alt` key by default,
+# Note: most i3 keybindings use ◆ mod key. This is `Alt` key by default,
 # but is frequently swapped with Meta (windows) key.
 
 # Open new terminal
-⊞ + Enter
+◆ + Enter
 
 # Open application launcher
-⊞ + d
+◆ + d
 
 # Change where new window is opened:
 # Horizontal split
-⊞ + h
+◆ + h
 # Vertical split
-⊞ + v
+◆ + v
 
 # Movement
 # (like in vim, but one key to right)
@@ -22,65 +22,97 @@
     V
 
 # Switch focus around windows in workspace
-⊞ + <movement key>
+◆ + <movement key>
 
 # Move windows around workspace
-⊞ + Shift + <movement key>
+◆ + Shift + <movement key>
 
 # Workspaces
 # i3 has by default 10 workspaces, labeled 1,2,...,9,0
 # Each opened window resides in one of the workspaces
 
 # Change workspace
-⊞ + 0-9
+◆ + 0-9
 
 # Send focused window to workspace
-⊞ + Shift + 0-9
+◆ + Shift + 0-9
 
 # Toggle fullscreen
-⊞ + f
+◆ + f
 
 # Enter resize mode (resize with movement/arrow keys, exit with Esc)
-⊞ + r
+◆ + r
 
 # Change container layout
 # default: next to each other
-⊞ + e
+◆ + e
 # stacked: all windows but one are minimized
-⊞ + s
+◆ + s
 # tabbed: like browser tabs
-⊞ + w
-# floating window (drag with ⊞ + LeftClick):
-⊞ + Shift + Space
+◆ + w
+# floating window (drag with ◆ + LeftClick):
+◆ + Shift + Space
 
 # Guide: precise positioning of newly spawned windows
 #
 # When creating new window, currently focused window
 # will be split in half and one half will be used by new window.
 # You can control whether it will split horiontally or
-# vertically with ⊞+v or ⊞+h.
+# vertically with ◆+v or ◆+h.
 # You can focus multiple windows at once.
 # For example with this layout with two windows:
 +-------+-------+
-+ . . . | . . . |
-+ . . . | . . . |
-+ . 1 . | . 2 . |
-+ . . . | . . . |
-+ . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
+| . 1 . | . 2 . |
+| . . . | . . . |
+| . . . | . . . |
 +-------+-------+
 # One can select both windows at once and split them vertically,
 # so the new window will take half of whole screen.
 # Select parent container (both windows 1 and 2):
-⊞ + a
-# Vertically spawn new terminal window: ⊞+v, ⊞+Enter
+◆ + a
+# Vertically spawn new terminal window: ◆+v, ◆+Enter
 # Result:
 +-------+-------+
-+ . . . | . . . |
-+ . 1 . | . 2 . |
+| . . . | . . . |
+| . 1 . | . 2 . |
 +-------+-------+
-+ . . . 3 . . . |
-+ . . . . . . . |
+| . . . 3 . . . |
+| . . . . . . . |
 +---------------+
 # Whenever you split window in half by spawning new window,
 # both windows will be placed in an invisible container.
-# One can focus parent container with ⊞+a.
+# One can focus parent container with ◆+a.
+
+# i3 configuration
+# Configuration files can be found at following locations (ordered by priority):
+~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config)
+~/.i3/config
+/etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config)
+/etc/i3/config
+# One can specify custom config file with -c option while starting i3
+# Most configuration options can be inferred from default configuration
+# Default configuration path:
+/etc/i3/config
+
+# Keys can be binded with bindsym like this:
+bindsym $mod+4 workspace $ws4
+bindsym $mod+Shift+R exec custom-script-in-path.sh --flag1 --flag2
+bindcode 172 exec playerctl play-pause
+
+# Always execute code when i3 starts:
+exec --no-startup-id ~/.config/polybar/launch.sh
+
+# One can make special modes (much like resize mode)
+set $gamingMode "gaming_mode"
+bindsym $mod+g mode $gamingMode
+mode $gamingMode {
+   # Insert declarations for this mode
+   # Useful when normal keybindings fight with keybindings of your games
+   # Don't forget to add option to return from this mode!
+   bindsym $mod+Escape mode default
+}
+
+# Move workspace between multiple monitors
+bindsym $mod+x move workspace to output right
