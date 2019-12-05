@@ -1,22 +1,33 @@
 # To implement a for loop:
-for file in *;
-do 
-    echo $file found;
+for WORD in LIST
+do
+    COMMANDS
+done
+# For example:
+for CurDay in Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+do
+	printf "%s\n" "$CurDay"
 done
 
-# To implement a case command:
-case "$1"
-in
-    0) echo "zero found";;
-    1) echo "one found";;
-    2) echo "two found";;
-    3*) echo "something beginning with 3 found";;
+# To implement a case statement:
+case $1 in
+    0)
+		echo "Found a '0'." ;;
+    1)
+		echo "Found a '1'." ;;
+    2)
+		echo "Found a '2'." ;;
+    3*)
+		echo "Something beginning with '3' found." ;;
+	'')
+		echo "Nothing (null) found." ;;
+	*)
+		echo "Anything else found." ;;
 esac
 
-# Turn on debugging:
+# Turn on built-in Bash debugging output:
 set -x
-
-# Turn off debugging:
+# Turn the above off again:
 set +x
 
 # Retrieve N-th piped command exit status
@@ -26,32 +37,46 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # Lock file:
 ( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
 
-# Fork bomb
+# Fork bomb. Do not run this! Has the potential to wreak havoc. It repeatedly
+# and quickly spawns a bazillion processes until the system eventually locks up.
 :(){ :|:& };:
+# An alternative, easier-to-understand version without the obfuscation:
+func(){ func | func & }; func
 
-# Unix Roulette
-# (Courtesy of Bigown's answer in the joke thread)
-# DANGER! Don't execute!
+# Unix Roulette, courtesy of Bigown's answer in the joke thread.
+#
+#   DANGER! Don't execute!
+#
+# Luckily, most modern setups have `--preserve-root` on by default, so this will be
+# null and void, but even so, not even remotely worth the risk!
 [ $[ $RANDOM % 6 ] == 0 ] && rm -rf /* || echo Click #Roulette
 
-# for loop in one line
-for i in $(seq 1 4); do echo $i; done
+# A for loop one-liner.
+for CurIter in {1..4}; do echo "$CurIter"; done
+# Alternative, slightly-cleaner syntax:
+for CurIter in {1..4}; { echo "$CurIter"; }
 
-# Check to see if a variable equals a specified integer
-if [ "$var" -eq "0" ]; then
-    echo "var equals zero";
+# Test for a variable being equal to (`-eq`) an integer (`0`).
+if [ $var -eq 0 ]; then
+    printf "Variable '\$var' is equal to '0'.\n"
 fi
 
-# Test if a program exists in the path
-# There are false positives: aliases and functions
+# Test for a `PATH` executable existing as a file, but note that aliases and
+# functions will also output and result in a `0` exit status.
 command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
+# However, that is a solution commonly found in a script using the Bourne shell, so
+# in this case, an alternative, Bash-like, and more accurate version could be:
+if ! type -fP bash > /dev/null 2>&1; then
+	printf "ERROR: Dependency 'bash' not met." >&2
+	exit 1
+fi
 
-# Redirection
-# Please note that 2>&1 goes after
-my_command > command-stdout-stderr.txt 2>&1
-my_command > /dev/null 2>&1
-# Redirect stdout and stderr of cmd1 to cmd2
-cmd1 |& cmd2
+# Send both STDOUT and STDERR from COMMAND to FILE. The `2>&1` must go at the end.
+COMMAND > FILE 2>&1
+# Send STDOUT and STDERR from COMMAND to `/dev/null`, where data goes to die.
+COMMAND > /dev/null 2>&1
+# Pipe the STDOUT and STDERR from COMMAND_1 to COMMAND_2.
+COMMAND_1 |& COMMAND_2
 
-# Convert spaces to underscores in filenames
+# Verbosely convert whitespaces (` `) to underscores (`_`) in the names of files.
 for name in *\ *; do mv -vn "$name" "${name// /_}"; done
