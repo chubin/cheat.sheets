@@ -41,3 +41,6 @@ awk '{for(F=0; F<NF; F++){if($F~/^\$[A-Z_]+$/){A[$F]++}}} END{for(I in A){X=subs
 
 # Output only lines from FILE between PATTERN_1 and PATTERN_2. Good for log files.
 awk '/PATTERN_1/,/PATTERN_2/{print}' [FILE]
+
+# Pretty-print a table of an overview of the non-system users on the system.
+awk -SPF ':' 'BEGIN {printf("%-17s %-4s %-4s %-s\n", "NAME", "UID", "GID", "SHELL")} $3>=1000 && $1!="nobody" {printf("%-17s %-d %-d %-s\n", $1, $3, $4, $7)}' /etc/passwd
