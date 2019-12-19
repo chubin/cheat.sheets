@@ -1,8 +1,10 @@
-# spell check a single file
-aspell check ${somefile}
+# Spell check a single file.
+aspell check [FILE]
 
-# list misspelled words from standard input
-cat ${somefile} | aspell list
+# List misspelled words from standard input (STDIN).
+cat [FILE] | aspell list
 
-# check for known dictionary files
+# Check for known dictionary files.
 aspell dicts
+# Above appears to be short-form for the below command.
+aspell dump dicts
