@@ -9,8 +9,8 @@ ruby -e 'puts "Hello world"'
 
 # The -n switch acts as though the code you pass to Ruby was wrapped in the following:
 # while gets
-#  # code here
-#  end
+#   # code here
+# end
 ruby -ne 'puts $_' file.txt
 
 # Beware that with the -n switch $_ contains newline character in the end.
