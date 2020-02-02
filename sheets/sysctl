@@ -1,0 +1,12 @@
+# List all kernel keys (parameters) and their values.
+sysctl [--all|-a]
+# As above, but show only specified keys and their values.
+sysctl [KEY_1 [KEY_2] ...]
+
+# As above, but instead output only the values.
+sysctl [--values|-n] [KEY_1 [KEY_2] ...]
+# Not nearly as useful, but alternatively, output only the key names.
+sysctl [--names|-N] [KEY_1 [KEY_2] ...]
+
+# Assign one or more kernel keys a new value; usually requires root access.
+sysctl [KEY_1=VALUE_1 [KEY_2=VALUE_2] ...]
