@@ -8,7 +8,7 @@ sudo sed 's/Name=Xfce Session/Name=Xfce_Session/g' /usr/share/xsessions/xfce.des
 sudo sed -i 's/Name=Xfce Session/Name=Xfce_Session/' /usr/share/xsessions/xfce.desktop
 
 # It can become necessary to escape special characters in your string.
-sed -i 's/\/path\/to\/somewhere\//\/path\/to\/anotherplace\//'
+sed -i 's/\/path\/to\/somewhere\//\/path\/to\/anotherplace\//' /tmp/filetoedit
 
 # Change your sed delimiter to a pipe to avoid escaping slashes.
-sed -i 's|/path/to/somewhere/|/path/to/anotherplace/|'
+sed -i 's|/path/to/somewhere/|/path/to/anotherplace/|' /tmp/filetoedit
