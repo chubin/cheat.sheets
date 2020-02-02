@@ -1,58 +1,60 @@
 # ssh
 # access a remote host via SSH
 
-# To ssh via pem file (which normally needs 0600 permissions):
+# SSH in via PEM file, which normally needs 0600 permissions.
 ssh -i /path/to/file.pem user@example.com
 
-# To connect on an non-standard port:
+# Connect through a non-standard port. It's recommended not to use the default
+# port of 22, as it is so often targeted, due to it being so commonplace.
 ssh -p 2222 user@example.com
 
-# To connect and forward the authentication agent
+# Connect and forward the authentication agent.
 ssh -A user@example.com
 
-# To execute a command on a remote server:
+# Execute a command on a remote server.
 ssh -t user@example.com 'the-remote-command'
 
-# To tunnel an x session over SSH:
+# Tunnel an X session over SSH, via X11 Forwarding.
 ssh -X user@example.com
 
 # Redirect traffic with a tunnel between local host (port 8080) and a remote
-# host (remote.example.com:5000) through a proxy (personal.server.com):
+# host (remote.example.com:5000) through a proxy (personal.server.com).
 ssh -f -L 8080:remote.example.com:5000 user@personal.server.com -N
 
-# To launch a specific x application over SSH:
+# Launch a specific X application over SSH.
 ssh -X -t user@example.com 'chromium-browser'
 
-# To create a SOCKS proxy on localhost and port 9999
+# Create a SOCKS proxy on localhost and port 9999.
 ssh -D 9999 user@example.com
 
-# -X use an xsession, -C compress data, "-c blowfish" use the encryption blowfish
-ssh user@example.com -C -c blowfish -X
+# Connect to server, but allow for X11 forwarding, while also using GZip
+# compression (can be much faster; YMMV), and using the `blowfish` encryption.
+# For more information, see: http://unix.stackexchange.com/q/12755/44856
+ssh -XCc blowfish user@example.com
 
-# For more information, see:
-# http://unix.stackexchange.com/q/12755/44856
+# Copy files and directories, via SSH, from remote host to the current working
+# directory, with GZip compression. An option for when `rsync` isn't available.
+#
+# This works by creating (not temporary!) a remote Tar archive, then piping its
+# output to a local Tar process, which then extracts it to STDOUT.
+ssh user@example.com 'tar -C /var/www/Shared/ zcf - asset1 asset2' | tar zxf -
 
-# Copy files and folders through ssh from remote host to pwd with tar.gz compression
-# when there is no rsync command available
-ssh user@example.com "cd /var/www/Shared/; tar zcf - asset1 asset2" | tar zxf -
-
-# explicitly specify a key for connection
-# (if you have Too many authentication failures for *username*)
+# Explicitly specify a key for connection. Useful if you have too many
+# authentication failures for a given username.
 ssh -i some_id_rsa -o IdentitiesOnly=yes them@there:/path/
 
-# switch off pubkey authentication
+# Temporarily disable `pubkey` authentication for this instance.
 ssh -o PubkeyAuthentication=no username@hostname.com
 
-# Mount folder/filesystem through SSH
-# Install SSHFS from https://github.com/libfuse/sshfs
-# Will allow you to mount a folder securely over a network.
+# Mount a remote directory or filesystem, through SSH, to a local mountpoint.
+# Install SSHFS from: https://github.com/libfuse/sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 
-# Emacs can read file through SSH
+# EMACS can read files through SSH.
 # Doc: http://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html
 emacs /ssh:name@server:/path/to/file
 
-# Get help on SSH escape sequences
-# Useful for terminating unresponsive sessions
-# The default escape character is ~ (tilde), escapes are only recognized immediately after newline
-$ [Enter]~?
+# Get help for SSH escape sequences. Useful for terminating unresponsive
+# sessions. The default escape character is ~ (tilde), escapes are only
+# recognized immediately after a newline.
+$ <Enter>~?
