@@ -28,3 +28,6 @@ perl -p -i'.old' -e 's/find/replace/g' filename
 #   learn perl:         /perl/:learn
 #   perl one-liners:    /perl/1line
 #   search in pages:    /perl/~keyword
+
+# Perl method of listing out the environment variables, sans values.
+perl -e 'print("$_\n") foreach keys(%ENV)'
