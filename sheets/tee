@@ -1,16 +1,15 @@
-# To tee stdout to a file:
+# Display `ls` output to the user, but also write it to the given file.
 ls | tee outfile.txt
-
-# To tee stdout and append to a file:
+# As above, but amend the data; previous file's data remains in-tact.
 ls | tee -a outfile.txt
 
-# tee would take the output of the first command in the pipeline and copy it 
-# to standard output (the terminal) while also making copies of it in the files one, two and three:
-somecommand | tee one two three
+# Pipe the standard output of a given command into `tee`, which then displays
+# it to the user and sending the data to files `one`, `two`, and `three`.
+[COMMAND] | tee one two three
 
-# write 3 to /proc/sys/vm/drop_caches (with root rights)
+# Workaround to output data to a file, with root privileges.
 echo 3 | sudo tee /proc/sys/vm/drop_caches
 
-# in Vim:
-# The structure :w !cmd means "write the current buffer piped through command".
+# Pipe the current Vim buffer to a shell process, which in this case is `tee`.
+# This is especially useful as a shortcut added to `.vimrc` or similar.
 :w !sudo tee %
