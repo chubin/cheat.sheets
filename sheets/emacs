@@ -77,11 +77,11 @@
     C-g         return to where search started (if you are still in search mode)
     M-% query replace
 #
-    Space or y  replace this occurence
+    Space or y  replace this occurrence
     Del or n    don\'t replace
     .           only replace this and exit (replace)
     ,           replace and pause (resume with Space or y)
-    !           replace all following occurences
+    !           replace all following occurrences
     ^           back to previous match
     RETURN or q quit replace
 
@@ -93,7 +93,7 @@
     .*          group or null of chars
     \<          beginning of a word
     \>          end of a word
-    []          every char inside the backets (for example [a-z] means every small letter)
+    []          every char inside the brackets (for example [a-z] means every small letter)
 #
     M C-s RETURN search for regular expression forward
     M C-r RETURN search for regular expression backward
