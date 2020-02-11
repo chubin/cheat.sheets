@@ -82,3 +82,10 @@ jq -r '(map(keys) | add | unique | sort) as $cols | .[] as $row | $cols | map($r
 #
 # => 2,,1
 #    ,4,3
+
+# Filter a list of objects
+jq 'map(select(.name == "foo"))'
+#
+# [ { "name": "foo" }, { "name": "bar" } ]
+# => [ { "name": "foo" } ]
+
