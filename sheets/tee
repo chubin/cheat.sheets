@@ -1,6 +1,8 @@
 # Display `ls` output to the user, but also write it to the given file.
 ls | tee outfile.txt
-# As above, but amend the data; previous file's data remains in-tact.
+
+# As above, but append the data; previous file's data remains intact while
+# new data is added at the end of the file.
 ls | tee -a outfile.txt
 
 # Pipe the standard output of a given command into `tee`, which then displays
