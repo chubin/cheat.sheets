@@ -1,0 +1,6 @@
+# Quietly download a file, continuing where it left of, if the connection fails.
+# Note that the file will be downloaded to the current working directory.
+wget -qc [URL]
+
+# Specify a location to download the given file.
+wget -qcO [PATH] [URL]
