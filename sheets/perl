@@ -31,3 +31,6 @@ perl -p -i'.old' -e 's/find/replace/g' filename
 
 # Perl method of listing out the environment variables, sans values.
 perl -e 'print("$_\n") foreach keys(%ENV)'
+
+# Output the columns and lines of the current terminal.
+perl -e 'use Term::ReadKey "GetTerminalSize"; my ($Cols, $Lines) = GetTerminalSize(); print("${Cols}x$Lines\n")'
