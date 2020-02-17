@@ -31,3 +31,20 @@ perl -p -i'.old' -e 's/find/replace/g' filename
 
 # Perl method of listing out the environment variables, sans values.
 perl -e 'print("$_\n") foreach keys(%ENV)'
+
+# Output the columns and lines of the current terminal.
+perl -e 'use Term::ReadKey "GetTerminalSize"; my ($Cols, $Lines) = GetTerminalSize(); print("${Cols}x$Lines\n")'
+
+# List out all of the aliases within the provided file. This works by iterating
+# over each line of the file, displaying only those lines matching the REGEX.
+# Before printing out the relevant lines, all tabs are removed.
+perl -ne '/^[[:space:]]+alias/ and print(tr/\t//dr)' "$HOME/.bash_aliases"
+# Alternative logic approach:
+perl -ne 'print(tr/\t//dr) if /^[[:space:]]+alias/' "$HOME/.bash_aliases"
+
+# See if the current user has a non-empty password value. This may not work for
+# systems set up with shadow passwords, however.
+perl -ne '/^$ARGV[0]::$</ and print(STDERR "WARNING: User has an empty password.\n")' /etc/passwd ichy
+
+# Display the current user's UID and GID in a format ideal for chmod(1).
+perl -e 'print("$<:" . (split(" ", $)))[0] . "\n")'

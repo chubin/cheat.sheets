@@ -1,0 +1,6 @@
+# Display Perl documentation for the given module, but in man(1) format.
+perldoc -o man X11::Protocol
+
+# Infinitely-useful way in which to display information for a given function.
+# Also, thanks to `-T`, all output goes to STDOUT, instead of a pager.
+perldoc -Tf stat

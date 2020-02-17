@@ -1,0 +1,12 @@
+# Display the package(s) in which the given file would be found. This is very
+# useful, because it lets you know to which package a file belongs.
+dpkg -S /usr/bin/awk
+
+# Where FILE is the provided Debian package to install, so instructed by `-i`.
+dpkg -i [FILE]
+
+# List Debian packages currently installed.
+dpkg --get-selections
+
+# List Debian packages installed and in other states, such as not-yet-purged.
+dpkg -l

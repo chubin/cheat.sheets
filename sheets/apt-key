@@ -1,0 +1,2 @@
+# List trusted GPG keys for APT.
+apt-key list
