@@ -21,7 +21,7 @@ apt-get dist-upgrade
 #   /var/cache/apt/pkgcache.bin /var/cache/apt/srcpkgcache.bin
 #
 # This will also, thanks to the provided flag, be somewhat verbose.
-sudo apt-get clean -s
+apt-get clean -s
 
 # View the changelog for the firefox package. Useful prior to or after upgrade.
 apt-get changelog firefox
