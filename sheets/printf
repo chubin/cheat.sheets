@@ -1,11 +1,12 @@
-# Assign the current date (timestamp style) as a shell variable, in Bash, and
-# make it a suitable filename for a Gzip-compressed Tar archive.
+# Assign the current date (timestamp style) as a shell variable, using the Bash
+# builtin, and make it a suitable filename for a Gzip-compressed Tar archive.
 printf -v FileName 'Backup_%(%F_%X)T.tgz' -1
 
 # Simple, feature-full, and portable way by which to echo(1) output to STDOUT.
 # Here, the current user's username is displayed, followed by a new line.
 printf '%s\n' "$USER"
 
-# In Bash, this will output one integer per line, from one to one million, in
-# a human-readable kind of way, by appropriately comma-separating the units.
+# Using the Bash builtin, this will output one integer per line, from one to
+# one million, in a human-readable kind of way, by appropriately
+# comma-separating the units.
 printf "%'d\n" {1..1000000}
