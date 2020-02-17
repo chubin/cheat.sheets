@@ -1,5 +1,5 @@
 #
-# FILE SPACING 
+# FILE SPACING
 # ------------
 
 # Double space a file
@@ -44,6 +44,7 @@ perl -lpe '$\ = $. % 10 ? "\t" : "\n"'
 
 # Number all lines in a file
 perl -pe '$_ = "$. $_"'
+perl -ne 'print("$. $_")'
 
 # Number only non-empty lines in a file
 perl -pe '$_ = ++$a." $_" if /./'
@@ -53,6 +54,8 @@ perl -ne 'print ++$a." $_" if /./'
 
 # Number all lines but print line numbers only non-empty lines
 perl -pe '$_ = "$. $_" if /./'
+perl -pe '$_ = "$. $_" unless /^$/'
+perl -pe '/^$/ or $_ = "$. $_"'
 
 # Number only lines that match a pattern, print others unmodified
 perl -pe '$_ = ++$a." $_" if /regex/'
@@ -82,6 +85,7 @@ perl -E 'say~~grep/./,<>'
 
 # Print the number of empty lines in a file
 perl -lne '$a++ if /^$/; END {print $a+0}'
+perl -lne '/^$/ && $L++; END{print($L)}'
 perl -le 'print scalar(grep{/^$/}<>)'
 perl -le 'print ~~grep{/^$/}<>'
 perl -E 'say~~grep{/^$/}<>'
@@ -89,6 +93,7 @@ perl -E 'say~~grep{/^$/}<>'
 # Print the number of lines in a file that match a pattern (emulate grep -c)
 perl -lne '$a++ if /regex/; END {print $a+0}'
 perl -nE '$a++ if /regex/; END {say $a+0}'
+perl -lne '/^#/ && $L++; END{print($L)}'
 
 #
 # CALCULATIONS
@@ -209,7 +214,7 @@ perl -MSocket -le 'print inet_ntoa(pack("N", 2130706433))'
 perl -le '$ip = 2130706433; print join ".", map { (($ip>>8*($_))&0xFF) } reverse 0..3'
 perl -le '$ip = 2130706433; $, = "."; print map { (($ip>>8*($_))&0xFF) } reverse 0..3'
 
-# 
+#
 # STRING CREATION AND ARRAY CREATION
 # ----------------------------------
 
@@ -269,7 +274,7 @@ perl -le 'print length "one-liners are great"'
 perl -le '@array = ("a".."z"); print scalar @array'
 perl -le '@array = ("a".."z"); print $#array + 1'
 
-# 
+#
 # TEXT CONVERSION AND SUBSTITUTION
 # --------------------------------
 
@@ -407,7 +412,7 @@ perl -ne 'print if $. != 27'
 
 # Print only lines 13, 19 and 67
 perl -ne 'print if $. == 13 || $. == 19 || $. == 67'
-perl -ne 'print if int($.) ~~ (13, 19, 67)' 
+perl -ne 'print if int($.) ~~ (13, 19, 67)'
 
 # Print all lines between two regexes (including lines that match regex)
 perl -ne 'print if /regex1/../regex2/'
@@ -447,7 +452,7 @@ perl -ne 'print unless $a{$_}++'
 # Print the first field (word) of every line (emulate cut -f 1 -d ' ')
 perl -alne 'print $F[0]'
 
-# 
+#
 # HANDY REGULAR EXPRESSIONS
 # -------------------------
 
