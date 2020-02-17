@@ -1,5 +1,4 @@
-# /proc is a pseudo-file system location that
-# contains information about a running process by PID
+# /proc is a pseudo-filesystem containing running process information and more.
 
 # See the commandline arguments that started the process
 cat /proc/<pid>/cmdline
