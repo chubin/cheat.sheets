@@ -1,0 +1,3 @@
+# Display the package(s) in which the given file would be found. This is very
+# useful, because it lets you know to which package a file belongs.
+dpkg -S /usr/bin/awk
