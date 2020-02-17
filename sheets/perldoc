@@ -1,0 +1,2 @@
+# Display Perl documentation for the given module, but in man(1) format.
+perldoc -o man X11::Protocol
