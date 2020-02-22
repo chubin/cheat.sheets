@@ -1,14 +1,17 @@
-# Printout disk free space in a human readable format
+# Print free disk space in a [h]uman-readable format.
 df -h
 
-# Disk free space for ext2 file systems
+# Free disk space for [t]ype EXT2 file systems.
 df -t ext2
 
-# Disk free space for file systems except ext2
+# Free disk space for filesystems, e[x]cluding EXT2.
 df -x ext2
 
-# Show inode usage
+# Show [i]node usage.
 df -i
 
-# Show information about a distinct file system /path
-df /path
+# Show information about a distinct filesystem path.
+df [PATH]
+
+# List [a]ll filesystems, + unreadable, duplicates, pseudo, and inaccessible.
+df -a

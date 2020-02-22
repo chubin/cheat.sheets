@@ -1,8 +1,7 @@
-# list partitions
-fdisk -l /dev/sda
+# List partitions on BLKDEV, such as `/dev/sda`.
+fdisk -l [BLKDEV]
 
-# delete a partition
-fdisk /dev/sda
-Command (m for help): d
-Partition number (1-9): XXX
-
+# Delete a partition.
+fdisk [BLOCK_DEVICE]
+# Once in the interactive prompt:
+d [NUMBER]
