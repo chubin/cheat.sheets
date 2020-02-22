@@ -1,7 +1,7 @@
 # siteciphers (Bash-Snippets)
-# Checks the available ciphers for the SSL of an https site.
+# Checks the available ciphers for the SSL of an HTTPS site.
 
-# Determine the available SSL ciphers for an https website
+# Determine the available SSL ciphers for an HTTPS website
 siteciphers github.com
 
 # Determine the ciphers setting the delay between requests (default is 1 sec)
