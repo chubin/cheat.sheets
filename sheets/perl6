@@ -2,7 +2,7 @@
 # The Perl 6 Language Implementation
 
 # to install perl6 (in Debian/Ubuntu)
-apt-get install rakudo 
+apt-get install rakudo
 
 # To install rakudobrew and zef (perl 6 package management)
 git clone https://github.com/tadzik/rakudobrew ~/.rakudobrew

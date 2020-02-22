@@ -14,7 +14,7 @@ curl http://example.com/pic[1-24].jpg
 curl -L http://example.com/file
 
 # Download a file and pass HTTP Authentication
-curl -u username:password URL 
+curl -u username:password URL
 
 # Download a file with a Proxy
 curl -x proxysever.server.com:PORT http://addressiwantto.access

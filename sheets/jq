@@ -58,7 +58,7 @@ jq 'flatten(1)'
 
 # Converting to csv
 jq '.[] | [.foo, .bar] | @csv' -r
-# 
+#
 # [{ "foo": 1, "bar": 2, "baz":3 }]
 # => 1,2
 

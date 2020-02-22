@@ -1,4 +1,4 @@
-# to install: 
+# to install:
 #             (Debian/Ubuntu) apt-get install rakudo
 #             (Fedora/CentOS) yum install perl6 (or rakudo)
 # to execute: perl6 my_script.pl

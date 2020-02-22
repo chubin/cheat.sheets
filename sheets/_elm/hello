@@ -7,7 +7,7 @@
 #	elm package install elm-lang/html
 # after that create Hello.elm in this directory
 # To start:
-#	elm reactor        
+#	elm reactor
 # Read more here:
 #   https://www.elm-tutorial.org/en/01-foundations/01-hello.html
 module Hello exposing (..)

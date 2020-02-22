@@ -68,7 +68,7 @@ func outer() (func() int, int) {
 func main() {
 	fmt.Println(adder(1, 2, 3)) 	// 6
 	fmt.Println(adder(9, 9))	// 18
-	
+
 	nums := []int{10, 20, 30}
 	fmt.Println(adder(nums...))	// 60
 }

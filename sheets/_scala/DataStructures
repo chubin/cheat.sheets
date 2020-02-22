@@ -5,7 +5,7 @@
 // This example would be a Tuple3
 (1,2,3)
 
-// tuple sugar 
+// tuple sugar
 // This example would be a Tuple2
 (1 -> 2) //same as
 (1, 2)

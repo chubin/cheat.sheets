@@ -21,6 +21,6 @@ c <- 1
 c <- 2
 close(c)
 for i := 0; i < 3; i++ {
-    fmt.Printf("%d ", <-c) 
+    fmt.Printf("%d ", <-c)
 }
 // 1 2 0

@@ -1,5 +1,5 @@
 # MegaCli introduced by LSI as a command line administration of LSI MegaRaid controllers.
-# With megacli we can create physical raids, gather info about raids and monitor raids. 
+# With megacli we can create physical raids, gather info about raids and monitor raids.
 
 # Install MegaCLI
 yum install MegaCli # CentOS

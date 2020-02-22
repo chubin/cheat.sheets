@@ -10,7 +10,7 @@ default:
     fmt.Println("Other")
 }
 
-// as with for and if, you can have an assignment statement before the switch value 
+// as with for and if, you can have an assignment statement before the switch value
 switch os := runtime.GOOS; os {
 case "darwin": ...
 }

@@ -5,7 +5,7 @@
 curl -L https://aka.ms/InstallAzureCli | bash
 
 # create a resource group named "MyResourceGroup" in the westus2 region of Azure
-az group create -n MyResourceGroup -l westus2 
+az group create -n MyResourceGroup -l westus2
 
 # create a Linux VM using the UbuntuTLS image, with two attached storage disks of 10 GB and 20 GB
 az vm create -n MyLinuxVM -g MyResourceGroup --ssh-key-value $HOME/.ssh/id_rsa.pub --image UbuntuLTS --data-disk-sizes-gb 10 20

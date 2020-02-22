@@ -8,7 +8,7 @@ var newA = myArray.slice(0);
 '<b>A</b>'.replace(/<[^>]+>/gi, '');
 
 // Reverse a string
-var str = "abc def ghi."; 
+var str = "abc def ghi.";
 str.split('').reverse().join('');   // '.ihg fed cba'
 
 // Reverse order of words in a string

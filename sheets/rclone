@@ -11,7 +11,7 @@ rclone ls remote:path
 rclone copy /local/path remote:path
 
 # Sync /local/path to the remote
-rclone sync /local/path remote:path 
+rclone sync /local/path remote:path
 
 # Server side Copy
 rclone copy s3:oldbucket s3:newbucket

@@ -1,5 +1,5 @@
 # rustup
-# The Rust toolchain installer 
+# The Rust toolchain installer
 
 # update rustup toolchain
 rustup update

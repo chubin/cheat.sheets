@@ -1,7 +1,7 @@
 # Create a btrfs file system on /dev/sdb, /dev/sdc, and /dev/sdd
 mkfs.btrfs /dev/sdb /dev/sdc /dev/sdd
 
-# btrfs with just one hard drive, metadata not redundant 
+# btrfs with just one hard drive, metadata not redundant
 # (this is danegerous: if your metadata is lost, your data is lost as well)
 mkfs.btrfs -m single /dev/sdb
 

@@ -1,5 +1,5 @@
 # xfs_repair
-# repair an XFS filesystem 
+# repair an XFS filesystem
 
 # rapair a XFS filesystem
 xfs_repair /dev/dm-0

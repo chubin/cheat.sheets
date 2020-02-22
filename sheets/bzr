@@ -2,7 +2,7 @@
 cd ~/.bazaar/plugins
 bzr branch lp:bzr-fastimport fastimport
 # you can do it manually:
-# pip install 
+# pip install
 # python setup.py build_ext -i
 # mv ... ~/.bazaar/plugins
 # probably you will need this patch:
