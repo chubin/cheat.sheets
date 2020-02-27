@@ -7,19 +7,19 @@ Command (m for help): d
 Partition number (1-9): XXX
 
 # Usage:
- fdisk [options] <disk>    change partition table
- fdisk [options] -l <disk> list partition table(s)
- fdisk -s <partition>      give partition size(s) in blocks
+#   fdisk [options] <disk>    change partition table
+#   fdisk [options] -l <disk> list partition table(s)
+#   fdisk -s <partition>      give partition size(s) in blocks
 
 # Options:
- -b <size>             sector size (512, 1024, 2048 or 4096)
- -c[=<mode>]           compatible mode: 'dos' or 'nondos' (default)
- -h                    print this help text
- -u[=<unit>]           display units: 'cylinders' or 'sectors' (default)
- -v                    print program version
- -C <number>           specify the number of cylinders
- -H <number>           specify the number of heads
- -S <number>           specify the number of sectors per track
+#   -b <size>             sector size (512, 1024, 2048 or 4096)
+#   -c[=<mode>]           compatible mode: 'dos' or 'nondos' (default)
+#   -h                    print this help text
+#   -u[=<unit>]           display units: 'cylinders' or 'sectors' (default)
+#   -v                    print program version
+#   -C <number>           specify the number of cylinders
+#   -H <number>           specify the number of heads
+#   -S <number>           specify the number of sectors per track
 
 # To display partition table
 p
