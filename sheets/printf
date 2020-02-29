@@ -10,3 +10,9 @@ printf '%s\n' "$USER"
 # one million, in a human-readable kind of way, by appropriately
 # comma-separating the units.
 printf "%'d\n" {1..1000000}
+
+# Zero-pad a number in order to maintain a width of 3 characters.
+printf '%#.3d\n' 12
+# As above, but instead, space-pad the number. Prefix the `3` with a hyphen
+# (`-`) to left-align the number, causing the padding to occur on the right.
+printf '%3d\n' 12
