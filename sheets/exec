@@ -1,17 +1,17 @@
 # exec
 #
 # Shell builtin command
-# It can start a new process to replace the shell, without a new process creation.
-# It can make redirections take effect in the current shell
+# It can start a new process to replace the shell, without a new process
+# creation. It can make redirections take effect in the current shell
 
-# Redirect the output of an entire shell script within the script itself
-# Only stdout:
+# Redirect all STDOUT from within a script to the given file.
 exec > foo.log
 
-# Redirect the output of an entire shell script within the script itself
-# Stdout and stderr:
+# Redirect all of both STDOUT & STDERR from within a script to the given file.
 exec > foo.log 2>&1
+# Or, if on bash(1), this syntax is also viable:
+exec &> foo.log
 
-# Copy output to a log file
+# Copy output to a log file, allowing the outputs to still work as usual.
 exec >  >(tee -ia foo.log)
 exec 2> >(tee -ia foo.log >&2)
