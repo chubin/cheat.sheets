@@ -44,3 +44,8 @@ awk '/PATTERN_1/,/PATTERN_2/{print}' [FILE]
 
 # Pretty-print a table of an overview of the non-system users on the system.
 awk -SPF ':' 'BEGIN {printf("%-17s %-4s %-4s %-s\n", "NAME", "UID", "GID", "SHELL")} $3>=1000 && $1!="nobody" {printf("%-17s %-d %-d %-s\n", $1, $3, $4, $7)}' /etc/passwd
+
+# Display the total amount of MiB of RAM available in the machine. This is also
+# a painful but useful workaround to get the units comma-separated, as would be
+# doable with Bash's own `printf` built-in.
+awk '/^MemTotal:/ {printf("%'"'"'dMiB\n", $2 / 1024)}'
