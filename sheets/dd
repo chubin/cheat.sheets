@@ -6,20 +6,20 @@ dd if=/dev/urandom of=/tmp/test.txt count=2 bs=512
 dd if=/dev/zero of=/dev/null bs=4KB &
 export dd_pid=`pgrep '^dd'`
 while [[ -d /proc/$dd_pid ]]; do
-	kill -USR1 $dd_pid && sleep 1
-	clear
+    kill -USR1 $dd_pid && sleep 1
+    clear
 done
 
 # Watch the progress of dd(1) with pv(1) and dialog(1), both of which can be
 # installed with the following command: apt-get install pv dialog
 (
-	pv -n /dev/zero | dd of=/dev/null bs=128M conv=notrunc,noerror
+    pv -n /dev/zero | dd of=/dev/null bs=128M conv=notrunc,noerror
 ) 2>&1 | dialog --gauge "Running dd command (cloning), please wait..." 10 70 0
 
 # Watch the progress of dd(1) with pv(1) and zenity(1), both of which can be
 # installed with the following command: apt-get install pv zenity
 (
-	pv -n /dev/zero | dd of=/dev/null bs=128M conv=notrunc,noerror
+    pv -n /dev/zero | dd of=/dev/null bs=128M conv=notrunc,noerror
 ) 2>&1 | zenity --title 'Running dd command (cloning), please wait...' --progress
 
 # Watch the progress of dd(1) with the built-in `progress` functionality, -
