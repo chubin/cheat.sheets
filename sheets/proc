@@ -12,3 +12,6 @@ cat /proc/<pid>/status
 
 # See every file the process has open
 ls -l /proc/<pid>/fd
+
+# Display some useful memory statistics, often used by programs like htop(1).
+cat /proc/meminfo

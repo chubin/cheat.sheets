@@ -9,7 +9,7 @@ val x = 5
 // BAD
 x = 5
 
-// lazy value 
+// lazy value
 // immutable, evaluated once but only when called
 lazy val x = 5
 

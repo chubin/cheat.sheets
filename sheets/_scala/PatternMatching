@@ -1,21 +1,21 @@
 // use case in function args for pattern matching.
-(xs zip ys) map { case (x,y) => x*y }   // GOOD 
-(xs zip ys) map( (x,y) => x*y )         // BAD 
+(xs zip ys) map { case (x,y) => x*y }   // GOOD
+(xs zip ys) map( (x,y) => x*y )         // BAD
 
 // "v42" is interpreted as a name matching any Int value, and "42" is printed.
 // BAD
 val v42 = 42
 Some(3) match {
-  case Some(v42) => println("42")
-  case _ => println("Not 42")
+    case Some(v42) => println("42")
+    case _ => println("Not 42")
 }
 
 // "`v42`" with backticks is interpreted as the existing val v42, and “Not 42” is printed.
 // GOOD
 val v42 = 42
 Some(3) match {
-  case Some(`v42`) => println("42")
-  case _ => println("Not 42")
+    case Some(`v42`) => println("42")
+    case _ => println("Not 42")
 }
 
 // UppercaseVal is treated as an existing val, rather than a new pattern variable, because it starts with an uppercase letter.
@@ -23,24 +23,24 @@ Some(3) match {
 // GOOD
 val UppercaseVal = 42
 Some(3) match {
-  case Some(UppercaseVal) => println("42")
-  case _ => println("Not 42")
+    case Some(UppercaseVal) => println("42")
+    case _ => println("Not 42")
 }
 
 // Creating an alias for a match
 // This will maintain the original value passed into the match function, using the '@' symbol, and print "Matched Some(3)"
 Some(3) match {
-	case foundSome @ Some(_) => println("Matched " + foundSome)
-	case _ => println("Matched nothing")
+    case foundSome @ Some(_) => println("Matched " + foundSome)
+    case _ => println("Matched nothing")
 }
 
 // Case Classes
 // This method allows you to match on any combination of properties of a case class
 case class Example(a: Int, b: String, c: Boolean)
 Example(1, "word", true) match {
-	case Example(3, _, _)         => println("Matches any Example where a = 3")
-	case Example(_, "foo", _)     => println("Matches any Example where b = foo")
-	case Example(_, _, false)     => println("Matches any Example where c = false")
-	case Example(1, "word", true) => println("Matches our Example")
-	case Example(_, _, _)         => println("Matches any other Example")
+    case Example(3, _, _)         => println("Matches any Example where a = 3")
+    case Example(_, "foo", _)     => println("Matches any Example where b = foo")
+    case Example(_, _, false)     => println("Matches any Example where c = false")
+    case Example(1, "word", true) => println("Matches our Example")
+    case Example(_, _, _)         => println("Matches any other Example")
 }

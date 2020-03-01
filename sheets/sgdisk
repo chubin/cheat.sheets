@@ -22,7 +22,7 @@ sgdisk -l=sgdisk-sda.bak
 # Clone your current device's partition layout '/dev/sda' to another drive '/dev/sdc'
 sgdisk -R=/dev/sdc /dev/sda
 
-# If both drives will be in the same computer, you need to randomize the GUID's after cloning
+# If both drives will be in the same computer, you need to randomize the GUIDs after cloning
 sgdisk -G /dev/sdc
 
 

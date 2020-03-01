@@ -7,7 +7,7 @@
 
 // To Compile w/ specific executable name: g++ my_script.cpp -o my.executable
 // To Execute: ./my.executable
-int main() { 
+int main() {
     std::cout << "Hello" << endl;
     return 0;
 }

@@ -23,7 +23,7 @@ class C(var x: R) {
   //
   // alternative constructor
   def this = this(42)
-}   
+}
 
 // anonymous class
 new{ ... }

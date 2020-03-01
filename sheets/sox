@@ -30,7 +30,7 @@ sox ${mono_wav} -c 2 ${stereo_wav}
 # Generate Different Types of Sounds
 # ${len} - length of audio to synthesize, hh:mm:ss.frac
 # ${freq} - frequencies at the beginning/end of synthesis in Hz
-# ${type} is one of sine, square, triangle, sawtooth, trapezium, exp, 
+# ${type} is one of sine, square, triangle, sawtooth, trapezium, exp,
 #   [white]noise, pinknoise, brown-noise
 # sox -n synth ${len} ${type} ${freq}
 sox -r 8000 -n output.wav synth 3 sine 300-3300

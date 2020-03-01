@@ -10,10 +10,10 @@ python -m SimpleHTTPServer
 # Python 3
 python -m http.server 8000
 
-# SMTP-Server for debugging, messages will be discarded, and printed on stdout.
+# SMTP-Server for debugging, messages will be discarded, and printed on STDOUT.
 python -m smtpd -n -c DebuggingServer localhost:1025
 
-# Pretty print a json
+# Pretty print a JSON
 python -mjson.tool
 
 # Zen of Python

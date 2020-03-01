@@ -1,2 +1,16 @@
 # POSIX-ly correct way in which to cat(1); see cat(1posix).
 cat -u [FILE_1 [FILE_2] ...]
+
+# Output a file, expanding any escape sequences (default). Using this short
+# one-liner let's you view the boot log how it was show at boot-time.
+cat /var/log/boot.log
+
+# This is an ever-popular useless use of cat.
+cat /etc/passwd | grep '^root'
+# The sane way:
+grep '^root' /etc/passwd
+
+# If in bash(1), this is often (but not always) a useless use of cat(1).
+Buffer=`cat /etc/passwd`
+# The sane way:
+Buffer=`< /etc/passwd`

@@ -6,7 +6,7 @@ fn main() {
     let t = thread::spawn(|| {
         println!("In a new thread!");
     });
-    
+
     // Wait for execution of spawned thread to join back up with main thread
     let result = t.join();
 

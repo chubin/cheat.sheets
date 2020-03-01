@@ -1,10 +1,10 @@
 # weather (Bash-Snippets)
-# Provides a 3 day forecast on your current location or a specified location
+# Provides a 3-day forecast on your current location or a specified location
 
-# Get a 3 day forecast for your current location as determined by your ip address
+# Get 3-day forecast for your current location as determined by your IP address
 weather
 
-# Get a 3 day forecast for any location
+# Get 3-day forecast for any location
 weather Tokyo
 
 # Get the current moon phase

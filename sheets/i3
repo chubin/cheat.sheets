@@ -101,17 +101,19 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+Shift+R exec custom-script-in-path.sh --flag1 --flag2
 bindcode 172 exec playerctl play-pause
 
-# Always execute code when i3 starts:
+# Execute code when i3 starts, but only once per session:
 exec --no-startup-id ~/.config/polybar/launch.sh
+# Always execute code when i3 starts, even if it's simply restarted:
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # One can make special modes (much like resize mode)
 set $gamingMode "gaming_mode"
 bindsym $mod+g mode $gamingMode
 mode $gamingMode {
-   # Insert declarations for this mode
-   # Useful when normal keybindings fight with keybindings of your games
-   # Don't forget to add option to return from this mode!
-   bindsym $mod+Escape mode default
+    # Insert declarations for this mode. Useful when normal keybindings fight
+    # with keybindings of your games. Don't forget to add option to return from
+    # this mode!
+    bindsym $mod+Escape mode default
 }
 
 # Move workspace between multiple monitors

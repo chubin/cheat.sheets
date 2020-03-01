@@ -22,7 +22,7 @@ ALTER TABLE table_name ALTER COLUMN [SET DEFAULT value | DROP DEFAULT]
 ALTER TABLE table_name ADD PRIMARY KEY (column,...);
 
 -- Remove the primary key from a table
-ALTER TABLE table_name 
+ALTER TABLE table_name
 DROP CONSTRAINT primary_key_constraint_name;
 
 -- Rename a table

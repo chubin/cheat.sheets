@@ -4,4 +4,4 @@ r := &Vertex{1, 2} // r is also a pointer to a Vertex
 
 // The type of a pointer to a Vertex is *Vertex
 // new creates a pointer to a new struct instance
-var s *Vertex = new(Vertex) 
+var s *Vertex = new(Vertex)

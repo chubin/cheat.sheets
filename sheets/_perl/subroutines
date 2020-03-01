@@ -28,7 +28,7 @@ named_params_example({
 sub named_params_with_defaults {
    my ( $arg ) = @_;
    # Use my ( $self, $arg ) = @_; if you are in object land.
-   # 
+   #
    # Set defaults
    #         If option given      Use options   Else
    my $one = exists $arg->{one} ? $arg->{one} : "default1";
