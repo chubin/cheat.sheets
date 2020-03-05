@@ -1,5 +1,5 @@
 # ssh
-# access a remote host via SSH
+# OpenSSH SSH client (remote login program)
 
 # SSH in via PEM file, which normally needs 0600 permissions.
 ssh -i /path/to/file.pem user@example.com
@@ -50,8 +50,10 @@ ssh -o PubkeyAuthentication=no username@hostname.com
 # Install SSHFS from: https://github.com/libfuse/sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 
-# EMACS can read files through SSH.
-# Doc: http://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html
+# EMACS can read files through SSH. Below, is a link to related documentation.
+#
+#   http://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html
+#
 emacs /ssh:name@server:/path/to/file
 
 # Get help for SSH escape sequences. Useful for terminating unresponsive
