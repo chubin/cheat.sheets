@@ -1,5 +1,5 @@
 # xset
-# user preference utility for X
+# User preference utility for X
 
 # Disable screen saver blanking
 xset s off

@@ -1,33 +1,64 @@
 # sudo
-# Execute a command as another user.
+# Execute a command as another user
 
-# List of an unreadable directory:
+# List contents of directory to which the user otherwise wouldn't have access.
 sudo ls /usr/local/scrt
 
-# To edit a file as user www:
+# Edit the given file as the `www` user. This is a great example of why sudo(8)
+# is or was often, and more accurately, referred to as "substitute user do".
 sudo -u www vi /var/www/index.html
 
-# To shutdown the machine:
+# Shut down (halt) the machine when 10 minutes have passed. The quoted text is
+# messaged to the terminal of all applicable users, known as a 'wall message'.
 sudo shutdown -h +10 "Cya soon!"
+# Note, that the above is the old method. On machines with SystemD, the below
+# command can instead be used.
+sudo systemctl reboot
 
-# To repeat the last command as sudo:
+# In Bash, `!!` (bang, bang) is an event designator, as described in bash(1), -
+# and is used to refer to the previous command, synonymous for `!-1`.
+#
+# In this case, the user is able to prefix the entirety of the previous command
+# with `sudo`, being most useful when forgetting that `root` access is needed.
 sudo !!
 
-# Save a file you edited in vim
+# For use in the vim(1) modal text editor, this command allows the user to save
+# the currently opened file as the `root` user, despite having not previously
+# opened it with such privileges.
 :w !sudo tee > /dev/null %
 
-# Make sudo forget password instantly
+# Reset the current user's sudo(8) timestamp, resulting in the user having to
+# once again enter his or her password when next using sudo(8). Use of this
+# flag does not actually require `root` privileges.
 sudo -K
 
-# List your sudo rights
+# List the current user's sudo(8) privileges.
 sudo -l
 
-# Add a line to a file using sudo
+# Add a line to a file using sudo(8). This is especially useful when making
+# changes to a kernel parameter file, like the `/proc/sys/vm/swappiness` file.
 echo "foo bar" | sudo tee -a /path/to/some/file
 
-# run root shell
+# Begin a shell session as the system's `root` user.
 sudo -i
 
-# to disable password for sudo for user superuser add
-# superuser ALL=(ALL) NOPASSWD:ALL
-# in /etc/sudoers
+# To disable password for sudo(8) for the `superuser` user, add the below line
+# to the `/etc/sudoers` file, preferably by using the visudo(8) executable.
+#
+#     superuser ALL=(ALL) NOPASSWD: ALL
+#
+# This would result in the aforementioned user not needing to enter in a
+# password when using `sudo`, otherwise he or she would be required to do so.
+#
+# Likewise, the below can be entered if this is wished for an entire group, -
+# which in this case would be the `special` group.
+#
+#     %special ALL=(ALL) NOPASSWD: ALL
+#
+# Do note that neither of these configurations are at all recommended and can
+# pose a massive security risk.
+
+# Run `CMD` as the `root` user, but maintain the current user's environment. In
+# systems like Ubuntu, this is assumed, but systems like Debian would require
+# that the user make use of this flag when wanting to keep their environment.
+sudo -E [CMD]

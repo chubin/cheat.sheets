@@ -1,0 +1,7 @@
+# colrm
+# Remove columns from a file or STDIN
+
+# Remove the first, second, third, and fourth column.
+colrm 1 4 [FILE]
+# Same approach as the above, but via STDIN.
+printf 'Some of this is omitted.' | colrm 1 4

@@ -1,3 +1,10 @@
+# printf
+# Format and print data
+
+# This command is typically available as a built-in to many shells, such as the
+# Bourne shell and the Bourne Again Shell. However, there also exists a GNU
+# alternative, sometimes found over at `/usr/bin/printf`.
+
 # Assign the current date (timestamp style) as a shell variable, using the Bash
 # builtin, and make it a suitable filename for a Gzip-compressed Tar archive.
 printf -v FileName 'Backup_%(%F_%X)T.tgz' -1
@@ -10,8 +17,11 @@ printf '%s\n' "$USER"
 # one million, in a human-readable kind of way, by appropriately
 # comma-separating the units.
 printf "%'d\n" {1..1000000}
+# Getting these results by using the comma is actually also viable in AWK, but
+# you'll likely have to jump through a quotation hoop to get access to it.
 
-# Zero-pad a number in order to maintain a width of 3 characters.
+# Zero-pad a number in order to maintain a width of 3 characters. It's also
+# possible to instead provide a `0` in-place of the hash (`#`).
 printf '%#.3d\n' 12
 # As above, but instead, space-pad the number. Prefix the `3` with a hyphen
 # (`-`) to left-align the number, causing the padding to occur on the right.

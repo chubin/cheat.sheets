@@ -1,3 +1,6 @@
+# df
+# Report file system disk space usage
+
 # Print free disk space in a [h]uman-readable format.
 df -h
 
