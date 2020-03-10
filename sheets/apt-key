@@ -1,2 +1,5 @@
-# List trusted GPG keys for APT.
+# apt-key
+# Command-line APT key management utility
+
+# List APT keys marked as trusted.
 apt-key list
