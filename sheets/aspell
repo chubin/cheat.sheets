@@ -1,3 +1,6 @@
+# aspell
+# Interactive spell-checker for use in a terminal
+
 # Spell check a single file.
 aspell check [FILE]
 
