@@ -1,0 +1,5 @@
+# nodejs
+# Server-side JavaScript
+
+# Execute a JS command directly from the command line.
+nodejs -e "console.log('Example text.')"
