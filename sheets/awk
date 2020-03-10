@@ -1,49 +1,82 @@
-# sum integers from a file or STDIN, one integer per line:
-printf '1\n2\n3\n' | awk '{ sum += $1} END {print sum}'
+# awk
+# Pattern scanning and processing language
 
-# using specific character as separator to sum integers from a file or STDIN
+# Sum integers from a file or STDIN, one integer per line.
+printf '1\n2\n3\n' | awk '{sum += $1} END {print sum}'
+
+# Using specific character as separator to sum integers from a file or STDIN.
 printf '1:2:3' | awk -F ":" '{print $1+$2+$3}'
 
-# print a multiplication table
-seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i<=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
+# Print a multiplication table.
+awk -v RS='' '
+    {
+        for(i=1;i<=NF;i++){
+            printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")
+        }
+    }
+' <<< "$(seq 9 | sed 'H;g')"
 
-# Specify output separator character
+# Specify output separator character.
 printf '1 2 3' | awk 'BEGIN {OFS=":"}; {print $1,$2,$3}'
 
-# search for a paragraph containing string
+# Search paragraph for the given REGEX match.
 awk -v RS='' '/42B/' file
 
-# display only first column from multi-column text
-echo "first-column  second-column  third-column" | awk '{print $1}'
+# Display only first field in text taken from STDIN.
+echo 'Field_1  Field_2  Field_3' | awk '{print $1}'
+# Note that in this case, you're far better off using cut(1).
 
 # Use AWK solo; without the need for something via STDIN.
-awk BEGIN'{printf("Example text.\n")}'
+awk 'BEGIN {print("Example text.")}'
 
-# Accessing environment variables from within AWK.
-awk 'BEGIN{print ENVIRON["LS_COLORS"]}'
+# Access environment variables from within AWK.
+awk 'BEGIN {print ENVIRON["LS_COLORS"]}'
 
-# One method to count the number of lines; in this case, read from STDIN.
-free | awk '{i++} END{print i}'
+# Count number of lines taken from STDIN.
+free | awk '{L++} END {print(L)}'
+# Cleaner, more efficient approach to the above.
+free | awk 'END {print(NR)}'
 
 # Output unique list of available sections under which to create a DEB package.
-awk '!A[$1]++{print($1)}' <<< "$(dpkg-query --show -f='${Section}\n')"
+awk '!A[$1]++ {print($1)}' <<< "$(dpkg-query --show -f='${Section}\n')"
 
 # Using process substitution (`<()` is NOT command substitution), with AWK and
 # its associative array variables, we can print just column 2 for lines whose
 # first column is equal to what's between the double-quotes.
-awk '{NR!=1&&A[$1]=$2} END{print(A["Mem:"])}' <(free -h)
+awk '{NR != 1 && A[$1]=$2} END {print(A["Mem:"])}' <(free -h)
 # While below is an easier and simpler solution to the above, it's not at all
 # the same, and in other cases, the above is definitely preferable.
-awk '/^Mem:/{print($2)}' <(free -h)
+awk '/^Mem:/ {print($2)}' <(free -h)
 
 # Output list of unique uppercase-only, sigil-omitted variables used in [FILE].
-awk '{for(F=0; F<NF; F++){if($F~/^\$[A-Z_]+$/){A[$F]++}}} END{for(I in A){X=substr(I, 2, length(I)); printf("%s\n", X)}}' [FILE]
+awk '
+    {
+        for(F=0; F<NF; F++){
+            if($F~/^\$[A-Z_]+$/){
+                A[$F]++
+            }
+        }
+    }
+    END {
+        for(I in A){
+            X=substr(I, 2, length(I))
+            printf("%s\n", X)
+        }
+    }
+' [FILE]
 
 # Output only lines from FILE between PATTERN_1 and PATTERN_2. Good for logs.
-awk '/PATTERN_1/,/PATTERN_2/{print}' [FILE]
+awk '/PATTERN_1/,/PATTERN_2/ {print}' [FILE]
 
 # Pretty-print a table of an overview of the non-system users on the system.
-awk -SPF ':' 'BEGIN {printf("%-17s %-4s %-4s %-s\n", "NAME", "UID", "GID", "SHELL")} $3>=1000 && $1!="nobody" {printf("%-17s %-d %-d %-s\n", $1, $3, $4, $7)}' /etc/passwd
+awk -F ':' '
+    BEGIN {
+        printf("%-17s %-4s %-4s %-s\n", "NAME", "UID", "GID", "SHELL")
+    }
+    $3 >= 1000 && $1 != "nobody" {
+        printf("%-17s %-d %-d %-s\n", $1, $3, $4, $7)
+    }
+' /etc/passwd
 
 # Display the total amount of MiB of RAM available in the machine. This is also
 # a painful but useful workaround to get the units comma-separated, as would be
