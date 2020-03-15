@@ -1,80 +1,78 @@
-# Send a mail with a subject, cc, and an attachment
+# mutt
+# Text-based mailreader supporting MIME, GPG, PGP and threading
+
+# Send E-Mail with subject, cc, and attachment.
 mutt -s "Site Backup" -a backup.tar -c user@example.com user2@example.com
 
-# Send a mail with a blind carbon copy (bcc)
+# Send E-Mail with blind carbon copy (bcc).
 mutt -s "hello" -b user2@example.com user@example.com
 
-#
 # Select (tag) messages: shift+t (T)
 #
-  = (string)
-  ~ (expression)
-# 
-  ~b expr     (message with expr in body)
-   [b]body
-   [B]whole message
-   [f]rom
-   [c]c'ed
-   [C]c'ed or to
-   [h]eader
-#  
-  ~m from-to  (range)
-  ~d from-to  (date range)
-# 
-  ~N (new messages)
-  ~U (unread messages)
-  ~R (read messages)
-  ~A (all messages)
-  ~D (deleted messages)
-  ~p (message to you)
-  ~P (message from you)
-  ~= (duplicated messages)
-  ~$ (unref messages)
-# 
+#  = (string)
+#  ~ (expression)
+#
+#  ~b expr     (message with expr in body)
+#   [b]body
+#   [B]whole message
+#   [f]rom
+#   [c]c'ed
+#   [C]c'ed or to
+#   [h]eader
+#
+#  ~m from-to  (range)
+#  ~d from-to  (date range)
+#
+#  ~N (new messages)
+#  ~U (unread messages)
+#  ~R (read messages)
+#  ~A (all messages)
+#  ~D (deleted messages)
+#  ~p (message to you)
+#  ~P (message from you)
+#  ~= (duplicated messages)
+#  ~$ (unref messages)
+#
 #  Logical operators:
 #
-    AND = ~P ~N (new messages from you)
-    OR  = ~P | ~N (new messages of messages from you)
-    ()  = (~= ~$) | ~N
+#   AND = ~P ~N (new messages from you)
+#   OR  = ~P | ~N (new messages of messages from you)
+#   ()  = (~= ~$) | ~N
 #
-#  
 #  DATES
 #
-    DD/MM/YY
-    ~d 20/1/95-31/10/95  (from 20/01/95 to 31/10/95)
-    ~d -31/10/95         (before 31/10/95)
-    ~d 20/1/95-          (after 20/01/95)
-    ~d 20/1/95           (only 20/01/95)
-    ~d 20/1/95*2w        (two weeks around 20/01/95)
-               [w]eek
-               [d]day
-               [m]onth
-               [y]ear
-    can use *(around), +(after) or -(before)
-#   
-    ~d <1m               (messages newer than 1 month)
-    ~d >1y               (messages older than 1 year)
-    ~d =1d               (exact one day)
+#   DD/MM/YY
+#   ~d 20/1/95-31/10/95  (from 20/01/95 to 31/10/95)
+#   ~d -31/10/95         (before 31/10/95)
+#   ~d 20/1/95-          (after 20/01/95)
+#   ~d 20/1/95           (only 20/01/95)
+#   ~d 20/1/95*2w        (two weeks around 20/01/95)
+#               ^
+#              [w]eek
+#              [d]day
+#              [m]onth
+#              [y]ear
+#
+#    Can use `*(around)`, `+(after)` or `-(before)`.
+#
+#    ~d <1m               (messages newer than 1 month)
+#    ~d >1y               (messages older than 1 year)
+#    ~d =1d               (exact one day)
 
-    
+
+# Keyboard shortcuts.
 #
-# Keys
-#
- shift+d (D) : delete messages using pattern
- shift+t (T) : select messages using pattern
- shift+u (U) : undelete messages using pattern
- ctrl+t      : un-selected messages using pattern
-#
-#
- d           : delete message
- N           : mark as new
- C           : copy message to another folder(mailbox)
- o, O        : change sort, reverse sort
- ctrl+ D, U  : Deleted, Undelete a thread
- ctrl+R      : mark current thread as read
- esc+t       : select thread
- esc+ v, V   : collapse thread, collapse all threads
- w,W         : add, remove flags
-#
-T ~U ;WN ctrl+t .
-mark unread msgs, remove its new flag, unselect them
+# shift+d (D)           : Delete messages using pattern
+# shift+t (T)           : Select messages using pattern
+# shift+u (U)           : Un-delete messages using pattern
+# ctrl+t                : de-selected messages using pattern
+# d                     : Delete message
+# N                     : Mark as new
+# C                     : Copy message to another folder(mailbox)
+# o, O                  : Change sort, reverse sort
+# ctrl+ D, U            : Deleted, Undelete a thread
+# ctrl+R                : Mark current thread as read
+# esc+t                 : Select thread
+# esc+ v, V             : Collapse thread, collapse all threads
+# w,W                   : Add, remove flags
+# T ~U ;WN ctrl+t .     : Mark unread msgs, remove its new flag, de-select them
