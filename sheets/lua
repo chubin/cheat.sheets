@@ -1,17 +1,25 @@
 # lua
-# A powerful, light-weight embeddable programming language.
+# Simple, extensible, embeddable programming language
+
+# You may not have access to the `lua` command, but instead to something like
+# `lua5.3` or one of a different version. The following information assumes you
+# have the `lua` command, as-is, but alternative commands may also work the
+# same or similarly, version allowing.
 
 # Start an interactive Lua shell:
 lua
 
-# Execute a Lua script:
-lua script_name.lua --optional-argument
+# Execute a Lua script.
+lua script_name.lua
+# Execute a Lua script, with arguments (IE: flags) given to the script itself.
+lua script_name.lua [ARGS]
 
-# Execute a Lua expression:
-lua -e 'print( "Hello World" )'
+# Execute a Lua expression(s), as though executed from within a script.
+lua -e 'print("Hello World")'
 
-# All options are handled in order, except -i. For instance, an invocation like
-# first set a to 1, then print the value of a (1), and finally run the file script.lua
+# All options are handled in order, except `-i`. For instance, an invocation
+# like first set a to 1, then print the value of a (1), and finally run the
+# file `script.lua`
 lua -e'a=1' -e 'print(a)' script.lua
 
 # See also:
