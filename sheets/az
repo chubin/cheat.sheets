@@ -62,11 +62,11 @@ az disk list --output table
 
 # Copy blob
 az storage blob copy start \
-	--source-uri 'https://md-ldh5nknx2rkz.blob.core.windows.net/jzwuuuzzapn0/abcd?sv=2017-04-17&sr=b&si=68041718-6828-4f5e-9e6e-a1b719975062&sig=XXX' \
-	--account-key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX== \
-	--account-name destaccount \
-	--destination-container vms \
-	--destination-blob DESTINATION-blob.vhd
+    --source-uri 'https://md-ldh5nknx2rkz.blob.core.windows.net/jzwuuuzzapn0/abcd?sv=2017-04-17&sr=b&si=68041718-6828-4f5e-9e6e-a1b719975062&sig=XXX' \
+    --account-key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX== \
+    --account-name destaccount \
+    --destination-container vms \
+    --destination-blob DESTINATION-blob.vhd
 
 # List virtual networks
 az network vnet list --output table

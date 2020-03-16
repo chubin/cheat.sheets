@@ -47,12 +47,13 @@ UUID=<blkid#> /opt defaults 0 0 # 00 disable disk checking and metadata dumping
 mount -a
 df -h /opt
 
-# Extending a physical disk (vm)
-1.  Unmount drive - comment out /etc/fstab entry for /dev/sdc
-2.  Increase drive physical space
-3.  parted /dev/sdc - 'p' 	#print partitions on /dev/sdc
-4.  fdisk /dev/sdc - 'p' - 'd' - 'n' (defaults) - w	# delete old partition, create new partition
-5.  reboot
-6.  e2fsck -f /dev/sdc1
-7.  resize2fs /dev/sdc1
-8.  mount /dev/sdc1 - uncomment fstab
+# Extending a physical disk (vm). Step 3 prints partitions on `/dev/sdc`. Step
+# 4 deletes the old partition, then creates a new one.
+1. Unmount drive. Comment out `/etc/fstab` entry for `/dev/sdc`.
+2. Increase drive physical space
+3. parted /dev/sdc - 'p'
+4. fdisk /dev/sdc - 'p' - 'd' - 'n' (defaults) - w
+5. reboot
+6. e2fsck -f /dev/sdc1
+7. resize2fs /dev/sdc1
+8. mount /dev/sdc1 - uncomment fstab

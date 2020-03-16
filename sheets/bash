@@ -6,23 +6,23 @@ done
 # For example:
 for CurDay in Monday Tuesday Wednesday Thursday Friday Saturday Sunday
 do
-	printf "%s\n" "$CurDay"
+    printf "%s\n" "$CurDay"
 done
 
 # To implement a case statement:
 case $1 in
     0)
-		echo "Found a '0'." ;;
+        echo "Found a '0'." ;;
     1)
-		echo "Found a '1'." ;;
+        echo "Found a '1'." ;;
     2)
-		echo "Found a '2'." ;;
+        echo "Found a '2'." ;;
     3*)
-		echo "Something beginning with '3' found." ;;
-	'')
-		echo "Nothing (null) found." ;;
-	*)
-		echo "Anything else found." ;;
+        echo "Something beginning with '3' found." ;;
+    '')
+        echo "Nothing (null) found." ;;
+    *)
+        echo "Anything else found." ;;
 esac
 
 # Turn on built-in Bash debugging output:
@@ -67,8 +67,8 @@ command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
 # However, that is a solution commonly found in a script using the Bourne shell, so
 # in this case, an alternative, Bash-like, and more accurate version could be:
 if ! type -fP bash > /dev/null 2>&1; then
-	printf "ERROR: Dependency 'bash' not met." >&2
-	exit 1
+    printf "ERROR: Dependency 'bash' not met." >&2
+    exit 1
 fi
 
 # Send both STDOUT and STDERR from COMMAND to FILE. The `2>&1` must go at the end.
