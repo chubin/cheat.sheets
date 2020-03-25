@@ -11,15 +11,17 @@ doas cat /etc/shadow
 # Execute the shell defined in $SHELL as root
 doas -s
 
-# Permission to execute commands as another user can be given in the config file "/etc/doas.conf"
+# Permission to execute commands as another user are given in the config file "/etc/doas.conf"
 # The following line grants permission for every user in the wheel group to execute commands as root
-# The option "persist" makes doas only ask for the password once in each shell session
-# The colon specifies that "wheel" is a group, not a user
+#
+#       permit persist keepenv :wheel
+#
+# Where the option "persist" makes doas only ask for the password once in each shell session
+# Where the colon specifies that "wheel" is a group, not a user
 # And the option "keepenv" keeps the current environment variables
-permit persist keepenv :wheel
-
-# The following line in the config file rejects permission for "user" to run commands as anon
-deny user as anon
-
-# The following line in the config file allows "user" to execute only "shutdown" as root, without asking for a password
-permit nopass user cmd shutdown
+#
+# The following line rejects permission for "user" to run commands as anon, if the user is not specified, it will default to root
+#       deny user as anon
+#
+# The following line allows "user" to execute only the program "shutdown" as root, without asking for a password
+#       permit nopass user cmd shutdown
