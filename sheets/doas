@@ -18,10 +18,14 @@ doas -s
 #
 # Where the option "persist" makes doas only ask for the password once in each shell session
 # Where the colon specifies that "wheel" is a group, not a user
-# And the option "keepenv" keeps the current environment variables
+# And where the option "keepenv" keeps the current environment variables
 #
-# The following line rejects permission for "user" to run commands as anon, if the user is not specified, it will default to root
+# The following line rejects permission for "user" to run commands as anon,
+# if the user is not specified, it will default to root
+#
 #       deny user as anon
 #
-# The following line allows "user" to execute only the program "shutdown" as root, without asking for a password
+# The following line allows "user" to execute only the program "shutdown" as root,
+# without asking for a password
+#
 #       permit nopass user cmd shutdown
