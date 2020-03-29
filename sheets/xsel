@@ -1,21 +1,20 @@
 # xsel
-#
-# X11 selection and clipboard manipulation tool.
+# Command-line tool to access X clipboard and selection buffers
 
-# Use a command's output as input of the clip[b]oard (equivalent to Ctrl + C):
+# Read from STDIN and save it to the clipboard; as if `Ctrl + C`.
 echo 123 | xsel -ib
-
-# Use the contents of a file as input of the clipboard:
+# A file's contents can also be provided to xsel(1x) via STDIN.
 cat file | xsel -ib
 
-# Output the clipboard's contents into the terminal (equivalent to Ctrl + V):
+# Send the clipboard's contents to STDOUT; as if `Ctrl + V`.
 xsel -ob
-
-# Output the clipboard's contents into a file:
+# The contents of the clipboard can be saved to a file(s). Note that the use of
+# `>` means that any existing file by the same name will be overwritten. Use
+# `>>` to instead append the data to that file.
 xsel -ob > file
 
-# Clear the clipboard:
+# Clear the clipboard.
 xsel -cb
 
-# Output the X11 primary selection's contents into the terminal (equivalent to a mouse middle-click):
+# Send X11 primary selection to STDOUT, as if clicking mouse's middle button.
 xsel -op

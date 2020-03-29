@@ -15,8 +15,8 @@ find -name \*.pdf -type f -print0 | xargs -0rn10 rm
 find -name \*.pdf | xargs -I{} rm -rf '{}'
 
 # Will show every .pdf like:
-#	&toto.pdf=
-#	&titi.pdf=
+#    &toto.pdf=
+#    &titi.pdf=
 # -n1 => One file by one file. ( -n2 => 2 files by 2 files )
 find -name \*.pdf | xargs -I{} -n1 echo '&{}='
 # The above is, however, much faster and easier without xargs:

@@ -1,14 +1,26 @@
-# Show keycodes used by Xorg
-# start xev and show only the relevant parts:
-xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+# xev
+# Print contents of X events
 
-# Alternative approach to show keycodes, with standard AWK formatting.
+# Start xev(1) and show only the relevant parts.
+xev | awk -F'[ )]+' '
+    /^KeyPress/ {
+        a[NR+2]
+    }
+    NR in a {
+        printf "%-3s %s\n", $5, $8
+    }
+'
+# Alternative approach to showing keycodes.
+#
+# Note that the use of `<(xev)` is process substitution, which is unavailable
+# in the Bourne Shell and its standard derivatives, nor is it available in Bash
+# with its own POSIX mode enabled.
 awk '
-	/^KeyPress/ {
-		A[NR+2]
-	}
-	NR in A {
-		B=substr($7, 0, length($7) - 2)
-		printf("%3d %s\n", $4, B)
-	}
+    /^KeyPress/ {
+        A[NR+2]
+    }
+    NR in A {
+        B=substr($7, 0, length($7) - 2)
+        printf("%3d %s\n", $4, B)
+    }
 ' <(xev)
