@@ -1,0 +1,32 @@
+# dosbox
+# An x86/DOS emulator with sound/graphics
+
+# Start dosbox
+dosbox
+
+# Start in fullscreen mode
+dosbox -fullscreen
+
+# Start and execute the script "script.bat"
+dosbox script.bat
+
+# Start and exit after running the program "doom.exe"
+dosbox -exit doom.exe
+
+# Mount C at "/home/user" right after startup
+dosbox -c "mount C /home/user"
+
+# Start in the internal keymapper, where you can change the keys dosbox uses
+dosbox -startmapper
+
+# Edit the default config file with the editor set in $EDITOR
+dosbox -editconf $EDITOR
+
+# Remove the default config file
+dosbox -eraseconf
+
+# Remove all the changes made in the internal keymapper
+dosbox -erasemapper
+
+# Start with the options specified in the config file "dosbox.conf"
+dosbox -conf dosbox.conf
