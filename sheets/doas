@@ -1,5 +1,9 @@
 # doas
 # Execute commands as another user
+#
+# OpenBSD lightweight sudo alternative, "dedicated openbsd application subexecutor"
+# It was created by Ted Unangst after he was dissatisfied with the complexity
+# of sudo and had issues with the default sudo configuration
 
 # Remove the folder of "/home/user" as user
 # If the -u option is not specified, the command will be executed as root
