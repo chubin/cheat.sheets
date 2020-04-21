@@ -28,4 +28,4 @@ echo "hi there" | logger
 #              local0
 #                to
 #              local7
-log -p <facility>.<level> -f <file>
+logger -p <facility>.<level> -f <file>
