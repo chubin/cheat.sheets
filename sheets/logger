@@ -1,0 +1,31 @@
+# logger
+# Interact with syslog server
+
+# log "hi there" to syslog with priority 'notice' and facility 'user'
+echo "hi there" | logger
+
+# Levels:      emerg
+#              alert
+#              crit
+#              err
+#              warning
+#              notice
+#              info
+#              debug
+#
+# Facilities:
+#              auth
+#              authpriv   for security information of a sensitive nature
+#              cron
+#              daemon
+#              ftp
+#              lpr
+#              mail
+#              news
+#              syslog
+#              user
+#              uucp
+#              local0
+#                to
+#              local7
+logger -p <facility>.<level> -f <file>
