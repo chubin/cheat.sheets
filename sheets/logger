@@ -4,28 +4,15 @@
 # log "hi there" to syslog with priority 'notice' and facility 'user'
 echo "hi there" | logger
 
-# Levels:      emerg
-#              alert
-#              crit
-#              err
-#              warning
-#              notice
-#              info
-#              debug
+# send <file> to syslog with <facility> and <priority>
+logger -p <facility>.<level> -f <file>
+
+# Levels (priorities):
+#     emerg alert crit err warning notice info debug
 #
 # Facilities:
-#              auth
-#              authpriv   for security information of a sensitive nature
-#              cron
-#              daemon
-#              ftp
-#              lpr
-#              mail
-#              news
-#              syslog
-#              user
-#              uucp
-#              local0
-#                to
-#              local7
-logger -p <facility>.<level> -f <file>
+#    auth
+#    authpriv (for security information of a sensitive nature)
+#    cron daemon ftp lpr mail news syslog user uucp
+#    local0 to local7 (local7 is used for boot messages)
+
