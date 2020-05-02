@@ -1,0 +1,23 @@
+# RFC
+# Request for Comments (RFC),
+#
+# in information and communications technology, is a type of text document from
+# the technology community.
+# An RFC document may come from many bodies including from
+# the Internet Engineering Task Force (IETF),
+# the Internet Research Task Force (IRTF),
+# the Internet Architecture Board (IAB),
+# or from independent authors.
+#
+
+# to list all available RFCs
+curl cht.sh/rfc/:list
+
+# to list all available RFCs with short description
+curl cht.sh/rfc/:describe
+
+# to show RFC 1234
+curl cht.sh/rfc/1234
+
+# to list all RFCs with OSPF in the name
+curl cht.sh/rfc/ospf
