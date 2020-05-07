@@ -6,7 +6,7 @@
 #  ~window 
 #  ~pane
 #  ~misc
-#  ~copy
+#  ~copymode
 #  ~layout
 
 # Start a new session:
@@ -58,7 +58,7 @@ tmux attach-session -t name
 #  ?  list shortcuts
 #  :  prompt
 
-#  copy mode
+#  copy mode (copymode)
 # ---
 #  [  go into copy mode  
 #  ]  paste into the current window
