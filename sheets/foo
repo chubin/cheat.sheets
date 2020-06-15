@@ -1,0 +1,13 @@
+# bar
+# The terms foobar (/ˈfuːbɑːr/), or foo and others are used as metasyntactic
+# variables and placeholder names
+
+# The etymology of foobar is generally traced
+# to the World War II military slang FUBAR,
+# which evolved through being bowdlerised to foobar
+
+# In this Scheme code sample, foobar is used to illustrate the name of a function:
+(define foobar
+   (lambda (x)
+      (display x)))
+(foobar "Hello World!")
