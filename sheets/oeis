@@ -6,6 +6,9 @@
 # Find all possible OEIS sequences for some sequence (1,1,1,1...)
 curl cheat.sh/oeis/1+1+1+1
 
+# Describe an OEIS sequence (A2)
+curl cheat.sh/oeis/A2
+
 # Implementation of the A2 OEIS sequence in Python
 curl cheat.sh/oeis/A2/python
 
