@@ -1,0 +1,62 @@
+# exim
+# Manage queue of Exim message transfer agent (MTA) service
+
+# Print amount of enqueued messages
+exim -bpc
+
+# List messages in the queue (time queued, size, message-id, sender, recipient)
+exim -bp
+
+# Print summary of enqueued messages
+exim -bp | exiqsumm
+
+# Check what is Exim doing right now
+exiwhat
+
+# Display all of Exim's configuration settings
+exim -bP
+
+# Search the queue for messages from a specific sender
+exiqgrep -f [user]@domain
+
+# Search the queue for messages from a specific recipient
+exiqgrep -r [user]@domain
+
+# Print messages older than the specified number of seconds (1 day = 86400 seconds)
+exiqgrep -o 86400
+
+# Print messages younger than the specified number of seconds
+exiqgrep -y 86400
+
+# Start a queue run
+exim -q -v
+
+# Remove message from the queue
+exim -Mrm <message-id> [ <message-id> ... ]
+
+# Freeze message
+exim -Mf <message-id> [ <message-id> ... ]
+
+# Thaw (unfreeze) a message
+exim -Mt <message-id> [ <message-id> ... ]
+
+# Deliver message, whether it's frozen or not, whether the retry time has been reached or not
+exim -M <message-id> [ <message-id> ... ]
+
+# Force message to fail and bounce as "cancelled by administrator"
+exim -Mg <message-id> [ <message-id> ... ]
+
+# View message's headers
+exim -Mvh <message-id>
+
+# View message's body
+exim -Mvb <message-id>
+
+# View message's logs
+exim -Mvl <message-id>
+
+# Add a recipient to a message
+exim -Mar <message-id> <address> [ <address> ... ]
+
+# Edit the sender of a message
+exim -Mes <message-id> <address>
