@@ -2,7 +2,7 @@
 mkfs.btrfs /dev/sdb /dev/sdc /dev/sdd
 
 # btrfs with just one hard drive, metadata not redundant
-# (this is danegerous: if your metadata is lost, your data is lost as well)
+# (this is dangerous: if your metadata is lost, your data is lost as well)
 mkfs.btrfs -m single /dev/sdb
 
 # data to be redundant and metadata to be non-redundant:
