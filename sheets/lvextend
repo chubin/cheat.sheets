@@ -15,7 +15,7 @@ lvextend -L +1G /dev/vg0/mylv
 # Extend volume in volume mylv in groug vg0
 # (defined by volume path /dev/vg0/mylv)
 # to use all of the unallocated space in the volume group vg0:
-lvextend -L +100%FREE /dev/vg0/mylv
+lvextend -l +100%FREE /dev/vg0/mylv
 
 # Extend ext4 filesystem after changing a logical volume
 # (takes volume path as parameter):
