@@ -1,0 +1,25 @@
+// Usually we place tests in a `tests` module. This module can be co-located in the file
+// containing the module under test, or it can be located in a separate file
+// (i.e. my_module.rs may have a child file, my_module/tests.rs, that contains a
+// `tests` module)
+
+// Tests are compiled only if the `test` cfg attribute is true (like when running `cargo test`)
+#[cfg(test)]
+mod tests {
+    // The `test` attribute macro identifies functions that will run as tests
+    #[test]
+    fn basic_addition() {
+        // `assert_eq` checks equality, and `assert` checks a boolean condition
+        assert_eq!(1 + 1, 2);
+        assert!(1 + 1 == 2);
+        // There is also `assert_ne`, which checks for inequality
+    }
+
+    #[test]
+    // The `should_panic` attribute macro identifies tests that should panic; therefore,
+    // with this macro, a test that does not panic will fail
+    #[should_panic]
+    fn oh_no() {
+        panic!("this is an expected failure!");
+    }
+}
