@@ -1,0 +1,32 @@
+# Simple class with constructor
+class Simple
+  def initialize(val)
+    // Set instance variable named `some_val`
+    @some_val = val
+  end
+end
+
+# Instantiate a class
+s = Simple.new('doot')
+
+# Class with inheritance
+class SuperString < String
+  # Call the same method in the parent class with `super`
+  def length
+    # This is equivalent to 100 times String#length
+    super * 100
+  end
+end
+
+# You can re-open *any* existing class for modification
+# This is called "monkey patching" and while it is very powerful, it
+# should be used sparingly.
+class Array
+  def implode
+    puts '*poof*'
+    self.clear
+  end
+end
+
+# View a class's instance method names
+Array.instance_methods
