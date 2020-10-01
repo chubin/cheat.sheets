@@ -1,0 +1,37 @@
+// The core of async is the `Future` trait, which defines some asynchronous computation
+// that may eventually yield a value.
+//
+// For more info, see https://doc.rust-lang.org/stable/std/future/trait.Future.html
+
+// Functions can be marked `async` to indicate that they return a type implementing `Future`.
+// The function signatures below are analogous.
+async fn do_work() -> String { ... }
+fn do_work() -> impl Future<Output = String> { ... }
+
+// To run a future, we can add a package that provides an async runtime, since Rust does 
+// not come with one in the standard library. An asynchronous runtime schedules futures
+// and continuously polls them to completion. Here, we'll use tokio, a mature and
+// battle-tested library.
+
+// in Cargo.toml
+tokio = { version = "0.2.22", features = ["full"] }
+
+// Now we can spawn futures on a runtime.
+fn main() {
+    let mut runtime = tokio::runtime::Runtime::new().unwrap();
+    // `block_on` will block the current thread until the given task completes
+    runtime.block_on(async {
+        // Now we're in a worker thread
+        // Futures can be executed using `.await`
+        let my_string = do_work().await;
+    });
+}
+
+// We can also use a macro to make this much more compact.
+#[tokio::main]
+async fn main() {
+    let my_string = do_work().await;
+}
+
+// See https://docs.rs/tokio for more information on tokio.
+// See https://docs.rs/futures for more tools on working with futures.
