@@ -1,43 +1,43 @@
-// Cargo is the Rust package manager. It downloads your Rust project's dependencies,
-// compiles your project, creates packages, and uploads them to crates.io.
-// See also: https://doc.rust-lang.org/cargo/
+# Cargo is the Rust package manager. It downloads your Rust project's dependencies,
+# compiles your project, creates packages, and uploads them to crates.io.
+# See also: https://doc.rust-lang.org/cargo/
 
-// To create a blank application:
-cargo new hello_world // or cargo new --bin hello_world
+# To create a blank application:
+cargo new hello_world # or cargo new --bin hello_world
 
-// To create a blank library:
+# To create a blank library:
 cargo new --lib hello_world
 
-// Build a project without optimizations (in debug mode).
+# Build a project without optimizations (in debug mode).
 cargo build
 
-// Compile and check a project for errors (faster than cargo build)
+# Compile and check a project for errors (faster than cargo build)
 cargo check
 
-// Build a project with all optimizations turned on
+# Build a project with all optimizations turned on
 cargo build --release
 
-// Build and run a binary application with Cargo (in debug mode).
+# Build and run a binary application with Cargo (in debug mode).
 cargo run
 
-// Run the project tests (from src/ and tests/)
+# Run the project tests (from src/ and tests/)
 cargo test
 
-// Generate rustdoc documentation for your package
+# Generate rustdoc documentation for your package
 cargo doc
 
-// Publishes your package to the registry, using information from Cargo.toml
+# Publishes your package to the registry, using information from Cargo.toml
 cargo publish
 
-// Updates dependencies in Cargo.lock
-cargo update            // update all
-cargo update -p rand    // update just "rand" crate
+# Updates dependencies in Cargo.lock
+cargo update            # update all
+cargo update -p rand    # update just "rand" crate
 
-// Clean all build files
+# Clean all build files
 cargo clean
 
-// Search for a package
+# Search for a package
 cargo search
 
-// Build and install a binary package into ~/.cargo/bin/
+# Build and install a binary package into ~/.cargo/bin/
 cargo install
