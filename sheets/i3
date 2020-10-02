@@ -118,3 +118,12 @@ mode $gamingMode {
 
 # Move workspace between multiple monitors
 bindsym $mod+x move workspace to output right
+
+# Reload config file
+◆ + Shift + c
+
+# Restart i3 in place
+◆ + Shift + r
+
+# Exit i3
+◆ + Shift + e
