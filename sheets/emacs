@@ -52,7 +52,7 @@
     C-x u       undo previous action
     M-x revert-buffer RETURN
                 (insert like this) undo all changes since last save
-    M-x recover-file RETURN 
+    M-x recover-file RETURN
                 Recover text from an autosave-file
     M-x recover-session RETURN
                 if you edited several files
@@ -101,7 +101,7 @@
     C-s         repeat incremental search
     M C-r       incremental search backwards
     C-r         repeat backwards
-    M-x query-replace-regexp 
+    M-x query-replace-regexp
                 search and replace
 
 # Window-Commands
@@ -110,7 +110,7 @@
     C-x 0       delete window
     C-x 1       close all windows except the one the cursors in
     C-x ^       enlarge window
-    M-x shrink-window 
+    M-x shrink-window
                 command says it ;-)
     M C-v       scroll other window
     C-x 4 f     find file in other window
@@ -176,14 +176,14 @@
     C-c C-u     go to beginning of this preprocessor statement
     C-c C-c     comment out marked area
 # More general
-    M-x outline-minor-mode 
+    M-x outline-minor-mode
                 collapses function definitions in a file to a mere {...}
-    M-x show-subtree 
+    M-x show-subtree
                 If you are in one of the collapsed functions, this un-collapses it
 # In order to achieve some of the feats coming up now you have to run etags *.c *.h *.cpp
 # (or what ever ending you source files have) in the source directory
     M-.         (Meta dot) If you are in a function call, this will take you to it\'s definition
-    M-x tags-search ENTER 
+    M-x tags-search ENTER
                 Searches through all you etaged
     M-,         (Meta comma) jumps to the next occurence for tags-search
     M-x tags-query-replace yum.

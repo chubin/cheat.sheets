@@ -4,7 +4,7 @@ lame input.wav output.mp3
 # Re-encode existing MP3 to 64 kbps MP3
 lame -b 64 original.mp3 new.mp3
 
-# Encode with variable bitrate (quality=2) 
+# Encode with variable bitrate (quality=2)
 # 0 <= quality <= 9  (default = 4).  0 = highest quality
 lame -V2 original.wav compressed.mp3
 
@@ -13,11 +13,11 @@ lame -V2 original.wav compressed.mp3
 # -m s: save as stereo
 # -m j: save as joint stereo (exploits inter-channel correlation
 #       more than regular stereo)
-# -q 2: quality tweaking: the lower the value, the better the 
+# -q 2: quality tweaking: the lower the value, the better the
 #       quality, but the slower the algorithm. Default is 5.
 #
-# By default, lame uses constant bit rate (CBR) encoding. 
-# You can also use average bit rate (ABR) encoding, 
+# By default, lame uses constant bit rate (CBR) encoding.
+# You can also use average bit rate (ABR) encoding,
 # e.g. for an average bit rate of 123 kbps:
 lame --abr 123 input.wav output.mp3
 
@@ -25,4 +25,4 @@ lame --abr 123 input.wav output.mp3
 lame -v -b 32 -B 192 input.wav output.mp3
 
 # Recode all wav files in all subdirectories
-find . -type d -exec sh -c '(cd {} && for i in *.wav; do lame -h -b 128 "$i" "`basename "$i" .wav`".mp3; done)' ';' 
+find . -type d -exec sh -c '(cd {} && for i in *.wav; do lame -h -b 128 "$i" "`basename "$i" .wav`".mp3; done)' ';'

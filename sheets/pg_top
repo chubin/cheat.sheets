@@ -1,5 +1,5 @@
 # pg_top
-# Display and update information about the top cpu PostgreSQL processes 
+# Display and update information about the top cpu PostgreSQL processes
 
 # connect to port 5432 using user postgres, and database, ask for password
 pg_top -p 5432 -U postgres -d database -W
@@ -15,4 +15,4 @@ pg_top -p 5432 -U postgres -d database -W
 #  Q
 #      Display the currently running query of a backend process
 #  X
-#      Display user index statistics. 
+#      Display user index statistics.

@@ -112,7 +112,7 @@ jq 'unique_by(length)'
 # Reverse an array
 jq 'reverse'
 
-# 
+#
 #   ## jq in shell scripts ##
 #
 
@@ -128,7 +128,7 @@ jq -n --arg foobaz "$FOOBAZ" '{"foobaz":$foobaz}'
 export $(jq -r '@sh "FOO=\(.foo) BAZ=\(.baz)"')
 
 
-# 
+#
 #   ## Input/output formats ##
 #
 

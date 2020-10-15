@@ -1,4 +1,4 @@
-# tmate - Instant terminal sharing 
+# tmate - Instant terminal sharing
 # tmux fork for screen sharing - https://tmate.io/
 tmate
 
@@ -6,7 +6,7 @@ tmate
 tmate show-messages
 
 # Launch tmate in a detached state
-tmate -S /tmp/tmate.sock new-session -d      
+tmate -S /tmp/tmate.sock new-session -d
 
 # Blocks until the SSH connection is established
 tmate -S /tmp/tmate.sock wait tmate-ready

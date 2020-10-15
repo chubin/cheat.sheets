@@ -1,5 +1,5 @@
 // There are no classes, only structs. Structs can have methods.
-// A struct is a type. It's also a collection of fields 
+// A struct is a type. It's also a collection of fields
 
 // Declaration
 type Vertex struct {
@@ -8,7 +8,7 @@ type Vertex struct {
 
 // Creating
 var v = Vertex{1, 2}
-var v = Vertex{X: 1, Y: 2} // Creates a struct by defining values with keys 
+var v = Vertex{X: 1, Y: 2} // Creates a struct by defining values with keys
 var v = []Vertex{{1,2},{5,2},{5,5}} // Initialize a slice of structs
 
 // Accessing members
@@ -31,7 +31,7 @@ func (v *Vertex) add(n float64) {
     v.Y += n
 }
 
-// **Anonymous structs:**  
+// **Anonymous structs:**
 // Cheaper and safer than using `map[string]interface{}`.
 point := struct {
     X, Y int

@@ -3,7 +3,7 @@
 # https://github.com/tmux/tmux
 #
 # toc:
-#  ~window 
+#  ~window
 #  ~pane
 #  ~misc
 #  ~copymode
@@ -25,7 +25,7 @@ tmux attach-session
 tmux attach-session -t name
 
 #  windows (tabs)
-# --- 
+# ---
 #  c  create window
 #  w  list windows
 #  n  next window
@@ -38,7 +38,7 @@ tmux attach-session -t name
 # ---
 #  %  vertical split
 #  "  horizontal split
-# 
+#
 #  →  go to the left (right, top, bottom) panel
 #  C-→  resize panel to the left (right, top, bottom) panel
 #  o  swap panes
@@ -60,7 +60,7 @@ tmux attach-session -t name
 
 #  copy mode (copymode)
 # ---
-#  [  go into copy mode  
+#  [  go into copy mode
 #  ]  paste into the current window
 #
 #     setw -g mode-keys vi  # to switch into vi mode

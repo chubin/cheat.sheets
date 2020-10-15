@@ -1,21 +1,21 @@
-// ## Built-in Types 
-bool 
+// ## Built-in Types
+bool
 
-char 
+char
 
-string 
+string
 
 // Assume signed, prepend unsigned to make it unsigned
-short 
+short
 
-int 
+int
 
-long 
+long
 
-// C++ 11 
-long long 
+// C++ 11
+long long
 
-// Floating Points 
-float 
-double 
-long double 
+// Floating Points
+float
+double
+long double
