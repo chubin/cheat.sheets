@@ -3,7 +3,7 @@ if (check) happy else sad
 
 // conditional sugar
 if (check) happy // same as
-if (check) happy else () 
+if (check) happy else ()
 
 // multiple conditions
 if (check) happy else if(secondCheck) lessHappy else ()
@@ -57,7 +57,7 @@ for (i <- 1 until 5) {
 // recursion
 // can yield a "java.lang.StackOverflowError" with large lists
 // this is because each recursive call of the function is waiting for the evaluation of the next
-def sum(ints: List[Int]): Int = ints match { 
+def sum(ints: List[Int]): Int = ints match {
   case Nil => 0
   case x :: tail => x + sum(tail)
 }

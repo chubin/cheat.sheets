@@ -12,7 +12,7 @@
 // |`&^`    |bit clear (and not)|
 // |`<<`    |left shift |
 // |`>>`    |right shift|
-// 
+//
 // ### Comparison
 // |Operator|Description|
 // |--------|-----------|
@@ -22,14 +22,14 @@
 // |`<=`    |less than or equal|
 // |`>`     |greater than|
 // |`>=`    |greater than or equal|
-// 
+//
 // ### Logical
 // |Operator|Description|
 // |--------|-----------|
 // |`&&`    |logical and|
 // |`||`    |logical or |
 // |`!`     |logical not|
-// 
+//
 // ### Other
 // |Operator|Description|
 // |--------|-----------|

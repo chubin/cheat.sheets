@@ -8,7 +8,7 @@
 // * Character
 // * Optional − a variable that can hold either a value or no value.
 // * Tuples
-// 
+//
 // | -------|-------------------|-----------------------------------------------|
 // | Type   |  Typical Bit Width|  Typical Range                                |
 // | -------|-------------------|-----------------------------------------------|
@@ -27,7 +27,7 @@
     typealias Feet = Int
     var distance: Feet = 100
     print(distance)
-    
+
 // Type inference:
 //
 // varA is inferred to be of type Int

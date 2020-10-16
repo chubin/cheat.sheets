@@ -1,7 +1,7 @@
 // define function
-// GOOD 
+// GOOD
 def f(x: Int) = { x*x }
-// BAD 
+// BAD
 // hidden error: without = it’s a Unit-returning procedure; causes havoc
 def f(x: Int) { x*x }
 
@@ -21,7 +21,7 @@ def f(x: R)
 def f(x: => R)
 
 // anonymous function
-(x:R) => x*x    
+(x:R) => x*x
 
 // anonymous function: underscore is positionally matched arg.
 (1 to 5).map(_*2) // vs.
@@ -31,7 +31,7 @@ def f(x: => R)
 (1 to 5).map( x => x*x )
 
 // anonymous function: bound infix method. Use 2*_ for sanity’s sake instead.
-// GOOD 
+// GOOD
 (1 to 5).map(2*)
 // BAD
 (1 to 5).map(*2)

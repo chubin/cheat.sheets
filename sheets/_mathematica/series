@@ -14,11 +14,11 @@ Series[Cos[x], {x, 0, 6}]
  *
  * Here's the same function, but expanded about a different point, x = 3pi/2:
  *)
- 
+
 Series[Cos[x], {x, 3 Pi/2, 6}]
 (x-3pi/2) - 1/6*(x-3pi/2)^3 + 1/120*(x-3pi/2)^5 + O[x-3pi/2]^7
 
-(* 
+(*
  * When plotting series, remember to wrap the function in both a call to Normal AND
  * a call to Evaluate: this strips the extra term mentioned previously and tells
  * Mathematica to actually evaluate the function rather than hold it as an expression.

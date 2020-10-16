@@ -8,7 +8,7 @@
 async fn do_work() -> String { ... }
 fn do_work() -> impl Future<Output = String> { ... }
 
-// To run a future, we can add a package that provides an async runtime, since Rust does 
+// To run a future, we can add a package that provides an async runtime, since Rust does
 // not come with one in the standard library. An asynchronous runtime schedules futures
 // and continuously polls them to completion. Here, we'll use tokio, a mature and
 // battle-tested library.

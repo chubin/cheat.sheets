@@ -1,5 +1,5 @@
 // Nothing is weird here, if you think a little bit more about it
-// but it seems to be 
+// but it seems to be
 
 // Null is an Object
 typeof null // => 'object'
@@ -22,7 +22,7 @@ new Array() == false // -> true
 // big integer numbers
 9999999999999999    // -> 10000000000000000
 
-//  
+//
 []+[]               // -> ""
 []+{}               // -> "[object Object]"
 {}+[]               // -> "{}+[]"

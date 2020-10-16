@@ -1,11 +1,11 @@
--- to install: 
+-- to install:
 --   (Debian/Ubuntu) apt-get install lua
 --   (Fedora/CentOS) yum install lua
---   (source code)   curl -R -O http://www.lua.org/ftp/lua-5.3.4.tar.gz | tar xz - 
+--   (source code)   curl -R -O http://www.lua.org/ftp/lua-5.3.4.tar.gz | tar xz -
 --                   cd lua-5.3.4
 --                   make linux
 --
--- to execute: 
+-- to execute:
 --   lua hello.lua
 
 io.write("Hello world, from ",_VERSION,"!\n")

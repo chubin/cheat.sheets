@@ -1,6 +1,6 @@
 # jshint
-# 
-# JSHint is a fork of JSLint. The reasons for the fork is basically that 
+#
+# JSHint is a fork of JSLint. The reasons for the fork is basically that
 # the author disagrees in some points with Douglas Crockford on JavaScript coding style.
 #
 # If you're looking for a very high standard for yourself or team, JSLint (by Doug Crockford)

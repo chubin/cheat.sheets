@@ -1,10 +1,10 @@
 # Elm
-# Domain-specific programming language for declaratively creating web browser-based graphical user interfaces. 
+# Domain-specific programming language for declaratively creating web browser-based graphical user interfaces.
 
 # Start Elm REPL
 elm repl
 
-# Default compilation 
+# Default compilation
 elm make HelloWorld.elm -> index.html
 
 # Custom name

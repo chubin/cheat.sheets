@@ -5,22 +5,22 @@
 dumpe2fs /dev/sdb1 | less
 
 # Print the blocks which are reserved as bad in the filesystem
-dumpe2fs -b /dev/sda2 
+dumpe2fs -b /dev/sda2
 
 # Use  the block superblock when examining the filesystem
-dumpe2fs -o superblock=superblock /dev/sda1 
+dumpe2fs -o superblock=superblock /dev/sda1
 
 # Use blocks of blocksize bytes when examining the filesystem.
-dumpe2fs -o blocksize=blocksize /dev/sda1 
+dumpe2fs -o blocksize=blocksize /dev/sda1
 
 # Force dumpe2fs to display a filesystem
-dumpe2fs -f /dev/sda1 
+dumpe2fs -f /dev/sda1
 
 # Only display the superblock information
-dumpe2fs -h 
+dumpe2fs -h
 
 # Display the filesystem data from an image file created by e2image
-dumpe2fs -i 
+dumpe2fs -i
 
 # Print the detailed group information block numbers in hexadecimal format
-dumpe2fs -x 
+dumpe2fs -x

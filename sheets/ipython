@@ -36,7 +36,7 @@ ipython --profile=${profile_name}
 %logoff
 %logstate
 
-# (to change directories, manipulate directory stacks, and create directory "bookmarks") 
+# (to change directories, manipulate directory stacks, and create directory "bookmarks")
 %cd
 %pushd
 %popd
@@ -46,7 +46,7 @@ ipython --profile=${profile_name}
 %reset
 
 # Allows you to see any part of your input history
-%hist 
+%hist
 
 # Search ("grep") through your history by typing
 %hist -g somestring
