@@ -51,6 +51,11 @@ tmux attach-session -t name
 #  }  (Move the current pane right)
 #  z  toggle pane zoom
 
+#  sessions
+# ---
+#  )  switch to next session
+#  (  switch to previous session
+
 #  misc
 # ---
 #  d  detach
