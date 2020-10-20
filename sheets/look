@@ -1,8 +1,8 @@
 # look
 # Look for lines in sorted file (Mac OS X)
 
-# Look for lines which begins with the given prefix:
+# Look for lines beginning with the given prefix.
 look prefix file
 
-# Look for lines ignoring case:
+# Look for lines, case-insensitively.
 look -f prefix file
