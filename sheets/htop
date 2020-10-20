@@ -1,21 +1,20 @@
 # htop
-#
-# Display dynamic real-time information about running processes.  An enhanced version of top.
+# Dynamic, real-time information about running processes
 
-# Start htop:
-  htop
+# Start htop.
+htop
 
-# Start htop displaying only processes owned by given user:
-  htop -u user_name
+# Start htop displaying only processes owned by given user.
+htop -u user_name
 
-# Refresh every 10 seconds
+# Refresh every 10 seconds.
 htop -d 10
 
-# Get help about interactive commands:
-  ?
+# While htop(1) is running, get help about interactive commands.
+?
 
-# Inverts the sort order
-  I
+# While htop(1) is running, invert the sort order.
+I
 
-# Trace a process (with strace)
-  s
+# While htop(1) is running, trace a process with strace.
+s
