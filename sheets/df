@@ -18,3 +18,6 @@ df [PATH]
 
 # List [a]ll filesystems, + unreadable, duplicates, pseudo, and inaccessible.
 df -a
+
+# Fetch a grand total of disk usage.
+df --total
