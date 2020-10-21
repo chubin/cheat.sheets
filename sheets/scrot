@@ -1,13 +1,14 @@
-# GUI screenshot tool for taking, editing screenshots
+# scrot
+# Command-line screen capture utility
 
-# Take screenshot of the current window
+# Take screenshot of the current window.
 scrot -u
 
-# Take screenshot of the current window including border
+# Take screenshot of the current window, including border.
 scrot -ub
 
-# Interactively select a window or rectangle with the mouse
+# Using a mouse, perform a rectangular selection of the screen to be captured.
 scrot -s
 
-# Capture the screenshot after 5 seconds, display countdown time
+# Capture a screenshot after 5 seconds. A countdown is also displayed.
 scrot -u -d 5 -c

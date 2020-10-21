@@ -1,21 +1,20 @@
 # pup
 #
-# pup is a command line tool for processing HTML
-# It reads from stdin, prints to stdout, and allows the user to filter parts of the page using CSS selectors.
+# Command line too for processing HTML
+# Reading from stdin, pup prints to stdout, allowing the user to filter parts
+# of the page using CSS selectors.
 
-# install pup
-# (requires go)
+# Install pup. Requires `go`.
 go install github.com/ericchiang/pup
 
-# indent and colorize HTML
+# Indent and colorize HTML.
 cat file.html | pup --color
 
-# filter by tag
+# Filter by tag.
 cat file.html | pup 'title'
 
-# pseudoclass: filter by content "History"
+# Pseudoclass: filter by content "History".
 cat file.html | pup ':contains("History")'
 
-# multiple groups of selectors
+# Multiple groups of selectors.
 cat file.html | pup 'title, h1 span[dir="auto"]'
-

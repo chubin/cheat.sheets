@@ -1,5 +1,5 @@
 # lshw
-# Get hardware information on Linux
+# Information about hardware configuration
 
 # Generate full information report about all detected hardware.
 lshw
@@ -16,8 +16,8 @@ lshw -class processor
 # Display the disk drives with the disk class.
 lshw -short -class disk
 
-# Display information about the partitions and controllers also,
-# specify the storage and volume class along with the disk class.
+# Display information about the partitions and controllers also, specify the
+# storage and volume class along with the disk class.
 lshw -short -class disk -class storage -class volume
 
 # Network adapter information.

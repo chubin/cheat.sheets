@@ -1,12 +1,15 @@
-# Clear dmesg Buffer Logs
+# dmesg
+# Print or control the kernel ring buffer
+
+# Print the ring buffer contents, then clear it.
 dmesg -c
 
-# Display the local time and the delta in human-readable format. Conversion to the local time could be inaccurate
+# Display the local time and the delta in human-readable format. Conversion to
+# the local time could be inaccurate.
 dmesg -e
 
 # Print human-readable timestamps.
 dmesg -T
 
-# Human-readable output (color + reltime)
+# Human-readable output (color + reltime).
 dmesg -H
-

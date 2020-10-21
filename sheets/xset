@@ -1,23 +1,21 @@
 # xset
 # User preference utility for X
 
-# Disable screen saver blanking
+# Disable screen saver blanking.
 xset s off
 
-# Change blank time to 1 hour
+# Change time before which the screen is blanked, to 3,600 seconds (1 hour).
 xset s 3600 3600
 
-# Turn off DPMS
+# Turn off Display Power Management Signaling. To instead enable DPMS, the `-`
+# character is simply changed to `+`.
 xset -dpms
 
-# Disable DPMS and prevent screen from blanking
+# Disable DPMS and prevent screen from blanking. This command also clearly
+# demonstrations the ability to combine several xset(1) commands within the one
+# process call.
 xset s off -dpms
 
-# Turn off screen immediately
+# Immediately force the provided DPMS state (off). Available states are
+# 'off', 'on', 'standby', and 'suspend'.
 xset dpms force off
-
-# Standby screen
-xset dpms force standby
-
-# Suspend screen
-xset dpms force suspend
