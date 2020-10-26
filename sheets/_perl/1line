@@ -380,7 +380,7 @@ perl -ne 'push @a, $_; @a = @a[@a-10..$#a]; END { print @a }'
 perl -ne '/regex/ && print'
 
 # Print only lines that do not match a regular expression
-perl -ne '!/regex/ && print'
+perl -ne '/regex/ || print'
 
 # Print the line before a line that matches a regular expression
 perl -ne '/regex/ && $last && print $last; $last = $_'
