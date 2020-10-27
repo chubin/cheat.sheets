@@ -1,0 +1,15 @@
+# scp
+# Secure copy (remote file copy program)
+
+# Secury copies files from remote ADDR's APTH to the current-working-directory.
+# By default here, port 22 is used, or whichever port is otherwise configured.
+scp ADDR:PATH ./
+
+# Using aliases (not Bash aliases) work with scp(1) as well. In this example, -
+# the PATH1 of the first remote source defined as ALIAS1 is sent to PATH2 of
+# the remote destination defined as ALIAS2.
+scp ALIAS1:PATH1 ALIAS2:PATH2
+
+# You can use the `-P` flag -- uppercase, unlike ssh(1) -- to determine the
+# PORT, in-case it's non-standard (not 22) or not defined within an alias.
+scp -P PORT ADDR:PATH ./
