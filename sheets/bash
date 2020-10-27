@@ -38,7 +38,7 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 ( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
 
 # Fork bomb. Do not run this! Has the potential to wreak havoc. It repeatedly
-# and quickly spawns a bazillion processes until the system eventually locks up.
+# and quickly spawns a lot of processes until the system eventually locks up.
 :(){ :|:& };:
 # An alternative, easier-to-understand version without the obfuscation:
 func(){ func | func & }; func
@@ -47,8 +47,8 @@ func(){ func | func & }; func
 #
 #   DANGER! Don't execute!
 #
-# Luckily, most modern setups have `--preserve-root` on by default, so this will be
-# null and void, but even so, not even remotely worth the risk!
+# Luckily, most modern setups have `--preserve-root` on by default, so this
+# will be null and void, but even so, not even remotely worth the risk!
 [ $[ $RANDOM % 6 ] == 0 ] && rm -rf /* || echo Click #Roulette
 
 # A for loop one-liner.
@@ -64,19 +64,20 @@ fi
 # Test for a `PATH` executable existing as a file, but note that aliases and
 # functions will also output and result in a `0` exit status.
 command -v ${program} >/dev/null 2>&1 || error "${program} not installed"
-# However, that is a solution commonly found in a script using the Bourne shell, so
-# in this case, an alternative, Bash-like, and more accurate version could be:
+# However, that is a solution commonly found in a script using the Bourne
+# shell, so in this case, an alternative, Bash-like, and more accurate version
+# could be:
 if ! type -fP bash > /dev/null 2>&1; then
     printf "ERROR: Dependency 'bash' not met." >&2
     exit 1
 fi
 
-# Send both STDOUT and STDERR from COMMAND to FILE. The `2>&1` must go at the end.
+# Send both STDOUT and STDERR from COMMAND to FILE.
 COMMAND > FILE 2>&1
 # Send STDOUT and STDERR from COMMAND to `/dev/null`, where data goes to die.
 COMMAND > /dev/null 2>&1
 # Pipe the STDOUT and STDERR from COMMAND_1 to COMMAND_2.
 COMMAND_1 |& COMMAND_2
 
-# Verbosely convert whitespaces (` `) to underscores (`_`) in the names of files.
+# Verbosely convert whitespaces (` `) to underscores (`_`) in file names.
 for name in *\ *; do mv -vn "$name" "${name// /_}"; done
