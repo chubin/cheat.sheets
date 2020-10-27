@@ -1,0 +1,9 @@
+# sensors
+# Print sensors information
+
+# By default, if possible, sensors(1) will provide temperature information in
+# Celsius. Using the `-f` option, Fahrenheit can instead be used.
+sensors -f
+
+# Display sensor information in raw output, suitable for parsing.
+sensors -u
