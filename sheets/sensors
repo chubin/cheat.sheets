@@ -7,3 +7,7 @@ sensors -f
 
 # Display sensor information in raw output, suitable for parsing.
 sensors -u
+
+# Using sensors(1) and Perl, output only the CPU's fan speed (RPM). May not
+# work on all system's software and/or hardcore configurations.
+sensors | perl -ne '/^cpu_fan/ && print((split(" "))[1])'
