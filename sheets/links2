@@ -1,0 +1,32 @@
+# links2
+# Lynx-like alternative character mode WWW browser
+# Note that some distributions of Linux package links2(1) as simply `links`.
+
+# Launch and browse immediately to the provided web address.
+links2 duckduckgo.co.uk
+
+# Dump the formatted result (not source) of a given page to STDOUT.
+links2 -dump duckduckgo.co.uk
+
+# When the `-dump` option is used, the user can also provide the `-width`
+# option, in order to specify the desired maximum line length, in characters.
+links2 -dump -width 80 duckduckgo.co.uk
+
+# Spoof the UA (UserAgent) which can help you visit various sites which might
+# restrict access from a non-standard browser, such as Firefox. In this case, -
+# we're faking a Mozilla Firefox 5.0 browser.
+links2 -http.fake-user-agent 'Mozilla/5.0' duckduckgo.co.uk
+
+# Have links2(1) request not to be tracked (as if anyone respects this!?). The
+# `1` is a boolean integer, indicating to enable the aforetyped option. This
+# option is by default disabled, according the August 2006 man page.
+links2 -http.do-not-track 1 duckduckgo.co.uk
+
+# Perhaps one of the most useful flags links2(1) supports enables numbered
+# links, allowing the user to simply type in the number followed by Enter or
+# Return, allowing for easier and quicker browsing.
+links2 -html-numbered-links 1 duckduckgo.co.uk
+
+# A Shell function which can be used to quickly access and search with DDG. For
+# example, the user might wish to learn about Perl, so enter: l2 Perl
+l2(){ links2 http://duckduckgo.com/?q="$*"; }
