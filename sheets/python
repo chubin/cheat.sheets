@@ -14,11 +14,11 @@ python -m http.server 8000
 python -m smtpd -n -c DebuggingServer localhost:1025
 
 # Pretty print a JSON
-python -mjson.tool
+python -m json.tool
 
 # Zen of Python
 # or just 'import this' in python
-python -mthis
+python -m this
 
 # See also:
 #   Python language cheat sheets at /python/
