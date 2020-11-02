@@ -1,14 +1,14 @@
 # heaptrack
-# A heap memory profiler for Linux
-# heaptrack traces all memory allocations and annotates these events with stack traces.
-# More information: <https://github.com/KDE/heaptrack>.
+# Heap memory profiler for Linux
+# Utility to trace all memory allocations and annotate these events with stack
+# traces. More information: <https://github.com/KDE/heaptrack>.
 
-
-# launch your_exec and start tracing its memory allocations. The code will exit with the path to your profile data file.
+# Launch your_exec, then start tracing its memory allocations. The code will
+# exit with the path to your profile data file.
 heaptrack ./your_exec
 
-# Analyze the heaptrack profiling data using the heaptrack GUI tool
+# Analyze the heaptrack profiling data using the heaptrack GUI tool.
 heaptrack_gui heaptrack.your_exec.pid.zst
 
-# Analyze the heaptrack profiling data using the heaptrack simple CLI tool
+# Analyze the heaptrack profiling data using the heaptrack simple CLI tool.
 heaptrack_print heaptrack.your_exec.pid.zst
