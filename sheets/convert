@@ -32,3 +32,6 @@ convert -quality 70 image.png new_image.jpg
 
 # Apply vignette and grayscale effects to all JPGs in the CWD, using a for loop.
 for FILE in *.jpg; { convert -background black -colorspace gray -vignette 200x100 "$FILE" "$FILE"; }
+
+# Convert multiple images to PDF
+convert image1.png image2.jpg image3.bmp output.pdf
