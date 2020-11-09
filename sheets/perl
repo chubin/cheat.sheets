@@ -48,3 +48,13 @@ perl -ne '/^$ARGV[0]::$</ and print(STDERR "WARNING: User has an empty password.
 
 # Display the current user's UID and GID in a format ideal for chmod(1).
 perl -e 'print("$<:" . (split(" ", $)))[0] . "\n")'
+
+# Permissions allowing, output the first 512 bytes of an MBR storage device, -
+# where the partition table should be stored, using Perl's read() function.
+#
+# Note that the 2-argument style open() should not be used unless the file is
+# static; no chance of changing to something potentially problematic.
+#
+# You might spot some printable strings, such as 'LILO' or 'GRUB', if you've
+# also stored your bootloader on the MBR of the storage device (non-UEFI).
+perl -e 'open(my $FH, "</dev/sda"); read($FH, my $Data, 512); close($FH); print("$Data\n")'

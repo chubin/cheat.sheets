@@ -1,0 +1,28 @@
+# ffmpeg
+# Tools for transcoding, streaming and playing of multimedia files
+
+# Convert IN_FILE to OUT_FILE, based on its extension. So, if your IN_FILE has
+# the `.mp3` extension and your OUT_FILE has the `.ogg` extension, then your
+# file will be converted -- but original kept in-tact -- to an OGG file.
+ffmpeg -i IN_FILE OUT_FILE
+# Remove the original upon successful completion of ffmpeg(1).
+ffmpeg -i IN_FILE OUT_FILE && rm -v IN_FILE
+
+# Convert all MP3s in the CWD to OGGs, deleting the originals when successfully
+# converted. This will be a huge time-saver! Note that this is Bash syntax.
+# By the way, this example works non-recursively.
+for File in *.mp3; { [ -f "$File" ] || continue; ffmpeg -i "$File" "${File%.mp3}.ogg" && rm -v "$File"; }
+
+# Obviously ffmpeg(1) works with audio files, but it can also work on images.
+# This example will convert a JPEG image to the PNG format.
+ffmpeg -i ImageFile.jpg ImageFile.png
+
+# By default, ffmpeg(1) is really verbose, so shut it up, displaying only the
+# more important information, by using the `-v` flag, followed by its `0`
+# argument; this argument means that only 'panic' messages will be shown. Refer
+# to the ffmpeg(1) man page for more information on these levels of logging.
+ffmpeg -v 0 -i IN_FILE OUT_FILE
+
+# If you want to see ongoing but not over-the-top statitics for the file on
+# which ffmpeg(1) is currently working, you can make use of the `-stats` flag.
+ffmpeg -stats -i IN_FILE OUT_FILE
