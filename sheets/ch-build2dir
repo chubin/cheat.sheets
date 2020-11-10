@@ -1,6 +1,8 @@
 # ch-build2dir
-# Utility to build a Charliecloud image from Dockerfile and unpack it into a directory. More information: <https://github.com/hpc/charliecloud>.
+# Utility to build a Charliecloud image from Dockerfile and unpack it into a
+# directory. More information: <https://github.com/hpc/charliecloud>.
 
-# Build a Charliecloud image using ./Dockerfile.foo and create image directory /var/tmp/foo
+# Build a Charliecloud image using ./Dockerfile.foo and create image
+# directory /var/tmp/foo
 ch-build2dir -t foo -f ./Dockerfile.foo . /var/tmp
 

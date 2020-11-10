@@ -1,7 +1,10 @@
 # ch-grow
-# Utility to build and manage Charliecloud images but not running them. It is completely unprivileged, with no setuid/setgid/setcap helpers. More information: <https://github.com/hpc/charliecloud>.
+# Utility to build and manage Charliecloud images but not running them.
+# It is completely unprivileged, with no setuid/setgid/setcap helpers.
+# More information: <https://github.com/hpc/charliecloud>.
 
-# Build the image "bar" using ./foo/bar/Dockerfile and context directory ./foo/bar
+# Build the image "bar" using ./foo/bar/Dockerfile and context directory
+# ./foo/bar
 ch-grow build -t bar -f ./foo/bar/Dockerfile ./foo/bar
 
 # Download the Debian Buster image and place it in /tmp/buster.
