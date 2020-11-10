@@ -1,0 +1,6 @@
+# ch-build
+# Utility to build a Charliecloud image and place it in the builder’s back-end storage. More information: <https://github.com/hpc/charliecloud>.
+
+# Create an image tagged foo and specified by the file /bar/Dockerfile. Use /bar as the Docker context directory. Use the default builder.
+ch-build -t foo --file=/bar/Dockerfile /bar
+

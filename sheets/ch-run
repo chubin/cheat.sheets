@@ -1,0 +1,6 @@
+# ch-run
+# Utility to run a command in a Charliecloud container. More information: <https://github.com/hpc/charliecloud>.
+
+# Run the command echo hello inside a Charliecloud container using the unpacked image at /data/foo.
+ch-run /data/foo -- echo hello
+

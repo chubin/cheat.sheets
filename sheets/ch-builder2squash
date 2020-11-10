@@ -1,0 +1,6 @@
+# ch-builder2squash
+# Utility to flatten a builder image into a Charliecloud SquashFS file. More information: <https://github.com/hpc/charliecloud>.
+
+# Flattens the builder image tagged "debian" into a SquashFS file named debian.sqfs in /var/tmp.
+ch-builder2squash debian /var/tmp
+
