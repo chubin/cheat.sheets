@@ -1,0 +1,9 @@
+# ch-tar2dir
+# Utility to unpack a Charliecloud image tarball into a directory.
+# More information: <https://github.com/hpc/charliecloud>.
+
+# Extract the tarball /var/tmp/hello.tar.gz into a subdirectory of /var/tmp.
+# hello.tar.gz must contain a Linux filesystem image, e.g. as created
+# by ch-builder2tar.
+ch-tar2dir /var/tmp/hello.tar.gz /var/tmp
+

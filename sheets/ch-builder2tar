@@ -1,0 +1,8 @@
+# ch-builder2tar
+# Utility to flatten a builder image into a Charliecloud image tarball.
+# More information: <https://github.com/hpc/charliecloud>.
+
+# Flatten the builder image tagged "hello" into a Charliecloud tarball in
+# directory /var/tmp
+ch-builder2tar hello /var/tmp
+

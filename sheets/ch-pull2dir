@@ -1,0 +1,8 @@
+# ch-pull2dir
+# Utility to pull an image from the Docker Hub and unpack it into a directory.
+# More information: <https://github.com/hpc/charliecloud>.
+
+# Pull Docker image named alpine:latest from Docker Hub and extract it into
+# a subdirectory of /var/tmp. A temporary tarball will be stored in /var/tmp.
+ch-pull2dir alpine:latest /var/tmp
+

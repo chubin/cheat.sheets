@@ -1,0 +1,8 @@
+# ch-mount
+# Utility to mount a SquashFS image file using FUSE.
+# More information: <https://github.com/hpc/charliecloud>.
+
+# Create a new empty directory named debian, then mount it on /var/tmp
+# directory. The /var/tmp directory must not already exist.
+ch-mount /var/tmp/debian.sqfs /var/tmp
+

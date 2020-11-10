@@ -1,0 +1,8 @@
+# ch-pull2tar
+# Utility to pull an image from the Docker Hub and flatten it into a tarball.
+# More information: <https://github.com/hpc/charliecloud>.
+
+# Pull a Docker image named alpine:latest from Docker Hub and flatten it into
+# a Charliecloud tarball in the directory /var/tmp.
+ch-pull2tar alpine:latest /var/tmp
+
