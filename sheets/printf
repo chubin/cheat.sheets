@@ -26,3 +26,7 @@ printf '%#.3d\n' 12
 # As above, but instead, space-pad the number. Prefix the `3` with a hyphen
 # (`-`) to left-align the number, causing the padding to occur on the right.
 printf '%3d\n' 12
+
+# Set a field's spacing by using an integer provided as a variable. This is
+# incredibly useful when you're dealing with inconsistent field lengths.
+printf '%*s\n' $Integer 'Example Field'

@@ -1,0 +1,5 @@
+# cdparanoia
+# Audio-extraction tool for sampling CDs
+
+# Rip tracks 1-20 from an audio CD in the provided device.
+cdparanoia -B 1-20 -d /dev/sr1
