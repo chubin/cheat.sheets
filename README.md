@@ -35,4 +35,4 @@ Requirements and constraints:
 
 * Maximum length of a comment line (including comment sign) is 80
 
-Other requirements can be proposed and discussed in #101
+Other requirements can be proposed and discussed in [#101](https://github.com/chubin/cheat.sheets/issues/101)
