@@ -1,7 +1,7 @@
 # curl
 # Command-line tool for transferring data with URL syntax
 
-# Download a single file.
+# Process a single GET request, and show its output on stdout.
 curl http://path.to.the/file
 
 # Download a file and specify a new filename.
