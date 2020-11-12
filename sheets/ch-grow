@@ -3,10 +3,8 @@
 # It is completely unprivileged, with no setuid/setgid/setcap helpers.
 # More information: <https://github.com/hpc/charliecloud>.
 
-# Build the image "bar" using ./foo/bar/Dockerfile and context directory
-# ./foo/bar
+# Build image 'bar' using './foo/bar/Dockerfile' and context dir './foo/bar'.
 ch-grow build -t bar -f ./foo/bar/Dockerfile ./foo/bar
 
-# Download the Debian Buster image and place it in /tmp/buster.
+# Download the Debian Buster image and place it in '/tmp/buster'.
 ch-grow pull debian:buster /tmp/buster
-

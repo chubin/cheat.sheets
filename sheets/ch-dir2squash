@@ -2,7 +2,6 @@
 # Utility to create a SquashFS file from a Charliecloud image directory.
 # More information: <https://github.com/hpc/charliecloud>.
 
-# Create a Charliecloud SquashFS file debian.sqfs under the directory /var/tmp
-# from the image directory /var/tmp/debian.
+# Create a Charliecloud SquashFS file debian.sqfs under the directory
+# '/var/tmp' from the image directory '/var/tmp/debian'.
 ch-dir2squash /var/tmp/debian /var/tmp
-
