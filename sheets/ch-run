@@ -6,7 +6,7 @@
 # unpacked image at '/data/foo'.
 ch-run /data/foo -- echo hello
 
-# Make the Charliecloud container writable (-w) and mount the host's
+# Make the Charliecloud container writable `-w` and mount the host's
 # '/home/user' directory to '/mnt' inside the container using the unpacked 
 # image at '/data/foo'. Run `/mnt/your_exec` inside the container.
 ch-run -w -b /home/user:/mnt /data/foo -- /mnt/your_exec
