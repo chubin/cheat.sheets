@@ -1,0 +1,29 @@
+# read (The Bash Built-in)
+# Read a line from the standard input and split it into fields
+
+# Standard approach to prompting the user for a single-character response, such
+# as a simple 'Y' or 'N' response. Using Bash's `read`, you can save time and
+# lines by having the prompt taken care of by `read` itself.
+#
+# The use of the `-e` flag tells read to return a new line afterwards. As the
+# `help read` output says:
+#
+#   use Readline to obtain the line in an interactive shell
+#
+# Because we're using the `-n 1` flag and argument, we'll want `-e`, as the
+# user will not get a chance to press the Enter or Return key which would
+# otherwise give us that new line.
+read -n 1 -e -p 'Prompt: '
+
+# A while read loop in Bash is easily one of the best features, when properly
+# utilized; it often makes the use of tools like grep(1), sed(1), and even
+# awk(1) redundant, depending on the functionality required. This can offer
+# more efficiency, depending on what's needed and the amount of data to parse.
+#
+# In this example, the [I]nput [F]ield [S]eperator is set to `=` for only the
+# `read` built-in, and the `-a` flag is used to split the input, per the
+# provided IFS, into an array. This then means the first index is the key and
+# the second index the value, which is ideal when parsing configurtion files.
+while IFS='=' read -a Line; do
+	COMMANDS
+done < INPUT_FILE
