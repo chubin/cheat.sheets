@@ -63,7 +63,7 @@ case $PWD in
 	'')
 		Err 1 'Unable to determine the CWD.' ;;
 	*)
-		Err 1 "Not within the 'cheat.sh/tests' directory." ;;
+		Err 1 "Not within the 'cheat.sheets/tests' directory." ;;
 esac
 
 Main(){
