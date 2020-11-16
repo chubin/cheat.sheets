@@ -111,7 +111,7 @@ Main(){
 					# then make sure the terminal window is wide enough.
 					printf '%s' "${REPLY:0:70}"
 
-					# Cut-off elipses.
+					# Cut-off ellipses.
 					[ "$DoColor" == 'True' ] && printf '\e[2;1m'
 					printf '...\n'
 					[ "$DoColor" == 'True' ] && printf '\e[0m'
@@ -132,6 +132,6 @@ else
 	Main
 
 	# Testing line for use when checking the summary lines up with wc(1). When
-	# using this, be sure previewing is disbaled and the summary is enabled.
+	# using this, be sure previewing is disabled and the summary is enabled.
 	#printf '%d\n' $((`Main |& wc -l` - 2))
 fi
