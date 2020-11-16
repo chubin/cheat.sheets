@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+
+#------------------------------------------------------------------------------
+# Author E-Mail     - terminalforlife@yahoo.com
+# Author GitHub     - https://github.com/terminalforlife
+#------------------------------------------------------------------------------
+
+Progrm=${0##*/}
+
+Usage(){
+	while read; do
+		printf '%s\n' "$REPLY"
+	done <<-EOF
+		Usage: $Progrm [OPTS]
+
+		  -h, --help               - Display this help information.
+		  -N, --no-preview         - Omit the preview of each triggered line.
+		  -S, --no-summary         - Omit the summary before $Progrm exits.
+		  -c, --colorize           - Provide color via esscape sequences.
+		  -l, --limit [INT]        - Override the limit of 80 columns.
+		  -p, --pager              - Use less(1) to page the output.
+	EOF
+}
+
+Err(){
+	printf 'ERROR: %s\n' "$2" 1>&2
+	[ $1 -gt 0 ] && exit $1
+}
+
+MaxCols=80
+
+while [ "$1" ]; do
+	case $1 in
+		--help|-h|-\?)
+			Usage; exit 0 ;;
+		--limit|-l)
+			shift; MaxCols=$1
+
+			if ! [[ $MaxCols =~ ^[0-9]+$ ]]; then
+				Err 1 'Invalid column maximum provided.'
+			fi ;;
+		--pager|-p)
+			DoLess='True' ;;
+		--no-preview|-N)
+			NoPreview='True' ;;
+		--colorize|-c)
+			DoColor='True' ;;
+		--no-summary|-S)
+			NoSummary='True' ;;
+		*)
+			Err 1 'Incorrect option(s) specified.' ;;
+	esac
+	shift
+done
+
+# Confirm we are in the right place.
+git rev-parse --is-inside-work-tree 1> /dev/null 2>&1 ||
+	Err 0 'Not inside a Git repository.'
+
+case $PWD in
+	*/cheat.sheets/tests)
+		;;
+	'')
+		Err 1 'Unable to determine the CWD.' ;;
+	*)
+		Err 1 "Not within the 'cheat.sheets/tests' directory." ;;
+esac
+
+Main(){
+	for File in ../sheets/* ../sheets/*/*; {
+		[ -f "$File" ] || continue
+
+		HaveBeenHit='False'
+		LineNum=0
+
+		while read; do
+			let LineNum++
+
+			# Ignore non-comment lines for '#' and '//'.
+			case $REPLY in
+				'#'*|'//'*)
+					;;
+				*)
+					continue ;;
+			esac
+
+			if [ ${#REPLY} -gt 80 ]; then
+				# We only need to be informed of a hit just the once, per file.
+				if [ "$HaveBeenHit" == 'False' ]; then
+					# The leading newline character, if needed.
+					[ "$NoPreview" == 'True' ] || printf '\n'
+
+					# The filename containing problematic line lengths.
+					[ "$DoColor" == 'True' ] && printf '\e[1;31m'
+					printf '%s\n' "${File#../}"
+					[ "$DoColor" == 'True' ] && printf '\e[0m'
+
+					HaveBeenHit='True'
+					let Hits++
+				fi
+
+				if ! [ "$NoPreview" == 'True' ]; then
+					# The line number of the problematic length.
+					[ "$DoColor" == 'True' ] && printf '\e[1;32m'
+					printf '  %7d  ' $LineNum # <-- allows for 9,999,999 lines.
+					[ "$DoColor" == 'True' ] && printf '\e[0m'
+
+					# Cannot make this 80 columns long, due to the indentation
+					# and padding, but if you need to test this, for the sake
+					# of checking lenchk is doing its job, set the 70 to 80, -
+					# then make sure the terminal window is wide enough.
+					printf '%s' "${REPLY:0:70}"
+
+					# Cut-off ellipses.
+					[ "$DoColor" == 'True' ] && printf '\e[2;1m'
+					printf '...\n'
+					[ "$DoColor" == 'True' ] && printf '\e[0m'
+				fi
+			fi
+		done < "$File"
+	}
+
+	if [ $Hits -gt 0 -a "$NoSummary" != 'True' ]; then
+		printf '\nFound %d file(s) with comment length >%d.\n'\
+			$Hits $MaxCols 1>&2
+	fi
+}
+
+if [ "$DoLess" == 'True' ]; then
+	Main | less -r
+else
+	Main
+
+	# Testing line for use when checking the summary lines up with wc(1). When
+	# using this, be sure previewing is disabled and the summary is enabled.
+	#printf '%d\n' $((`Main |& wc -l` - 2))
+fi
