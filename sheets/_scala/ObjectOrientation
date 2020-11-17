@@ -35,7 +35,8 @@ abstract class D { ... }
 class C extends D { ... }
 class D(var x: R)
 
-// inheritance and constructor params. (wishlist: automatically pass-up params by default)
+// inheritance and constructor params. (wishlist: automatically pass-up params
+// by default)
 class C(x: R) extends D(x)
 
 // define a singleton. (module-like)
@@ -44,8 +45,10 @@ object O extends D { ... }
 // traits.
 trait T { ... }
 
-// interfaces-with-implementation. no constructor params
-// mixin-able: http://docs.scala-lang.org/tutorials/tour/mixin-class-composition.html
+// interfaces-with-implementation. no constructor params. mixin-able:
+//
+//   http://docs.scala-lang.org/tutorials/tour/mixin-class-composition.html
+//
 class C extends T { ... }
 class C extends D with T { ... }
 
