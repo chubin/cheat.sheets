@@ -22,6 +22,7 @@ Usage(){
 		Usage: $Progrm [OPTS]
 
 		  -h, --help               - Display this help information.
+		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
 		  -N, --no-preview         - Omit the preview of each triggered line.
 		  -S, --no-summary         - Omit the summary before $Progrm exits.
 		  -c, --colorize           - Provide color via esscape sequences.
@@ -67,6 +68,8 @@ while [ "$1" ]; do
 			DoColor='True' ;;
 		--no-summary|-S)
 			NoSummary='True' ;;
+		--no-subdirs|-D)
+			NoSubDirs='True' ;;
 		*)
 			Err 1 'Incorrect option(s) specified.' ;;
 	esac
@@ -87,7 +90,10 @@ case $PWD in
 esac
 
 Main(){
-	for File in ../sheets/* ../sheets/*/*; {
+	Dirs=(../sheets/*)
+	[ "$NoSubDirs" == 'True' ] || Dirs+=(../sheets/*/*)
+
+	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
 
 		HaveBeenHit='False'
@@ -147,6 +153,8 @@ Main(){
 }
 
 if [ "$DoLess" == 'True' ]; then
+	# Redirecting STDERR to address less(1) bug causing summary to display
+	# where it shouldn't; only seems to happen when colorization is enabled.
 	Main 2>&1 | less -r
 else
 	Main
