@@ -15,6 +15,7 @@ Usage(){
 
 		  -h, --help               - Display this help information.
 		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
+		  -I, --no-lenchk-line     - Ignore the special 'lenchk=.*' line.
 		  -N, --no-preview         - Omit the preview of each triggered line.
 		  -P, --no-pager           - Do not use less(1) or more(1) for paging.
 		  -S, --no-summary         - Omit the summary before $Progrm exits.
@@ -38,6 +39,9 @@ Usage(){
 		  The location of the whitelisting file ('$Progrm-excludes') must
 		  remain in the same directory in which $Progrm is stored, unless
 		  otherwise specified.
+
+		  Alternatively, a file can be whitelisted by ensuring the very first
+		  line contains only 'lenchk=disable', akin to a vim(1) modeline.
 	EOF
 }
 
@@ -73,6 +77,8 @@ while [ "$1" ]; do
 			NoSubDirs='True' ;;
 		--no-whitelist|-W)
 			NoWhiteList='True' ;;
+		-I|--no-lenchk-line)
+			NoLenChkLine='True' ;;
 		--wl-file|-w)
 			shift
 
@@ -134,8 +140,10 @@ Main(){
 		}
 
 		# Per chubin's desire to have an "in-bound flag"; see #134 for info.
-		read Buffer < "$File"
-		[ "$Buffer" == 'lenchk=disable' ] && continue
+		if [ "$NoLenChkLine" != 'True' ]; then
+			read Buffer < "$File"
+			[ "$Buffer" == 'lenchk=disable' ] && continue
+		fi
 
 		HaveBeenHit='False'
 		LineNum=0
