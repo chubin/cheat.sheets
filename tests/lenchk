@@ -11,14 +11,33 @@ Usage(){
 	while read; do
 		printf '%s\n' "$REPLY"
 	done <<-EOF
-		Usage: $Progrm [OPTS]
+		Usage: $Progrm [OPTS] [DIR_1 [DIR_2 ...]]
 
 		  -h, --help               - Display this help information.
+		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
 		  -N, --no-preview         - Omit the preview of each triggered line.
+		  -P, --no-pager           - Do not use less(1) or more(1) for paging.
 		  -S, --no-summary         - Omit the summary before $Progrm exits.
+		  -W, --no-whilelist       - Do not use the whitelist file.
 		  -c, --colorize           - Provide color via esscape sequences.
 		  -l, --limit [INT]        - Override the limit of 80 columns.
-		  -p, --pager              - Use less(1) to page the output.
+		  -w, --wl-file [FILE]     - Use an alternative whitelist file.
+
+		  Additional directories can be appended to the argument string in
+		  order to process directories otherwise not handled by $Progrm. You
+		  can use '--' to let $Progrm know when to stop looking for flags.
+
+		  Files to whitelist must be placed line-by-line; one path per line.
+
+		    cheat.sheets/sheets/_perl/1line
+		    cheat.sheets/sheets/find
+
+		  The file paths to provide must begin with 'cheat.sheets/' to indicate
+		  the root of the repository, otherwise this feature will fail.
+
+		  The location of the whitelisting file ('$Progrm-excludes') must
+		  remain in the same directory in which $Progrm is stored, unless
+		  otherwise specified.
 	EOF
 }
 
@@ -27,10 +46,13 @@ Err(){
 	[ $1 -gt 0 ] && exit $1
 }
 
+WLFile='lenchk-excludes'
 MaxCols=80
 
 while [ "$1" ]; do
 	case $1 in
+		--)
+			break ;;
 		--help|-h|-\?)
 			Usage; exit 0 ;;
 		--limit|-l)
@@ -39,16 +61,30 @@ while [ "$1" ]; do
 			if ! [[ $MaxCols =~ ^[0-9]+$ ]]; then
 				Err 1 'Invalid column maximum provided.'
 			fi ;;
-		--pager|-p)
-			DoLess='True' ;;
+		--no-pager|-P)
+			NoPager='True' ;;
 		--no-preview|-N)
 			NoPreview='True' ;;
 		--colorize|-c)
 			DoColor='True' ;;
 		--no-summary|-S)
 			NoSummary='True' ;;
-		*)
+		--no-subdirs|-D)
+			NoSubDirs='True' ;;
+		--no-whitelist|-W)
+			NoWhiteList='True' ;;
+		--wl-file|-w)
+			shift
+
+			if [ -z "$1" ]; then
+				Err 1 'No alternative whitelist file provided.'
+			else
+				WLFile=$1
+			fi ;;
+		-*)
 			Err 1 'Incorrect option(s) specified.' ;;
+		*)
+			break ;;
 	esac
 	shift
 done
@@ -66,9 +102,36 @@ case $PWD in
 		Err 1 "Not within the 'cheat.sheets/tests' directory." ;;
 esac
 
+Dirs=(../sheets/*)
+[ "$NoSubDirs" == 'True' ] || Dirs+=(../sheets/*/*)
+
+# Add user's own directories to check, if they exist.
+for ArgDir in "$@"; {
+	if [ -d "$ArgDir" ]; then
+		Dirs+=($ArgDir/*)
+	else
+		Err 1 "Directory '$ArgDir' not found."
+	fi
+}
+
+# If the whitelist file exists, use it, unless whitelisting is disabled.
+# Keeping this test outside of the loop to avoid unnecessary processing.
+if [ "$NoWhiteList" != 'True' ] && [ -f "$WLFile" ]; then
+	# Read the whitelist file, line-by-line, generating an array thereof.
+	Whitelisted=()
+	while read; do
+		Whitelisted+=("../${REPLY#cheat.sheets/}")
+	done < "$WLFile"
+fi
+
 Main(){
-	for File in ../sheets/* ../sheets/*/*; {
+	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
+
+		# If the current file matches one which is whitelisted, skip it.
+		for CurWL in "${Whitelisted[@]}"; {
+			[ "$File" == "$CurWL" ] && continue 2
+		}
 
 		HaveBeenHit='False'
 		LineNum=0
@@ -120,14 +183,25 @@ Main(){
 		done < "$File"
 	}
 
-	if [ $Hits -gt 0 -a "$NoSummary" != 'True' ]; then
+	if [ ${Hits:-0} -gt 0 -a "$NoSummary" != 'True' ]; then
 		printf '\nFound %d file(s) with comment length >%d.\n'\
 			$Hits $MaxCols 1>&2
 	fi
 }
 
-if [ "$DoLess" == 'True' ]; then
-	Main | less -r
+if [ -t 1 -a "$NoPager" != 'True' ]; then
+	# Prefer less(1), but have more(1) as a fallback.
+	if type -fP less &> /dev/null; then
+		Pager='less'
+	elif type -fP more &> /dev/null; then
+		Pager='more'
+	else
+		Err 1 'Neither less(1) nor more(1) were found.'
+	fi
+
+	# Redirecting STDERR to address less(1) bug causing summary to display
+	# where it shouldn't; only seems to happen when colorization is enabled.
+	Main 2>&1 | $Pager -r
 else
 	Main
 
