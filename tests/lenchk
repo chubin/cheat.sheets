@@ -4,14 +4,6 @@
 # Author E-Mail     - terminalforlife@yahoo.com
 # Author GitHub     - https://github.com/terminalforlife
 #------------------------------------------------------------------------------
-# Features:
-#
-#TODO: k
-#
-# Bugs:
-#
-# N/A
-#------------------------------------------------------------------------------
 
 Progrm=${0##*/}
 
@@ -25,21 +17,23 @@ Usage(){
 		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
 		  -N, --no-preview         - Omit the preview of each triggered line.
 		  -S, --no-summary         - Omit the summary before $Progrm exits.
+		  -W, --no-whilelist       - Do not use the whitelist file.
 		  -c, --colorize           - Provide color via esscape sequences.
 		  -l, --limit [INT]        - Override the limit of 80 columns.
 		  -p, --pager              - Use less(1) to page the output.
-		  -w, --whitelist [FILE]   - Whitelist files stored within.
+		  -w, --wl-file [FILE]     - Use an alternative whitelist file.
 
-		  Whitelisting uses the following format, by way of example:
+		  Files to whitelist must be placed line-by-line; one path per line.
 
-		    file 'cheat.sheets/sheets/_perl/1line'
-		    file 'cheat.sheets/sheets/find'
+		    cheat.sheets/sheets/_perl/1line
+		    cheat.sheets/sheets/find
 
 		  The file paths to provide must begin with 'cheat.sheets/' to indicate
 		  the root of the repository, otherwise this feature will fail.
 
-		  The location of the whitelisting file ('$Progrm-exclude') must remain
-		  in the same directory in which $Progrm is stored.
+		  The location of the whitelisting file ('$Progrm-excludes') must
+		  remain in the same directory in which $Progrm is stored, unless
+		  otherwise specified.
 	EOF
 }
 
@@ -48,6 +42,7 @@ Err(){
 	[ $1 -gt 0 ] && exit $1
 }
 
+WLFile='lenchk-excludes'
 MaxCols=80
 
 while [ "$1" ]; do
@@ -70,6 +65,16 @@ while [ "$1" ]; do
 			NoSummary='True' ;;
 		--no-subdirs|-D)
 			NoSubDirs='True' ;;
+		--no-whitelist|-W)
+			NoWhiteList='True' ;;
+		--wl-file|-w)
+			shift
+
+			if [ -z "$1" ]; then
+				Err 1 'No alternative whitelist file provided.'
+			else
+				WLFile=$1
+			fi ;;
 		*)
 			Err 1 'Incorrect option(s) specified.' ;;
 	esac
@@ -93,8 +98,23 @@ Main(){
 	Dirs=(../sheets/*)
 	[ "$NoSubDirs" == 'True' ] || Dirs+=(../sheets/*/*)
 
+	# If the whitelist file exists, use it, unless whitelisting is disabled.
+	# Keeping this test outside of the loop to avoid unnecessary processing.
+	if [ "$NoWhiteList" != 'True' ] && [ -f "$WLFile" ]; then
+		# Read the whitelist file, line-by-line, generating an array thereof.
+		Whitelisted=()
+		while read; do
+			Whitelisted+=("../${REPLY#cheat.sheets/}")
+		done < "$WLFile"
+	fi
+
 	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
+
+		# If the current file matches one which is whitelisted, skip it.
+		for CurWL in "${Whitelisted[@]}"; {
+			[ "$File" == "$CurWL" ] && continue 2
+		}
 
 		HaveBeenHit='False'
 		LineNum=0
