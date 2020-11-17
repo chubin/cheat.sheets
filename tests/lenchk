@@ -130,6 +130,16 @@ if [ "$NoWhiteList" != 'True' ] && [ -f "$WLFile" ]; then
 	done < "$WLFile"
 fi
 
+# Using tput(1) for portability.
+if type -fP tput &> /dev/null; then
+	C_Ellipses=`tput dim; tput setaf 7`
+	C_LineNums=`tput bold; tput setaf 2`
+	C_FileNames=`tput bold; tput setaf 1`
+	C_Reset=`tput sgr0`
+else
+	Err 1 'Unable to colorize output -- tput(1) not found.'
+fi
+
 Main(){
 	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
@@ -166,9 +176,9 @@ Main(){
 					[ "$NoPreview" == 'True' ] || printf '\n'
 
 					# The filename containing problematic line lengths.
-					[ "$DoColor" == 'True' ] && printf '\e[1;31m'
+					[ "$DoColor" == 'True' ] && printf "$C_FileNames"
 					printf '%s\n' "${File#../}"
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$DoColor" == 'True' ] && printf "$C_Reset"
 
 					HaveBeenHit='True'
 					let Hits++
@@ -176,9 +186,9 @@ Main(){
 
 				if ! [ "$NoPreview" == 'True' ]; then
 					# The line number of the problematic length.
-					[ "$DoColor" == 'True' ] && printf '\e[1;32m'
+					[ "$DoColor" == 'True' ] && printf "$C_LineNums"
 					printf '  %7d  ' $LineNum # <-- allows for 9,999,999 lines.
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$DoColor" == 'True' ] && printf "$C_Reset"
 
 					# Cannot make this 80 columns long, due to the indentation
 					# and padding, but if you need to test this, for the sake
@@ -187,9 +197,9 @@ Main(){
 					printf '%s' "${REPLY:0:70}"
 
 					# Cut-off ellipses.
-					[ "$DoColor" == 'True' ] && printf '\e[2;1m'
+					[ "$DoColor" == 'True' ] && printf "$C_Ellipses"
 					printf '...\n'
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$DoColor" == 'True' ] && printf "$C_Reset"
 				fi
 			fi
 		done < "$File"
