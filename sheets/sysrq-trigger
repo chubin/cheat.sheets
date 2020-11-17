@@ -18,12 +18,14 @@ echo "kernel.sysrq = 1" >> /etc/sysctl.conf
 # e – Sends SIGTERM to all process except init.
 # m – Output current memory information to the console.
 # i – Send the SIGKILL signal to all processes except init
-# r – Switch the keyboard from raw mode (the mode used by programs such as X11), to XLATE mode.
+# r – Switch the keyboard from raw mode
+#     (the mode used by programs such as X11), to XLATE mode.
 # s – sync all mounted file system.
 # t – Output a list of current tasks and their information to the console.
 # u – Remount all mounted filesystems in readonly mode.
 # o – Shutdown the system immediately.
 # p – Print the current registers and flags to the console.
-# 0-9 – Sets the console log level, controlling which kernel messages will be printed to your console.
+# 0-9 – Sets the console log level, controlling which kernel messages will be
+#     printed to your console.
 # f – Will call oom_kill to kill process which takes more memory.
-# h – Used to display the help. But any other keys than the above listed will print help.
+# h – Used to display the help (any key except the listed above will print help)

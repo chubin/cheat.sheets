@@ -1,5 +1,6 @@
-# rclone is a command line tool, similar to rsync, with the difference that
-# it can sync, move, copy, and in general do other file operations on cloud services
+# rclone
+# A command line tool, similar to rsync, with the difference that it can sync,
+# move, copy, and in general do other file operations on cloud services.
 
 # Config rclone
 rclone config
