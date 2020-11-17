@@ -11,7 +11,7 @@ Usage(){
 	while read; do
 		printf '%s\n' "$REPLY"
 	done <<-EOF
-		Usage: $Progrm [OPTS]
+		Usage: $Progrm [OPTS] [DIR_1 [DIR_2 ...]]
 
 		  -h, --help               - Display this help information.
 		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
@@ -22,6 +22,10 @@ Usage(){
 		  -c, --colorize           - Provide color via esscape sequences.
 		  -l, --limit [INT]        - Override the limit of 80 columns.
 		  -w, --wl-file [FILE]     - Use an alternative whitelist file.
+
+		  Additional directories can be appended to the argument string in
+		  order to process directories otherwise not handled by $Progrm. You
+		  can use '--' to let $Progrm know when to stop looking for flags.
 
 		  Files to whitelist must be placed line-by-line; one path per line.
 
@@ -47,6 +51,8 @@ MaxCols=80
 
 while [ "$1" ]; do
 	case $1 in
+		--)
+			break ;;
 		--help|-h|-\?)
 			Usage; exit 0 ;;
 		--limit|-l)
@@ -75,8 +81,10 @@ while [ "$1" ]; do
 			else
 				WLFile=$1
 			fi ;;
-		*)
+		-*)
 			Err 1 'Incorrect option(s) specified.' ;;
+		*)
+			break ;;
 	esac
 	shift
 done
@@ -96,6 +104,15 @@ esac
 
 Dirs=(../sheets/*)
 [ "$NoSubDirs" == 'True' ] || Dirs+=(../sheets/*/*)
+
+# Add user's own directories to check, if they exist.
+for ArgDir in "$@"; {
+	if [ -d "$ArgDir" ]; then
+		Dirs+=($ArgDir/*)
+	else
+		Err 1 "Directory '$ArgDir' not found."
+	fi
+}
 
 # If the whitelist file exists, use it, unless whitelisting is disabled.
 # Keeping this test outside of the loop to avoid unnecessary processing.
@@ -166,7 +183,7 @@ Main(){
 		done < "$File"
 	}
 
-	if [ $Hits -gt 0 -a "$NoSummary" != 'True' ]; then
+	if [ ${Hits:-0} -gt 0 -a "$NoSummary" != 'True' ]; then
 		printf '\nFound %d file(s) with comment length >%d.\n'\
 			$Hits $MaxCols 1>&2
 	fi
