@@ -1,7 +1,8 @@
 # Shows information about the Xen host
 xm info
 
-# Shows information about doms (states include r for running, b for blocked, c for crashed, p for paused and the worse, d for dying).
+# Shows information about doms (states include r for running, b for blocked, c
+# for crashed, p for paused and the worse, d for dying).
 xm list
 
 # Shows virtual interfaces for doms
@@ -44,7 +45,7 @@ xm shutdown
 # but if the host is rebooted then state is lost (otherwise use suspend)
 xm pause
 
-# Suspends a VM, which writes the data to disk, so changes wouldn't be lost on restart.
+# Suspends VM, which writes data to disk, so changes won't be lost on restart.
 xm suspend
 
 # Rename installed VMs
@@ -79,4 +80,3 @@ xm vcpu-set
 
 # Move a domain to another server (e.g. using the -l operator to do so live)
 xm migrate
-

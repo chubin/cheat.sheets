@@ -1,6 +1,6 @@
 # Recursion
-# Def: "...is a method where the solution to a problem depends on solutions to smaller instance of the same problem.." - wiki
-# TL;DR: a function that calls itself inside its body.
+# Method for when the solution to a problem depends on solutions to smaller
+# instance of the same problem; a self-calling function.
 
 # Recursive programs - Pseduocode
 function factorial:

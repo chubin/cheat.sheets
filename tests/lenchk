@@ -14,12 +14,13 @@ Usage(){
 		Usage: $Progrm [OPTS] [DIR_1 [DIR_2 ...]]
 
 		  -h, --help               - Display this help information.
+		  -C, --no-color           - Provide color via esscape sequences.
 		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
+		  -I, --no-lenchk-line     - Ignore the special 'lenchk=.*' line.
 		  -N, --no-preview         - Omit the preview of each triggered line.
 		  -P, --no-pager           - Do not use less(1) or more(1) for paging.
 		  -S, --no-summary         - Omit the summary before $Progrm exits.
 		  -W, --no-whilelist       - Do not use the whitelist file.
-		  -c, --colorize           - Provide color via esscape sequences.
 		  -l, --limit [INT]        - Override the limit of 80 columns.
 		  -w, --wl-file [FILE]     - Use an alternative whitelist file.
 
@@ -38,6 +39,9 @@ Usage(){
 		  The location of the whitelisting file ('$Progrm-excludes') must
 		  remain in the same directory in which $Progrm is stored, unless
 		  otherwise specified.
+
+		  Alternatively, a file can be whitelisted by ensuring the very first
+		  line contains only 'lenchk=disable', akin to a vim(1) modeline.
 	EOF
 }
 
@@ -65,14 +69,16 @@ while [ "$1" ]; do
 			NoPager='True' ;;
 		--no-preview|-N)
 			NoPreview='True' ;;
-		--colorize|-c)
-			DoColor='True' ;;
+		--no-color|-C)
+			NoColor='True' ;;
 		--no-summary|-S)
 			NoSummary='True' ;;
 		--no-subdirs|-D)
 			NoSubDirs='True' ;;
 		--no-whitelist|-W)
 			NoWhiteList='True' ;;
+		-I|--no-lenchk-line)
+			NoLenChkLine='True' ;;
 		--wl-file|-w)
 			shift
 
@@ -88,6 +94,10 @@ while [ "$1" ]; do
 	esac
 	shift
 done
+
+# Thank you, Chubin. Feature apparently added in version 3.0 alpha, so should
+# be OK, but if anyone is having issues, just `cd` to the 'tests' directory.
+[ ${BASH_VERSINFO[0]:-0} -eq 3 ] || cd "${BASH_SOURCE[0]%/*}" &> /dev/null
 
 # Confirm we are in the right place.
 git rev-parse --is-inside-work-tree 1> /dev/null 2>&1 ||
@@ -124,6 +134,16 @@ if [ "$NoWhiteList" != 'True' ] && [ -f "$WLFile" ]; then
 	done < "$WLFile"
 fi
 
+# Using tput(1) for portability.
+if type -fP tput &> /dev/null; then
+	C_Ellipses=`tput dim; tput setaf 7`
+	C_LineNums=`tput bold; tput setaf 2`
+	C_FileNames=`tput bold; tput setaf 1`
+	C_Reset=`tput sgr0`
+else
+	Err 1 'Unable to colorize output -- tput(1) not found.'
+fi
+
 Main(){
 	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
@@ -132,6 +152,12 @@ Main(){
 		for CurWL in "${Whitelisted[@]}"; {
 			[ "$File" == "$CurWL" ] && continue 2
 		}
+
+		# Per chubin's desire to have an "in-bound flag"; see #134 for info.
+		if [ "$NoLenChkLine" != 'True' ]; then
+			read Buffer < "$File"
+			[ "$Buffer" == 'lenchk=disable' ] && continue
+		fi
 
 		HaveBeenHit='False'
 		LineNum=0
@@ -154,9 +180,9 @@ Main(){
 					[ "$NoPreview" == 'True' ] || printf '\n'
 
 					# The filename containing problematic line lengths.
-					[ "$DoColor" == 'True' ] && printf '\e[1;31m'
+					[ "$NoColor" == 'True' ] || printf "$C_FileNames"
 					printf '%s\n' "${File#../}"
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$NoColor" == 'True' ] || printf "$C_Reset"
 
 					HaveBeenHit='True'
 					let Hits++
@@ -164,9 +190,9 @@ Main(){
 
 				if ! [ "$NoPreview" == 'True' ]; then
 					# The line number of the problematic length.
-					[ "$DoColor" == 'True' ] && printf '\e[1;32m'
+					[ "$NoColor" == 'True' ] || printf "$C_LineNums"
 					printf '  %7d  ' $LineNum # <-- allows for 9,999,999 lines.
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$NoColor" == 'True' ] || printf "$C_Reset"
 
 					# Cannot make this 80 columns long, due to the indentation
 					# and padding, but if you need to test this, for the sake
@@ -175,9 +201,9 @@ Main(){
 					printf '%s' "${REPLY:0:70}"
 
 					# Cut-off ellipses.
-					[ "$DoColor" == 'True' ] && printf '\e[2;1m'
+					[ "$NoColor" == 'True' ] || printf "$C_Ellipses"
 					printf '...\n'
-					[ "$DoColor" == 'True' ] && printf '\e[0m'
+					[ "$NoColor" == 'True' ] || printf "$C_Reset"
 				fi
 			fi
 		done < "$File"
