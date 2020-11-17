@@ -1,35 +1,37 @@
 # doas
 # Execute commands as another user
 #
-# OpenBSD lightweight sudo alternative, "dedicated openbsd application subexecutor"
-# It was created by Ted Unangst after he was dissatisfied with the complexity
-# of sudo and had issues with the default sudo configuration
+# OpenBSD's lightweight sudo alternative, "dedicated openbsd application
+# subexecutor", was created by Ted Unangst after he was dissatisfied with the
+# complexity of sudo(8) and had issues with its default configuration.
 
-# Remove the folder of "/home/user" as user
-# If the -u option is not specified, the command will be executed as root
-doas -u user ls /home/user
+# Execute COMMAND as USER. If the -u option is not specified, `doas` will by
+# default operate as the 'root' user.
+doas -u USER COMMAND
 
-# Show the contents of "/etc/shadow" as root
+# Show the contents of '/etc/shadow' as root
 doas cat /etc/shadow
 
-# Execute the shell defined in $SHELL as root
+# Execute the shell defined in `$SHELL` as root
 doas -s
 
-# Permission to execute commands as another user are given in the config file "/etc/doas.conf"
-# The following line grants permission for every user in the wheel group to execute commands as root
+# Permission to execute commands as another user are given in the config file
+# '/etc/doas.conf'. The following line grants permission for every user in the
+# 'wheel' group to execute commands as the 'root' user:
 #
-#       permit persist keepenv :wheel
+#   permit persist keepenv :wheel
 #
-# Where the option "persist" makes doas only ask for the password once in each shell session
-# Where the colon specifies that "wheel" is a group, not a user
-# And where the option "keepenv" keeps the current environment variables
+# The option 'persist' makes doas only ask for the password once in each
+# shell session. The use of the colon (':') specifies that "wheel" is a
+# group, not a user. The option 'keepenv' keeps the current environment
+# variables.
 #
-# The following line rejects permission for "user" to run commands as anon,
-# if the user is not specified, it will default to root
+# The following line rejects permission for 'user' to run commands as 'anon', -
+# if the user is not specified, it will default to the 'root' user.
 #
-#       deny user as anon
+#   deny user as anon
 #
-# The following line allows "user" to execute only the program "shutdown" as root,
-# without asking for a password
+# The following line allows "user" to execute only the program "shutdown" as
+# root, without asking for a password.
 #
-#       permit nopass user cmd shutdown
+#   permit nopass user cmd shutdown
