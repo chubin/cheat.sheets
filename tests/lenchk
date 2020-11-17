@@ -4,6 +4,14 @@
 # Author E-Mail     - terminalforlife@yahoo.com
 # Author GitHub     - https://github.com/terminalforlife
 #------------------------------------------------------------------------------
+# Features:
+#
+#TODO: k
+#
+# Bugs:
+#
+# N/A
+#------------------------------------------------------------------------------
 
 Progrm=${0##*/}
 
@@ -19,6 +27,18 @@ Usage(){
 		  -c, --colorize           - Provide color via esscape sequences.
 		  -l, --limit [INT]        - Override the limit of 80 columns.
 		  -p, --pager              - Use less(1) to page the output.
+		  -w, --whitelist [FILE]   - Whitelist files stored within.
+
+		  Whitelisting uses the following format, by way of example:
+
+		    file 'cheat.sheets/sheets/_perl/1line'
+		    file 'cheat.sheets/sheets/find'
+
+		  The file paths to provide must begin with 'cheat.sheets/' to indicate
+		  the root of the repository, otherwise this feature will fail.
+
+		  The location of the whitelisting file ('$Progrm-exclude') must remain
+		  in the same directory in which $Progrm is stored.
 	EOF
 }
 
@@ -127,7 +147,7 @@ Main(){
 }
 
 if [ "$DoLess" == 'True' ]; then
-	Main | less -r
+	Main 2>&1 | less -r
 else
 	Main
 
