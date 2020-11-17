@@ -133,6 +133,10 @@ Main(){
 			[ "$File" == "$CurWL" ] && continue 2
 		}
 
+		# Per chubin's desire to have an "in-bound flag"; see #134 for info.
+		read Buffer < "$File"
+		[ "$Buffer" == 'lenchk=disable' ] && continue
+
 		HaveBeenHit='False'
 		LineNum=0
 
