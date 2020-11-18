@@ -1,6 +1,6 @@
 # percol
-#
-# adds flavor of interactive filtering to the traditional pipe concept of UNIX shell
+# adds flavor of interactive filtering to the traditional pipe concept
+# of UNIX shell
 
 # to install percol
 sudo pip install percol
