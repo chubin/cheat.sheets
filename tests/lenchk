@@ -229,16 +229,20 @@ Main(){
 if [ -t 1 -a "$NoPager" != 'True' ]; then
 	# Prefer less(1), but have more(1) as a fallback.
 	if type -fP less &> /dev/null; then
-		Pager='less'
+		Pager='less -R'
 	elif type -fP more &> /dev/null; then
 		Pager='more'
+
+		if [ "$NoColor" != 'True' ]; then
+			Err 1 'Only more(1) is available -- colors unsupported.'
+		fi
 	else
 		Err 1 'Neither less(1) nor more(1) were found.'
 	fi
 
 	# Redirecting STDERR to address less(1) bug causing summary to display
 	# where it shouldn't; only seems to happen when colorization is enabled.
-	Main 2>&1 | $Pager -r
+	Main 2>&1 | $Pager
 else
 	Main
 
