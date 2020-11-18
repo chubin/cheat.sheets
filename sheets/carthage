@@ -11,7 +11,7 @@ carthage update --platform ios
 # Update dependencies, but don't build any of them
 carthage update --no-build
 
-# Download and rebuild the current version of dependencies (without updating them)
+# Download & rebuild the current version of dependencies (without updating them)
 carthage bootstrap
 
 # Rebuild a specific dependency:
