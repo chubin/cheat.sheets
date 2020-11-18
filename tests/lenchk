@@ -148,20 +148,31 @@ Main(){
 	for File in "${Dirs[@]}"; {
 		[ -f "$File" ] || continue
 
+		# Per chubin's desire to have an "in-bound flag"; see #134.
+		if [ "$NoLenChkLine" != 'True' ]; then
+			SkipFile='False'
+
+			readarray -t Buffer < "$File"
+			for BufferLine in "${Buffer[@]}"; {
+				if [[ $BufferLine == '# cheat.sh: '* ]]; then
+					CheatLine=${BufferLine#'# cheat.sh: '}
+					IFS=',' read -a Fields <<< "$CheatLine"
+					for Field in "${Fields[@]}"; {
+						[ "$Field" == "$Progrm=disable" ] && SkipFile='True'
+					}
+				fi
+			}
+
+			[ "$SkipFile" == 'True' ] && continue
+		fi
+
 		# If the current file matches one which is whitelisted, skip it.
 		for CurWL in "${Whitelisted[@]}"; {
 			[ "$File" == "$CurWL" ] && continue 2
 		}
 
-		# Per chubin's desire to have an "in-bound flag"; see #134 for info.
-		if [ "$NoLenChkLine" != 'True' ]; then
-			read Buffer < "$File"
-			[ "$Buffer" == 'lenchk=disable' ] && continue
-		fi
-
-		HaveBeenHit='False'
 		LineNum=0
-
+		HaveBeenHit='False'
 		while read; do
 			let LineNum++
 
