@@ -1,5 +1,6 @@
 # Erlang
-# General-purpose, concurrent, functional programming language, as well as a garbage-collected runtime system.
+# General-purpose, concurrent, functional programming language,
+# as well as a garbage-collected runtime system.
 
 # See also:
 #   erl

@@ -5,7 +5,8 @@
 # Create a Podfile for the current project with the default contents:
 pod init
 
-# Download and install all pods defined in the Podfile (that haven't been installed before):
+# Download and install all pods defined in the Podfile
+# (that haven't been installed before):
 pod install
 
 # List all available pods:

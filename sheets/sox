@@ -8,7 +8,8 @@ sox -m ${input_audiofile1} ${input_audiofile2} ${output_audiofile}
 # Trim an audio file to the specified times:
 sox ${input_audiofile} ${output_audiofile} trim ${start} ${end}
 
-# Normalize an audio file (adjust volume to the maximum peak level, without clipping):
+# Normalize an audio file
+# (adjust volume to the maximum peak level, without clipping):
 sox --norm ${input_audiofile} ${output_audiofile}
 
 # Reverse and save an audio file:
