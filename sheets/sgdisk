@@ -9,20 +9,21 @@ sgdisk -g /dev/sda
 sgdisk -m /dev/sda
 
 # Sort GPT partitions
-# when a new partition is created in the space between two partitions or a partition is deleted
+# when a new partition is created in the space between two partitions
+# or a partition is deleted
 sgdisk -s /dev/sda
 
-# Using sgdisk you can create a binary backup consisting of the protective MBR,
-# the main GPT header, the backup GPT header, and one copy of the partition table
+# Create a binary backup consisting of the protective MBR, the main GPT header,
+# the backup GPT header, and one copy of the partition table
 sgdisk -b=sgdisk-sda.bak
 
 # Restore GPT/MBR backup:
 sgdisk -l=sgdisk-sda.bak
 
-# Clone your current device's partition layout '/dev/sda' to another drive '/dev/sdc'
+# Clone partition layout of '/dev/sda' to another drive '/dev/sdc'
 sgdisk -R=/dev/sdc /dev/sda
 
-# If both drives will be in the same computer, you need to randomize the GUIDs after cloning
+# Randomize GUIDs (after cloning)
 sgdisk -G /dev/sdc
 
 

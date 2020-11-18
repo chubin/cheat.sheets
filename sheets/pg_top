@@ -9,7 +9,8 @@ pg_top -p 5432 -U postgres -d database -W
 #  A
 #      Display the actual query plan (EXPLAIN ANALYZE)
 #  E
-#      Display re-determined execution plan (EXPLAIN) of the SQL statement by a backend process
+#      Display re-determined execution plan (EXPLAIN) of the SQL statement
+#      by a backend process
 #  L
 #      Display the currently held locks by a backend process
 #  Q

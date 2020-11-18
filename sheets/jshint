@@ -1,11 +1,12 @@
 # jshint
-#
 # JSHint is a fork of JSLint. The reasons for the fork is basically that
-# the author disagrees in some points with Douglas Crockford on JavaScript coding style.
+# the author disagrees in some points with Douglas Crockford
+# on JavaScript coding style.
 #
-# If you're looking for a very high standard for yourself or team, JSLint (by Doug Crockford)
-# If you want to be a bit more flexible,
-# or have some old pros on your team that don't buy into JSLint's opinions, try JSHint
+# If you're looking for a very high standard for yourself or team,
+# use JSLint (by Doug Crockford).
+# If you want to be a bit more flexible, or have some old pros on your team
+# that don't buy into JSLint's opinions, try JSHint.
 
 # to install jshint
 sudo npm install jshint -g
