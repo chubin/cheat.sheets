@@ -1,13 +1,17 @@
+# dpkg-deb
+# Debian package archive (.deb) manipulation tool
+
 # Build a DEB package using the provided directory.
 dpkg-deb -b /path/to/directory
 
 # List out the contents of an existing DEB package.
 dpkg-deb -c /path/to/package.deb
 
-# Extract the contents of an existing DEB package. If no destination is provided
-# for the extracted files, then they will be extracted to the CWD. Will also create
-# the specified directory if it's not found, but it won't create its parents.
+# Extract the contents of an existing DEB package. If no destination is
+# provided for the extracted files, then they will be extracted to the CWD.
+# Will also create the specified directory if it's not found, but it won't
+# create its parents.
 dpkg-deb -x /path/to/package.deb /path/to/destination/
 
-# Output a (unique) list of available sections under which to create a DEB package.
+# Output (unique) list of available sections under which to create DEB package.
 awk '!A[$1]++{print($1)}' <<< "$(dpkg-query --show -f='${Section}\n')"
