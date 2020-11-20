@@ -1,0 +1,44 @@
+# yq
+# A lightweight and portable command-line YAML processor
+
+# Read spec.template node from example.yml
+yq r example.yml spec.template
+
+# Read from stdin
+cat sample.yaml | yq r - b.c
+
+# Print the path
+yq r --printMode p "a.thing*.*"
+
+# Print the path and value
+yq r --printMode pv "a.thing*.*"
+
+# Print the length of a list
+yq r sample.yml --length animals
+
+# Read with conditions
+yq r sample.yml spec.metadata[name==myapp]
+
+# Collect results into an array
+yq r sample.yaml --collect a.*.animal
+
+# Read from the 2nd docuemnt
+yq r -d1 sample.yaml b.c
+
+# Validate a document
+yq v valid.yaml
+
+# Compare documents
+yq compare data1.yaml data2.yaml
+
+# Write b.c value with 'cat'
+yq w sample.yaml b.c cat
+
+# Delete b.c node in place from sample.yaml
+yq d -i sample.yaml b.c
+
+# Merge documents
+yq merge data1.yaml data2.yaml
+
+# Shell completion
+yq shell-completion
