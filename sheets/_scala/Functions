@@ -78,7 +78,8 @@ countTo(3) = Range(1,2,3)
 countTo()  = Range(1,2,3,4,5)
 
 // higher order functions
-// as long as a function returns the correct type, it can be used as a parameter in another function
+// as long as a function returns the correct type, it can be used as a
+// parameter in another function
 def sum(a: Int, b: Int): Int = a + b
 def double(x: Int): Int = x * 2
 double(sum(1, 1)) // returns 4
