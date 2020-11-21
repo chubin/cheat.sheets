@@ -1,0 +1,58 @@
+# yq
+# A lightweight and portable command-line YAML processor
+
+# This is for yq v4. For version 3, use 'yq'
+
+# Read spec.template node from example.yml
+yq eval '.spec.template' example.yml
+
+# Assign spec.selector.matchLabels to spec.template.metadata.labels 
+yq eval '.spec.selector.matchLabels |= .spec.template.metadata.labels' example.yaml
+
+# Update parent to be the child value. b is a's child. '|=' means the . on the right is relative to the left.
+yq eval '.a |= .b' sample.yml
+
+# Update multiple nodes. a and c are siblings.
+yq eval '(.a, .c) |= "potatoe"' sample.yml
+
+# Update selected results. Only update a's children with value=='apple' to 'frog'.
+yq eval '.a[] | select(. == "apple") |= "frog"' sample.yml
+
+# Match with boolean operator 'or'.
+yq eval '[.[] | select(.a == "cat" or .b == "dog")]' sample.yml
+
+# Collect into array.
+yq eval '[.a, .b]' sample.yml
+
+# Collect into object.
+yq eval '{"replicas": .spec.replicas}' sample.yml
+
+# Splat into multiple objects.
+yq eval '{"name": .pets[]}' sample.yml
+
+# Create yaml from scratch.
+yq eval --null-input '{"wrap": "frog"}'
+
+# Delete an entry.
+yq eval 'del(.b)' sample.yml
+
+# Delete an entry by index in an array.
+yq eval 'del(.[1])' sample.yml
+
+# Retrieve a document index from a multiple-document yaml file.
+yq eval '.a | documentIndex' sample.yml
+
+# Filter/select a document by index.
+yq eval 'select(. | documentIndex == 1)' sample.yml
+
+# Merge objects with '*'.
+yq eval '.a * .b' sample.yml
+
+# Traverse all nodes recursively.
+yq eval '..' sample.yml
+
+# Traverse and change style to single quote.
+yq eval '.. style="single"' sample.yml
+
+# Shell completion.
+yq shell-completion
