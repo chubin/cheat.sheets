@@ -1,6 +1,8 @@
 # yq
 # A lightweight and portable command-line YAML processor
 
+# This is for yq v3. For version 4, use 'yq_v4'
+
 # Read spec.template node from example.yml
 yq r example.yml spec.template
 
