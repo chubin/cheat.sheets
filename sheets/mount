@@ -1,0 +1,7 @@
+# mount
+# Mount a filesystem
+
+# Mount a temporary filesystem (TMPFS) of 4GB to '/mnt'. The contents will
+# vanish when you reboot, but this can be very useful when working with things
+# like bootstrap tarballs or temporary storages for sensitive data.
+mount -t tmpfs -o mode=755,size=4096M tmpfs /mnt
