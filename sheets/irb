@@ -1,5 +1,7 @@
-# interactive ruby. irb is a tool to execute interactively ruby expressions read from stdin
+# irb
+# Interactive ruby. A tool to execute interactively Ruby expressions
+# read from stdin.
 
-# start irb
+# Start irb
 irb
 

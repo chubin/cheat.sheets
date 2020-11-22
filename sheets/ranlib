@@ -1,9 +1,9 @@
 # ranlib
-#
-# generates an index to the contents of an archive and stores it in the archive.
-# The index lists each symbol defined by a member of an archive that is a relocatable object file.
+# Generate an index to the contents of an archive and stores it in the archive.
+# The index lists each symbol defined by a member of an archive that is
+# a relocatable object file.
 
-# This creates an index of the contents of fruits.a and stores the index in fruits.a
+# Creates an index of the contents of fruits.a and store the index in fruits.a.
 # This is useful for linking and in case the objects call each other.
 ranlib fruits.a
 # after

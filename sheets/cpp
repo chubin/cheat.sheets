@@ -1,7 +1,8 @@
 # C++
 #
-# C++ is an object-oriented programming language which provides facilities for low-level memory manipulation.
-# It is widely used by big tech companies, such as, Amazon, Facebook, Google, and SpaceX
+# C++ is an object-oriented programming language which provides facilities for
+# low-level memory manipulation. It is widely used by big tech companies,
+# such as, Amazon, Facebook, Google, and SpaceX
 #
 # To Compile: g++ my_script.cpp
 # To Execute: ./a.out

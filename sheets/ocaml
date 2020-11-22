@@ -1,6 +1,6 @@
 # OCaml
-# OCaml, originally named Objective Caml, is the main implementation of the programming language Caml.
-# A member of the ML language family.
+# OCaml, originally named Objective Caml, is the main implementation of
+# the programming language Caml. A member of the ML language family.
 
 # Compile into a bytecode executable:
 ocamlc hello.ml -o hello
