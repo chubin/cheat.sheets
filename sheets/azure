@@ -10,13 +10,14 @@ azure login
 azure login -u <your organizational ID email address>
 
 # This will login in using a service principal
-azure login -u "<service-principal-id>" -p "<key>" --service-principal --tenant "<tenant-id>"
+azure login -u "<principal>" -p "<key>" --service-principal --tenant "<tenant>"
 
 # find images with Linux in name
 azure vm image list | grep "Linux"
 
 # start a new VM (in asm mode)
-azure vm create ${vm_name} ${image_name} -u ${azureuser} -p "${password}" -z "Small" -e -l "West US"
+azure vm create ${vm_name} ${image_name} -u ${azureuser} \
+  -p "${password}" -z "Small" -e -l "West US"
 
 # List VMs disks
 azure vm disk list
@@ -24,24 +25,28 @@ azure vm disk list
 # Remove all disks of VMs labeled with LABEL
 for disk in $(azure vm disk list | grep LABEL | awk '{print $2}')
 do
-    azure vm disk delete --blob-delete "$disk"
+  azure vm disk delete --blob-delete "$disk"
 done
 
 # Create storage account $myacct in location 'West US'
-azure storage account create ${storage_account} --label ${storage_account} --location 'West US'
+azure storage account create ${stor_acc} \
+  --label ${stor_acc} --location 'West US'
 
 # Set default account environment variables
 export AZURE_STORAGE_ACCOUNT=$account_name
 export AZURE_STORAGE_ACCESS_KEY=$account_key
 
 # Create a VM image based on a storage file
-azure vm image create ${image_name} --os linux  -l 'West Europe' --blob-url https://${storage_account}.blob.core.windows.net:443/vms/${image_name}.vhd -v
+azure vm image create ${image_name} --os linux  -l 'West Europe' \
+  --blob-url https://${stor_acc}.blob.core.windows.net:443/vms/${image}.vhd -v
 
 # Share a file (a vm image for example) with the world:
-azure storage blob sas create -a ${storage_account} --container ${container} --blob ${filename} --permissions r
+azure storage blob sas create -a ${stor_acc} \
+  --container ${container} --blob ${filename} --permissions r
 
 # Download a file from a blob storage using curl/wget
-# values of the header variables can be calculated like here: https://gist.github.com/jrwren/ff46f4ba177f042ccdc48c080c198f60
+# values of the header variables can be calculated like here:
+# https://gist.github.com/jrwren/ff46f4ba177f042ccdc48c080c198f60
 curl -v \
   -H "$x_ms_date_h" \
   -H "$x_ms_version_h" \

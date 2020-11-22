@@ -1,4 +1,5 @@
-# Go is a free and open source programming language created at Google
+# Go
+# A free and open source programming language created at Google
 # and go is a tool for managing go source code.
 
 # Download and install a package, specified by its import path:
@@ -10,7 +11,8 @@ go run file.go
 # Compile the package present in the current directory:
 go build
 
-# Execute all test cases of the current package (files have to end with _test.go):
+# Execute all test cases of the current package
+# (files have to end with _test.go):
 go test
 
 # Compile and install the current package:

@@ -1,14 +1,17 @@
+# sed
+# A stream editor. Used to perform basic text transformations
+
 # Preview a file edit, via substitution.
-sudo sed 's/Name=Xfce Session/Name=Xfce_Session/' /usr/share/xsessions/xfce.desktop
+sudo sed 's/Name=Xfce Session/Name=Xfce_Session/' FILE
 
-# Replace the same string more than once per line (appending g flag), via substitution.
-sudo sed 's/Name=Xfce Session/Name=Xfce_Session/g' /usr/share/xsessions/xfce.desktop
+# Replace the same string more than once per line (g flag)
+sudo sed 's/Name=Xfce Session/Name=Xfce_Session/g' FILE
 
-# Edit a file (adding -i flag), via substitution, in-place; changes are made to the file(s).
-sudo sed -i 's/Name=Xfce Session/Name=Xfce_Session/' /usr/share/xsessions/xfce.desktop
+# Edit a file (adding -i flag), in-place; changes are made to the file(s).
+sudo sed -i 's/Name=Xfce Session/Name=Xfce_Session/' FILE
 
 # It can become necessary to escape special characters in your string.
-sed -i 's/\/path\/to\/somewhere\//\/path\/to\/anotherplace\//' /tmp/filetoedit
+sed -i 's/\/path\/to\/somewhere\//\/path\/to\/anotherplace\//' FILE
 
 # Change your sed delimiter to a pipe to avoid escaping slashes.
-sed -i 's|/path/to/somewhere/|/path/to/anotherplace/|' /tmp/filetoedit
+sed -i 's|/path/to/somewhere/|/path/to/anotherplace/|' FILE

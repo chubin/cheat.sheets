@@ -180,7 +180,8 @@
                 collapses function definitions in a file to a mere {...}
     M-x show-subtree
                 If you are in one of the collapsed functions, this un-collapses it
-# In order to achieve some of the feats coming up now you have to run etags *.c *.h *.cpp
+# In order to achieve some of the feats coming up,
+# now you have to run etags *.c *.h *.cpp
 # (or what ever ending you source files have) in the source directory
     M-.         (Meta dot) If you are in a function call, this will take you to it\'s definition
     M-x tags-search ENTER
