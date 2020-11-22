@@ -1,5 +1,6 @@
 # blktrace
-# blktrace is a block layer IO tracing mechanism which provides detailed information about request queue operations up to user space
+# A block layer IO tracing mechanism which provides detailed information
+# about request queue operations up to user space
 
 # trace PC (non-filesystem requests, PC) on the /dev/sdb disk.
 # blkparse generates human-readable formatting

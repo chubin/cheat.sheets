@@ -4,11 +4,14 @@
 # Install Azure CLI 2.0 with one curl command.
 curl -L https://aka.ms/InstallAzureCli | bash
 
-# create a resource group named "MyResourceGroup" in the westus2 region of Azure
-az group create -n MyResourceGroup -l westus2
+# create a resource group named "MyRG" in the 'westus2' region
+az group create -n MyRG -l westus2
 
-# create a Linux VM using the UbuntuTLS image, with two attached storage disks of 10 GB and 20 GB
-az vm create -n MyLinuxVM -g MyResourceGroup --ssh-key-value $HOME/.ssh/id_rsa.pub --image UbuntuLTS --data-disk-sizes-gb 10 20
+# create a Linux VM using the UbuntuTLS image,
+# with two attached storage disks of 10 GB and 20 GB
+az vm create -n MyLinuxVM -g MyRG \
+    --ssh-key-value $HOME/.ssh/id_rsa.pub --image UbuntuLTS \
+    --data-disk-sizes-gb 10 20
 
 # list VMs
 az vm list --output table
@@ -16,28 +19,28 @@ az vm list --output table
 # list only VMs having distinct state
 az vm list -d --query "[?powerState=='VM running']" --output table
 
-# delete VM (with the name MyLinuxVM in the group MyResourceGroup)
-az vm delete -g MyResourceGroup -n MyLinuxVM --yes
+# delete VM (with the name MyLinuxVM in the group MyRG)
+az vm delete -g MyRG -n MyLinuxVM --yes
 
 # Delete all VMs in a resource group
-az vm delete --ids $(az vm list -g MyResourceGroup --query "[].id" -o tsv)
+az vm delete --ids $(az vm list -g MyRG --query "[].id" -o tsv)
 
 # Create an Image based on a running VM
-az vm deallocate -g MyResourceGroup -n MyLinuxVM
-az vm generalize -g MyResourceGroup -n MyLinuxVM
-az image create --resource-group MyResourceGroup --name MyTestImage --source MyLinuxVM
+az vm deallocate -g MyRG -n MyLinuxVM
+az vm generalize -g MyRG -n MyLinuxVM
+az image create --resource-group MyRG --name MyTestImage --source MyLinuxVM
 
 # Running VM based on a VHD
 az storage blob upload --account-name "${account_name}"  \
-   --account-key "${account_key}" --container-name "${container_name}" --type page \
-   --file "${file}" --name "${vhd_name}"
+   --account-key "${account_key}" --container-name "${container}" --type page \
+   --file "${file}" --name "${vhd}"
 az disk create \
-   --resource-group ${resource_group} \
+   --resource-group "${resource_group}" \
    --name myManagedDisk \
-   --source https://${account_name}.blob.core.windows.net/${container_name}/${vhd_name}
+   --source "https://${account_name}.blob.core.windows.net/${container}/${vhd}"
 
 # open port
-az vm open-port --resource-group MyResourceGroup --name MyLinuxVM --port 443 --priority 899
+az vm open-port --resource-group MyRG --name MyLinuxVM --port 443 --priority 899
 
 # Show storage accounts
 az storage account list --output table
@@ -46,7 +49,8 @@ az storage account list --output table
 az storage container list --account-name mystorageaccount --output table
 
 # Show blobs in a container
-az storage blob list --account-name mystorageaccount --container-name mycontainer  --output table
+az storage blob list --account-name mystorageaccount \
+    --container-name mycontainer  --output table
 
 # list account keys
 az storage account keys list  --account-name STORAGE_NAME --resource-group RESOURCE_GROUP
@@ -62,8 +66,8 @@ az disk list --output table
 
 # Copy blob
 az storage blob copy start \
-    --source-uri 'https://md-ldh5nknx2rkz.blob.core.windows.net/jzwuuuzzapn0/abcd?sv=2017-04-17&sr=b&si=68041718-6828-4f5e-9e6e-a1b719975062&sig=XXX' \
-    --account-key XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX== \
+    --source-uri 'https://xxx.blob.core.windows.net/jzwuuuzzapn0/abcd?...' \
+    --account-key XXXXXXXXXX== \
     --account-name destaccount \
     --destination-container vms \
     --destination-blob DESTINATION-blob.vhd
@@ -81,7 +85,8 @@ az vm list-ip-addresses --output table
 az snapshot create --resource-group IC-EXASOL-001 --source vm1-disk1 -n vm1-snap1
 
 # create SAS url for a snapshot
-az snapshot grant-access --resource-group IC-EXASOL-001 --name vm1-snap1 --duration-in-seconds 36000 --query '[accessSas]' -o tsv
+az snapshot grant-access --resource-group IC-EXASOL-001 --name vm1-snap1\
+    --duration-in-seconds 36000 --query '[accessSas]' -o tsv
 
 # attach disk
 az vm disk attach --vm-name vm1 -g RESOURCE_GROUP --disk DISK1_ID

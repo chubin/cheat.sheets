@@ -4,7 +4,7 @@
 # Quickly check the overall health of a drive
 smartctl -H /dev/sda
 
-# Obtain information on the drive: view the type of drive, its serial number, and so forth
+# Obtain information on the drive: type of drive, serial number, etc.
 smartctl -i /dev/sda
 
 # initiate short tests for the drive

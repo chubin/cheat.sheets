@@ -22,7 +22,8 @@ exiqgrep -f [user]@domain
 # Search the queue for messages from a specific recipient
 exiqgrep -r [user]@domain
 
-# Print messages older than the specified number of seconds (1 day = 86400 seconds)
+# Print messages older than the specified number of seconds
+# (1 day = 86400 seconds)
 exiqgrep -o 86400
 
 # Print messages younger than the specified number of seconds
@@ -40,7 +41,8 @@ exim -Mf <message-id> [ <message-id> ... ]
 # Thaw (unfreeze) a message
 exim -Mt <message-id> [ <message-id> ... ]
 
-# Deliver message, whether it's frozen or not, whether the retry time has been reached or not
+# Deliver message, whether it's frozen or not,
+# whether the retry time has been reached or not
 exim -M <message-id> [ <message-id> ... ]
 
 # Force message to fail and bounce as "cancelled by administrator"

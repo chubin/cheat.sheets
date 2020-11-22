@@ -7,15 +7,18 @@
 yq eval '.spec.template' example.yml
 
 # Assign spec.selector.matchLabels to spec.template.metadata.labels 
-yq eval '.spec.selector.matchLabels |= .spec.template.metadata.labels' example.yaml
+yq eval \
+    '.spec.selector.matchLabels |= .spec.template.metadata.labels' example.yaml
 
-# Update parent to be the child value. b is a's child. '|=' means the . on the right is relative to the left.
+# Update parent to be the child value. b is a's child.
+# '|=' means the . on the right is relative to the left.
 yq eval '.a |= .b' sample.yml
 
 # Update multiple nodes. a and c are siblings.
 yq eval '(.a, .c) |= "potatoe"' sample.yml
 
-# Update selected results. Only update a's children with value=='apple' to 'frog'.
+# Update selected results.
+# Only update a's children with value=='apple' to 'frog'.
 yq eval '.a[] | select(. == "apple") |= "frog"' sample.yml
 
 # Match with boolean operator 'or'.

@@ -8,7 +8,8 @@ jq
 # (or all key-value pairs from objects) in a JSON file:
 jq .[]
 
-# Read JSON objects from a file into an array, and output it (inverse of jq .[]):
+# Read JSON objects from a file into an array, and output it
+# (inverse of jq .[]):
 jq --slurp
 
 # Output the first element in a JSON file:
@@ -42,7 +43,8 @@ jq 'map({ a, b })'
 #     => [ { "a": 1, "b": 2 }, ...]
 
 # Converting arbitrary data to json
-jq -r '(map(keys) | add | unique | sort) as $cols | .[] as $row | $cols | map($row[.]) | @csv'
+jq -r '(map(keys) | add | unique | sort) as $cols \
+        | .[] as $row | $cols | map($row[.]) | @csv'
 #
 #     [ { "foo": 1, "bar": 2}, { "foo": 3, "baz": 4}]
 #
@@ -150,4 +152,3 @@ jq '.[] | [.foo, .bar] | @csv' -r
 #
 #     [{ "foo": 1, "bar": 2, "baz":3 }]
 #     => 1,2
-
