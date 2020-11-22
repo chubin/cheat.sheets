@@ -1,6 +1,5 @@
 # dscacheutil
-# Gather information, statistics and initiate queries to
-# the Directory Service cache.
+# Gather info, stats and initiate queries to the Directory Service cache.
 
 # Flush the DNS cache
 # in OS X 10.9 Mavericks

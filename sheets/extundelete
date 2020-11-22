@@ -1,5 +1,5 @@
 # extundelete
-# An ext3 and ext4 file undeletion utility
+# Utility to recover deleted files from ext3/ext4 partition
 
 # Recover a file in '/home/UserName', assuming '/home' is on its own partition
 extundelete /dev/sda4 --restore-file UserName/SomeDirectory
