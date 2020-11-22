@@ -56,3 +56,6 @@ yq eval '.. style="single"' sample.yml
 
 # Shell completion.
 yq shell-completion
+
+# Evaluate multiple files
+yq eval-all ".metadata.name" a.yaml b.yaml
