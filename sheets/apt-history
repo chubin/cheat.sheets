@@ -1,0 +1,23 @@
+# apt-history
+# Command-line tool to pretty-print and filter the APT log
+
+# Filter log entries by installations made by user 'ichy'.
+apt-history -u ichy -A Install
+
+# Filter log entries by removals affecting the package 'firefox:amd64'
+apt-history -A Remove -p firefox:amd64
+
+# By default, `apt-history` paginates using less(1) or more(1), but this can be
+# disabled with the `-P` flag. In this example, only log entries made by the
+# current user will be displayed.
+#
+# Thanks to the `-r` flag, the output is reversed, meaning that the newest
+# entries show last.
+apt-history -r -u $USER -P
+
+# You might prefer your packages to be listed out in a wrapped way, more like
+# you'd see in the '/var/log/apt/history.log' file, without all of the version
+# strings.
+#
+# Using the `-c` flag, this example will include the actual command executed.
+apt-history -D Wrapped -c
