@@ -14,7 +14,7 @@ Usage(){
 		Usage: $Progrm [OPTS] [DIR_1 [DIR_2 ...]]
 
 		  -h, --help               - Display this help information.
-		  -C, --no-color           - Provide color via esscape sequences.
+		  -C, --no-color           - Do not use ANSI color escape sequences.
 		  -D, --no-subdirs         - Ignore the 'sheets/_*' subdirectories.
 		  -I, --no-lenchk-line     - Ignore the special 'lenchk=.*' line.
 		  -N, --no-preview         - Omit the preview of each triggered line.
