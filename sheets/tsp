@@ -16,5 +16,5 @@ tsp -c [job ID]
 # Clear job list
 tsp -C
 
-# Stop a job
+# Kill a job
 kill $(tsp -p [job ID])
