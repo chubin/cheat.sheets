@@ -1,3 +1,6 @@
+# task-spooler
+# tsp - A simple unix batch system to run commands in a queue
+
 # Run a job in the background 
 tsp pg_dump mydb
 
