@@ -1,0 +1,23 @@
+# tsp
+# task-spooler - A simple unix batch system to run commands in a queue
+
+# Run a job in the background 
+tsp pg_dump mydb
+
+# Run complex job in the background
+tsp sh -c "pg_dump mydb > file.log"
+
+# Show list of jobs
+tsp -l
+
+# Print path to logfile
+tsp -o [job ID]
+
+# Print logfile
+tsp -c [job ID]
+
+# Clear job list
+tsp -C
+
+# Kill a job
+kill $(tsp -p [job ID])
