@@ -1,0 +1,44 @@
+# Bash keyboard shortcuts
+
+# -= Navigation =-
+Ctrl + a   - go to beginning of line
+Ctrl + e   - go to end of line
+Ctrl + f   - one character forward
+Ctrl + b   - one character backward
+ Alt + f   - one word forward
+ Alt + b   - one word backward
+Ctrl + xx  - toggle between start of line and current position
+
+# -= Editing =-
+Ctrl + d   - delete character right (Del)
+Ctrl + h   - delete character left (Backspace)
+ Alt + d   - cut word right
+Ctrl + w   - cut word left
+Ctrl + k   - cut from cursor till end of line
+Ctrl + u   - cut from beginning of line till cursor
+Ctrl + y   - paste last cut
+ Alt + t   - swap current word with previous
+Ctrl + t   - swap current character with previous
+ Alt + u   - uppercase from cursor till end of word
+ Alt + l   - lowercase from cursor till end of word
+ Alt + c   - capitalize current word
+Ctrl + v   - insert next character literally (e.g. Ctrl + v - Tab) 
+Ctrl + _   - undo last action
+ Alt + r   - revert all modifications to current line
+ Tab       - complete file/command name
+
+# -= History =-
+Ctrl + r   - interactive history search
+Ctrl + g   - escape from interactive history search
+Ctrl + p   - previous command (↑)
+Ctrl + n   - next command (↓)
+Ctrl + o   - execute displayed command from history, don't clear command line
+ Alt + .   - recall last argument (word) of last executed command
+
+# -= Terminal control =-
+Ctrl + l   - clear screen, don't clear command line
+Ctrl + s   - suspend (freeze) terminal
+Ctrl + q   - unsuspend (unfreeze) terminal
+Ctrl + z   - suspend (SIGSTP) current process. Resume with 'fg' (foreground)
+             or 'bg' (background), kill with 'kill %<ID>'
+Ctrl + d   - send EOF
