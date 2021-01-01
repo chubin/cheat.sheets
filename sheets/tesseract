@@ -1,0 +1,6 @@
+# tesseract
+# OCR program
+
+# Recognize screenshot, and print result to stdout
+convert x: -modulate 100,0 -resize 400% -set density 300 png:- |
+  tesseract stdin stdout
