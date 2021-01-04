@@ -1,0 +1,25 @@
+# glkfu
+# Easily compile & build Debian packages for Linux kernels
+
+# View the major of the latest stable current version found on 'kernel.org'.
+glkfu -o latest.maj
+
+# Just check for a new kernel version than that which you're currently running.
+# Useful for scripting or one-time executions.
+glkfu -j
+
+# Download, compile, and build packages for the latest stable kernel without
+# prompting the user, keeping all processed files, and using only the 1 core.
+glkfu -y -k -c 1
+
+# Download tarball of the latest kernel version, ignoring the current version.
+glkfu -d -i
+
+# Download a specific tarball (in this case, the 5.10 LTS release) instead of
+# just the latest one. Useful when you need an older kernel.
+glkfu -O linux-5.10.tar.xz
+
+# List, in order, all of the available stable kernels found on 'kernel.org'. By
+# default, and if color is available, the current kernel version -- that is, -
+# the one you're using right now -- is highlighted in green.
+glkfu -l
