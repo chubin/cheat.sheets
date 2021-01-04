@@ -1,0 +1,9 @@
+# nvidia-settings
+# Configure the NVIDIA graphics driver
+
+# Set 'ForceFullCompositionPipeline' attribute to 'on'. This will set it for an
+# automatically-determined display.
+nvidia-settings --assign "CurrentMetaMode=nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+
+# Assign the first GPU a power mode of 'performance'.
+nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1
