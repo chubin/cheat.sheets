@@ -1,0 +1,22 @@
+# tar
+# GNU version of the tar archiving utility
+
+# An approach to backing up the current user's HOME, using tar(1) and GZip
+# compression. Permissions (modes) will be preserved. The filename format will
+# be: UID:GID_DATE.tgz
+#
+# Replace 'DEVICE' with whichever device is applicable to you, but note that it
+# must be in the '/media/USER' (where USER is the username) directory, else
+# this won't work, unless you edit the formatting section of `printf`.
+tar -czvpf "$(printf '/media/%s/%s/%d:%d_%(%F)T.tgz' "$USER" 'DEVICE' ${UID:-`id -u`} ${GID:-`id -g`} -1)" "$HOME"
+
+# Delete file 'xdm' from the archive given to the `-f` flag. This only works on
+# non-compressed archives, unfortunately, but those can always be uncompressed
+# first, then altered with the `--delete` flag, after which you can recompress.
+tar --delete -f xdm_edited.tar.gz xdm
+
+# Extract the contents of the given archive (which is not compressed) to the
+# destination given to the `-C` flag; not many seem to know of this flag.
+#
+# If a destination (path given to `-C`) is not provided, the CWD will be used.
+tar -C /mnt -xvf Tarball.tar
