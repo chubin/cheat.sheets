@@ -1,6 +1,8 @@
 # identify
-#
-# describes the format and characteristics of one or more image files
+# Describes the format and characteristics of one or more image files.
 
-# show width and height of the image
-identify -format '%w %h' ${img}
+# Show width and height of the image. Multiple images can be provided.
+identify -format '%w %h' FILE
+
+# Display lots of meta-data in FILE.
+identify -verbose FILE
