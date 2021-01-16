@@ -1,0 +1,12 @@
+# lsb_release
+# Print distribution-specific information
+
+# Output the current distribution's ID. In Debian/Ubuntu, you'll see this an
+# example of this command and these flags being used in the default GRUB
+# configuration file, found at '/etc/default/grub'.
+lsb_release -si
+
+# Output the current distribution's description. This should basically show
+# the full name and version of the description, minus the codename. For
+# example, in Ubuntu 18.04, the returned value is: Ubuntu 18.04.5 LTS
+lsb_release -sd
