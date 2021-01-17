@@ -1,37 +1,40 @@
-# Resize an image to a fixed width and proportional height:
+# convert
+# Image converter and manipulator
+
+# Resize an image to a fixed width and proportional height.
 convert original-image.jpg -resize 100x converted-image.jpg
 
-# Resize an image to a fixed height and proportional width:
+# Resize an image to a fixed height and proportional width.
 convert original-image.jpg -resize x100 converted-image.jpg
 
-# Resize an image to a fixed width and height:
+# Resize an image to a fixed width and height.
 convert original-image.jpg -resize 100x100 converted-image.jpg
 
-# Resize an image and simultaneously change its file type:
+# Resize an image and simultaneously change its file type.
 convert original-image.jpg -resize 100x converted-image.png
 
-# Resize all of the images within a directory, using a for loop:
+# Resize all of the images within a directory, using a for loop.
 for file in original/image/path/*; do
     convert "$file" -resize 150 converted/image/path/"$file"
 done
 
-# Make text annotation (text = Flower)
+# Make text annotation, which in this example is 'Flower'.
 convert flower.jpg -font courier -fill white -pointsize 20 -annotate +50+50 'Flower' flower_annotate1.jpg
 
-# Crop an image
+# Crop an image.
 convert flower.jpg -crop 128×128+50+50 flower_crop.jpg
 
-# Rotate an image
+# Rotate an image.
 convert flower.jpg -rotate 45 flower_rotate45.jpg
 
-# Add a border
+# Add a border around an image.
 convert -border 1x1 -bordercolor "#FFFFFF" image.png new-image.png
 
-# Convert PNG to JPEG (with 70% quality)
+# Convert PNG to JPEG, with 70% quality.
 convert -quality 70 image.png new_image.jpg
 
-# Apply vignette and grayscale effects to all JPGs in the CWD, using a for loop.
+# Apply vignette & grayscale effects to all JPGs in the CWD, using a for loop.
 for FILE in *.jpg; { convert -background black -colorspace gray -vignette 200x100 "$FILE" "$FILE"; }
 
-# Convert multiple images to PDF
+# Convert and combine multiple images to a single PDF.
 convert image1.png image2.jpg image3.bmp output.pdf
