@@ -1,0 +1,40 @@
+# systemctl
+# Control the systemd system and service manager
+
+# Show only a given value from one of the `show` keys. In this example, the
+# value for the `ActiveState` key for the UFW service will be shown, and only
+# it; ideal for scripting.
+#
+# Using the `--value` flag causes only the value to be displayed.
+systemctl show -p ActiveState --value ufw
+
+# Start, stop, or restart a given service(s).
+systemctl [start|stop|restart] [SERVICE]
+
+# Check if a given service(s) is active. If it is, 'active' will display. An
+# exit status of 0 will be given if it's active, and non-zero otherwise. Use
+# the `-q` or `--quiet` flag to rely only on the exit status.
+systemctl is-active ufw
+
+# Check if a given service(s) has failed. If it is, 'failed' will display. An
+# exit status of 0 will be given if it has failed, and non-zero otherwise. Use
+# the `-q` or `--quiet` flag to rely only on the exit status.
+systemctl is-active ufw
+
+# Check if a given service(s) is enabled. If it is, 'enabled' will display. An
+# exit status of 0 will be given if it's enabled, and non-zero otherwise. Use
+# the `-q` or `--quiet` flag to rely only on the exit status.
+systemctl is-enabled ufw
+
+# List all failed services.
+systemctl --failed
+
+# Shut the system down. Use `suspend` to suspend, `halt` to halt, and `reboot`
+# to instead of reboot the machine.
+systemctl poweroff
+
+# Enable or disable a given service(s).
+systemctl [enable|disable] [SERVICE]
+
+# Show the current status of a given service(s).
+systemctl status [SERVICE]
