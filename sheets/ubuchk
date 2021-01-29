@@ -1,0 +1,27 @@
+# ubuchk
+# Send your Ubuntu system to the doctor for a check-up.
+
+# Force a complete reset of the current user's ubuchk(8) configurations.
+ubuchk --force-reset
+
+# Force ubuchk(8) to run, ignoring Linux distribution type.
+ubuchk --force-run
+
+# List all of the available ubuchk(8) configuration keys.
+--list-keys
+
+# Run UbuChk verbosely, but also omit all messages informing the user that a
+# given key (functionality associated therewith) will be ignored.
+ubuchk -V --hush-ignored
+
+# Query a given alert ID; they are 4-characters in length.
+ubuchk -Q [ID]
+
+# Override a key's value, even if it's set in the user's configuration file.
+# Multiple key=value pairs are allowed, but must be as a comma-separated list.
+ubuchk -k KernParams=false
+
+# Skip a given alert. Multiples allowed, provided they're comma-separated.
+# There is a configuration key for this, but this flag can be useful for
+# one-time uses or for testing.
+ubuchk --skip=[ID]
