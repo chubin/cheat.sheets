@@ -1,0 +1,12 @@
+# Xephyr 
+# Nested X server that runs as an X application.
+# To ungrab mouse/keyboard; press ctrl+shift
+
+# Run a nested X window, as display :1
+Xephyr -br -ac -noreset -screen 800x600 :1
+
+# Run a program on display :1
+DISPLAY=:1 i3 
+
+# Start a new X session with xinitrc
+startx -- /usr/bin/Xephyr :1
