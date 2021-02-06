@@ -8,3 +8,14 @@ sudo -u postgres pg_dump -C anitya > anitya.dump
 
 # restore database
 sudo -u postgres pqsql -f anitya.dump
+
+# create a database
+sudo -u postgres psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE kaizen;"
+
+# delete a database
+sudo -u postgres psql -h localhost -p 5432 -U postgres -c "DROP DATABASE kaizen;"
+
+# Run a postgres docker container with persistent volume
+docker pull postgres
+mkdir -p ~/docker/volumes/postgres
+docker run --rm  --name pg-docker -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
