@@ -1,0 +1,8 @@
+# i3-msg
+# Send messages to i3 window manager
+
+# Reload i3wm.
+i3-msg 'reload'
+
+# Restart i3wm.
+i3-msg 'restart'
