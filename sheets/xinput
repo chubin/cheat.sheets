@@ -1,0 +1,19 @@
+# xinput
+# Utility to configure and test X input devices
+
+# List the properties for X input device 8; in this case, an optical USB mouse.
+xinput --list-props 8
+
+# Changes the values for property 157 of device 8. The property's full name is
+# 'Coordinate Transformation Matrix' (CTM), and from left-to-right, the values
+# are as follows.
+#
+# 1: X Sensitivity
+# 2: Rotates the Y axis
+# 3: No idea. Didn't appear to do anything
+# 4: Rotates the X axis
+# 5: Y Sensitivity
+#
+# Beyond that, I'm not sure because I didn't test them. X and Y are the main
+# ones anyway. These CTM values and their order may differ from your mouse.
+xinput --set-prop 8 157 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000
