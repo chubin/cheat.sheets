@@ -1,6 +1,9 @@
 # xinput
 # Utility to configure and test X input devices
 
+# View a listing of the input devices X sees
+xinput list
+
 # List the properties for X input device 8; in this case, an optical USB mouse.
 xinput --list-props 8
 
@@ -17,3 +20,13 @@ xinput --list-props 8
 # Beyond that, I'm not sure because I didn't test them. X and Y are the main
 # ones anyway. These CTM values and their order may differ from your mouse.
 xinput --set-prop 8 157 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000
+
+# Disable some device (for example touchscreen)
+xinput disable [touchscreen XID]
+
+# Disable middle mouse button click
+# Numbers are what you do with the first, second, and third (ie, left, middle, right) mouse buttons.
+# 1 0 3 means that the left button should do a left click (action 1),
+#                  the middle button should do nothing,
+#              and the right button should do a right click (action 3).
+xinput set-button-map [mouse ID] 1 0 3
