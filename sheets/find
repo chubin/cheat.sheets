@@ -4,6 +4,9 @@
 # Find files by case-insensitive extension, such as `.jpg`, `.JPG`, & `.jpG`).
 # By default, find(1) uses glob pathname pattern matching. To avoid shell
 # interpretation, the glob either must be expanded or the string quoted.
+#
+# Period is optional; it's implied unless a path is provided. find(1) works
+# recursively unless otherwise directed (IE: `-maxdepth [N]`).
 find . -iname '*.jpg'
 
 # Find directories.
