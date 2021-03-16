@@ -42,4 +42,4 @@ Other requirements can be proposed and discussed in [#101](https://github.com/ch
 
 If you are new to Github, and you want to contribute to cheat.sheets, you can start from this video:
 
-* [How to contribute to cheat.sheets](https://www.youtube.com/watch?v=ZJ3lPQVoiVw] — a short introduction into Github and the cheat.sheets repository
+* [How to contribute to cheat.sheets](https://www.youtube.com/watch?v=ZJ3lPQVoiVw) — a short introduction into Github and the cheat.sheets repository
