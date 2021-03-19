@@ -20,3 +20,12 @@
 # to have a new root-owned BASH session, which then executes the commands
 # proceeding the `-c` flag.
 sudo bash -c 'du -xh / | sort -rhk 1 | head -n 20'
+
+# Display just the total human-readable size of the current working directory.
+du -sh
+
+# Display the total human-readable size of the three provided directories, as
+# well as the grand total of the combined directories.
+du -chs ~/Desktop ~/Pictures ~/Videos
+# You could potentially make this task a bit easier with BASH brace expansion.
+du -chs ~/{Desktop,Pictures,Videos}
