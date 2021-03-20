@@ -1,0 +1,28 @@
+# sort
+# Sort lines of text files
+
+# Return the contents of the British English dictionary, in reverse order.
+sort -r /usr/share/dict/british-english
+
+# Since sort(1) can filter out duplicate adjacent lines or fields, this example
+# therefore makes uniq(1) redundant. You should only ever use uniq(1) if you
+# need its functionality, or need uniqueness without sorting.
+#
+# By default, sort(1) sorts lines or fields using the ASCI table. Here, we're
+# essentially getting alphanumeric sorting, where case is handled separately; -
+# this results in these words being adjacent to one another, thus duplicates
+# are removed.
+#
+# If you need better uniq-ing, you could refer to AWK & its associative arrays.
+printf '%s\n' this is a list of of random words with duplicate words | sort -u
+
+# Sort numerically. If you don't provide the `-n` flag, sort(1) will instead
+# sort by the ASCI table, as mentioned above, meaning it'll display as 1, 10, -
+# 11, 2, 3, 4, etc.
+printf '%d\n' {1..9} 10 11 | sort -n
+
+# You can even sort human-readable sizes. In this example, the 2nd column is
+# being sorted, thanks to the use of the `-k` flag, and the sorting is
+# reversed, so that the top-most storage space hungry filesystems are displayed
+# from df(1).
+df -ht ext4 /dev/sd[a-z][1-9]* | sed '1d' | sort -rhk 2
