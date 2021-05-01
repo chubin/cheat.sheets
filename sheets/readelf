@@ -1,0 +1,2 @@
+# How to check that an object file was built with -fPIC
+readelf --relocs foo.o | egrep '(GOT|PLT|JU?MP_SLOT)'
