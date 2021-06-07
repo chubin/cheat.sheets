@@ -1,0 +1,41 @@
+# A decorator is a design pattern in Python that allows a user
+# to add new functionality to an existing object without modifying
+# its structure. Decorators are usually called before the definition
+# of a function you want to decorate.
+# In simple words: they are functions which modify the functionality
+# of other functions.
+
+from datetime import datetime
+
+def my_decorator(func):
+    def wrapper():
+        print('start', datetime.now())
+        func()
+        print('end', datetime.now())
+    return wrapper
+
+@my_decorator
+def my_method():
+    for i in range(1, 100000):
+        pass
+
+my_method()
+# start 2021-06-07 15:29:51.330086
+# end 2021-06-07 15:29:51.333832
+
+# Decorator with function parameters.
+def my_decorator(func):
+    def wrapper(start, end):
+        print('start', datetime.now())
+        func(start, end)
+        print('end', datetime.now())
+    return wrapper
+
+@my_decorator
+def my_method(start, end):
+    for i in range(start, end):
+        pass
+
+my_method()
+# start 2021-06-07 15:29:51.330086
+# end 2021-06-07 15:29:51.333832
