@@ -5,8 +5,8 @@
 # mode creation mask") for only the current user, and only his or her current
 # session. The (one) leading zero is optional, unless you otherwise need it.
 #
-# This umask setting is actually recommended for security by RHEL, and is also
-# mentioned and I believe recommended in the Arch Linux Wiki.
+# This umask setting is actually recommended for security by major Linux distributions
+# like RHEL, Debian and Arch Linux.
 #
 # The result of '0077' being -- and I'll use standard octal with which we're
 # all probably familiar -- that all new files are created using the '600'
