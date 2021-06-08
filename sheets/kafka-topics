@@ -1,6 +1,6 @@
 # kafka-topics
 #
-# Comamnd-line tool to manage Kafka topics
+# Command-line tool to manage Kafka topics
 
 # list topics
 kafka-topics --zookeeper localhost:2181 --list

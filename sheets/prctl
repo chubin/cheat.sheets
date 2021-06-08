@@ -6,7 +6,7 @@
 # Examine process limits and permissions:
 prctl ${PID}
 
-# Examine process limits and permissions in machine parseable format:
+# Examine process limits and permissions in machine parse-able format:
 prctl -P ${PID}
 
 # Get specific limit for a running process:

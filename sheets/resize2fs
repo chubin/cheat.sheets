@@ -1,6 +1,6 @@
 # resize2fs
 
-# ext2/ext3/ext4 file system resizer
+# ext2/ext3/ext4 file system resize tool
 
 # resize filesystem up to the block device size
 # make e2fsck /dev/xvdb1 before

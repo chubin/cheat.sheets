@@ -35,7 +35,7 @@ abstract class D { ... }
 class C extends D { ... }
 class D(var x: R)
 
-// inheritance and constructor params. (wishlist: automatically pass-up params
+// inheritance and constructor params. (wish list: automatically pass-up params
 // by default)
 class C(x: R) extends D(x)
 

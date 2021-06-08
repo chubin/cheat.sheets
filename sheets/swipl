@@ -1,7 +1,7 @@
 # swipl
 # SWI-Prolog is a versatile implementation of the Prolog language.
 
-# run plolog interpreter in interactive mode
+# run Prolog interpreter in interactive mode
 swipl
 
 # consult file.pl, run goal mygoal(3,foo)

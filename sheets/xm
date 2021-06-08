@@ -57,7 +57,7 @@ xm resume
 # Similar to suspend except with user definable state file
 xm save
 
-# Similar to resume except restoreable with exports that used the save verb
+# Similar to resume except can be restored with exports that used the save verb
 xm restore
 
 # Dumps core per domain

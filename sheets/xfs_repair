@@ -1,7 +1,7 @@
 # xfs_repair
 # repair an XFS filesystem
 
-# rapair a XFS filesystem
+# repair a XFS filesystem
 xfs_repair /dev/dm-0
 
 # last resort option:

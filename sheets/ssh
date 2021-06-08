@@ -27,13 +27,13 @@ ssh -X -t user@example.com 'chromium-browser'
 # Create a SOCKS proxy on localhost and port 9999.
 ssh -D 9999 user@example.com
 
-# Connect to server, but allow for X11 forwarding, while also using GZip
+# Connect to server, but allow for X11 forwarding, while also using Gzip
 # compression (can be much faster; YMMV), and using the `blowfish` encryption.
 # For more information, see: http://unix.stackexchange.com/q/12755/44856
 ssh -XCc blowfish user@example.com
 
 # Copy files and directories, via SSH, from remote host to the current working
-# directory, with GZip compression. An option for when `rsync` isn't available.
+# directory, with Gzip compression. An option for when `rsync` isn't available.
 #
 # This works by creating (not temporary!) a remote Tar archive, then piping its
 # output to a local Tar process, which then extracts it to STDOUT.
@@ -46,7 +46,7 @@ ssh -i some_id_rsa -o IdentitiesOnly=yes them@there:/path/
 # Temporarily disable `pubkey` authentication for this instance.
 ssh -o PubkeyAuthentication=no username@hostname.com
 
-# Mount a remote directory or filesystem, through SSH, to a local mountpoint.
+# Mount a remote directory or filesystem, through SSH, to a local mount point.
 # Install SSHFS from: https://github.com/libfuse/sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 

@@ -45,7 +45,7 @@ exim -Mt <message-id> [ <message-id> ... ]
 # whether the retry time has been reached or not
 exim -M <message-id> [ <message-id> ... ]
 
-# Force message to fail and bounce as "cancelled by administrator"
+# Force message to fail and bounce as "canceled by administrator"
 exim -Mg <message-id> [ <message-id> ... ]
 
 # View message's headers

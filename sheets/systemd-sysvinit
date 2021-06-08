@@ -1,4 +1,4 @@
-# SysVinit to Systemd Cheatsheet
+# SysVinit to Systemd Cheat sheet
 
 # Ways in which to control an available service.
 #
@@ -30,7 +30,7 @@ chkconfig SERVICE
 # SystemD:
 systemctl is-enabled SERVICE
 
-# Print a table of services, listing for which runlevel each is configured.
+# Print a table of services, listing for which run level each is configured.
 #
 # SysVinit:
 chkconfig --list
@@ -59,9 +59,9 @@ chkconfig SERVICE --add
 # SystemD:
 systemctl daemon-reload
 
-# Runlevel/Target -- Half the system.
+# Run level/Target -- Half the system.
 #
-# SysVinit Runlevel:        0
+# SysVinit Run level:        0
 # SystemD Target:           runlevel0.target
 #                           poweroff.target
 #
@@ -71,7 +71,7 @@ systemctl daemon-reload
 # SystemD Target:           runlevel1.target
 #                           rescue.target
 #
-# User-defined/Site-specific runlevels. By default, identical to 3.
+# User-defined/Site-specific run levels. By default, identical to 3.
 #
 # SysVinit Runlevel:        2, 4
 # SystemD Target:           runlevel2.target

@@ -18,7 +18,7 @@ links2 -dump -width 80 duckduckgo.co.uk
 links2 -http.fake-user-agent 'Mozilla/5.0' duckduckgo.co.uk
 
 # Have links2(1) request not to be tracked (as if anyone respects this!?). The
-# `1` is a boolean integer, indicating to enable the aforetyped option. This
+# `1` is a boolean integer, indicating to enable the option. This
 # option is by default disabled, according the August 2006 man page.
 links2 -http.do-not-track 1 duckduckgo.co.uk
 

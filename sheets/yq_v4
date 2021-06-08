@@ -15,7 +15,7 @@ yq eval \
 yq eval '.a |= .b' sample.yml
 
 # Update multiple nodes. a and c are siblings.
-yq eval '(.a, .c) |= "potatoe"' sample.yml
+yq eval '(.a, .c) |= "potato"' sample.yml
 
 # Update selected results.
 # Only update a's children with value=='apple' to 'frog'.

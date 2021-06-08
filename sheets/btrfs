@@ -8,13 +8,13 @@ mkfs.btrfs -m single /dev/sdb
 # data to be redundant and metadata to be non-redundant:
 mkfs.btrfs -m raid0 -d raid1 /dev/sdb /dev/sdc /dev/sdd
 
-# both data and metadata to be redundan
+# both data and metadata to be redundant
 mkfs.btrfs -d raid1 /dev/sdb /dev/sdc /dev/sdd
 
 # To get a list of all btrfs file systems
 btrfs filesystem show
 
-# detailed df for a fileesystem (mounted in /mnt)
+# detailed df for a filesystem (mounted in /mnt)
 btrfs filesystem df /mnt
 
 # resize btrfs online (-2g decreases, +2g increases)

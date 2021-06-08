@@ -21,7 +21,7 @@ mongo --shell my-script.js
 # and execute my-script.js after that
 mongo localhost:27017/myDatabase my-script.js
 
-# Evaluate a javascript expression on the database:
+# Evaluate a JavaScript expression on the database:
 mongo --eval 'JSON.stringify(db.foo.findOne())' database
 
 # See also:

@@ -1,5 +1,5 @@
 # enhanced version of GNU dd with features useful for forensics and security.
-# includes ability to have mulitple output targets
+# includes ability to have multiple output targets
 
 # write file image to an SD card showing a progress bar based on filesize
 sudo dcfldd if=./raspbian.img of=/dev/mmcblk0 sizeprobe=if
