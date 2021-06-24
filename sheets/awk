@@ -48,7 +48,7 @@ awk '{NR != 1 && A[$1]=$2} END {print(A["Mem:"])}' <(free -h)
 # the same, and in other cases, the above is definitely preferable.
 awk '/^Mem:/ {print($2)}' <(free -h)
 
-# Output list of unique uppercase-only, sigil-omitted variables used in [FILE].
+# Output list of unique uppercase-only, sigil-omitted variables used in FILE.
 awk '
     {
         for(F=0; F<NF; F++){
@@ -63,10 +63,10 @@ awk '
             printf("%s\n", X)
         }
     }
-' [FILE]
+' FILE
 
 # Output only lines from FILE between PATTERN_1 and PATTERN_2. Good for logs.
-awk '/PATTERN_1/,/PATTERN_2/ {print}' [FILE]
+awk '/PATTERN_1/,/PATTERN_2/ {print}' FILE
 
 # Pretty-print a table of an overview of the non-system users on the system.
 awk -F ':' '
@@ -82,3 +82,21 @@ awk -F ':' '
 # a painful but useful workaround to get the units comma-separated, as would be
 # doable with Bash's own `printf` built-in.
 awk '/^MemTotal:/ {printf("%'"'"'dMiB\n", $2 / 1024)}'
+
+# It's possible to sort strings in AWK, as well as uniq-ing, meaning you can
+# replace uniq(1) and sort(1) calls with just the one call of AWK. Granted, you
+# can use `sort -u` to do both, but AWK offers much more functionality.
+#
+# Unlike when using AWK to uniq-ify, uniq(1) only works by adjacency, meaning
+# the duplicate lines must be adjacent to one another for them to be handled.
+awk '
+	{
+		!Lines[$0]++
+	}
+	END {
+		asorti(Lines, Sorted)
+		for (Line in Sorted) {
+			print(Sorted[Line])
+		}
+	}
+' FILE
