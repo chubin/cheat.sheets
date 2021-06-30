@@ -1,0 +1,5 @@
+# pactl
+# Control a running PulseAudio sound server
+
+# Display a sorted and uniq-ified list of PulseAudio modules, using AWK.
+pactl list modules short | awk '{!Lines[$2]++} END {asorti(Lines, Sorted); for (Line in Sorted) print(Sorted[Line])}'
