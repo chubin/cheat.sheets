@@ -1,7 +1,7 @@
 # tar
 # GNU version of the tar archiving utility
 
-# An approach to backing up the current user's HOME, using tar(1) and GZip
+# An approach to backing up the current user's HOME, using tar(1) and Gzip
 # compression. Permissions (modes) will be preserved. The filename format will
 # be: UID:GID_DATE.tgz
 #

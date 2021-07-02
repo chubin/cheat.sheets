@@ -1,19 +1,19 @@
 # rustup
-# The Rust toolchain installer
+# The Rust tool chain installer
 
-# update rustup toolchain
+# update rustup tool chain
 rustup update
 
 # install nightly build
 rustup install nightly
 
-# use rustc from nightly toolchain
+# use rustc from nightly tool chain
 rustup run nightly rustc --version
 
 # switch to nightly installation
 rustup default nightly
 
-# List all available targets for the active toolchain
+# List all available targets for the active tool chain
 rustup target list
 
 # Install the Android target
@@ -22,5 +22,5 @@ rustup target add arm-linux-androideabi
 # Run a shell configured for the nightly compiler
 rustup run nightly bash
 
-# Show which toolchain will be used in the current directory
+# Show which tool chain will be used in the current directory
 rustup show

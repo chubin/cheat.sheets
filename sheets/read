@@ -23,7 +23,7 @@ read -n 1 -e -p 'Prompt: '
 # In this example, the [I]nput [F]ield [S]eperator is set to `=` for only the
 # `read` built-in, and the `-a` flag is used to split the input, per the
 # provided IFS, into an array. This then means the first index is the key and
-# the second index the value, which is ideal when parsing configurtion files.
+# the second index the value, which is ideal when parsing configuration files.
 while IFS='=' read -a Line; do
 	COMMANDS
 done < INPUT_FILE

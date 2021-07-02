@@ -7,8 +7,8 @@
     C-x b       create/switch buffers
     C-x C-b     show buffer list
     C-x k       kill buffer
-    C-z         suspend emacs
-    C-X C-c     close down emacs
+    C-z         suspend Emacs
+    C-X C-c     close down Emacs
 
 # Basic movement
     C-f         forward char
@@ -65,11 +65,11 @@
     C-h f       what does this function do
     C-h v       what\'s this variable and what is it\'s value
     C-h b       show all keycommands for this buffer
-    C-h t       start the emacs tutorial
+    C-h t       start the Emacs tutorial
     C-h i       start the info reader
     C-h C-k     start up info reader and go to a certain key-combo point
-    C-h F       show the emacs FAQ
-    C-h p       show infos about the Elisp package on this machine
+    C-h F       show the Emacs FAQ
+    C-h p       show info about the Elisp package on this machine
 
 # Search/Replace
     C-s         Search forward
@@ -122,7 +122,7 @@
     C-x 5 0     close this frame
 
 # Bookmark commands
-    C-x r m     set a bookmark at current cursor pos
+    C-x r m     set a bookmark at current cursor position
     C-x r b     jump to bookmark
     M-x bookmark-rename
     M-x bookmark-delete
@@ -147,10 +147,10 @@
 
 # Shell
     M-x         shell starts shell modus
-    C-c C-c     same as C-c under unix (stop running job)
+    C-c C-c     same as C-c under Unix (stop running job)
     C-d         delete char forward
     C-c C-d     Send EOF
-    C-c C-z     suspend job (C-z under unix)
+    C-c C-z     suspend job (C-z under Unix)
     M-p         show previous commands
 
 # Text
@@ -163,7 +163,7 @@
     M C-\       indent region between cursor and mark
     M-m         move to first (non-space) char in this line
     M-^         attach this line to previous
-    M-;         formatize and indent comment
+    M-;         formats and indent comment
 # C, C++ and Java Modes
     M-a         beginning of statement
     M-e         end of statement
@@ -171,22 +171,22 @@
     M C-e       end of function
     C-c RETURN  Set cursor to beginning of function and mark at the end
     C-c C-q     indent the whole function according to indention style
-    C-c C-a     toggle modus in which after electric signs (like {}:\';./*) emacs does the indention
-    C-c C-d     toggle auto hungry mode in which emacs deletes groups of spaces with one del-press
+    C-c C-a     toggle modus in which after electric signs (like {}:\';./*) Emacs does the indention
+    C-c C-d     toggle auto hungry mode in which Emacs deletes groups of spaces with one del-press
     C-c C-u     go to beginning of this preprocessor statement
     C-c C-c     comment out marked area
 # More general
     M-x outline-minor-mode
                 collapses function definitions in a file to a mere {...}
     M-x show-subtree
-                If you are in one of the collapsed functions, this un-collapses it
+                If you are in one of the collapsed functions, this expands it
 # In order to achieve some of the feats coming up,
 # now you have to run etags *.c *.h *.cpp
 # (or what ever ending you source files have) in the source directory
     M-.         (Meta dot) If you are in a function call, this will take you to it\'s definition
     M-x tags-search ENTER
                 Searches through all you etaged
-    M-,         (Meta comma) jumps to the next occurence for tags-search
+    M-,         (Meta comma) jumps to the next occurrence for tags-search
     M-x tags-query-replace yum.
                 This lets you replace some text in all the tagged files
 

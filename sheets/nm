@@ -24,7 +24,7 @@ nm  -S 1 | grep abc
 nm -D executable
 
 # Change the format of the nm output
-# (display the output of nm command in posix style)
+# (display the output of nm command in POSIX style)
 nm -u -f posix executable
 
 # Display only the external symbols of executable

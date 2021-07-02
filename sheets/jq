@@ -97,7 +97,7 @@ jq --slurp '. | sort | .[]'
 # Group by a key - opposite to flatten
 jq 'group_by(.foo)'
 
-# Minimun value of an array
+# Minimum value of an array
 jq 'min'
 # See also min, max, min_by(path_exp), max_by(path_exp)
 

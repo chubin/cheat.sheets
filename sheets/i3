@@ -57,7 +57,7 @@
 #
 # When creating new window, currently focused window
 # will be split in half and one half will be used by new window.
-# You can control whether it will split horiontally or
+# You can control whether it will split horizontally or
 # vertically with ◆+v or ◆+h.
 # You can focus multiple windows at once.
 # For example with this layout with two windows:
@@ -96,7 +96,7 @@
 # Default configuration path:
 /etc/i3/config
 
-# Keys can be binded with bindsym like this:
+# Keys can be bound with bindsym like this:
 bindsym $mod+4 workspace $ws4
 bindsym $mod+Shift+R exec custom-script-in-path.sh --flag1 --flag2
 bindcode 172 exec playerctl play-pause

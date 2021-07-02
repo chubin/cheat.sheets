@@ -7,7 +7,7 @@ xset s off
 # Change time before which the screen is blanked, to 3,600 seconds (1 hour).
 xset s 3600 3600
 
-# Turn off Display Power Management Signaling. To instead enable DPMS, the `-`
+# Turn off Display Power Management Signalling. To instead enable DPMS, the `-`
 # character is simply changed to `+`.
 xset -dpms
 

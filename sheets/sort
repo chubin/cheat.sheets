@@ -4,11 +4,14 @@
 # Return the contents of the British English dictionary, in reverse order.
 sort -r /usr/share/dict/british-english
 
-# Since sort(1) can filter out duplicate adjacent lines or fields, this example
-# therefore makes uniq(1) redundant. You should only ever use uniq(1) if you
-# need its functionality, or need uniqueness without sorting.
+# The GNU sort(1) command can also filter out adjacent duplicate lines and can
+# therefore overlap with the uniq(1) command. However, uniq(1) has some options
+# that sort(1) cannot do so refer to the man page for you situation if you 
+# require something beyond a basic uniqueness check. In addition, there is the
+# potential for parallizing the processing by piping sort(1) into uniq(1) for 
+# non trivial tasks.
 #
-# By default, sort(1) sorts lines or fields using the ASCI table. Here, we're
+# By default, sort(1) sorts lines or fields using the ASCII table. Here, we're
 # essentially getting alphanumeric sorting, where case is handled separately; -
 # this results in these words being adjacent to one another, thus duplicates
 # are removed.
@@ -17,7 +20,7 @@ sort -r /usr/share/dict/british-english
 printf '%s\n' this is a list of of random words with duplicate words | sort -u
 
 # Sort numerically. If you don't provide the `-n` flag, sort(1) will instead
-# sort by the ASCI table, as mentioned above, meaning it'll display as 1, 10, -
+# sort by the ASCII table, as mentioned above, meaning it'll display as 1, 10, -
 # 11, 2, 3, 4, etc.
 printf '%d\n' {1..9} 10 11 | sort -n
 

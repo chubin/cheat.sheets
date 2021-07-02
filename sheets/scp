@@ -1,7 +1,7 @@
 # scp
 # Secure copy (remote file copy program)
 
-# Secury copies files from remote ADDR's APTH to the current-working-directory.
+# Securely copies files from remote ADDR's PATH to the current-working-directory.
 # By default here, port 22 is used, or whichever port is otherwise configured.
 scp ADDR:PATH ./
 

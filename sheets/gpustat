@@ -3,6 +3,6 @@
 # It is a wrapper for nvidia-smi.
 # To install: `pip install gpustat`
 
-# show GPU statistsics with the processes PIDs and names
+# show GPU statistics with the processes PIDs and names
 gpustat -cp
 

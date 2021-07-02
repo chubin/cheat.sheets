@@ -21,7 +21,7 @@ yay -Y --gendb
 # and use PKGBUILD modification time and not version to determine update
 yay -Syu --devel --timeupdate
 
-# instalation
+# installation
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si

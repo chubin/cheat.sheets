@@ -45,7 +45,7 @@ az vm open-port --resource-group MyRG --name MyLinuxVM --port 443 --priority 899
 # Show storage accounts
 az storage account list --output table
 
-# Show contaniers for an account
+# Show containers for an account
 az storage container list --account-name mystorageaccount --output table
 
 # Show blobs in a container

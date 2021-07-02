@@ -1,4 +1,4 @@
-# POSIX-ly correct way in which to cat(1); see cat(1posix).
+# POSIX way in which to cat(1); see cat(1posix).
 cat -u [FILE_1 [FILE_2] ...]
 
 # Output a file, expanding any escape sequences (default). Using this short

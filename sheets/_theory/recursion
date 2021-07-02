@@ -2,7 +2,7 @@
 # Method for when the solution to a problem depends on solutions to smaller
 # instance of the same problem; a self-calling function.
 
-# Recursive programs - Pseduocode
+# Recursive programs - Pseudocode
 function factorial:
 input: integer n such that n >= 0
 output: n * (n-1) * (n-2) * ... * 1 = n!

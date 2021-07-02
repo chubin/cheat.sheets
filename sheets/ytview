@@ -1,10 +1,10 @@
 # ytview (Bash-Snippets)
-# search and play youtube videos right from the terminal
+# search and play YouTube videos right from the terminal
 
-# Search for youtube videos by title
+# Search for YouTube videos by title
 ytview This is my search query
 
-# Search for youtbe videos by specifying a channel
+# Search for YouTube videos by specifying a channel
 ytview -c numberphile
 
 # After using one of the two above commands you will be able
