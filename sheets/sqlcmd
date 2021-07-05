@@ -1,4 +1,5 @@
-# sqlcmd utility for SQL Server
+# sqlcmd
+# utility for MS SQL Server
 
 # connect to a database server with user
 sqlcmd -S localhost,1433 -U username
@@ -16,5 +17,5 @@ sqlcmd -S localhost,1433 -U username -v SOME_VARIABLE="foo" -i "/path/to/script.
 sqlcmd -S localhost,1433 -U username -Q "INSERT QUERY HERE"
 
 # check if a database exists using cmd line query (return 1 if True)
-sqlcmd -S localhost,1433 -U username -h -1 -W -Q "SET NOCOUNT ON;SELECT 1 FROM sys.databases WHERE [Name] = N'YOURDBNAME'")
+sqlcmd -S localhost,1433 -U username -h -1 -W -Q "SET NOCOUNT ON;SELECT 1 FROM sys.databases WHERE [Name] = N'YOURDBNAME'"
 
