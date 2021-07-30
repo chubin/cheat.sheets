@@ -1,22 +1,19 @@
 # dict
 # dictd - Client/server software, human language dictionary databases, and tools supporting the DICT protocol
 
-# List Available Databases
+# List available databases
 dict -D
 
-# Get Information about a Database
-dict -i
+# Get Information about a Database (e.g. moby-thesaurus)
+dict -i moby-thesaurus
 
-# Specify which database to use
-dict -d
-
-# Look up for "use" in Moby-Thesaurus
+# Look up "use" in Moby-Thesaurus
 dict -d moby-thesaurus use
 
-# Look up for "local" from all dictionaries in available databases
-dict local
+# Look up for "perceive" from all dictionaries in all available databases
+dict perceive
 
-# A list of all the available dictionaries can be queried by executing.
+# List all the available dictionaries server and their info
 dict -I
 
 
