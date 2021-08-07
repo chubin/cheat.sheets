@@ -1,3 +1,6 @@
+# xm
+# Xen management user interface.
+
 # Shows information about the Xen host
 xm info
 

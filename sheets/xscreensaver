@@ -1,2 +1,5 @@
+# xscreensaver-command
+# Control a running xscreensaver process.
+
 # lock screen sver
 xscreensaver-command -lock
