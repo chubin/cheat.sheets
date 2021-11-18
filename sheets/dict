@@ -1,11 +1,19 @@
 # dict
-# Dictionary client
+# dictd - Client/server software, human language dictionary databases, and tools supporting the DICT protocol
 
-# A list of all the available dictionaries can be queried by executing.
+# List available dictionary databases
+dict -D
+
+# Get information about a dictionary database (e.g. moby-thesaurus)
+dict -i moby-thesaurus
+
+# Look up "use" in Moby-Thesaurus database
+dict -d moby-thesaurus use
+
+# Look up "perceive" in all available dictionary databases
+dict perceive
+
+# List all the available dictionaries server and their info
 dict -I
 
-# Translate 'understand' to Dutch.
-dict -d fd-eng-nld understand
 
-# Show available dict databases.
-dict -D
