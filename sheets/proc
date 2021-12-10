@@ -1,6 +1,6 @@
 # /proc is a pseudo-filesystem containing running process information and more.
 
-# See the commandline arguments that started the process
+# See the command line arguments that started the process
 cat /proc/<pid>/cmdline
 
 # See the process's environment variables

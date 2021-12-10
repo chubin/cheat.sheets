@@ -1,6 +1,6 @@
 # jslint
 #
-# The JavaScript Code Quality Tool written by Dougls Crockford
+# The JavaScript Code Quality Tool written by Douglas Crockford
 
 # to install jslint
 sudo npm install jslint -g

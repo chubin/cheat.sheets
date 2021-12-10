@@ -70,7 +70,7 @@ tmux attach-session -t name
 #
 #     setw -g mode-keys vi  # to switch into vi mode
 #
-#  Function                vi             emacs
+#  Function                Vi             Emacs
 #  -----------------------------------------------
 #  Back to indentation     ^              M-m
 #  Start selection         Space          C-space

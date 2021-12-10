@@ -1,0 +1,10 @@
+# apt-config
+# APT Configuration Query program
+
+# List all APT (and related) configuration options and their values.
+apt-config dump
+
+# List regular expressions used to match packages to be ignored by apt-get(8)'s
+# `autoremove` functionality. Assumes `;` or some other undesired character
+# will be at the end of the string.
+apt-config dump | awk '/^APT::NeverAutoRemove::/ {print(substr($2, 0, length($2) - 1))}'

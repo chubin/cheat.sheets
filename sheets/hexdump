@@ -1,4 +1,4 @@
-# side-by-side hexadecimal and ascii view of the first 128 bytes of a file
+# side-by-side hexadecimal and ASCII view of the first 128 bytes of a file
 hexdump -C -n128 /etc/passwd
 
 # Convert a binary file to C Array

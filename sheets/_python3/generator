@@ -1,0 +1,20 @@
+# Declare a function that behaves like an iterator.
+# Any function with yield returns generator.
+# Generators follow lazy evaluation.
+# lazy evaluation means that the object is evaluated when it is needed,
+# not when it is created.
+
+def my_generator(start, end, step=1):
+    while start < end:
+        yield start
+        start += step
+
+gen = my_generator(start=1, end=10)
+next(gen), next(gen), next(gen)
+# (1, 2, 3)
+
+gen = (i for i in range(1, 100) if i%2==0)
+next(gen), next(gen), next(gen), next(gen)
+# (2, 4, 6, 8)
+
+# https://wiki.python.org/moin/Generators

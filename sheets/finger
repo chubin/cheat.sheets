@@ -4,6 +4,6 @@
 # “.pgpkey” and “.forward” from the user's home directory.
 finger -s username
 
-# weather report in console (for nuremberg in this case)
+# weather report in console (for Nuremberg in this case)
 finger nuremberg@graph.no
 

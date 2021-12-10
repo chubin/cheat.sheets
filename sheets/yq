@@ -24,7 +24,7 @@ yq r sample.yml spec.metadata[name==myapp]
 # Collect results into an array
 yq r sample.yaml --collect a.*.animal
 
-# Read from the 2nd docuemnt
+# Read from the 2nd document
 yq r -d1 sample.yaml b.c
 
 # Validate a document

@@ -1,6 +1,6 @@
 # short (Bash-Snippets)
-# Unmasks shortended urls.
+# Unmasks shortened URLs.
 
-# Unmask the true url behind a shortened link
+# Unmask the true URL behind a shortened link
 short tinyurl.com/jhkj
 # Output: http://possiblemaliciouswebsiteornot.com

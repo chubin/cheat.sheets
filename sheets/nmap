@@ -73,8 +73,8 @@ nmap --script "(default or safe or intrusive) and not http-*"
 # -pT:443 => Scan only port 443 with TCP (T:)
 nmap -T5 --min-parallelism=50 -n --script "ssl-heartbleed" -pT:443 127.0.0.1
 
-# Show all informations (debug mode)
+# Show all information (debug mode)
 nmap -d ...
 
-# Discovert DHCP information on an interface
+# Discover DHCP information on an interface
 nmap --script broadcast-dhcp-discover -e eth0

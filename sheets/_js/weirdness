@@ -4,6 +4,9 @@
 // Null is an Object
 typeof null // => 'object'
 
+// Weird decimal calculation
+0.1 + 0.2 // -> 0.30000000000000004
+
 // Despite this, null is not an instance of an Object
 null instanceof Object // => false
 

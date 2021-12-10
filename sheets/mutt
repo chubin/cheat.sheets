@@ -64,8 +64,8 @@ mutt -s "hello" -b user2@example.com user@example.com
 #
 # shift+d (D)           : Delete messages using pattern
 # shift+t (T)           : Select messages using pattern
-# shift+u (U)           : Un-delete messages using pattern
-# ctrl+t                : de-selected messages using pattern
+# shift+u (U)           : Undelete messages using pattern
+# ctrl+t                : deselect messages using pattern
 # d                     : Delete message
 # N                     : Mark as new
 # C                     : Copy message to another folder(mailbox)

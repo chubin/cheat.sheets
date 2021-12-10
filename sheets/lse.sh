@@ -1,8 +1,8 @@
 # lse
-# Linux enumeration tools for pentesting and CTFs.
+# Linux enumeration tools for pen-testing and CTFs.
 # This project was inspired by https://github.com/rebootuser/LinEnum and uses
-# many of its tests. Unlike LinEnum, lse tries to gradualy expose the
-# information depending on its importance from a privesc point of view.
+# many of its tests. Unlike LinEnum, lse tries to gradually expose the
+# information depending on its importance from a privacy point of view.
 # GitHub repo: https://github.com/diego-treitos/linux-smart-enumeration.git
 
 # Basic usage
@@ -27,7 +27,7 @@
 # fst: File system related tests.
 # sys: System related tests.
 # sec: Security measures related tests.
-# ret: Recurren tasks (cron, timers) related tests.
+# ret: Recurrent tasks (cron, timers) related tests.
 # net: Network related tests.
 # srv: Services related tests.
 # pro: Processes related tests.

@@ -1,0 +1,21 @@
+# sqlcmd
+# utility for MS SQL Server
+
+# connect to a database server with user
+sqlcmd -S localhost,1433 -U username
+
+# connect to a database server on specific db instance
+sqlcmd -S localhost,1433 -U username -P password -d target_db
+
+# change a password
+sqlcmd -U username -P oldpassword -Z newpassword
+
+# run a sql script against a database with variable (stdout)
+sqlcmd -S localhost,1433 -U username -v SOME_VARIABLE="foo" -i "/path/to/script.sql"
+
+# run a cmd line query and exit
+sqlcmd -S localhost,1433 -U username -Q "INSERT QUERY HERE"
+
+# check if a database exists using cmd line query (return 1 if True)
+sqlcmd -S localhost,1433 -U username -h -1 -W -Q "SET NOCOUNT ON;SELECT 1 FROM sys.databases WHERE [Name] = N'YOURDBNAME'"
+

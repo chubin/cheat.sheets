@@ -25,7 +25,7 @@ xinput --set-prop 8 157 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.
 xinput disable [touchscreen XID]
 
 # Disable middle mouse button click
-# Numbers are what you do with the first, second, and third (ie, left, middle, right) mouse buttons.
+# Numbers are what you do with the first, second, and third (i.e., left, middle, right) mouse buttons.
 # 1 0 3 means that the left button should do a left click (action 1),
 #                  the middle button should do nothing,
 #              and the right button should do a right click (action 3).

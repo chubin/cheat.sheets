@@ -34,6 +34,7 @@ Ctrl + p   - previous command (↑)
 Ctrl + n   - next command (↓)
 Ctrl + o   - execute displayed command from history, don't clear command line
  Alt + .   - recall last argument (word) of last executed command
+ Alt + - + . - recall second last argument (word) of last executed command
 
 # -= Terminal control =-
 Ctrl + l   - clear screen, don't clear command line
