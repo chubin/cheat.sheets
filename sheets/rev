@@ -1,0 +1,10 @@
+# rev
+# Reverse a string
+
+# Reverse a string
+echo hello world | rev
+# dlrow olleh
+
+# Reverse and flip
+echo hello world | rev | perl -Mopen=locale -Mutf8 -pe tr/a-z/ɐqɔpǝɟƃɥıɾʞlɯuodᕹɹsʇnʌʍxʎz/
+# plɹoʍ ollǝɥ
