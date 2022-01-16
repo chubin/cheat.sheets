@@ -1,3 +1,6 @@
+# yay
+# Yet another yogurt. Pacman wrapper and AUR helper written in go.
+
 # present package selection menu
 yay [Search Term]
 

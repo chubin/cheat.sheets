@@ -81,3 +81,67 @@ COMMAND_1 |& COMMAND_2
 
 # Verbosely convert whitespaces (` `) to underscores (`_`) in file names.
 for name in *\ *; do mv -vn "$name" "${name// /_}"; done
+
+# Expand a regular variable.
+$Var
+# Some people like to cuddle the variable name with braces ('{' and '}') but
+# this is usually superfluous and wasted keystrokes, unless you need to protect
+# the variable name from having other characters included, as in the below
+# example, or you're using one of the many features of parameter expansion.
+"${Var}some text"
+
+# Access a given index in an array. In this example, you don't technically
+# need to specify the element, because by default the first element is used.
+# As with many other languages, note that indices are 0-first, so 1 is the 2nd.
+${Var[0]}
+# You can use arithmetic between '[' and ']' as well.
+${Var[2+3]}
+
+# Expand variable to the length of that to which the variable would expand.
+${#Var}
+
+# Expand array variable to the number of elements/indices. You may find that
+# `[*]` works as well as `[@]`, in this case.
+${#Var[@]}
+
+# Expand variable to a substring. In this case, imagine `Var` is equal to the
+# string 'thing', but the offset is 2 and the length is 1, giving us an 'i'.
+${Var:2:1}
+
+# Expand variable to a substring by removing the matched glob pattern from left
+# to right. To make this global (IE: greedy) use two '#' characters. So, in
+# this example, everything, from left to right, up to and including a 'T' or
+# 't', will be removed, but it would only happen once.
+${Var#*[Tt]}
+# As above, but from right to left. Use two '%' characters for a greedy match.
+${Var%[Tt]*}
+
+# Change how the variable expands by using pattern substitution. This uses glob
+# pattern matching, not REGEX. If the first '/' is instead '//', a greedy match
+# is performed.
+${Var/PATTERN/REPLACEMENT/}
+# A good example of the above, which will list directories in PATH which exist
+# and are directories. It works because all instances of ':' are replaced with
+# a whitespace, causing find(1) to see multiple directories (fields) in which
+# to search.
+find ${PATH//:/ } -type d
+
+# Expand the variable to the string between `:-` and the closing `}`, if that
+# variable doesn't already have a value. This can be useful to set a default.
+${Var:-Default Value}
+
+# This is a way of displaying an error message if the contents of the variable
+# is empty. It will also immediately exit with an exit status of 1.
+${Var:?This is an error message.}
+
+# Indirect expansion exists in a couple of ways in BASH. If `Var` is equal to
+# `OtherVar`, and that `OtherVar` is equal to `true`, the below example would
+# expand to `true`.
+${!Var}
+
+# Expand variable so that the first letter is uppercase. Use two '^' (carets)
+# if you want the entire contents of the variable to change to uppercase.
+${Var^}
+# As above, but convert to lowercase. Use two ',' characters to transform the
+# entire string to which `Var` expands.
+${Var,}
