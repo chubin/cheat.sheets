@@ -1,0 +1,11 @@
+# jo
+# JSON output from a shell
+
+# Create an object
+jo -p name=jo n=17 parser=false
+
+# Create an array
+seq 1 10 | jo -a
+
+# Create a json with nested objects and arrays
+jo -p name=Jane point[]=1 point[]=2 geo[lat]=10 geo[lon]=20
