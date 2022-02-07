@@ -1,0 +1,26 @@
+# pack
+# CLI for building apps using Cloud Native Buildpacks
+
+# List recommended builders
+pack builder suggest
+
+# Use a builder to build an image 
+pack build <image-name> --builder <builder-to-use>
+
+# Example: Build a node app
+pack build testbuild --builder paketobuildpacks/builder:base
+# $ cat app.js 
+# var http = require('http');
+# http.createServer(function (request, response) {
+#    response.writeHead(200, {'Content-Type': 'text/plain'});
+#    response.end('Hello world!');
+# }).listen(8080);
+#
+# $ pack build testbuild --builder paketobuildpacks/builder:base
+# (..)
+# Successfully built image testbuild
+#
+# $ docker run --rm -p 8080:8080 testbuild
+#
+# $ curl http://127.0.0.1:8080
+# Hello world!
