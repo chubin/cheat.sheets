@@ -38,6 +38,8 @@ tmux attach-session -t name
 # ---
 #  %  vertical split
 #  "  horizontal split
+#  M-1 select-layout even-horizontal
+#  M-2 select-layout even-vertical
 #
 #  →  go to the left (right, top, bottom) panel
 #  C-→  resize panel to the left (right, top, bottom) panel
