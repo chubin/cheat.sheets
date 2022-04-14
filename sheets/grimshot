@@ -1,0 +1,20 @@
+# grimshot
+# A helper for screenshots within sway or other wayland compositor
+
+# Copy a screenshot of the screen to clipboard & notify the user
+grimshot --notify copy screen
+
+# Copy a screenshot of the screen to a file & notify the user
+grimshot --notify save screen screen.png
+
+# Copy a screenshot of an area to clipboard
+grimshot copy area
+
+# Copy a screenshot of the active window to clipboard
+grimshot copy active
+
+# Copy a screenshot of a selectable window to clipboard
+grimshot copy window
+
+# Copy a screenshot of the currently active output to clipboard
+grimshot copy output
