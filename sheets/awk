@@ -47,7 +47,12 @@ awk -v RS='' '
 printf '1 2 3' | awk 'BEGIN {OFS=":"}; {print $1,$2,$3}'
 
 # Search paragraph for the given REGEX match.
+# Paragraphs will be collapsed together.
 awk -v RS='' '/42B/' file
+
+# Search paragraph for the given REGEX match.
+# Paragraphs will be separated with a new line.
+awk -v RS= ORS='\n\n' '/42B/' file
 
 # Display only first field in text taken from STDIN.
 echo 'Field_1  Field_2  Field_3' | awk '{print $1}'
