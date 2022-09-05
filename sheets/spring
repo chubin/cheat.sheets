@@ -1,0 +1,4 @@
+# Create a basic Spring Boot project and run it 🚀
+spring init --dependencies=web sample-app.zip
+unzip sample-app.zip -d sample-app && rm sample-app.zip
+cd sample-app && mvn spring-boot:run
