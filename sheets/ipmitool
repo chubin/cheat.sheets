@@ -1,0 +1,26 @@
+# ipmitool
+# ipmi configuration and remote client
+#
+# Connect IPMI/BMC board via lan
+ipmitool -I lanplus -U USER -a -H ADDR
+
+# Check power status
+ipmitool -I lanplus -U USER -a -H ADDR chassis power status
+
+# Power on system
+ipmitool -I lanplus -U USER -a -H ADDR chassis power on
+
+# Configure local IPMI board with static IP Address
+ipmitool lan set 1 ipsrc static
+ipmitool lan set 1 ipaddr ADDR
+ipmitool lan set 1 netmask 255.255.255.0
+ipmitool lan set 1 defgw ipaddr GATEWAYW_ADDR
+
+# Show configuration for first configured LAN interface
+ipmitool lan print 1
+
+# Configure access to channel with admin rights
+ipmitool user set name 2 admin
+ipmitool user set password 2
+ipmitool channel setaccess 1 2 link=on ipmi=on callin=on privilege=4
+ipmitool user enable 2
