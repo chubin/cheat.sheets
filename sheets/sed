@@ -15,3 +15,48 @@ sed -i 's/\/path\/to\/somewhere\//\/path\/to\/anotherplace\//' FILE
 
 # Change your sed delimiter to a pipe to avoid escaping slashes.
 sed -i 's|/path/to/somewhere/|/path/to/anotherplace/|' FILE
+
+# Print 2nd line
+sed -n '2p' FILE
+
+# Print lines from 2 till 9
+sed -n '2,9p' FILE
+
+# Print lines starting from one having pattern "any" till line number 17
+sed -n '/any/,17p' FILE
+
+# Print lines starting from the beginning, quit after printing 3rd line
+sed -n 'p;3q'
+
+# Print and quit at 5th line
+sed -n '5{p;q}' FILE
+
+# Print lines starting from the one having pattern "strstart" till
+# the line having pattern "strend"
+sed -n '/strstart/,/strend/p' FILE
+
+# Print the last line
+sed -n '$p' FILE
+
+# Replace tabs with 4 spaces (changes are written to file itself)
+sed -i 's/\t/    /g' FILE
+
+# Replace CRLF with LF (convert DOS/Windows line endings to Linux line endings)
+sed -i  's/\r$//g' FILE
+
+# Insert CR (carriage return) character before LF (line feed) character
+# (Linux to DOS/Windows line endings conversion)
+sed -i 's/$/\r/' FILE
+
+# Remove trailing spaces (changes are written to file itself)
+sed -i -E "s/\s+$//g" FILE
+
+# Remove empty lines (changes are written to file itself)
+sed -i -E "/^\s*$/d" FILE
+
+# Anonymize original MAC address of an Ethernet device in ifconfig's output
+# (match 6 pairs of hexadecimal numbers with an optional trailing ":")
+ifconfig | sed -E "/ether/ s/([0-9a-f]{2}:{0,1}){6}/00:00:00:00:00:00/g"
+
+# Rearrange order of %Y,%m,%d in `date`s output by matching groups of characters
+date '+%Y-%m-%d' | sed -E "s/([0-9]{4})-([0-9]{2})-([0-9]{2})/\3-\2-\1/"
