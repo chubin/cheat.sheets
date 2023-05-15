@@ -10,9 +10,7 @@
 Progrm=${0##*/}
 
 Usage() {
-	while read; do
-		printf '%s\n' "$REPLY"
-	done <<-EOF
+	read -d '' <<-EOF
 		Usage: $Progrm [OPTS] [DIR [DIR] ...]
 
 		  -h, --help               - Display this help information.
@@ -43,8 +41,10 @@ Usage() {
 		  otherwise specified.
 
 		  Alternatively, a file can be whitelisted by ensuring the very first
-		  line contains only 'lenchk=disable', akin to a vim(1) modeline.
+		  line contains only '$Progrm=disable', akin to a vim(1) modeline.
 	EOF
+
+	printf '%s' "$REPLY"
 }
 
 Err() {
@@ -64,7 +64,7 @@ while [[ -n $1 ]]; do
 		--limit|-l)
 			shift; MaxCols=$1
 
-			if ! [[ $MaxCols =~ ^[0-9]+$ ]]; then
+			if ! [[ $MaxCols =~ ^[[:digit:]]+$ ]]; then
 				Err 1 'Invalid column maximum provided.'
 			fi ;;
 		--no-pager|-P)
@@ -128,6 +128,7 @@ for ArgDir in "$@"; {
 # Keeping this test outside of the loop to avoid unnecessary processing.
 if [[ $NoWhiteList != True && -f $WLFile ]]; then
 	# Read the whitelist file, line-by-line, generating an array thereof.
+	Whitelisted=()
 	while read; do
 		Whitelisted+=("../${REPLY#cheat.sheets/}")
 	done < "$WLFile"
@@ -150,15 +151,16 @@ Main() {
 	for File in "${Dirs[@]}"; {
 		[[ -f $File ]] || continue
 
-		# Per chubin's desire to have an "in-bound flag"; see #134.
+		# Per chubin's desire to have an "in-bound flag"; see #134. This also
+		# makes way for additional override parameters, if added in the future.
 		if [[ $NoLenChkLine != True ]]; then
 			SkipFile='False'
 			while read; do
-				if [[ $BufferLine == '# cheat.sh: '* ]]; then
-					CheatLine=${BufferLine#'# cheat.sh: '}
+				if [[ $REPLY == '# cheat.sh: '* ]]; then
+					CheatLine=${REPLY#'# cheat.sh: '}
 					IFS=',' read -a Fields <<< "$CheatLine"
 					for Field in "${Fields[@]}"; {
-						[[ $Field == $Progrm=disable ]] && SkipFile='True'
+						[[ $Field == "$Progrm"=disable ]] && SkipFile='True'
 					}
 				fi
 			done < "$File"
@@ -168,9 +170,10 @@ Main() {
 
 		# If the current file matches one which is whitelisted, skip it.
 		for CurWL in "${Whitelisted[@]}"; {
-			[[ $File == $CurWL ]] && continue 2
+			[[ $File == "$CurWL" ]] && continue 2
 		}
 
+		LineNum=0
 		HaveBeenHit='False'
 		while read; do
 			(( LineNum++ ))
@@ -198,7 +201,7 @@ Main() {
 					(( Hits++ ))
 				fi
 
-				if ! [[ $NoPreview == True ]]; then
+				if [[ $NoPreview != True ]]; then
 					# The line number of the problematic length.
 					[[ $NoColor == True ]] || printf "$C_LineNums"
 					printf '  %7d  ' $LineNum # <-- allows for 9,999,999 lines.
@@ -236,7 +239,7 @@ if [[ -t 1 && $NoPager != True ]]; then
 			Err 1 'Only more(1) is available -- colors unsupported.'
 		fi
 	else
-		Err 1 'Neither less(1) nor more(1) were found.'
+		Err 1 'Neither less(1) nor more(1) found.'
 	fi
 
 	# Redirecting STDERR to address less(1) bug causing summary to display
