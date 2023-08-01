@@ -8,4 +8,10 @@
 -- to execute:
 --   lua hello.lua
 
-io.write("Hello world, from ",_VERSION,"!\n")
+-- The simplest way:
+print('Hello world', 'from', _VERSION)
+
+-- On the stdout or stderr
+io.stdout:write("Hello world, from ",_VERSION,"!\n")
+io.stderr:write("Hello world, from ",_VERSION,"!\n")
+
