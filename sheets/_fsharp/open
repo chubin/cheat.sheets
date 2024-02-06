@@ -1,0 +1,7 @@
+// you can open namespaces with the open keyword
+// a bit like importing packages in other languages
+open System
+
+
+// for example, now wait for a key press and read it, from the System package, Console `module` or static class
+let k = Console.ReadKey()

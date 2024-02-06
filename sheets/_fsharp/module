@@ -1,0 +1,15 @@
+// in F# module help you to organize your code, like in python or js, a bit like static classes in C# or Java
+
+module MyModule = 
+
+    // bindings in modules are by default public
+    let SOME_CONST = 5
+
+    // same for function bindings
+    let someFun a = 
+        a + SOME_CONST
+
+
+
+// you can access your module somewhere else in your code as such
+let result = MyModule.someFun 3

@@ -1,0 +1,8 @@
+// simple function
+
+// functions in F# are created with `let` keyword as functions are just regular bindings
+
+// sum two values a and b
+let myFunction a b = 
+	// the last value in scope is returned
+	a + b
