@@ -1,0 +1,20 @@
+# cargo-clean
+# Remove the target directory to clean build artifacts.
+
+# Remove the entire target directory to clean all build artifacts
+cargo clean
+
+# Clean build artifacts for a specific target (e.g., i686-unknown-linux-gnu)
+cargo clean --target i686-unknown-linux-gnu
+
+# Use with --release to clean artifacts built with the --release flag
+cargo clean --release
+
+# Clean build artifacts for a specific package within a workspace
+cargo clean -p package_name
+
+# Explain using with verbose to show more output (if useful)
+cargo clean -v
+
+# Perform clean operation in a specific directory (if the cargo project is in another folder)
+cargo clean --manifest-path /path/to/Cargo.toml

@@ -1,0 +1,32 @@
+# rustdoc
+# A tool to generate documentation for Rust projects.
+
+# Generate HTML documentation from a Rust project
+rustdoc src/lib.rs
+
+# Generate documentation with a custom output directory
+rustdoc src/lib.rs --output target/doc
+
+# Include private items in the generated documentation
+rustdoc src/lib.rs --document-private-items
+
+# Specify the HTML theme to use for the documentation
+rustdoc src/lib.rs --theme path/to/theme.css
+
+# Generate JSON format documentation instead of HTML
+rustdoc src/lib.rs --output-format json
+
+# Set document title
+rustdoc src/lib.rs --crate-name my_crate
+
+# Add an external HTML page to the documentation
+rustdoc src/lib.rs --html-in-header path/to/header.html
+
+# Add CSS file to customize the documentation style
+rustdoc src/lib.rs --html-includes css/path/print.css
+
+# Link to documentation for dependencies hosted on external URLs
+rustdoc src/lib.rs --extern-html-root-url dep-name=url
+
+# Generate lint warnings for missing items
+rustdoc src/lib.rs --warn missing-docs

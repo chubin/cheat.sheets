@@ -1,0 +1,26 @@
+# cargo-doc
+# Build the documentation for the current package.
+
+# Build the documentation for the current package
+cargo doc
+
+# Build the documentation for a package and open it in the default browser
+cargo doc --open
+
+# Build the documentation for all packages in the workspace
+cargo doc --workspace
+
+# Build the documentation without dependencies
+cargo doc --no-deps
+
+# Build the documentation including private items
+cargo doc --document-private-items
+
+# Build the documentation for a specific package in a workspace
+cargo doc -p package_name
+
+# Build the documentation for a specific package with all features enabled
+cargo doc --features "feature_name"
+
+# Build the documentation in the release mode
+cargo doc --release

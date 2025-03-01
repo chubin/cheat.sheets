@@ -1,0 +1,32 @@
+# cargo-check
+# Check the current package for errors without producing a binary.
+
+# Check the current package for errors
+cargo check
+
+# Check a specific package within a workspace
+cargo check -p package_name
+
+# Check with all features enabled
+cargo check --all-features
+
+# Check with no default features
+cargo check --no-default-features
+
+# Check with only specific features enabled
+cargo check --features feature1,feature2
+
+# Check in release mode
+cargo check --release
+
+# Check with verbose output
+cargo check --verbose
+
+# Check targeting a specific platform
+cargo check --target target_triple
+
+# Check and use a custom target directory
+cargo check --target-dir custom_dir
+
+# Check with specific rust flags
+RUSTFLAGS="--flag" cargo check

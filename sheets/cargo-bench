@@ -1,0 +1,23 @@
+# cargo-bench
+# Run benchmarks of a package using libtest crate.
+
+# Running all benchmarks for a package
+cargo bench
+
+# Running benchmarks for specific functions using a filter
+cargo bench --bench benchmark_name_filter
+
+# Running a benchmark in a specific package within a workspace
+cargo bench -p package_name
+
+# Running benchmarks without compiling the package dependencies
+cargo bench --no-run
+
+# Displaying additional output information during benchmark running
+cargo bench --verbose
+
+# Compiling benchmarks for the nightly Rust toolchain
+cargo +nightly bench
+
+# Running benchmarks for a specific benchmark target
+cargo bench --bench specific_benchmark_target_name

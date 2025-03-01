@@ -1,30 +1,70 @@
-# Cargo is the Rust package manager
+# cargo
+# The Rust package manager.
 # Cargo downloads your Rust project's dependencies,
 # compiles your project, makes packages, and upload them to crates.io
 # See also: https://doc.rust-lang.org/cargo/
 
-# To start a new project
+# Build the current project
+cargo build
+
+# Build the project in release mode
+cargo build --release
+
+# Run the current project
+cargo run
+
+# Run the current project with arguments
+cargo run -- arg1 arg2
+
+# Test the current project
+cargo test
+
+# Check the code to make sure it compiles, without producing an executable
+cargo check
+
+# Create a new package/project
 cargo new hello_world --bin     # program
 cargo new hello_world --lib     # library
 
-# Build a project without optimizations (in debug mode)
-cargo build
+# Create a new package/project in the current directory
+cargo init
 
-# Build a project with optimizations turned on
-cargo build --release
-
-# Build and run (without optimizations) a package with Cargo
-cargo run
-
-# Updates dependencies in Cargo.lock
-cargo update            # update all
+# Update dependencies listed in Cargo.lock
+cargo update
 cargo update -p rand    # updates just “rand” crate
 
-# run the project tests (from src/ and tests/)
-cargo test
+# Search for a package in the registry
+cargo search keyword
 
-# Clean all output build files and targets
+# Add a new dependency to Cargo.toml
+cargo add package_name
+
+# Remove a dependency from Cargo.toml
+cargo remove package_name
+
+# List installed binary packages
+cargo install --list
+
+# Install a binary package
+cargo install package_name
+
+# Uninstall a binary package
+cargo uninstall package_name
+
+# Generate documentation for the project and open it in a browser
+cargo doc --open
+
+# Publish a package to the registry
+cargo publish
+
+# Run a specific binary from a project with multiple binaries
+cargo run --bin binary_name
+
+# Run a specific example
+cargo run --example example_name
+
+# Run tests with verbose output
+cargo test -- --nocapture
+
+# Clean up build files
 cargo clean
-
-# search for a package
-cargo search

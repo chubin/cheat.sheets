@@ -1,0 +1,14 @@
+# cargo-fix
+# Automatically fix common compiler warnings.
+
+# Automatically fix common compiler warnings in the current crate
+cargo fix
+
+# Automatically fix common compiler warnings but do not actually apply the fixes, just show what would be changed
+cargo fix --dry-run
+
+# Automatically fix warnings, including converting any 'allow(warnings)' to 'warn(warnings)'
+cargo fix --allow-dirty
+
+# Automatically fix warnings and apply suggested fixes for all targets (including tests and examples)
+cargo fix --all-targets

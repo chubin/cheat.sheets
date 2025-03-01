@@ -1,0 +1,29 @@
+# cargo-build
+# Compile the current package.
+
+# Compile the current package in release mode
+cargo build --release
+
+# Compile the current package for a specific target
+cargo build --target x86_64-unknown-linux-gnu
+
+# Compile the current package with a specific feature enabled
+cargo build --features feature_name
+
+# Compile the current package and display verbose output
+cargo build --verbose
+
+# Compile all packages in the workspace
+cargo build --workspace
+
+# Compile the current package without default features
+cargo build --no-default-features
+
+# Compile the current package with all features enabled
+cargo build --all-features
+
+# Compile the current package using a different configuration profile
+cargo build --profile custom_profile_name
+
+# Compile the current package but don't actually build it (check for errors)
+cargo build --check

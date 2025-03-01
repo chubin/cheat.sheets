@@ -1,0 +1,32 @@
+# cargo-generate
+# Generate a new Rust project based on an existing template.
+
+# Generate a new Rust project interactively using a specified template
+cargo generate --git https://github.com/owner/repo
+
+# Generate a new project using a template from a specific branch
+cargo generate --git https://github.com/owner/repo --branch branch-name
+
+# List available template variables and descriptions without generating a project
+cargo generate --git https://github.com/owner/repo --list
+
+# Disable auto-initialization of a new git repository in the generated project
+cargo generate --git https://github.com/owner/repo --name my_project --no-git
+
+# Use a specific favorite template stored in a configuration file
+cargo generate favorite-name
+
+# Generate a project with specific template values
+cargo generate --git https://github.com/owner/repo --name my_project --define key=value
+
+# Use SSH to clone a template from a private repository
+cargo generate --git git@github.com:owner/repo.git
+
+# Generate a Rust project from an existing template and specify a project name
+cargo generate --git https://github.com/owner/repo --name new_project_name
+
+# Generate a project using a specific path for a local template
+cargo generate --path /path/to/local/template
+
+# Skip confirming template variables with a non-interactive flag
+cargo generate --git https://github.com/owner/repo --force

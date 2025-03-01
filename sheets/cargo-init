@@ -1,0 +1,23 @@
+# cargo-init
+# Create a new Cargo package in an existing directory.
+
+# Initialize a new Cargo package in the current directory
+cargo init
+
+# Initialize a new Cargo package with a library instead of a binary
+cargo init --lib
+
+# Initialize a new Cargo package with a specific name (sets the package name)
+cargo init --name my-package
+
+# Initialize a new Cargo package without creating a VCS (Version Control System) repository
+cargo init --vcs none
+
+# Initialize a new Cargo package with a specific VCS, for example, Git
+cargo init --vcs git
+
+# Initialize a new Cargo package with quiet output (less verbose)
+cargo init --quiet
+
+# Initialize a new Cargo package with more verbose output
+cargo init --verbose

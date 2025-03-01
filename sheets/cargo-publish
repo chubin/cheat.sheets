@@ -1,0 +1,32 @@
+# cargo-publish
+# Upload a package to the registry crates.io.
+
+# Publish a package to crates.io with default settings
+cargo publish
+
+# Publish a package, specifying a custom registry other than crates.io
+cargo publish --registry my-registry
+
+# Publish a package, avoiding prompts for confirmation
+cargo publish --no-verify
+
+# Publish a package, with flags to allow missing dependencies that are path-based
+cargo publish --allow-dirty
+
+# Publish a package, ignoring VCS information and without updating the index
+cargo publish --no-verify --no-vcs
+
+# Publish a package with a specific target directory for the output
+cargo publish --target-dir /path/to/target
+
+# Dry-run to test how the publish would proceed without actually uploading
+cargo publish --dry-run
+
+# Specify a custom token for authentication
+cargo publish --token my-token
+
+# Publish all packages in a workspace
+cargo publish --workspace
+
+# Publish with additional features
+cargo publish --features "feature1,feature2"

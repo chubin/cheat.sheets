@@ -1,0 +1,47 @@
+# cargo-test
+# Run the tests for the current package.
+
+# Run all tests in the current package
+cargo test
+
+# Run tests with verbose output
+cargo test -- --nocapture
+
+# Run a specific test function by name
+cargo test test_function_name
+
+# Run tests in a specific file or module
+cargo test module_name::test_function_name
+
+# Run ignored tests as well
+cargo test -- --ignored
+
+# Run tests without compiling the benchmarks
+cargo test --lib
+
+# Run tests with a specific feature enabled
+cargo test --features feature_name
+
+# Run tests and include output for passing tests
+cargo test -- --display-output
+
+# Run tests and filter output by using a regular expression for matching test names
+cargo test test_name_regex
+
+# Run tests and capture the standard output of successful tests (default behavior)
+cargo test -- 
+
+# Run a test with a custom test binary
+cargo test --test test_binary_name
+
+# Run tests in a specific package within a workspace
+cargo test -p package_name
+
+# Run tests in a release mode (optimized)
+cargo test --release
+
+# Run all examples as tests
+cargo test --examples
+
+# Run tests but skip building the package
+cargo test --no-build

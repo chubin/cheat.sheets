@@ -1,0 +1,26 @@
+# cargo-audit
+# Audit Cargo.lock for vulnerabilities using the RustSec Advisory Database.
+
+# Audit the `Cargo.lock` file for vulnerabilities using the RustSec Advisory Database
+cargo audit
+
+# Ignore a specific vulnerability using its advisory ID
+cargo audit --ignore RUSTSEC-YYYY-XXXX
+
+# Produce a JSON output of the audit results
+cargo audit --json
+
+# Fetch the latest vulnerability database before auditing
+cargo audit update && cargo audit
+
+# Audit using a specific advisory database URL
+cargo audit --url https://example.com/advisory-db
+
+# Output a warning message if there are outdated crates
+cargo audit --warn-outdated
+
+# Silence all output except for errors
+cargo audit --quiet
+
+# Limit number of threads for concurrent network requests 
+cargo audit --jobs NUM_THREADS

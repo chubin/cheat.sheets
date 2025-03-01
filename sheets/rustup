@@ -1,26 +1,32 @@
 # rustup
-# The Rust tool chain installer
+# The Rust toolchain installer and version manager.
 
-# update rustup tool chain
+# Install the Rust toolchain
+rustup install stable
+
+# Update Rust toolchains and rustup itself
 rustup update
 
-# install nightly build
-rustup install nightly
+# Show installed toolchains
+rustup toolchain list
 
-# use rustc from nightly tool chain
-rustup run nightly rustc --version
+# Set the default Rust toolchain for the current user
+rustup default stable
 
-# switch to nightly installation
-rustup default nightly
+# Add a target for cross-compilation
+rustup target add wasm32-unknown-unknown
 
-# List all available targets for the active tool chain
-rustup target list
+# Remove a specific toolchain
+rustup toolchain remove nightly
 
-# Install the Android target
-rustup target add arm-linux-androideabi
+# Run a command with a specific toolchain
+rustup run nightly cargo build
 
-# Run a shell configured for the nightly compiler
-rustup run nightly bash
+# Uninstall rustup and all Rust tools
+rustup self uninstall
 
-# Show which tool chain will be used in the current directory
-rustup show
+# Check for environment setup issues
+rustup doctor
+
+# Add a component to a toolchain
+rustup component add rustfmt

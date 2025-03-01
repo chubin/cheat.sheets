@@ -1,0 +1,26 @@
+# cargo-watch
+# Watch files for changes and automatically run cargo commands.
+
+# Watch for changes and run tests automatically
+cargo watch -x test
+
+# Watch for changes in the src directory and run the build command
+cargo watch -w src -x build
+
+# Watch for changes in any `.rs` files and run the run command
+cargo watch -w '*.rs' -x run
+
+# Watch for changes, clear the terminal, and run check command
+cargo watch -c -x check
+
+# Watch for changes and run multiple cargo commands sequentially
+cargo watch -x "build" -x "test" 
+
+# Watch for changes while excluding specific files or directories
+cargo watch --ignore ignored_dir -x run
+
+# Watch for all changes but only run a command if `.rs` files are modified
+cargo watch -w '*.rs' -s "echo .rs File Changed" -x run
+
+# Watch for changes, execute a shell command before running cargo command
+cargo watch -s "echo Pre-processing Step" -x run
