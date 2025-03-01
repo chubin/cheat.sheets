@@ -1,0 +1,130 @@
+[
+  {
+    "command": "cargo",
+    "description": "The Rust package manager."
+  },
+  {
+    "command": "cargo-audit",
+    "description": "Audit Cargo.lock for vulnerabilities using the RustSec Advisory Database."
+  },
+  {
+    "command": "cargo-bench",
+    "description": "Run benchmarks of a package using libtest crate."
+  },
+  {
+    "command": "cargo-build",
+    "description": "Compile the current package."
+  },
+  {
+    "command": "cargo-check",
+    "description": "Check the current package for errors without producing a binary."
+  },
+  {
+    "command": "cargo-clean",
+    "description": "Remove the target directory to clean build artifacts."
+  },
+  {
+    "command": "cargo-clone",
+    "description": "Clone an entire crate source from a remote registry into a directory."
+  },
+  {
+    "command": "cargo-doc",
+    "description": "Build the documentation for the current package."
+  },
+  {
+    "command": "cargo-edit",
+    "description": "Manage dependencies for a Cargo project."
+  },
+  {
+    "command": "cargo-fix",
+    "description": "Automatically fix common compiler warnings."
+  },
+  {
+    "command": "cargo-generate",
+    "description": "Generate a new Rust project based on an existing template."
+  },
+  {
+    "command": "cargo-init",
+    "description": "Create a new Cargo package in an existing directory."
+  },
+  {
+    "command": "cargo-install",
+    "description": "Install a Rust binary crate from the current package or crates.io."
+  },
+  {
+    "command": "cargo-new",
+    "description": "Create a new Cargo package in a new directory."
+  },
+  {
+    "command": "cargo-publish",
+    "description": "Upload a package to the registry crates.io."
+  },
+  {
+    "command": "cargo-run",
+    "description": "Compile and execute the main package."
+  },
+  {
+    "command": "cargo-script",
+    "description": "A tool for running Rust scripts with optional dependency declarations."
+  },
+  {
+    "command": "cargo-test",
+    "description": "Run the tests for the current package."
+  },
+  {
+    "command": "cargo-tree",
+    "description": "Display a dependency graph in a tree-like format."
+  },
+  {
+    "command": "cargo-update",
+    "description": "Update dependencies as specified in the Cargo.toml file."
+  },
+  {
+    "command": "cargo-watch",
+    "description": "Watch files for changes and automatically run cargo commands."
+  },
+  {
+    "command": "clippy",
+    "description": "A collection of lints to catch common mistakes and improve your Rust code."
+  },
+  {
+    "command": "crate",
+    "description": "A Rust library or executable package."
+  },
+  {
+    "command": "rls",
+    "description": "Rust Language Server provides IDEs and editors with enhanced IDE features."
+  },
+  {
+    "command": "rust-analyzer",
+    "description": "An implementation of the Language Server Protocol (LSP) for Rust."
+  },
+  {
+    "command": "rustc",
+    "description": "The Rust compiler."
+  },
+  {
+    "command": "rustdoc",
+    "description": "A tool to generate documentation for Rust projects."
+  },
+  {
+    "command": "rust-docs",
+    "description": "Documentation for the Rust programming language and its standard library."
+  },
+  {
+    "command": "rustfmt",
+    "description": "Tool for formatting Rust code according to style guidelines."
+  },
+  {
+    "command": "rust-lldb",
+    "description": "A wrapper around LLDB, the debugger for Rust programs."
+  },
+  {
+    "command": "rust-std",
+    "description": "The Standard Library for the Rust programming language."
+  },
+  {
+    "command": "rustup",
+    "description": "The Rust toolchain installer and version manager."
+  }
+]

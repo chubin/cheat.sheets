@@ -1,0 +1,36 @@
+# rustc
+# The Rust compiler.
+
+# Compile a Rust source file into an executable
+rustc main.rs
+
+# Compile a Rust source file with debugging information included
+rustc -g main.rs
+
+# Compile a Rust source file with optimization for speed
+rustc -O main.rs
+
+# Compile a Rust source file with optimization for size
+rustc -C opt-level=s main.rs
+
+# Emit only metadata usable by other compilations
+rustc --emit=metadata main.rs
+
+# Check the Rust source file for errors without generating an output file
+rustc --emit=metadata -Z no-codegen main.rs
+
+# Compile with specific target (useful for cross-compilation)
+rustc --target=<target_triple> main.rs
+
+# Specify output filename for the compilation
+rustc -o output_filename main.rs
+
+# Produce intermediate representations (IR) or assembly
+rustc --emit=llvm-ir main.rs # for LLVM IR
+rustc --emit=asm main.rs     # for assembly
+
+# Compile with conditional compilation flags
+rustc --cfg <flag> main.rs
+
+# Link with specific library
+rustc -l <library_name> main.rs

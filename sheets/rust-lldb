@@ -1,0 +1,4 @@
+# rust-lldb
+# A wrapper around LLDB, the debugger for Rust programs.
+
+NOT_CLI

@@ -1,0 +1,26 @@
+# cargo-script
+# A tool for running Rust scripts with optional dependency declarations.
+
+# Run a Rust script from a file
+cargo-script file.rs
+
+# Run a Rust script from a string
+cargo-script -e "println!(\"Hello, world!\");"
+
+# Run a Rust script with inline dependency declaration
+cargo-script -e "// cargo-deps: clap = \"2.33\" \n extern crate clap; println!(\"Hello, world!\");"
+
+# Run a Rust script with specific Rust edition (e.g., 2018 edition)
+cargo-script --edition 2018 file.rs
+
+# Pass command-line arguments to the Rust script
+cargo-script file.rs arg1 arg2
+
+# Compile the Rust script without running it
+cargo-script --build-only file.rs
+
+# Force recompilation of the script
+cargo-script --force file.rs
+
+# Run a Rust script in debug mode for more verbose error messages
+cargo-script --debug file.rs

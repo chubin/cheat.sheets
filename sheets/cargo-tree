@@ -1,0 +1,32 @@
+# cargo-tree
+# Display a dependency graph in a tree-like format.
+
+# Display the dependency tree of the current package
+cargo tree
+
+# Display the dependency tree of a specific package
+cargo tree --package package_name
+
+# Display only the direct dependencies (skip transitive)
+cargo tree --depth 1
+
+# Display dependencies with extra details such as versions or features
+cargo tree --edges features
+
+# Include dev-dependencies in the output
+cargo tree --features dev
+
+# Output the dependency tree in JSON format
+cargo tree --format json
+
+# Display the tree with specific features enabled
+cargo tree --features feature_name
+
+# Display only dependencies that contain specific text (like a package name)
+cargo tree --filter xyz
+
+# Display a tree excluding certain packages or features
+cargo tree --no-default-features
+
+# Display help for `cargo tree` command
+cargo tree --help

@@ -1,0 +1,29 @@
+# cargo-install
+# Install a Rust binary crate from the current package or crates.io.
+
+# Install a binary crate from crates.io
+cargo install crate_name
+
+# Install a specific version of a binary crate
+cargo install crate_name --version 1.2.3
+
+# Install a binary crate from the current package
+cargo install --path .
+
+# Install a binary crate with a specific features enabled
+cargo install crate_name --features feature1,feature2
+
+# Install a binary crate without default features
+cargo install crate_name --no-default-features
+
+# Install a binary crate and override the install location
+cargo install crate_name --root /path/to/installation
+
+# Install a binary crate in debug mode instead of release mode
+cargo install crate_name --debug
+
+# Update an already installed binary crate to the latest version
+cargo install crate_name --force
+
+# List all installed binary crates and their installation paths
+cargo install --list

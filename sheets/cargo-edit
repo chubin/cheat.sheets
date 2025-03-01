@@ -1,0 +1,29 @@
+# cargo-edit
+# Manage dependencies for a Cargo project.
+
+# Add a new dependency to a Cargo project
+cargo add <crate_name>
+
+# Add a specific version of a dependency
+cargo add <crate_name>@<version>
+
+# Add a dependency with a specific feature
+cargo add <crate_name> --features <feature_name>
+
+# Upgrade all dependencies in a Cargo project to the latest version
+cargo upgrade
+
+# Upgrade a specific dependency
+cargo upgrade <crate_name>
+
+# Remove a dependency from a Cargo project
+cargo rm <crate_name>
+
+# Upgrade dependencies interactively
+cargo upgrade --interactive
+
+# List outdated dependencies
+cargo outdated
+
+# Get help and list all available commands
+cargo help	edit

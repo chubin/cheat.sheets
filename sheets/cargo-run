@@ -1,0 +1,32 @@
+# cargo-run
+# Compile and execute the main package.
+
+# Compile and execute the main package
+cargo run
+
+# Compile and execute the main package without default features
+cargo run --no-default-features
+
+# Compile and execute the main package with specific features enabled
+cargo run --features feature_name
+
+# Compile and run the main package in release mode for optimized performance
+cargo run --release
+
+# Compile and execute with environment variables set
+ENV_VAR=value cargo run
+
+# Compile and execute the main package using a specific package from a workspace
+cargo run --package package_name
+
+# Compile and run a specific binary target
+cargo run --bin binary_name
+
+# Compile and execute while passing additional arguments to the program
+cargo run -- arg1 arg2 arg3
+
+# Compile and run using a specific configuration profile
+cargo run --profile profile_name
+
+# Compile and execute the main package with verbose output
+cargo run --verbose

@@ -1,0 +1,26 @@
+# rustfmt
+# Tool for formatting Rust code according to style guidelines.
+
+# Format a specific Rust file
+rustfmt src/main.rs
+
+# Format all Rust files in the current directory and its subdirectories
+find . -name "*.rs" | xargs rustfmt
+
+# Format a specific Rust file and show diff output (changes made)
+rustfmt --check src/main.rs
+
+# Format a Rust file using a specific configuration file
+rustfmt --config-path ./path/to/rustfmt.toml src/main.rs
+
+# Format in place and write to stdout (useful to view changes)
+rustfmt --emit=stdout src/main.rs
+
+# Format a Rust file and suppress the terminal output
+rustfmt --quiet src/main.rs
+
+# Format Rust code from stdin and output the result
+echo "fn main() { println!(\"Hello, world!\"); }" | rustfmt
+
+# Format a Rust file and list files with errors if any
+rustfmt --check --files-with-diff src/*.rs
