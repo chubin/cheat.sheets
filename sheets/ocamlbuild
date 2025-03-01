@@ -1,0 +1,32 @@
+# ocamlbuild
+# Build tool for managing complex OCaml projects.
+
+# Build a specified target with default options
+ocamlbuild my_project.native
+
+# Build a bytecode executable
+ocamlbuild my_project.byte
+
+# Clean up the build directory
+ocamlbuild -clean
+
+# Build a target with custom include directories
+ocamlbuild -I src -I lib my_project.native
+
+# Specify tag for additional build options
+ocamlbuild -tag debug my_project.native
+
+# Build with verbose output to see more details
+ocamlbuild -verbose my_project.native
+
+# Build using a specific OCamlfind package
+ocamlbuild -use-ocamlfind -pkg core my_project.native
+
+# Use a custom build file
+ocamlbuild -build-dir custom_build_dir my_project.native
+
+# Enable warnings as errors during the build
+ocamlbuild -cflags -warn-error +a my_project.native
+
+# Use a plugin for additional functionality
+ocamlbuild -plugin-tag "package(bisect_ppx)" my_project.native

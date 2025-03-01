@@ -1,0 +1,32 @@
+# menhir
+# Parser generator for OCaml.
+
+# Basic usage to generate a parser from a grammar file
+menhir grammar.mly
+
+# Generate and display the parser's automaton
+menhir --dump grammar.mly
+
+# Produce detailed explanation of conflicts (useful for debugging grammar conflicts)
+menhir --explain grammar.mly
+
+# Generate the parser with error messages in a separate file
+menhir --error-recovery grammar.mly
+
+# Specify a start symbol for the parser
+menhir --entry <entry_point> grammar.mly
+
+# Generate a parser that can be selectively compiled with manual intervention
+menhir --table grammar.mly
+
+# Use an existing .cmly file to check compatibility or produce additional outputs
+menhir --interpret grammar.cmly
+
+# Specify standard library directory for use with OCaml's standard library
+menhir --stdlib <directory> grammar.mly
+
+# Create a parser that enables incremental parsing
+menhir --incremental grammar.mly
+
+# Produce a Makefile-compatible dependency listing
+menhir --depend grammar.mly

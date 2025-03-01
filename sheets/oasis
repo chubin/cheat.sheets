@@ -1,0 +1,20 @@
+# oasis
+# Tool for building OCaml libraries and applications.
+
+# Initialize a new OASIS project
+oasis setup
+
+# Generate the configure, build, and install scripts
+oasis configure
+
+# Build the project
+make
+
+# Clean up the build and remove generated files
+make clean
+
+# Install the built project
+make install
+
+# Display help information for OASIS
+oasis help

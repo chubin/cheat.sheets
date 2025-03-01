@@ -1,0 +1,32 @@
+# dune
+# Build system for OCaml projects.
+
+# Initialize a new Dune project
+dune init project project_name
+
+# Build the entire project
+dune build
+
+# Run the tests
+dune runtest
+
+# Clean the build artifacts
+dune clean
+
+# Watch mode for a project that automatically rebuilds on file changes
+dune build -w
+
+# Run an executable defined in the project
+dune exec ./path/to/executable
+
+# Build a specific target
+dune build path/to/target
+
+# Print the build context information
+dune printenv
+
+# Generate documentation for the project
+dune build @doc
+
+# Display help information for more commands and options
+dune --help

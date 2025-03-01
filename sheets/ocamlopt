@@ -1,0 +1,34 @@
+# ocamlopt
+# The native code compiler for OCaml.
+
+# Compile an OCaml source file to a native executable
+ocamlopt -o my_program my_program.ml
+
+# Include debugging information in the compiled program
+ocamlopt -g -o my_program_debug my_program.ml
+
+# Enable optimization level 3 for potentially faster code
+ocamlopt -O3 -o my_program_optimized my_program.ml
+
+# Compile separate modules and link them into a single executable
+ocamlopt -c module1.ml
+ocamlopt -c module2.ml
+ocamlopt -o my_program module1.cmx module2.cmx
+
+# Link with an external C library
+ocamlopt -cclib -lmyclibrary -o my_program my_program.ml
+
+# Generate assembly code instead of an executable
+ocamlopt -S -o my_program.s my_program.ml
+
+# Include a custom search path for finding compiled interface files
+ocamlopt -I /path/to/dir -o my_program my_program.ml
+
+# Produce a profiling-enabled executable
+ocamlopt -p -o my_program_prof my_program.ml
+
+# Link against a precompiled C object file
+ocamlopt my_program.ml my_c_function.o -o my_program_with_c
+
+# Output a list of intermediate compilation steps
+ocamlopt -verbose -o my_program_verbose my_program.ml

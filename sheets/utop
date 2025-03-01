@@ -1,0 +1,23 @@
+# utop
+# Enhanced OCaml interactive toplevel.
+
+# Start utop with a custom initialization file
+utop -init custom_init.ml
+
+# Load a specific OCaml module before starting utop
+utop -load my_module.cmo
+
+# Require a package using ocamlfind before starting utop
+utop -require package_name
+
+# Start utop without loading any initialization files
+utop -noinit
+
+# Evaluate a specific OCaml expression and exit
+utop -eval "print_endline \"Hello, World!\""
+
+# Increase verbosity of utop for debugging purposes
+utop -verbose
+
+# Run utop with specific compiler flags
+utop -ocamlc "-w A"

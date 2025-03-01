@@ -1,0 +1,32 @@
+# ocamldoc
+# Documentation generator for OCaml.
+
+# Generate documentation in HTML format for an OCaml file
+ocamldoc -html myfile.ml
+
+# Generate documentation in LaTeX format
+ocamldoc -latex myfile.ml
+
+# Specify the output directory for the generated documentation
+ocamldoc -d output_directory -html myfile.ml
+
+# Generate documentation with custom tags
+ocamldoc -tags custom_tag1,custom_tag2 -html myfile.ml
+
+# Pass specific package options to improve generated documentation
+ocamldoc -package pkg_name -html myfile.ml
+
+# Generate documentation including private elements
+ocamldoc -html -hide private myfile.ml
+
+# Generate documentation in man page format
+ocamldoc -man myfile.ml
+
+# Use a specific ocamlc command
+ocamldoc -copts "ocamlc options" -html myfile.ml
+
+# Generate a one-page HTML file
+ocamldoc -html -one-page myfile.ml
+
+# Include the navigation bar in the documentation
+ocamldoc -html -with-index -d output_directory myfile.ml

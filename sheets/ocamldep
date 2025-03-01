@@ -1,0 +1,26 @@
+# ocamldep
+# Dependency analyzer for OCaml source files.
+
+# Generate dependency information for OCaml source files
+ocamldep -modules file1.ml file2.ml
+
+# Include directory to search for source files
+ocamldep -I directory file.ml
+
+# Print dependencies for native compilation
+ocamldep -native file.ml
+
+# Print dependencies for bytecode compilation (default behavior)
+ocamldep -bytecode file.ml
+
+# Use specified suffix for compiled files
+ocamldep -ext obj file.ml
+
+# Generate dependency information for input files in the directory
+ocamldep -one-line *.ml
+
+# Enable Verbose mode for more detailed output
+ocamldep -verbose file.ml
+
+# Display version information and exit
+ocamldep -version

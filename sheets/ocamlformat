@@ -1,0 +1,26 @@
+# ocamlformat
+# Code formatting tool for OCaml.
+
+# Format a single OCaml file in place
+ocamlformat --inplace filename.ml
+
+# Read from stdin and output to stdout
+ocamlformat - 
+
+# Format all OCaml files in the current project
+ocamlformat --root . 
+
+# Check if files need formatting (useful for CI pipelines)
+ocamlformat --check filename.ml
+
+# Format according to a specific profile (e.g., conventional)
+ocamlformat --profile=conventional filename.ml
+
+# Format files with a specified margin (e.g., 80 characters)
+ocamlformat --margin=80 filename.ml
+
+# Specify a custom ocamlformat configuration file
+ocamlformat --name=path/to/.ocamlformat filename.ml
+
+# List all available options
+ocamlformat --help

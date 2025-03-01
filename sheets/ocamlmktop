@@ -1,0 +1,20 @@
+# ocamlmktop
+# Build OCaml toplevel systems with custom modules.
+
+# Create a custom OCaml toplevel with a single custom module
+ocamlmktop -o custom_top custom_module.cmo
+
+# Create a custom OCaml toplevel including multiple custom modules
+ocamlmktop -o custom_top module1.cmo module2.cmo module3.cmo
+
+# Create a custom OCaml toplevel with linking against a library
+ocamlmktop -o custom_top -custom -cclib -lcustomlib custom_module.cmo
+
+# Create a custom OCaml toplevel with additional include directories
+ocamlmktop -o custom_top -I /path/to/dir1 -I /path/to/dir2 custom_module.cmo
+
+# Create a custom OCaml toplevel with debugging and profiling options
+ocamlmktop -o custom_top -g -p custom_module.cmo
+
+# Include other object files and libraries
+ocamlmktop -o custom_top other_object.o custom_module.cmo -cclib -lmylib

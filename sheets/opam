@@ -1,34 +1,45 @@
-# OPAM is a source-based package manager for OCaml
+# opam
+# Package manager for OCaml.
 
-# Initialize ~/.opam using an already installed OCaml
+# Initialize opam environment
 opam init
-opam init --comp 4.02.3
-# Initialize with a freshly compiled OCaml 4.02.3
-
-# List all available packages
-opam list -a
-
-# List packages with QUERY in their name or description
-opam search ${QUERY}
-
-# Display information about PACKAGE
-opam show ${PACKAGE}
 
 # Download, build and install the latest version of PACKAGE
 # and all its dependencies
-opam install ${PACKAGE}
+opam install "${PACKAGE}"
 
-# Update the packages database
+# Remove a package
+opam remove "${PACKAGE}"
+
+# Display information about PACKAGE
+opam show "${PACKAGE}"
+
+# Update the list of available packages and the compiler
 opam update
-
-# Bring everything to the latest version possible
-opam upgrade
 
 # Command-specific manpage
 opam CMD --help
 
-# install static analysis and indentation for ocaml
-opam install ocp-indent merlin
-# configure editor as recommended in the installation output
-# + (for vim) don't forget to add "filetype plugin on" in ~/.vimrc
+# Upgrade all installed packages to the latest version
+opam upgrade
 
+# Switch to a different OCaml compiler/install environment
+opam switch create switch-name --packages package-list
+
+# Show information about a package
+opam info "${PACKAGE}"
+
+# List installed packages
+opam list
+
+# List all available packages
+opam list -a
+
+# Search for a package
+opam search "${PACKAGE}"
+
+# Clean up the download cache and log directory
+opam clean
+
+# Pin a package to a specific version/source
+opam pin add "${PACKAGE}" "${VERSION_OR_URL}"

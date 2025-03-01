@@ -1,0 +1,23 @@
+# odig
+# Documentation manager for OCaml packages.
+
+# Display the documentation of the installed OCaml packages
+odig doc
+
+# List installed OCaml packages
+odig list
+
+# Open the documentation of a specific package
+odig doc package-name
+
+# Rebuild the documentation
+odig odoc
+
+# Browse a package's metadata
+odig show package-name
+
+# List themes for HTML documentation
+odig cache path --theme
+
+# Display help for odig commands
+odig help
