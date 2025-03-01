@@ -1,0 +1,146 @@
+[
+  {
+    "command": "lvchange",
+    "description": "Change attributes of a logical volume."
+  },
+  {
+    "command": "lvconvert",
+    "description": "Convert a logical volume from linear to mirror or RAID."
+  },
+  {
+    "command": "lvcreate",
+    "description": "Create a new logical volume."
+  },
+  {
+    "command": "lvdisplay",
+    "description": "Display information about logical volumes."
+  },
+  {
+    "command": "lvextend",
+    "description": "Extend the size of a logical volume."
+  },
+  {
+    "command": "lvm",
+    "description": "Activate the LVM2 command-line interface."
+  },
+  {
+    "command": "lvmconfig",
+    "description": "Display and manipulate LVM configuration."
+  },
+  {
+    "command": "lvmdiskscan",
+    "description": "List devices that may be used as physical volumes."
+  },
+  {
+    "command": "lvmsadc",
+    "description": "Collect activity data for LVM objects."
+  },
+  {
+    "command": "lvmsar",
+    "description": "Display historical LVM activity data."
+  },
+  {
+    "command": "lvreduce",
+    "description": "Reduce the size of a logical volume."
+  },
+  {
+    "command": "lvremove",
+    "description": "Remove a logical volume."
+  },
+  {
+    "command": "lvrename",
+    "description": "Rename a logical volume."
+  },
+  {
+    "command": "lvresize",
+    "description": "Resize a logical volume."
+  },
+  {
+    "command": "lvs",
+    "description": "Display information about logical volumes in concise form."
+  },
+  {
+    "command": "lvscan",
+    "description": "Scan for all logical volumes in the system."
+  },
+  {
+    "command": "pvchange",
+    "description": "Change attributes of a physical volume."
+  },
+  {
+    "command": "pvcreate",
+    "description": "Initialize a physical volume for use by LVM."
+  },
+  {
+    "command": "pvdisplay",
+    "description": "Display information about physical volumes."
+  },
+  {
+    "command": "pvmove",
+    "description": "Move physical extents from one physical volume to another."
+  },
+  {
+    "command": "pvremove",
+    "description": "Remove a physical volume."
+  },
+  {
+    "command": "pvresize",
+    "description": "Resize a physical volume."
+  },
+  {
+    "command": "pvs",
+    "description": "Display information about physical volumes in concise form."
+  },
+  {
+    "command": "pvscan",
+    "description": "Scan all disks for physical volumes."
+  },
+  {
+    "command": "vgchange",
+    "description": "Change attributes of a volume group."
+  },
+  {
+    "command": "vgconvert",
+    "description": "Convert a volume group metadata format."
+  },
+  {
+    "command": "vgcreate",
+    "description": "Create a new volume group."
+  },
+  {
+    "command": "vgdisplay",
+    "description": "Display information about volume groups."
+  },
+  {
+    "command": "vgextend",
+    "description": "Extend a volume group by adding physical volumes."
+  },
+  {
+    "command": "vgmerge",
+    "description": "Merge two volume groups."
+  },
+  {
+    "command": "vgreduce",
+    "description": "Reduce a volume group by removing physical volumes."
+  },
+  {
+    "command": "vgremove",
+    "description": "Remove a volume group."
+  },
+  {
+    "command": "vgrename",
+    "description": "Rename a volume group."
+  },
+  {
+    "command": "vgs",
+    "description": "Display information about volume groups in concise form."
+  },
+  {
+    "command": "vgscan",
+    "description": "Scan all disks for volume groups."
+  },
+  {
+    "command": "vgsplit",
+    "description": "Split a volume group into two volume groups."
+  }
+]
