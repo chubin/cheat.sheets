@@ -1,0 +1,23 @@
+# vgremove
+# Remove a volume group.
+
+# Remove a volume group named "my_volume_group"
+vgremove my_volume_group
+
+# Forcefully remove a volume group without prompt, using the '-f' option
+vgremove -f my_volume_group
+
+# Use '-v' for verbose output while removing the volume group
+vgremove -v my_volume_group
+
+# Remove a volume group and use '--force' to avoid interactive confirmation
+vgremove --force my_volume_group
+
+# Remove multiple volume groups at once
+vgremove volume_group1 volume_group2
+
+# Use '-A' to set auto-activation to 'n' for not activating any logical volumes on start-up
+vgremove -A n my_volume_group
+
+# Remove a volume group but proceed even if some logical volumes do not exist with '--removemissing'
+vgremove --removemissing my_volume_group

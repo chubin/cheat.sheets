@@ -1,0 +1,11 @@
+# lvscan
+# Scan for all logical volumes in the system.
+
+# Scan for all logical volumes in the system
+lvscan
+
+# Display all logical volumes with their associated attributes such as status and size
+lvscan --all
+
+# Scan and display logical volumes with additional detailed information
+lvscan --verbose

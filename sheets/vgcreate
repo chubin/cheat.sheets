@@ -1,0 +1,20 @@
+# vgcreate
+# Create a new volume group.
+
+# Create a new volume group with specific name and physical volumes
+vgcreate <volume_group_name> <physical_volume_paths>
+
+# Create a new volume group with a specific physical extent size
+vgcreate --physicalextentsize <size> <volume_group_name> <physical_volume_paths>
+
+# Create a new volume group with a maximum number of logical volumes that can be created
+vgcreate --maxlogicalvolumes <number> <volume_group_name> <physical_volume_paths>
+
+# Create a new volume group with a maximum number of physical volumes that can be included
+vgcreate --maxphysicalvolumes <number> <volume_group_name> <physical_volume_paths>
+
+# Create a new volume group with metadata to be stored in a specific format (lvm1 or lvm2)
+vgcreate --metadatatype <type> <volume_group_name> <physical_volume_paths>
+
+# Create a new volume group while specifying allocation policy (e.g., contiguous, cling, normal)
+vgcreate --alloc <policy> <volume_group_name> <physical_volume_paths>

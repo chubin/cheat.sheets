@@ -1,0 +1,25 @@
+# lvdisplay
+# Display information about logical volumes.
+
+# Display information about all logical volumes
+lvdisplay
+
+# Display information about a specific logical volume
+lvdisplay /dev/<volume_group>/<logical_volume_name>
+
+# Display information with more detailed output
+lvdisplay -v
+
+# Display information with the size displayed in human-readable format
+lvdisplay -C --units=h
+
+# Display information in a format that is easier to parse programmatically
+lvdisplay --reportformat json
+
+# Display information about logical volumes that are currently active
+lvdisplay --active
+
+# Display only specific fields in the output
+lvdisplay -o lv_name,lv_size
+
+Remember to replace placeholders (like `<volume_group>` and `<logical_volume_name>`) with your actual logical volume group and logical volume names.

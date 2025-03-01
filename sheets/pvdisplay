@@ -1,0 +1,23 @@
+# pvdisplay
+# Display information about physical volumes.
+
+# Display detailed information about all physical volumes
+pvdisplay
+
+# Display detailed information for a specific physical volume (replace "/dev/sdX" with the actual volume name)
+pvdisplay /dev/sdX
+
+# Display physical volume information with units in megabytes
+pvdisplay --units m
+
+# Show physical volume information with human-readable output
+pvdisplay --human-readable
+
+# Display only the physical volume(s) UUID
+pvdisplay -C --columns | awk '{print $1, $2}'
+
+# Show verbose output with additional details
+pvdisplay -v
+
+# Show version information
+pvdisplay --version

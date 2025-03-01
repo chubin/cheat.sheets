@@ -1,0 +1,14 @@
+# vgmerge
+# Merge two volume groups.
+
+# Explanation: Basic usage to merge two volume groups
+vgmerge destination_vg source_vg
+
+# Explanation: Merge two volume groups in verbose mode, displaying detailed output of the process
+vgmerge -v destination_vg source_vg
+
+# Explanation: Test merge of two volume groups without actually making any changes
+vgmerge -t destination_vg source_vg
+
+# Explanation: Force the merge of two volume groups, even if the destination volume group is already active
+vgmerge -f destination_vg source_vg

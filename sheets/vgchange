@@ -1,0 +1,26 @@
+# vgchange
+# Change attributes of a volume group.
+
+# Activate all the volume groups
+vgchange -a y
+
+# Deactivate a specific volume group
+vgchange -a n VolumeGroupName
+
+# Set the maximum number of logical volumes for a volume group
+vgchange -l MaxLogicalVolumes VolumeGroupName
+
+# Set the maximum number of physical volumes for a volume group
+vgchange -p MaxPhysicalVolumes VolumeGroupName
+
+# Change the writeability attribute of a volume group (e.g., make it read-only)
+vgchange -a r VolumeGroupName
+
+# Resize or reset the physical extent size of a volume group
+vgchange --resizeable y VolumeGroupName
+
+# Temporarily change the number of concurrent allocation processes (use only for tuning)
+vgchange --allocations 2 VolumeGroupName
+
+# Enable cluster infrastructure for a volume group (requires clustering software)
+vgchange --clustered y VolumeGroupName

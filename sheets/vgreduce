@@ -1,0 +1,17 @@
+# vgreduce
+# Reduce a volume group by removing physical volumes.
+
+# Remove a specific physical volume from a volume group
+vgreduce my_volume_group /dev/sdX1
+
+# Remove all missing physical volumes from a volume group
+vgreduce --removemissing my_volume_group
+
+# Remove a physical volume from a volume group with verbose output
+vgreduce --verbose my_volume_group /dev/sdX1
+
+# Reduce the volume group by removing a physical volume forcefully
+vgreduce --force my_volume_group /dev/sdX1
+
+# Remove a physical volume from a volume group without confirming (use with caution)
+vgreduce --yes my_volume_group /dev/sdX1

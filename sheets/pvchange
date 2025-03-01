@@ -1,0 +1,17 @@
+# pvchange
+# Change attributes of a physical volume.
+
+# Change the availability of a physical volume
+pvchange -x n /dev/sdX
+
+# Set physical volume not to be allocatable
+pvchange -x n /dev/sdX
+
+# Set physical volume to be allocatable
+pvchange -x y /dev/sdX
+
+# Change the metadata ignore flag of a physical volume
+pvchange --metadataignore y /dev/sdX
+
+# Enable 64-bit metadata on a physical volume
+pvchange --metadata-type lvm2 /dev/sdX

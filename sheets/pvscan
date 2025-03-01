@@ -1,0 +1,17 @@
+# pvscan
+# Scan all disks for physical volumes.
+
+# Scan all disks for LVM physical volumes
+pvscan
+
+# Show physical volumes and update the VG and LVM metadata to reflect changes
+pvscan --cache
+
+# Scan specific devices for physical volumes
+pvscan /dev/sda /dev/sdb
+
+# Display version information
+pvscan --version
+
+# Display help information
+pvscan --help

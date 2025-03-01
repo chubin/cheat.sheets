@@ -1,0 +1,38 @@
+# lvm
+# Activate the LVM2 command-line interface.
+
+# List all existing volume groups
+lvm vgs
+
+# Display detailed information about all physical volumes
+lvm pvs -v
+
+# Activate a specific logical volume
+lvm lvchange -ay /dev/VolumeGroupName/LogicalVolumeName
+
+# Deactivate a specific logical volume
+lvm lvchange -an /dev/VolumeGroupName/LogicalVolumeName
+
+# Create a new logical volume with a specified size
+lvm lvcreate -L 10G -n LogicalVolumeName VolumeGroupName
+
+# Resize an existing logical volume
+lvm lvresize -L +5G /dev/VolumeGroupName/LogicalVolumeName
+
+# Remove a logical volume
+lvm lvremove /dev/VolumeGroupName/LogicalVolumeName
+
+# Display detailed information about logical volumes
+lvm lvs -v
+
+# Extend a volume group by adding a physical volume
+lvm vgextend VolumeGroupName /dev/sdX
+
+# Create a new volume group
+lvm vgcreate VolumeGroupName /dev/sdX
+
+# Reduce a volume group by removing a physical volume
+lvm vgreduce VolumeGroupName /dev/sdX
+
+# Remove a volume group
+lvm vgremove VolumeGroupName

@@ -1,0 +1,14 @@
+# pvremove
+# Remove a physical volume.
+
+# Remove a physical volume from LVM
+pvremove /dev/sdX
+
+# Remove a physical volume with a warning prompt (use -ff to force and skip prompts)
+pvremove -ff /dev/sdX
+
+# Remove a physical volume while suppressing all output and warnings
+pvremove -q /dev/sdX
+
+# Remove multiple physical volumes at once
+pvremove /dev/sdX /dev/sdY '/dev/mapper/volume_name'

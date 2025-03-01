@@ -1,0 +1,23 @@
+# lvremove
+# Remove a logical volume.
+
+# Basic removal of a logical volume
+lvremove /dev/vg_name/lv_name
+
+# Forcefully remove a logical volume without prompt
+lvremove -f /dev/vg_name/lv_name
+
+# Remove multiple logical volumes at once
+lvremove /dev/vg_name/lv1_name /dev/vg_name/lv2_name
+
+# Remove a logical volume with a specific volume group
+lvremove vg_name/lv_name
+
+# Preview removing a logical volume without actually executing
+lvremove -t /dev/vg_name/lv_name
+
+# Remove a logical volume and suppress all output
+lvremove -q /dev/vg_name/lv_name
+
+# Remove a thin logical volume without a confirmation prompt
+lvremove -y /dev/vg_thinpool/thinlv_name

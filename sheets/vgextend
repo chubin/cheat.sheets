@@ -1,0 +1,17 @@
+# vgextend
+# Extend a volume group by adding physical volumes.
+
+# Extend an existing volume group by adding a new physical volume
+vgextend <volume_group_name> <physical_volume_path>
+
+# Extend a volume group by adding multiple physical volumes at once
+vgextend <volume_group_name> <physical_volume_path1> <physical_volume_path2> <physical_volume_path3>
+
+# Extend a volume group with verbose output to see detailed information
+vgextend --verbose <volume_group_name> <physical_volume_path>
+
+# Extend a volume group by adding a physical volume while specifying the physical volume as a UUID
+vgextend <volume_group_name> /dev/disk/by-id/<physical_volume_uuid>
+
+# Extend a volume group while making a backup of metadata before the extension
+vgextend --backup <volume_group_name> <physical_volume_path>

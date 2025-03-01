@@ -1,21 +1,23 @@
 # lvextend
-# Extends a logical volume in an existing volume group.
-# A volume group is a collection of logical and physical volumes.
+# Extend the size of a logical volume.
 
-# Extend volume in volume mylv in group vg0
-# (defined by volume path /dev/vg0/mylv)
-# to 12 gigabyte:
-lvextend -L 12G /dev/vg0/mylv
+# Extend a logical volume by a specific size (e.g., 10GB)
+lvextend -L +10G /dev/vg_name/lv_name
 
-# Extend volume in volume mylv in group vg0
-# (defined by volume path /dev/vg0/mylv)
-# by 1 gigabyte:
-lvextend -L +1G /dev/vg0/mylv
+# Extend a logical volume to a specific size (e.g., 50GB)
+lvextend -L 50G /dev/vg_name/lv_name
 
-# Extend volume in volume mylv in group vg0
-# (defined by volume path /dev/vg0/mylv)
-# to use all of the unallocated space in the volume group vg0:
-lvextend -l +100%FREE /dev/vg0/mylv
+# Extend a logical volume using all the available space in the volume group
+lvextend -l +100%FREE /dev/vg_name/lv_name
+
+# Extend a logical volume on a specific physical volume
+lvextend -L +5G /dev/vg_name/lv_name /dev/sdX
+
+# Extend a logical volume and resize the filesystem on the fly (for ext2/ext3/ext4 file systems)
+lvextend -r -L +10G /dev/vg_name/lv_name
+
+# Extend a logical volume to use all the remaining unallocated space in the group and resize the filesystem
+lvextend -r -l +100%FREE /dev/vg_name/lv_name
 
 # Extend ext4 filesystem after changing a logical volume
 # (takes volume path as parameter):

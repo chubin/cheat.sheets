@@ -1,0 +1,29 @@
+# lvresize
+# Resize a logical volume.
+
+# Resize a logical volume to a specific size
+lvresize -L [size] [logical_volume]
+
+# Increase the size of a logical volume by a specific amount
+lvresize -L +[size] [logical_volume]
+
+# Reduce the size of a logical volume by a specific amount
+lvresize -L -[size] [logical_volume]
+
+# Resize a logical volume and extend the underlying filesystem automatically
+lvresize -r -L [size] [logical_volume]
+
+# Resize a logical volume to a percentage of the total VG size
+lvresize -l [percentage]%VG [logical_volume] 
+
+# Increase logical volume size by a percentage of the existing size
+lvresize -l +[percentage]% [logical_volume] 
+
+# Reduce logical volume size by a percentage of the existing size
+lvresize -l -[percentage]% [logical_volume] 
+
+# Resize a logical volume to fill all remaining free space in the volume group
+lvresize -l 100%FREE [logical_volume]
+
+# Resize a logical volume with a new size while keeping the original file system intact
+lvresize --nofsck -L [size] [logical_volume]

@@ -1,0 +1,26 @@
+# vgdisplay
+# Display information about volume groups.
+
+# Display information about all volume groups
+vgdisplay
+
+# Display information about a specific volume group
+vgdisplay volume_group_name
+
+# Display information about all volume groups with more detailed output
+vgdisplay -v
+
+# Display information about a specific volume group with more detailed output
+vgdisplay -v volume_group_name
+
+# Display only the names of the volume groups
+vgdisplay -c | cut -d ':' -f 1
+
+# Display information in units of megabytes
+vgdisplay --units m
+
+# Display information in a verbose and machine-readable format
+vgdisplay -C -o vg_name,lv_count,lv_size,pv_count,pv_size,vg_free
+
+# Display the size of the volume group in human-readable format
+vgdisplay --units h volume_group_name

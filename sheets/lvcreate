@@ -1,30 +1,38 @@
 # lvcreate
+# Create a new logical volume.
 
-# Creates a logical volume in an existing volume group.
-# A volume group is a collection of logical and physical volumes.
+# Create a logical volume with a specified size
+lvcreate -L 10G -n my_lv my_vg
 
-# Create a logical volume of 10 gigabytes in the volume group vg1:
-lvcreate -L 10G vg1
+# Create a logical volume with a percentage of the total size of the volume group
+lvcreate -l 50%VG -n my_lv my_vg
 
-# Create a 1500 megabyte linear logical volume named mylv
-# in the volume group vg1:
-lvcreate -L 1500 -n mylv vg1
+# Create a mirror logical volume with 2 copies
+lvcreate -m 1 -L 10G -n my_mirror_lv my_vg
 
-# Create a logical volume called mylv that uses 60% of the total space
-# in the volume group vg1:
-lvcreate -l 60%VG -n mylv vg1
+# Create a thin logical volume from a thin pool
+lvcreate -V 10G -T my_vg/my_pool -n my_thin_lv
 
-# Create a logical volume called mylv that uses all of the unallocated space
-# in the volume group vg1:
-lvcreate -l 100%FREE -n mylv vg1
+# Create a snapshot of an existing logical volume
+lvcreate -L 5G -s -n my_snapshot /dev/my_vg/my_lv
 
-# Create a snapshot (lvsnap) from a logical volume (/dev/vgA/lv1);
-# snapshot size = 10G (total size of the changes)
-lvcreate -L 10G -s -n lvsnap /dev/vgA/lv1
+# Create a striped logical volume
+lvcreate -i 2 -L 10G -n my_striped_lv my_vg
+
+# Create a logical volume with specific physical volumes
+lvcreate -L 10G -n my_pv_lv my_vg /dev/sda1 /dev/sdb1
+
+# Create a logical volume with a specific permission
+lvcreate -L 10G -n my_lv -p rw my_vg
+
+# Create a logical volume while specifying metadata size
+lvcreate --size 10G --name my_lv --poolmetadatasize 128M my_vg
+
+# Create a logical volume with zeroing of the first block
+lvcreate -Z y -L 10G -n my_lv my_vg
 
 # Clone LVM volume: test => testCopy
 lvconvert --type mirror --alloc anywhere -m1 /dev/mylv/test
 lvs -a -o +devices | grep -E "LV|test"
 # After Cpy%Sync is 100% finished:
 lvconvert --splitmirrors 1 --name testCopy /dev/rootvg/test
-
