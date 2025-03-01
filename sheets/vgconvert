@@ -1,0 +1,20 @@
+# vgconvert
+# Convert a volume group metadata format.
+
+# Convert a volume group to the latest metadata format
+vgconvert --force vg_name
+
+# Convert a volume group to the LVM1 metadata format
+vgconvert --type lvm1 vg_name
+
+# Convert a volume group to the LVM2 metadata format
+vgconvert --type lvm2 vg_name
+
+# Convert a clustered volume group to a non-clustered volume group
+vgconvert --remove-clustered vg_name
+
+# Convert a non-clustered volume group to a clustered volume group
+vgconvert --add-clustered vg_name
+
+# Preview the conversion without making any changes
+vgconvert --test vg_name

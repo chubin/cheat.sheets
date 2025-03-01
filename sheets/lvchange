@@ -1,0 +1,29 @@
+# lvchange
+# Change attributes of a logical volume.
+
+# Change the logical volume to be writeable
+lvchange -ay /dev/vg_name/lv_name
+
+# Disable the logical volume
+lvchange -an /dev/vg_name/lv_name
+
+# Activate a logical volume with synchronization
+lvchange --syncaction none /dev/vg_name/lv_name
+
+# Change a logical volume to be read-only
+lvchange -pr /dev/vg_name/lv_name
+
+# Enable monitoring of the logical volume
+lvchange --monitor y /dev/vg_name/lv_name
+
+# Disable monitoring of the logical volume
+lvchange --monitor n /dev/vg_name/lv_name
+
+# Resizing a volume when snapshotting
+lvchange --refresh /dev/vg_name/lv_name
+
+# Change minor number of a logical volume
+lvchange --minor 42 /dev/vg_name/lv_name
+
+# Change logical volume permission to read-write
+lvchange -ay -M rw /dev/vg_name/lv_name

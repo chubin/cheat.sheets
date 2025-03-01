@@ -1,0 +1,17 @@
+# lvmdiskscan
+# List devices that may be used as physical volumes.
+
+# Basic usage: Lists all devices that may be used as physical volumes
+lvmdiskscan
+
+# List devices with detailed information
+lvmdiskscan --verbose
+
+# Output the results in a format suitable for seeding a configuration file
+lvmdiskscan --dumpconfig
+
+# Exclude devices from being listed
+lvmdiskscan --ignorelockingfailure
+
+# Display the command version
+lvmdiskscan --version

@@ -1,0 +1,20 @@
+# vgsplit
+# Split a volume group into two volume groups.
+
+# Split a volume group 'vg1' into two separate volume groups 'vg1' and 'vg2', moving logical volume 'lv1' to 'vg2'
+vgsplit vg1 vg2 /dev/vg1/lv1
+
+# Split a volume group 'vg-source' into 'vg-destination', specifying the physical volume '/dev/sdXY' to move
+vgsplit vg-source vg-destination /dev/sdXY
+
+# Maintain metadata backup of volume groups while splitting
+vgsplit --metadatacopies 2 vg1 vg2 /dev/vg1/lv1
+
+# Split a volume group and skip any prompts by confirming all changes automatically
+vgsplit --yes vg1 vg2 /dev/vg1/lv1
+
+# Split a volume group with verbose output to show detailed operations during the split
+vgsplit --verbose vg1 vg2 /dev/vg1/lv1
+
+# When running as part of a script, suppress all output except error messages
+vgsplit --quiet vg1 vg2 /dev/vg1/lv1

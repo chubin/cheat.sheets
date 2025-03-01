@@ -1,0 +1,32 @@
+# lvconvert
+# Convert a logical volume from linear to mirror or RAID.
+
+# Convert a linear logical volume to a mirrored volume
+lvconvert --type mirror --mirrors <number_of_mirrors> <vg_name>/<lv_name>
+
+# Convert a linear logical volume to a RAID 1 volume
+lvconvert --type raid1 --mirrors 1 <vg_name>/<lv_name>
+
+# Convert a linear logical volume to a RAID 5 volume
+lvconvert --type raid5 <vg_name>/<lv_name>
+
+# Convert a linear logical volume to a RAID 6 volume
+lvconvert --type raid6 <vg_name>/<lv_name>
+
+# Convert a RAID or mirrored logical volume back to linear
+lvconvert --type linear <vg_name>/<lv_name>
+
+# Convert a logical volume and specify the number of parallel operations to use
+lvconvert --type mirror --mirrors <number_of_mirrors> --parallel <max_parallel_operations> <vg_name>/<lv_name>
+
+# Convert a logical volume to a mirror and allocate space from specific physical volumes
+lvconvert --type mirror --mirrors <number_of_mirrors> --alloc anywhere <vg_name>/<lv_name> <physical_volume_path>
+
+# Remove mirroring and reduce it back to a linear volume
+lvconvert --type linear <vg_name>/<lv_name>
+
+# Convert a volume to RAID with specific metadata type
+lvconvert --type raid1 --raidmetadataver 1.2 <vg_name>/<lv_name>
+
+# Convert a volume to a mirror with an additional log device
+lvconvert --type mirror --mirrors <number_of_mirrors> --mirrorlog disk <vg_name>/<lv_name>

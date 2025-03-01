@@ -1,0 +1,11 @@
+# vgrename
+# Rename a volume group.
+
+# Rename a volume group from old_name to new_name
+vgrename old_name new_name
+
+# Rename a volume group identified by its UUID
+vgrename UUID new_name
+
+# Rename a volume group with additional option to check for size compatibility
+vgrename --sizecheck old_name new_name

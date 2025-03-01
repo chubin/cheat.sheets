@@ -1,0 +1,17 @@
+# lvrename
+# Rename a logical volume.
+
+# Rename a logical volume within the same volume group
+lvrename /dev/vg_name/old_lv_name /dev/vg_name/new_lv_name
+
+# Rename a logical volume by specifying the volume group name once
+lvrename vg_name old_lv_name new_lv_name
+
+# Rename a logical volume using the UUID
+lvrename --uuid old_lv_uuid /dev/vg_name/new_lv_name
+
+# Rename a logical volume and activate verbose mode to get more details
+lvrename -v /dev/vg_name/old_lv_name /dev/vg_name/new_lv_name
+
+# Test rename operation without making changes
+lvrename --test /dev/vg_name/old_lv_name /dev/vg_name/new_lv_name

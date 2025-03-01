@@ -1,0 +1,23 @@
+# pvmove
+# Move physical extents from one physical volume to another.
+
+# Move all physical extents from one physical volume to another
+pvmove /dev/sdX /dev/sdY
+
+# Move specific logical volumes from one physical volume to another
+pvmove --alloc anywhere /dev/sdX:/dev/sdY /dev/mapper/vgname-lvname
+
+# Move all physical extents while outputting verbose information
+pvmove -v /dev/sdX
+
+# Move physical extents while allowing uninitialized physical volumes as sources
+pvmove --ignoreskippedcluster /dev/sdX /dev/sdY
+
+# Move extents from any device belonging to a volume group to a specified device
+pvmove --alloc anywhere /dev/md0
+
+# Move physical extents using a temporary mirror, reading from and writing to specified devices
+pvmove --atomic pvname[:pe_ranges] [destpv[:pe_ranges] [movedevice[:pe_ranges]]]
+
+# Abort a pvmove operation in progress
+pvmove --abort

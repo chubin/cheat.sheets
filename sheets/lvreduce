@@ -1,0 +1,20 @@
+# lvreduce
+# Reduce the size of a logical volume.
+
+# Reducing the size of a logical volume
+lvreduce -L [size] [LogicalVolumePath]
+
+# Reducing the size of a logical volume by a certain amount
+lvreduce -L -[size] [LogicalVolumePath]
+
+# Simulating the reduction process to show what would happen
+lvreduce -t -L [size] [LogicalVolumePath]
+
+# Forcing the reduction even if consistency check fails
+lvreduce -f -L [size] [LogicalVolumePath]
+
+# Reducing the size of a logical volume and resizing the filesystem
+lvreduce -r -L [size] [LogicalVolumePath]
+
+# Reducing the size of a logical volume and specifying exact size in sectors
+lvreduce -l [number_of_logical_extents] [LogicalVolumePath]

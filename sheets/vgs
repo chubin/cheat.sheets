@@ -1,0 +1,35 @@
+# vgs
+# Display information about volume groups in concise form.
+
+# Display all volume groups in a concise form
+vgs
+
+# Display specific volume group information
+vgs [VolumeGroupName]
+
+# Display volume groups with specific fields (e.g., VG name and size)
+vgs --options vg_name,vg_size
+
+# Display volume groups and filter results using a keyword (e.g., "root")
+vgs | grep root
+
+# Show volume group information with units in human-readable format
+vgs --units h
+
+# Display output in columns
+vgs --separator :
+
+# Show detailed help about the vgs command
+vgs --help
+
+# Display volume groups with additional information (e.g., tags, etc.)
+vgs --options +tags
+
+# Sort volume groups by size
+vgs --sort vg_size
+
+# Display volume groups in a specific format
+vgs --reportformat basic
+
+# Display volume group information in JSON format
+vgs --reportformat json

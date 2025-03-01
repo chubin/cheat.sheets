@@ -1,0 +1,32 @@
+# pvs
+# Display information about physical volumes in concise form.
+
+# Display basic information about physical volumes
+pvs
+
+# Display verbose information about physical volumes, including details such as UUID
+pvs -v
+
+# Display physical volumes with specific columns: physical volume name, volume group name, and size
+pvs --columns pv_name,vg_name,pv_size
+
+# Display physical volumes in a human-readable format, converting size units
+pvs --units h
+
+# Show physical volumes sorted by size
+pvs --sort pv_size
+
+# Display information about physical volumes with additional device filter
+pvs /dev/sdX1
+
+# Display information about physical volumes with a header only once for better readability
+pvs --noheadings
+
+# Display physical volumes with size information in megabytes
+pvs --units M
+
+# Show physical volumes with a warning if any are using a missing data segment
+pvs --segments
+
+# Display the status of the physical volumes including allocatable and missing status
+pvs -o +allocatable,missing

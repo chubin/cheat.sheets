@@ -1,0 +1,17 @@
+# pvresize
+# Resize a physical volume.
+
+# Resize a physical volume to use all available space on the underlying block device
+pvresize /dev/sdX
+
+# Resize a physical volume to a specific size (e.g., 10GB)
+pvresize --setphysicalvolumesize 10G /dev/sdX
+
+# Resize a physical volume to the available size on the underlying block device without confirmation
+pvresize --yes /dev/sdX
+
+# Force resize even if the PV is not the last one on the underlying block device
+pvresize --force /dev/sdX
+
+# Display help information about pvresize command usage
+pvresize --help

@@ -1,0 +1,20 @@
+# vgscan
+# Scan all disks for volume groups.
+
+# Scan all physical volumes for volume groups
+vgscan
+
+# Scan all disks for volume groups without updating the cache
+vgscan --ignorelockingfailure
+
+# Scan and print the current volume group names without performing any changes
+vgscan --readonly
+
+# Run vgscan with verbose output
+vgscan --verbose
+
+# Run vgscan with debugging information output
+vgscan --debug
+
+# Scan all disks and force a re-read of the metadata
+vgscan --mknodes

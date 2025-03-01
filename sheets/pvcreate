@@ -1,0 +1,23 @@
+# pvcreate
+# Initialize a physical volume for use by LVM.
+
+# Initialize a disk or partition as a physical volume for LVM
+pvcreate /dev/sdx1
+
+# Initialize a disk or partition with specific metadata size
+pvcreate --metadatasize 128M /dev/sdx1
+
+# Initialize a disk or partition with zeroing of the first 4 sectors (default)
+pvcreate --zero y /dev/sdx1
+
+# Initialize a disk with sector size of 512 bytes
+pvcreate --dataalignment 512s /dev/sdx1
+
+# Set the physical volume label and initialize
+pvcreate --label my_physical_volume /dev/sdx1
+
+# Initialize with a specific UUID
+pvcreate --uuid abcdef12-3456-7890-abcd-ef1234567890 /dev/sdx1
+
+# Display detailed information about the operation being performed
+pvcreate --verbose /dev/sdx1
