@@ -1,0 +1,23 @@
+# ocamlmklib
+# A tool to create OCaml libraries.
+
+# Create a static library from OCaml object files
+ocamlmklib -o library_name file1.o file2.o
+
+# Create a shared library (dynamic linking) from OCaml object files
+ocamlmklib -shared -o library_name file1.o file2.o
+
+# Create a library with C files and OCaml files
+ocamlmklib -o library_name file1.c file2.ml
+
+# Include additional directories when searching for files
+ocamlmklib -o library_name -I /path/to/dir file1.o file2.o
+
+# Generate a library and specify the output directory for the generated files
+ocamlmklib -o library_name -oc /output/directory file1.ml file2.ml
+
+# Pass specific options to the linker
+ocamlmklib -o library_name -ldopts 'linker_option' file1.o file2.o
+
+# Suppress informational messages
+ocamlmklib -quiet -o library_name file1.o file2.o

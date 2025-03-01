@@ -1,0 +1,26 @@
+# ocamlc
+# The bytecode compiler for OCaml.
+
+# Compile a single OCaml source file (hello.ml) into bytecode
+ocamlc -c hello.ml
+
+# Link bytecode object files (hello.cmo and world.cmo) to create an executable (program)
+ocamlc -o program hello.cmo world.cmo
+
+# Compile and immediately link OCaml source files (hello.ml and world.ml) into an executable (program)
+ocamlc -o program hello.ml world.ml
+
+# Compile an OCaml source file with debug information
+ocamlc -g -o program.ml
+
+# Use a custom search path for additional OCaml modules
+ocamlc -I +custompath -o program mod1.ml mod2.ml
+
+# Generate a custom interface file (.cmi) for a module
+ocamlc -c mymodule.mli
+
+# Compile and output with warnings enabled
+ocamlc -w mymodule.ml
+
+# Compile with a specific warning level (e.g., warnings level 40)
+ocamlc -w +40 mymodule.ml

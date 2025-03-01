@@ -1,0 +1,18 @@
+# ocamlnat
+# Native toplevel for OCaml, providing a REPL with Just-In-Time compilation.
+
+# Start an OCaml native toplevel session
+ocamlnat
+
+# Load a specific file or library at startup
+ocamlnat -I /path/to/library -I /another/path file.ml
+
+# Execute an initialization script before entering the REPL
+ocamlnat -init init_script.ml
+
+# Include additional cmxa or cma files in the REPL session
+ocamlnat -I +some_directory some_library.cmxa
+
+# Exit command for ending the REPL session
+# Note: Usually `Ctrl+D` is used to exit terminal REPLs, but explicit command in ocamlnat is:
+exit;;

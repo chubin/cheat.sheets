@@ -1,0 +1,118 @@
+[
+  {
+    "command": "dune",
+    "description": "A build system for OCaml projects."
+  },
+  {
+    "command": "merlin",
+    "description": "A code assistance tool for OCaml."
+  },
+  {
+    "command": "oasis",
+    "description": "A tool to integrate a configure, build and install system in OCaml projects."
+  },
+  {
+    "command": "ocambase",
+    "description": "Base package for the OCaml programming language."
+  },
+  {
+    "command": "ocaml",
+    "description": "The OCaml interactive interpreter and REPL."
+  },
+  {
+    "command": "ocamlbuild",
+    "description": "A build tool for OCaml projects."
+  },
+  {
+    "command": "ocamlc",
+    "description": "The OCaml bytecode compiler."
+  },
+  {
+    "command": "ocamldep",
+    "description": "A dependency generator for OCaml source files."
+  },
+  {
+    "command": "ocamldoc",
+    "description": "A documentation generator for OCaml code."
+  },
+  {
+    "command": "ocamlfind",
+    "description": "A library manager for OCaml."
+  },
+  {
+    "command": "ocamlformat",
+    "description": "A tool to format OCaml source code."
+  },
+  {
+    "command": "ocamllex",
+    "description": "A lexer generator for OCaml."
+  },
+  {
+    "command": "ocamllib",
+    "description": "Package for the OCaml standard library's development files."
+  },
+  {
+    "command": "ocamllint",
+    "description": "A tool to check OCaml source code for potential issues."
+  },
+  {
+    "command": "ocamlmerlin",
+    "description": "An alias for Merlin, providing editor support for OCaml."
+  },
+  {
+    "command": "ocamlmklib",
+    "description": "A tool to create OCaml libraries."
+  },
+  {
+    "command": "ocamlmktop",
+    "description": "Build a custom toplevel for OCaml."
+  },
+  {
+    "command": "ocamlobjinfo",
+    "description": "Print information about OCaml object files."
+  },
+  {
+    "command": "ocamlopt",
+    "description": "The OCaml native code compiler."
+  },
+  {
+    "command": "ocamlprof",
+    "description": "Display execution counts following OCaml code profiling."
+  },
+  {
+    "command": "ocamlrun",
+    "description": "Run OCaml bytecode executables."
+  },
+  {
+    "command": "ocamlscript",
+    "description": "A script interpreter for OCaml, similar to Perl or Python."
+  },
+  {
+    "command": "ocamltest",
+    "description": "Testing tool for OCaml code."
+  },
+  {
+    "command": "ocamlyacc",
+    "description": "A parser generator in the style of yacc for OCaml."
+  },
+  {
+    "command": "ocp-indent",
+    "description": "Indentation tool for OCaml source code."
+  },
+  {
+    "command": "odig",
+    "description": "A tool to discover and inspect OCaml packages."
+  },
+  {
+    "command": "odoc",
+    "description": "Generate documentation from OCaml source files."
+  },
+  {
+    "command": "opam",
+    "description": "A package manager for OCaml."
+  },
+  {
+    "command": "utop",
+    "description": "An improved toplevel for OCaml with enhanced features."
+  }
+]

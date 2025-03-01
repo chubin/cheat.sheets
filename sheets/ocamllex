@@ -1,0 +1,14 @@
+# ocamllex
+# Lexical analyzer generator for OCaml.
+
+# Generate a lexical analyzer from a lexer definition file (e.g., lexer.mll) and produce a corresponding OCaml source file (e.g., lexer.ml)
+ocamllex lexer.mll
+
+# Generate a lexical analyzer with verbose output, showing the internal states
+ocamllex -v lexer.mll
+
+# Output the generated OCaml source code to a custom file, instead of the default one
+ocamllex -o custom_output.ml lexer.mll
+
+# Force ocamllex to overwrite an existing file without prompting
+ocamllex -f lexer.mll

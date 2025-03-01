@@ -1,0 +1,20 @@
+# ocamlrun
+# Run OCaml bytecode executables.
+
+# Run an OCaml bytecode executable
+ocamlrun my_program.byte
+
+# Specify the OCAMLRUNPARAM environment variable to control runtime behavior, such as setting the garbage collector parameters
+OCAMLRUNPARAM='s=256k,v=0x40000' ocamlrun my_program.byte
+
+# Pass arguments to the OCaml bytecode executable
+ocamlrun my_program.byte arg1 arg2 arg3
+
+# Use ocamlrun to display the help information for the command
+ocamlrun -help
+
+# Run bytecode with debugging option enabled, useful for identifying issues in the execution
+OCAMLRUNPARAM=b ocamlrun my_debuggable_program.byte
+
+# Execute a bytecode that requires a specific heap size
+OCAMLRUNPARAM='h=500M' ocamlrun memory_intensive_program.byte

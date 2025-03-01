@@ -1,0 +1,17 @@
+# ocamlobjinfo
+# Print information about OCaml object files.
+
+# Get detailed information about an OCaml object file
+ocamlobjinfo your_object_file.cmo
+
+# Display information about an OCaml native object file
+ocamlobjinfo your_native_object_file.cmxa
+
+# Print information about an OCaml library file
+ocamlobjinfo your_library_file.cma
+
+# Access details of an OCaml bytecode executable
+ocamlobjinfo your_executable.byte
+
+# Fetch information about a specific unit in an object file
+ocamlobjinfo --unit=UnitName your_object_file.cmo

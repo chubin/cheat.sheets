@@ -1,0 +1,26 @@
+# ocamlfind
+# Tool for locating OCaml libraries.
+
+# List all available OCaml packages
+ocamlfind list
+
+# Find a specific OCaml package by name
+ocamlfind query package_name
+
+# Compile an OCaml program with a specific package
+ocamlfind ocamlc -package package_name -linkpkg -o output_file source_file.ml
+
+# Linking OCaml modules with specific packages
+ocamlfind ocamlc -o output_program -package package1,package2 -linkpkg source_file1.cmo source_file2.cmo
+
+# Print information related to a package (like its version)
+ocamlfind query -format '%F: %v' package_name
+
+# Use a package with the OCaml top-level (REPL)
+ocamlfind ocaml -package package_name -linkpkg
+
+# Install a package (through opam or another package manager, not directly with ocamlfind)
+opam install package_name
+
+# Remove a package (through opam or another package manager, not directly with ocamlfind)
+opam remove package_name

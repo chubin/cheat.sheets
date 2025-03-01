@@ -1,0 +1,20 @@
+# ocp-indent
+# Indentation tool for OCaml source code.
+
+# Indent an OCaml source file
+ocp-indent myfile.ml
+
+# Indent input from standard input
+cat myfile.ml | ocp-indent
+
+# Indent and overwrite an OCaml source file in-place
+ocp-indent -i myfile.ml
+
+# Display version information
+ocp-indent --version
+
+# Display help information
+ocp-indent --help
+
+# Usage to specify configuration file
+ocp-indent --config myconfig.conf myfile.ml
