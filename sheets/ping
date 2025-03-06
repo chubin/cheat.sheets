@@ -1,0 +1,29 @@
+# ping
+# Send ICMP echo requests to network hosts.
+
+# Basic usage of ping to check connectivity to a host
+ping hostname_or_IP_address
+
+# Specify the number of echo requests to send
+ping -c 4 hostname_or_IP_address
+
+# Set the interval between sending each packet in seconds
+ping -i 2 hostname_or_IP_address
+
+# Flood ping, sending requests as fast as possible (requires root)
+ping -f hostname_or_IP_address
+
+# Ping with a specified packet size in bytes
+ping -s 100 hostname_or_IP_address
+
+# Set time to live to control the number of hops
+ping -t 64 hostname_or_IP_address
+
+# Use IPv4 explicitly (equivalent to ping)
+ping -4 hostname_or_IP_address
+
+# Use IPv6 explicitly
+ping -6 ipv6_address
+
+# Display the version of the ping command
+ping -V

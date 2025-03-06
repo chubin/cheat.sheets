@@ -1,0 +1,32 @@
+# vnstat
+# Network traffic monitor that keeps a log of daily network traffic.
+
+# Display a summary of the current month's network traffic
+vnstat -m
+
+# Display a summary of the traffic for the current day
+vnstat -d
+
+# Show the hourly traffic usage for a specific day
+vnstat -h
+
+# Display real-time traffic statistics
+vnstat -l
+
+# Display a live, continually updating traffic report
+vnstat -tr
+
+# Export all data in JSON format
+vnstat --json
+
+# Display traffic statistics for a specific network interface
+vnstat -i eth0
+
+# Reset all data for a specific interface (caution: this deletes all recorded data)
+vnstat --reset -i eth0
+
+# Display traffic statistics in kilobytes
+vnstat --unit k
+
+# Display detailed help for vnStat options
+vnstat --help

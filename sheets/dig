@@ -1,0 +1,39 @@
+# dig
+# Query DNS servers for information about host addresses and other DNS records.
+
+# Basic A record lookup
+dig example.com
+
+# Query specific DNS record type (e.g., MX for mail exchange)
+dig example.com MX
+
+# Specify DNS server to use for the query
+dig @8.8.8.8 example.com
+
+# Get both IPv4 A and IPv6 AAAA records
+dig example.com A
+dig example.com AAAA
+
+# Display only the answer section of the query
+dig +noquestion +noauthority +noadditional +noanswer example.com
+
+# Perform a reverse DNS lookup for an IP address
+dig -x 192.0.2.1
+
+# Use verbose output to display entire response
+dig +noall +answer +comment example.com
+
+# Query whois information using dig
+dig +short txt whois.example.com
+
+# Query DNS for specific port using SRV record
+dig _sip._tcp.example.com SRV
+
+# Conduct a trace from root to authoritative DNS server
+dig +trace example.com
+
+# Measure and display query time
+dig example.com +stats
+
+# Get list of name servers for a domain
+dig example.com NS

@@ -1,0 +1,26 @@
+# arpwatch
+# Monitor Ethernet/IP address pairings on the network.
+
+# Start arpwatch in the background to monitor Ethernet/IP address pairings on the default network interface
+arpwatch -i eth0 &
+
+# Specify a custom log file to redirect arpwatch's output
+arpwatch -i eth0 -f /var/log/arpwatch.log &
+
+# Start arpwatch with a custom email address for sending notifications about changes in address pairings
+arpwatch -i eth0 -m admin@example.com &
+
+# Use a different program for sending email notifications instead of the default sendmail
+arpwatch -i eth0 -M /path/to/custom/sendmail
+
+# Specify a different file for retrieving previously recorded Ethernet/IP address pairings
+arpwatch -i eth0 -r /path/to/old_arp.dat
+
+# Run arpwatch with a custom timeout value for age checking in the activity file
+arpwatch -i eth0 -a 3600
+
+# Run arpwatch with a custom timezone setting for timestamps
+arpwatch -i eth0 -z UTC
+
+# Enable a specific syslog facility for logging arpwatch messages
+arpwatch -i eth0 -s local0

@@ -1,0 +1,32 @@
+# ifconfig
+# Configure a network interface (deprecated, replaced by ip command).
+
+# Display all network interfaces and their configuration
+ifconfig
+
+# View configuration details for a specific interface (e.g., eth0)
+ifconfig eth0
+
+# Enable a network interface (e.g., eth0)
+ifconfig eth0 up
+
+# Disable a network interface (e.g., eth0)
+ifconfig eth0 down
+
+# Assign an IP address to an interface (e.g., eth0)
+ifconfig eth0 192.168.1.10
+
+# Set a subnet mask on a network interface
+ifconfig eth0 netmask 255.255.255.0
+
+# Add an alias for a network interface with a separate IP address
+ifconfig eth0:0 192.168.1.20
+
+# Remove alias from a network interface
+ifconfig eth0:0 down
+
+# Set a broadcast address on a network interface
+ifconfig eth0 broadcast 192.168.1.255
+
+# Change the MAC address of a network interface
+ifconfig eth0 hw ether 00:11:22:33:44:55

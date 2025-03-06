@@ -1,0 +1,29 @@
+# fping
+# Send ICMP echo requests to network hosts, similar to ping, but supports multiple targets.
+
+# Send ICMP echo requests to a single host
+fping example.com
+
+# Send ICMP echo requests to multiple hosts (space-separated)
+fping host1.example.com host2.example.com host3.example.com
+
+# Specify the count of requests to send to each target (3 times)
+fping -c 3 example.com
+
+# Specify the maximum round-trip time (in milliseconds) before marking a host as unreachable
+fping -t 200 example.com
+
+# Quiet mode, outputs only summary for multiple hosts
+fping -q example.com host1.example.com host2.example.com
+
+# Display version of fping
+fping -v
+
+# Loop mode, continuously send requests to each host, report statistics (use CTRL+C to stop)
+fping -l example.com
+
+# Send requests until the host is reachable
+fping -u example.com
+
+# Use fping with an input file containing a list of hosts
+fping < hosts.txt

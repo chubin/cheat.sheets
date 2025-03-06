@@ -1,0 +1,35 @@
+# mtr
+# Network diagnostic tool that combines the functions of traceroute and ping.
+
+# Basic usage to diagnose a network path
+mtr hostname_or_ip
+
+# Run mtr with a specific number of cycles (useful for getting a quick snapshot)
+mtr -c 10 hostname_or_ip
+
+# Run mtr in report mode, providing a summary after a set number of cycles
+mtr --report hostname_or_ip
+
+# Run mtr as root to use ICMP ECHO for improved accuracy
+sudo mtr hostname_or_ip
+
+# Set the interval between packets sent (default is one second)
+mtr --interval 0.5 hostname_or_ip
+
+# Run mtr with a specified packet size
+mtr --psize 1500 hostname_or_ip
+
+# Display both IP address and hostname
+mtr --show-ips hostname_or_ip
+
+# Use TCP instead of ICMP ECHO (useful for environments with ICMP restrictions)
+mtr --tcp hostname_or_ip
+
+# Run mtr with JSON output (useful for machine parsing)
+mtr --json hostname_or_ip
+
+# Limit mtr to testing a specific number of hops
+mtr --max-ttl 10 hostname_or_ip
+
+# Run mtr in a mode suitable for scripting, exiting after a given number of cycles
+mtr --report-cycles 10 hostname_or_ip

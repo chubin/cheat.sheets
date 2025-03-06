@@ -1,0 +1,29 @@
+# tracert
+# Windows utility equivalent to traceroute for tracking packet paths (Windows only).
+
+# Basic Usage
+tracert [hostname]
+
+# Trace route to an IP address
+tracert [IP address]
+
+# Specify the maximum number of hops to search for the target
+tracert -h [max hops] [hostname]
+
+# Set the timeout period (in milliseconds) for each reply
+tracert -w [timeout] [hostname]
+
+# Do not resolve addresses to hostnames
+tracert -d [hostname]
+
+# Example of combining options: trace route with no DNS resolution and specific timeout
+tracert -d -w 1000 [hostname]
+
+# Run a trace route using a specific source IP address
+tracert -s [source IP] [target hostname]
+
+# Run a trace route with IPv6 (use tracert6 on older Windows version which might still have it)
+tracert -6 [hostname]
+
+# Use Internet Control Message Protocol (ICMP) echo request messages
+tracert -4 [hostname]

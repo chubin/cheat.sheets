@@ -1,0 +1,23 @@
+# whois
+# Query databases to obtain domain name registration information.
+
+# Check domain registration information
+whois example.com
+
+# Retrieve registration details of an IP address
+whois 192.0.2.1
+
+# Query a specific WHOIS server for domain information
+whois -h whois.nic.xyz example.xyz
+
+# Display command usage information in case of errors or unsure use
+whois -h
+
+# Use specific WHOIS server on a non-standard port
+whois -h whois.example.com -p 43 example.com
+
+# Format output to be more readable by human
+whois -H example.com
+
+# Display help and additional options
+whois --help

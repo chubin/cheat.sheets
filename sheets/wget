@@ -1,12 +1,54 @@
 # wget
-# The non-interactive network downloader
+# Retrieve files from the web using HTTP, HTTPS, and FTP.
+
+# Download a file from a given URL and save it in the current directory
+wget http://example.com/file.zip
+
+# Download a file and save it with a different name
+wget -O newname.zip http://example.com/file.zip
+
+# Download files in the background
+wget -b http://example.com/file.zip
+
+# Download a file and limit the download speed to reduce bandwidth usage
+wget --limit-rate=200k http://example.com/file.zip
+
+# Download files from a list of URLs provided in a text file
+wget -i urls.txt
+
+# Resume an incomplete download
+wget -c http://example.com/file.zip
+
+# Download a file while showing the progress in a more readable form
+wget --show-progress http://example.com/file.zip
+
+# Download a file without checking the server's SSL certificate
+wget --no-check-certificate https://example.com/file.zip
+
+# Download an entire website for offline browsing
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://example.com
+
+# Download a file with HTTP authentication
+wget --user=username --password=password http://example.com/secure-file.zip
+
+# Download a file with cookies, useful for sites that require logins
+wget --load-cookies cookies.txt http://example.com/file.zip
+
+# Download a directory from an FTP server
+wget -r ftp://example.com/pub/
+
+# Download only files newer than the local version
+wget -N http://example.com/file.zip
+
+# Download a file only if it has been updated on the server
+wget -S --spider http://example.com/file.zip
 
 # Quietly download a file, continuing where it left of, if the connection
 # fails. The file will be downloaded to the current working directory.
-wget -qc [URL]
+wget -qc http://example.com/file.zip
 
 # Specify a location to download the given file.
-wget -qcO [PATH] [URL]
+wget -qcO [PATH] http://example.com/file.zip
 
 # Download URL using the user agent string provided to the `-U` flag.
-wget -U 'Mozilla/5.0' [URL]
+wget -U 'Mozilla/5.0' http://example.com/file.zip

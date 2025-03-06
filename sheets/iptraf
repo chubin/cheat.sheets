@@ -1,0 +1,32 @@
+# iptraf
+# Interactive, colorful IP LAN monitor.
+
+# Start IPTraf in interactive mode
+iptraf
+
+# Start IPTraf with a specific interface monitoring
+iptraf -i eth0
+
+# Start IPTraf using minimal interface monitoring with specified interface
+iptraf -m -i eth0
+
+# Start IPTraf for a specific IP address
+iptraf -f 192.168.1.1
+
+# Start IPTraf and dump output to a specific log file
+iptraf -B -L /var/log/iptraf.log
+
+# Use IPTraf with filter to display only specific traffic type
+iptraf -F /path/to/filter
+
+# Start IPTraf in non-interactive mode with specified configurations
+iptraf -g
+
+# Start IPTraf with port mode for monitoring TCP/UDP ports
+iptraf -d
+
+# Start IPTraf with the layout view option for live packet displays
+iptraf -l
+
+# Clear and reset all current traffic statistics
+iptraf -z

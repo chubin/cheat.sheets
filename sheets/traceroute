@@ -1,0 +1,33 @@
+# traceroute
+# Trace the route packets take to a network host.
+
+# Basic usage to display the route taken by packets to reach a host
+traceroute hostname_or_IP_address
+
+# Specify the maximum number of hops (TTL) to be used
+traceroute -m max_ttl hostname_or_IP_address
+
+# Use a particular protocol (ICMP or UDP)
+traceroute -I hostname_or_IP_address   # For ICMP
+traceroute -U hostname_or_IP_address  # For UDP
+
+# Specify the number of probe packets per hop
+traceroute -q n_queries hostname_or_IP_address
+
+# Set the initial TTL (Time-To-Live)
+traceroute -f first_ttl hostname_or_IP_address
+
+# Specify the wait time for a response
+traceroute -w wait_time hostname_or_IP_address
+
+# Change the default port
+traceroute -p port_number hostname_or_IP_address
+
+# Specify the interface to be used
+traceroute -i interface hostname_or_IP_address
+
+# Display the IP addresses numerically without resolving hostnames
+traceroute -n hostname_or_IP_address
+
+# Set the source address
+traceroute -s source_address hostname_or_IP_address

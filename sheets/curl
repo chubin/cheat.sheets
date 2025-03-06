@@ -1,50 +1,56 @@
 # curl
-# Command-line tool for transferring data with URL syntax
+# Transfer data from or to a server using various protocols.
 
-# Process a single GET request, and show its output on stdout.
-curl http://path.to.the/file
+# Download a file from a URL and save it with a specific name
+curl -o filename.ext http://example.com/file.txt
 
-# Download a file and specify a new filename.
-curl http://example.com/file.zip -o new_file.zip
+# Download a file from a URL and save it with the original filename
+curl -O http://example.com/file.txt
 
-# Download multiple files.
-curl -O URLOfFirstFile -O URLOfSecondFile
+# Download a file and limit the download speed
+curl --limit-rate 100K http://example.com/file.txt
 
-# Download all sequentially-numbered files (1-24).
-curl http://example.com/pic[1-24].jpg
+# Follow redirects if the URL has moved
+curl -L http://example.com
 
-# Download a file and follow redirects.
-curl -L http://example.com/file
+# Send POST data to a server
+curl -d "name=value" http://example.com/resource
 
-# Download a file and pass HTTP Authentication.
-curl -u username:password URL
+# Send JSON data with a POST request
+curl -H "Content-Type: application/json" -d '{"key":"value"}' http://example.com/resource
 
-# Download a file with a Proxy.
-curl -x proxysever.server.com:PORT http://addressiwantto.access
+# Include headers in the output
+curl -i http://example.com
 
-# Download a file from FTP.
-curl -u username:password -O ftp://example.com/pub/file.zip
-
-# Get an FTP directory listing.
-curl ftp://username:password@example.com
-
-# Resume a previously failed download.
-curl -C - -o partial_file.zip http://example.com/file.zip
-
-# Fetch only the HTTP headers from a response.
+# Display only the HTTP headers for a GET request
 curl -I http://example.com
 
-# Fetch your external IP and network info as JSON.
-curl http://ifconfig.me/all/json
+# Send a request with a custom header
+curl -H "Custom-Header: Value" http://example.com
 
-# Limit the rate of a download.
-curl --limit-rate 1000B -O http://path.to.the/file
+# Authenticate with a username and password
+curl -u username:password http://example.com
 
-# POST to a form.
-curl -F "name=user" -F "password=test" http://example.com
+# Use a different request method like PUT or DELETE
+curl -X PUT http://example.com/resource
 
-# POST JSON Data.
-curl -H "Content-Type: application/json" -X POST -d '{"user":"bob","pass":"123"}' http://example.com
+# Download multiple URLs in sequence
+curl -O http://example.com/file1.txt -O http://example.com/file2.txt
 
-# POST data from the standard in / share data on sprunge.us.
-curl -F 'sprunge=<-' sprunge.us
+# Resume a failed or interrupted download
+curl -C - -O http://example.com/largefile.zip
+
+# Transfer a file using FTP
+curl -T localfile.txt ftp://ftp.example.com/upload/
+
+# Specify a proxy for the request
+curl -x http://proxy-server:port http://example.com
+
+# Send data with the URL encoded format
+curl --data-urlencode "key=value" http://example.com/resource
+
+# Save the response headers to a file
+curl -D headers.txt http://example.com
+
+# Download a file and run it through a pipe (e.g., to `grep`)
+curl http://example.com/file.txt | grep "search-string"

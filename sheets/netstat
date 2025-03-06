@@ -1,0 +1,32 @@
+# netstat
+# Print network connections, routing tables, interface statistics, and more (deprecated).
+
+# Display all active Internet connections
+netstat -a
+
+# Show only listening ports
+netstat -l
+
+# Display statistics for each protocol
+netstat -s
+
+# Show routing table
+netstat -r
+
+# Display addresses in numeric form
+netstat -n
+
+# Display only TCP connections
+netstat -t
+
+# Display only UDP connections
+netstat -u
+
+# Display PID and program name for each connection
+netstat -p
+
+# Refresh netstat output every few seconds (e.g., every 1 second)
+netstat -c
+
+# Display multicast group memberships
+netstat -g

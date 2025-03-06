@@ -1,0 +1,32 @@
+# host
+# Look up DNS records for a given host.
+
+# Simple DNS lookup
+host example.com
+
+# Lookup the IP address of a hostname
+host -t A example.com
+
+# Lookup the IPv6 address of a hostname
+host -t AAAA example.com
+
+# Lookup the mail server records (MX) for a given domain
+host -t MX example.com
+
+# Lookup the name server records (NS) for a given domain
+host -t NS example.com
+
+# Lookup all available records for a given domain
+host -a example.com
+
+# Reverse DNS lookup (find the domain name associated with an IP address)
+host 192.168.1.1
+
+# Specify a different DNS server to use for the query
+host example.com 8.8.8.8
+
+# Lookup the canonical name (CNAME) records for a given host
+host -t CNAME sub.example.com
+
+# Lookup the start of authority (SOA) record for a domain
+host -t SOA example.com

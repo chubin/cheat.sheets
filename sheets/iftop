@@ -1,0 +1,41 @@
+# iftop
+# Display bandwidth usage on an interface by host.
+
+# Display bandwidth usage on the default interface
+iftop
+
+# Display bandwidth usage on a specified interface
+iftop -i eth0
+
+# Show or hide DNS hostnames
+iftop -n  # Show network traffic without resolving hostnames
+
+# Limit the display to IPV4 or IPV6 traffic
+iftop -4  # Show only IPV4 traffic
+iftop -6  # Show only IPV6 traffic
+
+# Set the screen update interval to 5 seconds
+iftop -t  # Use text interface
+iftop -s 5
+
+# Display bandwidth in bits instead of bytes
+iftop -b
+
+# Adjust the sort order of hosts
+iftop -o source  # Sort by source address
+iftop -o destination  # Sort by destination address
+iftop -o both  # Sort by both
+
+# Display cumulative usage since start
+iftop -c
+
+# Use a custom filter code, e.g., to monitor specific port traffic
+iftop -f "port 80"  # Show only HTTP traffic
+
+# Show only a specific number of lines
+iftop -N 10  # Display the first 10 lines only
+
+# Freeze the current display to observe
+iftop -F
+
+These are some common use cases for using `iftop` to display bandwidth usage by host on a network interface.
