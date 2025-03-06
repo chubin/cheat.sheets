@@ -1,0 +1,17 @@
+# kprop
+# Propagate a Kerberos database dump from the master to a slave server.
+
+# Propagate a Kerberos database dump from the master to a slave server
+kprop -f /path/to/dumpfile -P port_number slave_server
+
+# Propagate a Kerberos database with verbosity for debugging
+kprop -f /path/to/dumpfile -P port_number -d slave_server
+
+# Use a different keytab file for authentication
+kprop -f /path/to/dumpfile -P port_number -k /path/to/keytab slave_server
+
+# Specify a specific service principal for authentication
+kprop -f /path/to/dumpfile -P port_number -s principal'service_name slave_server
+
+# Attempt to propagate a database dump with encryption verification
+kprop -f /path/to/dumpfile -e slave_server

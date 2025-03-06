@@ -1,0 +1,35 @@
+# ktutil
+# Utility to manage entries in a Kerberos keytab file.
+
+# Load an existing keytab file
+ktutil
+ktutil:  rkt <keytab_file>
+
+# List the entries in the currently loaded keytab
+ktutil
+ktutil:  list
+
+# Add a new entry to the keytab
+ktutil
+ktutil:  add_entry -password -p <principal> -k <kvno> -e <encryption_type> 
+
+# Write the current keytab entries to a new keytab file
+ktutil
+ktutil:  wkt <keytab_file>
+
+# Remove a specific entry from the keytab
+ktutil
+ktutil:  delete_entry <entry_number>
+
+# Change the password of a principal and update the keytab
+ktutil
+ktutil:  change_password -p <principal> -newpass 
+
+# Quit the ktutil session
+ktutil
+ktutil:  quit 
+
+# Start ktutil and directly execute commands from a script (example)
+ktutil < script_file
+
+# Explanation: The commands in 'script_file' will be executed in order. Each line should contain a valid ktutil command such as 'rkt', 'add_entry', 'wkt', etc.

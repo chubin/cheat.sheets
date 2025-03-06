@@ -1,0 +1,23 @@
+# kpropd
+# Receive and install propagated Kerberos database dumps.
+
+# Start the kpropd in standalone mode
+kpropd -S
+
+# Run kpropd in daemon mode
+kpropd -d
+
+# Specify an alternate database file
+kpropd -f /path/to/alternate/db
+
+# Increase verbosity of kpropd
+kpropd -d -d -d
+
+# Specify a file for logging
+kpropd -F /path/to/logfile.log
+
+# Specify the port kpropd listens on
+kpropd -p 754
+
+# Run kpropd without forking (remain attached to terminal)
+kpropd -n

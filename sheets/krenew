@@ -1,0 +1,20 @@
+# krenew
+# Renew a Kerberos ticket-granting ticket and optionally forward it.
+
+# Renew a Kerberos ticket-granting ticket, keeping it valid indefinitely
+krenew -b -K 60
+
+# Renew a ticket-granting ticket and forward the tickets
+krenew -F -b -K 60
+
+# Renew a ticket-granting ticket as a specific user
+krenew -t -u username -K 60
+
+# Run a command with a renewable and forwardable ticket-granting ticket
+krenew -F -- my_command
+
+# Use a specific credential cache while renewing
+krenew -c /path/to/credential.cache -K 60
+
+# Run krenew in the background and redirect output to a log file
+krenew -b -K 60 -o /path/to/logfile.log

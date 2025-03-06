@@ -1,0 +1,26 @@
+# ksu
+# Kerberos substitute user - switch user identity similar to su but using Kerberos authentication.
+
+# Switch to another user using Kerberos authentication
+ksu [username]
+
+# Switch to another user and specify a particular Kerberos ticket cache
+ksu -c [cache_name] [username]
+
+# Run a command as another user with Kerberos authentication
+ksu [username] -e [command]
+
+# Request a forwardable ticket on behalf of the user
+ksu -F [username]
+
+# Display the version of ksu
+ksu -V
+
+# Use verbose mode for additional output details
+ksu -v [username]
+
+# Force the use of a specific authentication method
+ksu -o [option] [username]
+
+# Specify a different authentication context
+ksu -a [auth_context] [username]

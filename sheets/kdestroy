@@ -1,0 +1,14 @@
+# kdestroy
+# Destroy a user's Kerberos tickets.
+
+# Remove the user's current Kerberos tickets, effectively logging them out of Kerberos
+kdestroy
+
+# Remove Kerberos tickets and display a message upon successful destruction
+kdestroy -q
+
+# Remove Kerberos tickets for a specific cache (useful in multi-cache environments)
+kdestroy -c /path/to/your/credentials/cache
+
+# Force delete the credential cache, even if there are errors (use with caution)
+kdestroy -f

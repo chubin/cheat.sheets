@@ -1,0 +1,26 @@
+# klist
+# List cached Kerberos tickets.
+
+# Display the default credential cache
+klist
+
+# Display the credential cache for a specific cache name
+klist -c /path/to/your/credential.cache
+
+# List the tickets with their timestamps in a human-readable format
+klist -f
+
+# Display all information about credentials, including encryption types
+klist -e
+
+# Show only the list of Kerberos tickets without extra information
+klist -s
+
+# Display tickets for a specified client principal
+klist -k -p principal_name
+
+# Check if the tickets are still valid, suppressing output on success
+klist -s /path/to/credential.cache
+
+# List all available caches
+klist -A
