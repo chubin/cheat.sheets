@@ -1,0 +1,8 @@
+# luksKillSlot
+# Delete a specific key slot from a LUKS device.
+
+# Use case 1: Delete a specific key slot on a LUKS device using the key slot number
+cryptsetup luksKillSlot /dev/sdX 1
+
+# Use case 2: Delete a key slot on a LUKS device using a specified password
+cryptsetup luksKillSlot /dev/sdX --key-file keyfile 1

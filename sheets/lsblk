@@ -1,0 +1,38 @@
+# lsblk
+# List all block devices including LUKS encrypted ones.
+
+# List all block devices in a tree-like format
+lsblk
+
+# List all block devices with detailed information
+lsblk -a
+
+# List all block devices including those without a filesystem
+lsblk -f
+
+# List all block devices and print size information in human-readable format
+lsblk -h
+
+# Display all block devices including their full path
+lsblk -p
+
+# Include all available information about devices, RAIDs, and vendors
+lsblk -O
+
+# Show all block devices including LUKS encrypted ones (not explicitly listed; generally shown by default)
+lsblk -e7
+
+# List all block devices excluding certain types (e.g., loop devices)
+lsblk -e 7,1
+
+# List all block devices in JSON format
+lsblk -J
+
+# List all block devices in output suitable for scripts (name only)
+lsblk -n
+
+# List all block devices with their UUIDs and LABELs
+lsblk -o NAME,SIZE,UUID,LABEL
+
+# List all block devices including topology information
+lsblk -t

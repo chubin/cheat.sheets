@@ -1,0 +1,17 @@
+# luksHeaderBackup
+# Backup the LUKS header and keyslot information.
+
+# Backup the LUKS header to a file
+cryptsetup luksHeaderBackup /dev/sda1 --header-backup-file /path/to/backup/header.img
+
+# Restore the LUKS header from a file (use with caution)
+cryptsetup luksHeaderRestore /dev/sda1 --header-backup-file /path/to/backup/header.img
+
+# Backup the LUKS header from a specific keyslot
+cryptsetup luksHeaderBackup /dev/sda1 --header-backup-file /path/to/backup/header.img --key-slot 0
+
+# Verify the integrity of a LUKS header backup file
+cryptsetup luksDump --header /path/to/backup/header.img
+
+# Backup the LUKS header to a file with verbose output
+cryptsetup luksHeaderBackup /dev/sda1 --header-backup-file /path/to/backup/header.img --verbose

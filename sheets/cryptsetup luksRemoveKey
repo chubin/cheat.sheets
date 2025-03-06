@@ -1,0 +1,17 @@
+# luksRemoveKey
+# Remove a specific key from a LUKS device.
+
+# Remove a specific key from a LUKS device, identified by key slot number
+cryptsetup luksRemoveKey /dev/sdX --key-slot <slot_number>
+
+# Remove a specific key from a LUKS device, interactive password prompt to unlock
+cryptsetup luksRemoveKey /dev/sdX
+
+# Remove a specific key and specify which key should be used to unlock the disk
+cryptsetup luksRemoveKey /dev/sdX --key-file /path/to/keyfile
+
+# Remove a key by prompting for the passphrase directly
+echo -n "current_passphrase" | cryptsetup luksRemoveKey /dev/sdX
+
+# Using a key file to remove a key identified by a specific key slot
+cryptsetup luksRemoveKey /dev/sdX --key-slot <slot_number> --key-file /path/to/keyfile
