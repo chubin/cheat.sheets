@@ -1,0 +1,50 @@
+# kadmin
+# Kerberos administration tool for remote administration of principals and policies.
+
+# Launch kadmin in interactive mode
+kadmin
+
+# Launch kadmin with a specific Kerberos realm
+kadmin -r EXAMPLE.COM
+
+# Retrieve a new TGT (Ticket Granting Ticket) for the admin session
+kadmin -p admin/admin
+
+# Change the password of a specific principal
+kadmin -q "cpw [principal]"
+
+# Add a new principal with default options
+kadmin -q "addprinc [principal]"
+
+# Add a new principal with a specific password
+kadmin -q "addprinc -pw [password] [principal]"
+
+# Delete a specific principal
+kadmin -q "delprinc [principal]"
+
+# Rename a principal
+kadmin -q "renprinc [oldprincipal] [newprincipal]"
+
+# List all principals
+kadmin -q "listprincs"
+
+# List all policies
+kadmin -q "listpols"
+
+# Add a new policy
+kadmin -q "addpol [policy]"
+
+# Modify a policy with specific parameters
+kadmin -q "modpol -maxlife 7d0h0m0s [policy]"
+
+# Delete a policy
+kadmin -q "delpol [policy]"
+
+# Get detailed information about a principal
+kadmin -q "getprinc [principal]"
+
+# Get detailed information about a policy
+kadmin -q "getpol [policy]"
+
+# Exit kadmin interactive mode (if in it)
+exit

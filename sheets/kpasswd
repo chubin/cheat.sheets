@@ -1,0 +1,20 @@
+# kpasswd
+# Change a Kerberos principal's password.
+
+# Basic usage to change your own Kerberos principal's password
+kpasswd
+
+# Change a specified Kerberos principal's password
+kpasswd principal_name
+
+# Specify a particular realm for the Kerberos principal when changing the password
+kpasswd principal_name@REALM
+
+# Use the verbose option to get more detailed output during the password change process
+kpasswd -v
+
+# Specify a custom configuration file for kpasswd
+kpasswd -c /path/to/conf_file
+
+# Display help information for kpasswd command
+kpasswd -h

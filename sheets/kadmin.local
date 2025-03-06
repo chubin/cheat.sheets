@@ -1,0 +1,35 @@
+# kadmin.local
+# Kerberos administration tool for local management of principals and policies.
+
+# Add a new principal
+kadmin.local -q "addprinc username"
+
+# Change a principal's password
+kadmin.local -q "cpw username"
+
+# Delete a principal
+kadmin.local -q "delprinc username"
+
+# List all principals
+kadmin.local -q "listprincs"
+
+# Get information about a specific principal
+kadmin.local -q "getprinc username"
+
+# Rename a principal
+kadmin.local -q "renprinc oldusername newusername"
+
+# Add a new policy
+kadmin.local -q "addpol -minlength 8 -minclasses 3 policy_name"
+
+# Modify an existing policy
+kadmin.local -q "modpol -minlength 12 policy_name"
+
+# List all policies
+kadmin.local -q "listpols"
+
+# Get information about a specific policy
+kadmin.local -q "getpol policy_name"
+
+# Delete a policy
+kadmin.local -q "delpol policy_name"

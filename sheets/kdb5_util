@@ -1,0 +1,26 @@
+# kdb5_util
+# Utility for managing the Kerberos database.
+
+# Initialize a new Kerberos database
+kdb5_util create -s
+
+# Destroy an existing Kerberos database
+kdb5_util destroy
+
+# Dump the Kerberos database to a file
+kdb5_util dump /path/to/dumpfile
+
+# Load a Kerberos database from a dump file
+kdb5_util load /path/to/dumpfile
+
+# Archive the current log to the specified output file
+kdb5_util ark /path/to/archivefile
+
+# Show the Kerberos database's attributes
+kdb5_util list
+
+# Change the master key
+kdb5_util stash
+
+# Prompt for old master key, then read and update key from a file
+kdb5_util update -f /path/to/stashfile

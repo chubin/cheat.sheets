@@ -1,0 +1,74 @@
+[
+  {
+    "command": "kadmin",
+    "description": "Kerberos administration tool for remote administration of principals and policies."
+  },
+  {
+    "command": "kadmind",
+    "description": "Kerberos administration server daemon managing authentication services."
+  },
+  {
+    "command": "kadmin.local",
+    "description": "Kerberos administration tool for local management of principals and policies."
+  },
+  {
+    "command": "kdb5_util",
+    "description": "Utility for managing the Kerberos database."
+  },
+  {
+    "command": "kdestroy",
+    "description": "Destroy a user's Kerberos tickets."
+  },
+  {
+    "command": "kgetcred",
+    "description": "Fetch a credential cache with specific settings from the Kerberos Ticket Granting Server."
+  },
+  {
+    "command": "kinit",
+    "description": "Obtain and cache an initial ticket-granting ticket for Kerberos authentication."
+  },
+  {
+    "command": "klist",
+    "description": "List cached Kerberos tickets."
+  },
+  {
+    "command": "kpasswd",
+    "description": "Change a Kerberos principal's password."
+  },
+  {
+    "command": "kprop",
+    "description": "Propagate a Kerberos database dump from the master to a slave server."
+  },
+  {
+    "command": "kpropd",
+    "description": "Receive and install propagated Kerberos database dumps."
+  },
+  {
+    "command": "krb524init",
+    "description": "Initialize a krb524 service ticket for older Kerberos 4 authentication support."
+  },
+  {
+    "command": "krb5kdc",
+    "description": "Kerberos Key Distribution Center daemon."
+  },
+  {
+    "command": "krenew",
+    "description": "Renew a Kerberos ticket-granting ticket and optionally forward it."
+  },
+  {
+    "command": "ksu",
+    "description": "Kerberos substitute user - switch user identity similar to su but using Kerberos authentication."
+  },
+  {
+    "command": "kswitch",
+    "description": "Switch primary Kerberos credential cache."
+  },
+  {
+    "command": "ktutil",
+    "description": "Utility to manage entries in a Kerberos keytab file."
+  },
+  {
+    "command": "kvno",
+    "description": "Obtain and display the Kerberos service ticket for a specified principal."
+  }
+]

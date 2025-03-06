@@ -1,0 +1,26 @@
+# kvno
+# Obtain and display the Kerberos service ticket for a specified principal.
+
+# Obtain a service ticket for a specific principal
+kvno [principal_name]
+
+# Obtain service tickets for multiple specified principals
+kvno [principal1_name] [principal2_name] [principal3_name]
+
+# Obtain and display a service ticket for the current user's primary principal
+kvno host/[hostname]
+
+# Obtain a service ticket and display it with a specified encryption type (specify encryption type such as aes256-cts)
+kvno -e [enctype] [principal_name]
+
+# Obtain a service ticket with verbose output to show detailed information
+kvno -verbose [principal_name]
+
+# Obtain a service ticket from a specific Key Distribution Center (KDC)
+kvno -c [cache_name] [principal_name]
+
+# Allows for proxiable tickets
+kvno -P [principal_name]
+
+# Specifies the keytab from which credentials are accessed
+kvno -k [keytab] [principal_name]
