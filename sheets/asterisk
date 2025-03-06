@@ -1,0 +1,41 @@
+# asterisk (CLI commands for managing SIP communications)
+# Command-line interface commands for managing Asterisk's SIP functionalities.
+
+# Display the status of all SIP peers
+asterisk -rx "sip show peers"
+
+# Show detailed information about a specific SIP peer
+asterisk -rx "sip show peer [peer-name]"
+
+# Reload SIP configurations without restarting Asterisk
+asterisk -rx "sip reload"
+
+# Display the current SIP channel statistics
+asterisk -rx "sip show channels"
+
+# List active SIP registrations
+asterisk -rx "sip show registry"
+
+# Unregister a specific SIP user
+asterisk -rx "sip unregister [peer-name]"
+
+# Check the status of SIP options (qualify packets)
+asterisk -rx "sip show options"
+
+# Monitor a specific SIP channel
+asterisk -rx "sip show channel [channel-name]"
+
+# Turn on SIP debug for a specific IP or peer
+asterisk -rx "sip set debug peer [peer-name]" or asterisk -rx "sip set debug ip [ip-address]"
+
+# Turn off SIP debug
+asterisk -rx "sip set debug off"
+
+# Check active SIP channels and their call status
+asterisk -rx "sip show active"
+
+# Set SIP debug on globally
+asterisk -rx "sip set debug on"
+
+# Set SIP debug off globally
+asterisk -rx "sip set debug off"

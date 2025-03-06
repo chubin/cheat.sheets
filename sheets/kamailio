@@ -1,0 +1,29 @@
+# kamailio
+# A robust open-source SIP server for building scalable communication services.
+
+# Start Kamailio with a specific configuration file
+kamailio -f /path/to/kamailio.cfg
+
+# Start Kamailio in the background (daemon mode)
+kamailio -D
+
+# Run Kamailio and print the version information
+kamailio -v
+
+# Start Kamailio, log to a specific file, and set the log level
+kamailio -f /path/to/kamailio.cfg -l /var/log/kamailio.log --log-level=3
+
+# Test the configuration file (check for syntax errors)
+kamailio -c -f /path/to/kamailio.cfg
+
+# Start Kamailio with a particular listening interface
+kamailio -f /path/to/kamailio.cfg -l udp:192.168.0.1:5060
+
+# Enable debug messages (set debug level to minimum 3)
+kamailio -f /path/to/kamailio.cfg -d 3
+
+# Run Kamailio with specific memory limits for PKG and SHM memory
+kamailio -f /path/to/kamailio.cfg -m 64 -M 8
+
+# Display help for Kamailio command options
+kamailio -h

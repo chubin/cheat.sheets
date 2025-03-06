@@ -1,0 +1,38 @@
+# sipp
+# A performance testing tool for SIP protocol, with message and sequence customization.
+
+# Basic SIPp call
+sipp -sn uac <destination_ip>
+
+# Start SIPp as User Agent Server (UAS)
+sipp -sn uas -i <local_ip> -p <local_port>
+
+# Using custom XML scenario file
+sipp -sf <scenario_file.xml> <destination_ip>
+
+# Running SIPp with specific call rate
+sipp -r <calls_per_second> <destination_ip>
+
+# Limiting maximum number of simultaneous calls
+sipp -l <max_simultaneous_calls> <destination_ip>
+
+# Using authentication with username and password
+sipp -au <username> -ap <password> <destination_ip>
+
+# Sending calls with a specific From header
+sipp -i <local_ip> -p <local_port> -sf <scenario_file.xml> -s <from_user> <destination_ip>
+
+# Specifying transport protocol (UDP, TCP, TLS)
+sipp -t <protocol> <destination_ip>
+
+# Enable logging of messages
+sipp -trace_msg <destination_ip>
+
+# Generate pcap file of SIPp traffic
+sipp -trace_file <destination_ip>
+
+# Using a csv file for external data
+sipp -inf <csv_file> <destination_ip>
+
+# Use a specific media file for RTP streaming
+sipp -mp <media_port> -m <max_calls> -sf <scenario_file.xml> <destination_ip>
