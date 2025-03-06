@@ -1,0 +1,11 @@
+# pactl unload-module
+# Unload a module from the PulseAudio sound server.
+
+# Unloads a specific module by its module number
+pactl unload-module MODULE_NUMBER
+
+# Unloads a module using a shell command substitution to fetch the module number dynamically
+pactl unload-module $(pactl list short modules | grep MODULE_NAME | cut -f1)
+
+# Use case where you know the module name and want to unload all instances of it
+for module in $(pactl list short modules | grep MODULE_NAME | cut -f1); do pactl unload-module $module; done

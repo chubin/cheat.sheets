@@ -1,0 +1,35 @@
+# pulseaudio
+# A networked sound server for UNIX systems.
+
+# Start the PulseAudio sound server
+pulseaudio --start
+
+# Stop the PulseAudio sound server
+pulseaudio --kill
+
+# Check the version of PulseAudio
+pulseaudio --version
+
+# Display help information
+pulseaudio --help
+
+# Start PulseAudio in a no-daemon mode (remains in the foreground)
+pulseaudio --no-daemon
+
+# Log to a specific file
+pulseaudio --log-target=file:/path/to/logfile
+
+# Specify the verbosity level of logging
+pulseaudio -vv
+
+# Specify an alternate configuration file
+pulseaudio --file=/path/to/config.file
+
+# Start PulseAudio with high-priority scheduling
+pulseaudio --high-priority
+
+# Disable real-time scheduling
+pulseaudio --disable-realtime
+
+# Enable PulseAudio as a system-wide instance (needs root privileges)
+sudo pulseaudio --system

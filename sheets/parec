@@ -1,0 +1,23 @@
+# parec
+# Record audio directly from a PulseAudio sound server.
+
+# Record audio from the default source and save it to a file
+parec --format=s16le --rate=44100 --channels=2 > output.raw
+
+# Record audio from a specific source using its name
+parec --device=source_name --format=s16le --rate=44100 --channels=2 > output.raw
+
+# List available sources
+pactl list short sources
+
+# Record audio and encode to WAV format using sox
+parec --format=s16le --rate=44100 --channels=2 | sox -t raw -r 44100 -e signed-integer -b 16 -c 2 - output.wav
+
+# Record audio and compress it to MP3 format using lame
+parec --format=s16le --rate=44100 --channels=2 | lame -r -s 44.1 - output.mp3
+
+# Adjust the recording volume through volume scaling
+parec --volume=65536 --format=s16le --rate=44100 --channels=2 > output.raw
+
+# Specify a buffer size for recording
+parec --buffer-time=500000 --format=s16le --rate=44100 --channels=2 > output.raw

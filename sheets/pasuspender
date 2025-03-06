@@ -1,0 +1,20 @@
+# pasuspender
+# Temporarily suspend PulseAudio for another application.
+
+# Temporarily suspend PulseAudio and run a specific command
+pasuspender -- my_command
+
+# Disable PulseAudio while running an application with specific options
+pasuspender -- my_command --option val
+
+# Run a multimedia application without PulseAudio interference
+pasuspender -- vlc my_video_file
+
+# Temporarily suspend PulseAudio to execute a script
+pasuspender -- ./myscript.sh
+
+# Run an application that conflicts with PulseAudio, like JACK
+pasuspender -- jackd -dalsa
+
+# Suspend PulseAudio for testing and debugging purposes
+pasuspender -- aplay test.wav
