@@ -1,0 +1,20 @@
+# luksFormat
+# Initialize and format a device for LUKS encryption.
+
+# Initialize and format a device for LUKS encryption with default settings
+cryptsetup luksFormat /dev/sdX
+
+# Initialize and format a device with custom cipher and key size
+cryptsetup luksFormat --cipher aes-xts-plain64 --key-size 512 /dev/sdX
+
+# Initialize and format a device specifying a custom hash function
+cryptsetup luksFormat --hash sha512 /dev/sdX
+
+# Use a pre-existing key file instead of a passphrase
+cryptsetup luksFormat --key-file /path/to/keyfile /dev/sdX
+
+# Format a device with a warning prompt, forcing user interaction to be suppressed
+cryptsetup luksFormat --yes --force-password /dev/sdX
+
+# Format with a custom PBKDF (Password-Based Key Derivation Function) iteration time
+cryptsetup luksFormat --pbkdf argon2id --pbkdf-memory 1048576 --pbkdf-parallel 4 --pbkdf-force-iterations 100000 /dev/sdX

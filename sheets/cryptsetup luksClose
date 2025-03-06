@@ -1,0 +1,8 @@
+# luksClose
+# Close a mapped LUKS encrypted device.
+
+# Close a LUKS encrypted device using the mapped name
+cryptsetup luksClose <mapped_name>
+
+# Forcefully close a mapped LUKS encrypted device, useful if the device is busy
+cryptsetup luksClose --force <mapped_name>

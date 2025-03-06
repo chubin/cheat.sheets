@@ -1,0 +1,18 @@
+# luksAddKey
+# Add a new key slot to a LUKS device.
+
+# Add a new key to a LUKS encrypted device using a passphrase from an existing keyslot.
+# This command prompts for the existing and new passphrase.
+cryptsetup luksAddKey /dev/sdX
+
+# Add a new key to a specific key slot of a LUKS encrypted device by specifying the keyfile.
+# This is useful for automated processes where passphrase input is not feasible.
+cryptsetup luksAddKey /dev/sdX --key-file /path/to/keyfile --key-slot 1
+
+# Add a new key to a LUKS encrypted device and specify the iteration time (in milliseconds) for the new key.
+# This fine-tuning can help in optimizing the performance versus security of the passphrase.
+cryptsetup luksAddKey /dev/sdX --iter-time 2000
+
+# Add a new key using an existing keyfile to authenticate on a LUKS device that uses multiple key areas.
+# It's useful when managing large sets of keys.
+cryptsetup luksAddKey /dev/sdX --key-file /path/to/existing_keyfile --new-key-file /path/to/new_keyfile

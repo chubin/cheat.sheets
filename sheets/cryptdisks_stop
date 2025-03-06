@@ -1,0 +1,14 @@
+# cryptdisks_stop
+# Stop a running encrypted volume specified in /etc/crypttab.
+
+# Stop a specific encrypted volume identified as 'myencryptedvolume' in /etc/crypttab
+cryptdisks_stop myencryptedvolume
+
+# Stop an encrypted volume and provide verbose output for more detailed information
+cryptdisks_stop --verbose myencryptedvolume
+
+# Use with systemd to stop an encrypted volume, where 'myencryptedvolume' is the volume name
+systemctl stop cryptdisks@myencryptedvolume
+
+# Stop all encrypted volumes listed in /etc/crypttab
+cryptdisks_stop --all

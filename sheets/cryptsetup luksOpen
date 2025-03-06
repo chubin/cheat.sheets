@@ -1,0 +1,17 @@
+# luksOpen
+# Open a LUKS device and map it to a specified name.
+
+# Open a LUKS encrypted device and map it to a specified name
+cryptsetup luksOpen /dev/sdX1 my_encrypted_partition
+
+# Open a LUKS encrypted device with a custom keyfile
+cryptsetup luksOpen /dev/sdX1 my_encrypted_partition --key-file /path/to/keyfile
+
+# Open a LUKS encrypted device and suppress all output
+cryptsetup --quiet luksOpen /dev/sdX1 my_encrypted_partition
+
+# Open a LUKS encrypted device using a specific keyslot
+cryptsetup --key-slot 2 luksOpen /dev/sdX1 my_encrypted_partition
+
+# Open a LUKS encrypted device with verbose output for debugging
+cryptsetup --verbose luksOpen /dev/sdX1 my_encrypted_partition

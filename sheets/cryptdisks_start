@@ -1,0 +1,8 @@
+# cryptdisks_start
+# Start an encrypted volume using configuration from /etc/crypttab.
+
+# Start a specific encrypted volume as configured in /etc/crypttab
+cryptdisks_start <volume-name>
+
+# Start all encrypted volumes listed in /etc/crypttab
+for volume in $(awk '{print $1}' /etc/crypttab); do cryptdisks_start $volume; done

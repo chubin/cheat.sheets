@@ -1,0 +1,26 @@
+# blkid
+# Identify LUKS devices by displaying block device attributes.
+
+# Display attributes of all block devices
+blkid
+
+# Display attributes of a specific block device
+blkid /dev/sdX
+
+# Display only the UUID of a specific device
+blkid -s UUID -o value /dev/sdX
+
+# Display LUKS information from a block device, if available
+blkid -s TYPE -o value /dev/sdX | grep -q 'crypto_LUKS' && echo "LUKS device"
+
+# Format output with labels and values
+blkid -p -o udev /dev/sdX
+
+# Display attributes with specific formatting
+blkid -o full /dev/sdX
+
+# Utilize cache for faster results
+blkid -c /dev/null /dev/sdX
+
+# Cache the results and update the cache 
+blkid -c /etc/blkid.tab /dev/sdX

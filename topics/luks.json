@@ -1,0 +1,74 @@
+[
+  {
+    "command": "blkid",
+    "description": "Identify LUKS devices by displaying block device attributes."
+  },
+  {
+    "command": "cryptdisks_start",
+    "description": "Start an encrypted volume using configuration from /etc/crypttab."
+  },
+  {
+    "command": "cryptdisks_stop",
+    "description": "Stop a running encrypted volume specified in /etc/crypttab."
+  },
+  {
+    "command": "cryptsetup",
+    "description": "Manage and configure LUKS encrypted block devices."
+  },
+  {
+    "command": "lsblk",
+    "description": "List all block devices including LUKS encrypted ones."
+  },
+  {
+    "command": "cryptsetup luksAddKey",
+    "description": "Add a new key slot to a LUKS device."
+  },
+  {
+    "command": "cryptsetup luksChangeKey",
+    "description": "Change an existing key on a LUKS device."
+  },
+  {
+    "command": "cryptsetup luksClose",
+    "description": "Close a mapped LUKS encrypted device."
+  },
+  {
+    "command": "cryptsetup luksDump",
+    "description": "Display information about a LUKS encrypted volume."
+  },
+  {
+    "command": "cryptsetup luksFormat",
+    "description": "Initialize and format a device for LUKS encryption."
+  },
+  {
+    "command": "cryptsetup luksHeaderBackup",
+    "description": "Backup the LUKS header and keyslot information."
+  },
+  {
+    "command": "cryptsetup luksHeaderRestore",
+    "description": "Restore the LUKS header from a backup."
+  },
+  {
+    "command": "cryptsetup luksKillSlot",
+    "description": "Delete a specific key slot from a LUKS device."
+  },
+  {
+    "command": "cryptsetup luksOpen",
+    "description": "Open a LUKS device and map it to a specified name."
+  },
+  {
+    "command": "cryptsetup luksRemoveKey",
+    "description": "Remove a specific key from a LUKS device."
+  },
+  {
+    "command": "cryptsetup luksResume",
+    "description": "Resume a suspended LUKS device."
+  },
+  {
+    "command": "cryptsetup luksSuspend",
+    "description": "Suspend a LUKS device, freezing I/O operations."
+  },
+  {
+    "command": "cryptsetup luksUUID",
+    "description": "Display the UUID of a LUKS encrypted device."
+  }
+]

@@ -1,0 +1,17 @@
+# luksChangeKey
+# Change an existing key on a LUKS device.
+
+# Change a passphrase for an existing key slot
+sudo cryptsetup luksChangeKey /dev/sdXn
+
+# Change a passphrase specifying the old passphrase and the slot to change
+sudo cryptsetup luksChangeKey --key-slot <N> /dev/sdXn
+
+# Use a key file instead of a passphrase for old and new keys
+sudo cryptsetup luksChangeKey --key-file <old-key-file> --new-key-file <new-key-file> /dev/sdXn
+
+# Change a key interactively by specifying the device only (old passphrase will be prompted)
+sudo cryptsetup luksChangeKey --key-file <old-key-file> /dev/sdXn
+
+# Change a key interactively with verbosity to get more information
+sudo cryptsetup luksChangeKey --verbose /dev/sdXn

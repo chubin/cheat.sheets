@@ -1,0 +1,19 @@
+# luksDump
+# Display information about a LUKS encrypted volume.
+
+# Display information about a LUKS encrypted volume
+# Note: Ensure you have administrative privileges to view information on LUKS headers
+
+# Basic usage to display the LUKS header information of an encrypted volume
+cryptsetup luksDump /dev/sdXn
+
+# Use the --debug option for additional debug information while displaying a LUKS header
+cryptsetup --debug luksDump /dev/sdXn
+
+# Use the --type option to specify the type of LUKS header to display, helpful if there are different versions
+cryptsetup luksDump --type luks1 /dev/sdXn
+
+# Output LUKS header information in a specific format like JSON
+cryptsetup luksDump --type luks2 --json /dev/sdXn
+
+# Note: Replace /dev/sdXn with the actual device path of the LUKS encrypted volume.
