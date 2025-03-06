@@ -37,6 +37,13 @@ Requirements and constraints:
 
 Other requirements can be proposed and discussed in [#101](https://github.com/chubin/cheat.sheets/issues/101)
 
+## News
+
+| **Date**     | **Update**                                                                                                                                              | **PR** |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| `2025-03-06` | Network diagnostics: 36 new cheat sheets (`arp`, `arpwatch`, `bmon`, `curl`, `dig`, `ethtool`, `fping`, `host`, `hostname`, etc.)                       | #198   |
+| `2025-03-06` | SIP Protocol usage and diagnostics: 9 cheat sheets (`asterisk`, `baresip`, `fs_cli`, `kamailio`, `opensips`, `pjsua`, `sipcmd`, `sipp`, `sngrep`, etc.) | #197   |
+
 
 ## Getting started
 
