@@ -1,0 +1,70 @@
+[
+  {
+    "command": "pacat",
+    "description": "Play audio using PulseAudio."
+  },
+  {
+    "command": "pacmd",
+    "description": "Control PulseAudio servers from the command line."
+  },
+  {
+    "command": "pactl",
+    "description": "Control a running PulseAudio sound server."
+  },
+  {
+    "command": "pactl load-module",
+    "description": "Load a module into the PulseAudio sound server."
+  },
+  {
+    "command": "pactl unload-module",
+    "description": "Unload a module from the PulseAudio sound server."
+  },
+  {
+    "command": "padevchooser",
+    "description": "Choose and control audio devices using a graphical interface."
+  },
+  {
+    "command": "pa-info",
+    "description": "Display information about PulseAudio settings."
+  },
+  {
+    "command": "paman",
+    "description": "PulseAudio Manager graphical interface."
+  },
+  {
+    "command": "pamon",
+    "description": "Monitor audio streams in PulseAudio."
+  },
+  {
+    "command": "paplay",
+    "description": "Play audio files via PulseAudio."
+  },
+  {
+    "command": "parec",
+    "description": "Record audio directly from a PulseAudio sound server."
+  },
+  {
+    "command": "parec-simple",
+    "description": "Record audio from PulseAudio with simple output."
+  },
+  {
+    "command": "pasuspender",
+    "description": "Temporarily suspend PulseAudio for another application."
+  },
+  {
+    "command": "pasystray",
+    "description": "System tray utility to control PulseAudio volume."
+  },
+  {
+    "command": "pavucontrol",
+    "description": "Graphical volume control tool for PulseAudio."
+  },
+  {
+    "command": "pavumeter",
+    "description": "Graphical audio level meter for PulseAudio."
+  },
+  {
+    "command": "pulseaudio",
+    "description": "A networked sound server for UNIX systems."
+  }
+]

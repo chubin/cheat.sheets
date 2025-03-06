@@ -1,0 +1,23 @@
+# paplay
+# Play audio files via PulseAudio.
+
+# Play an audio file (e.g., WAV or OGG) using the default PulseAudio server
+paplay /path/to/audiofile.wav
+
+# Play an audio file specifying a particular PulseAudio server to use
+paplay --server=SERVER /path/to/audiofile.wav
+
+# Play an audio file specifying a specific sink (output device)
+paplay --device=SINK_NAME /path/to/audiofile.wav
+
+# Play an audio file and set the volume (0-65536) for the playback
+paplay --volume=VOLUME /path/to/audiofile.wav
+
+# Play an audio file in a loop until interrupted
+while true; do paplay /path/to/audiofile.wav; done
+
+# Play multiple audio files in succession
+paplay /path/to/audiofile1.wav /path/to/audiofile2.wav
+
+# Play an audio file with environmental variable to change PulseAudio server (useful in scripts)
+PULSE_SERVER=SERVER paplay /path/to/audiofile.wav

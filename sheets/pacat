@@ -1,0 +1,29 @@
+# pacat
+# Play audio using PulseAudio.
+
+# Play an audio file using pacat
+pacat --file /path/to/audiofile
+
+# Record audio to a file using pacat
+pacat --record --file /path/to/outputfile
+
+# Play audio from stdin
+cat /path/to/audiofile | pacat
+
+# Record audio from a microphone to stdout
+pacat --record > output.raw
+
+# Play audio with verbose logging
+pacat --verbose --file /path/to/audiofile
+
+# Specify audio format (e.g., s16le, s16be, u8)
+pacat --file-format s16le --file /path/to/audiofile
+
+# Set the audio sample rate
+pacat --rate 44100 --file /path/to/audiofile
+
+# Adjust audio channel number
+pacat --channels 2 --file /path/to/audiofile
+
+# Specify a device for output or input
+pacat --device alsa_output.pci-0000_00_1f.3.analog-stereo --file /path/to/audiofile

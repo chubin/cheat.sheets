@@ -1,10 +1,44 @@
 # pactl
-# Control a running PulseAudio sound server
+# Control a running PulseAudio sound server.
+
+# List all loaded modules
+pactl list modules
+
+# Load a module
+pactl load-module module-name
+
+# Unload a module by its index
+pactl unload-module module-index
+
+# List all available sinks (output devices)
+pactl list sinks
+
+# List all available sources (input devices)
+pactl list sources
+
+# Set the default sink (output device) by its name
+pactl set-default-sink sink-name
+
+# Set the default source (input device) by its name
+pactl set-default-source source-name
+
+# Set the volume of a sink (output device) by its name or index to 50%
+pactl set-sink-volume sink-name-or-index 50%
+
+# Mute a sink (output device) by its index
+pactl set-sink-mute sink-index 1
+
+# Unmute a sink (output device) by its index
+pactl set-sink-mute sink-index 0
+
+# Move a sink input (audio stream) to a different sink by their index
+pactl move-sink-input sink-input-index sink-index
+
+# Kill a client by its index
+pactl kill-client client-index
+
+# Kill a sink input by its index
+pactl kill-sink-input sink-input-index
 
 # Display a sorted and uniq-ified list of PulseAudio modules, using AWK.
 pactl list modules short | awk '{!Lines[$2]++} END {asorti(Lines, Sorted); for (Line in Sorted) print(Sorted[Line])}'
-
-# Load a module.
-pactl load-module MODULE
-# Unload a module.
-pactl unload-module MODULE

@@ -1,0 +1,23 @@
+# pamon
+# Monitor audio streams in PulseAudio.
+
+# Monitor the default audio stream
+pamon
+
+# Monitor a specific sink (output device)
+pamon --sink <sink_index>
+
+# Monitor a specific source (input device)
+pamon --source <source_index>
+
+# Monitor a specific audio channel
+pamon --channel <channel_index>
+
+# Monitor with more detailed output, including volume and other parameters
+pamon --verbose
+
+# Monitor audio streams with a defined latency in microseconds
+pamon --latency <microseconds>
+
+# Use a custom server instead of the default
+pamon --server <server_name>

@@ -1,0 +1,20 @@
+# parec-simple
+# Record audio from PulseAudio with simple output.
+
+# Record audio from the default source and save it to a file named output.wav
+parec-simple output.wav
+
+# Record audio and specify the desired audio format using the -f option (e.g., S16LE for 16-bit little-endian format)
+parec-simple -f S16LE output.wav
+
+# Specify the sample rate with the -r option (e.g., 44100 Hz)
+parec-simple -r 44100 output.wav
+
+# Record audio from a specific PulseAudio source (e.g., monitor source) and save it to a file
+parec-simple -d <source_name> output.wav
+
+# Record audio and specify the number of recording channels with the -c option (e.g., 2 for stereo)
+parec-simple -c 2 output.wav
+
+# Record audio and save it directly to stdout (useful for piping into other commands)
+parec-simple -o - | other_command

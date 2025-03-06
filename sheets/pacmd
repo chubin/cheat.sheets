@@ -1,0 +1,51 @@
+# pacmd
+# Control PulseAudio servers from the command line.
+
+# List all loaded modules
+pacmd list-modules
+
+# List all sinks (output devices)
+pacmd list-sinks
+
+# List all sources (input devices)
+pacmd list-sources
+
+# List all clients connected to the PulseAudio server
+pacmd list-clients
+
+# List all loaded cards
+pacmd list-cards
+
+# List all active audio streams
+pacmd list-sink-inputs
+pacmd list-source-outputs
+
+# Set the default sink (output device)
+pacmd set-default-sink <sink_name_or_index>
+
+# Set the default source (input device)
+pacmd set-default-source <source_name_or_index>
+
+# Move a sink input to a different sink
+pacmd move-sink-input <input_index> <sink_name_or_index>
+
+# Move a source output to a different source
+pacmd move-source-output <output_index> <source_name_or_index>
+
+# Load a module
+pacmd load-module <module_name> [arguments]
+
+# Unload a module
+pacmd unload-module <module_index_or_name>
+
+# Set the volume of a sink (output device)
+pacmd set-sink-volume <sink_name_or_index> <volume>
+
+# Set the mute status of a sink (output device)
+pacmd set-sink-mute <sink_name_or_index> <yes|no>
+
+# Set the volume of a source (input device)
+pacmd set-source-volume <source_name_or_index> <volume>
+
+# Set the mute status of a source (input device)
+pacmd set-source-mute <source_name_or_index> <yes|no>

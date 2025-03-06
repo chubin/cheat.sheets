@@ -1,0 +1,23 @@
+# pactl load-module
+# Load a module into the PulseAudio sound server.
+
+# Load a module into the PulseAudio sound server
+pactl load-module <module-name> [arguments]
+
+# Load the null-sink module, creating a virtual output device
+pactl load-module module-null-sink sink_name=Virtual_Sink
+
+# Load the loopback module to route audio from a source to a sink
+pactl load-module module-loopback source=<source_name_or_index> sink=<sink_name_or_index>
+
+# Load the RTP (Real-time Transport Protocol) receiver module for network audio streaming
+pactl load-module module-rtp-recv
+
+# Load the RTP sender module and specify the destination IP address for network audio streaming
+pactl load-module module-rtp-send destination_ip=<ip_address> sink=<sink_name_or_index>
+
+# Load the module-combine-sink to combine multiple sinks into a single virtual sink
+pactl load-module module-combine-sink sink_properties=device.description=Combined virtual_sinks="<sink1>,<sink2>"
+
+# Load the module-remap-sink to remap channels for custom audio routing
+pactl load-module module-remap-sink sink_name=Remapped_Sink master=<sink_name_or_index> channels=<channel_count> channel_map=<map>
