@@ -1,0 +1,32 @@
+# nload
+# View network traffic and bandwidth usage in real time.
+
+# View network traffic and bandwidth usage for the default network interface
+nload
+
+# View network traffic and bandwidth usage for a specific network interface (e.g., eth0)
+nload eth0
+
+# Set the refresh interval to a specific value in seconds (e.g., 2 seconds)
+nload -t 2000
+
+# Show traffic in bits per second instead of bytes per second
+nload -u b
+
+# Combine units and binary prefixes (e.g., KB/s, MB/s)
+nload -u K
+
+# Bind nload to a specific IP address for monitoring (e.g., 192.168.1.1)
+nload -m 192.168.1.1
+
+# Change the history average interval (e.g., average usage over the last 30 seconds)
+nload -i 30
+
+# Customize the display colors (e.g., setting background color to blue and graph color to red)
+nload -c "background=blue:graphs=red"
+
+# Disable color in output (useful for non-color terminals)
+nload -o
+
+# Log output to a specified file (e.g., /var/log/nload.log)
+nload -o /var/log/nload.log

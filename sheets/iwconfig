@@ -1,0 +1,51 @@
+# iwconfig
+# Configure wireless network interfaces in Linux.
+
+# Display wireless interface details
+iwconfig
+
+# Set the ESSID (Network Name) of a wireless interface
+iwconfig wlan0 essid "YourNetworkName"
+
+# Set the wireless mode (e.g., Managed, Ad-Hoc)
+iwconfig wlan0 mode Managed
+
+# Set the frequency or channel of a wireless interface
+iwconfig wlan0 freq 2.422G
+iwconfig wlan0 channel 3
+
+# Set the operational rate of a wireless network
+iwconfig wlan0 rate 54M
+
+# Specify the encryption key (WEP) for a network
+iwconfig wlan0 key s:yourpassword
+
+# Disable any encryption on the interface
+iwconfig wlan0 key off
+
+# Change the wireless interface sensitivity threshold
+iwconfig wlan0 sens -80
+
+# Set the retry limit or lifetime for a network re-transmission
+iwconfig wlan0 retry 16
+
+# Set the RTS/CTS threshold
+iwconfig wlan0 rts 250
+
+# Change the fragmentation threshold
+iwconfig wlan0 frag 512
+
+# Set the access point or base station manually
+iwconfig wlan0 ap 00:14:22:68:9F:01
+
+# Change the power management settings
+iwconfig wlan0 power off
+
+# Set the transmit power level
+iwconfig wlan0 txpower 20
+
+# View wireless interface statistics
+iwconfig --statistics
+
+# Run iwconfig on a specific wireless interface
+iwconfig wlan0

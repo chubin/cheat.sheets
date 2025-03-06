@@ -1,0 +1,36 @@
+# ethtool
+# Display or change Ethernet device settings.
+
+# Display Ethernet settings for a specific interface
+ethtool eth0
+
+# Change the speed to 1000Mb/s and set full-duplex mode
+ethtool -s eth0 speed 1000 duplex full
+
+# Turn off auto-negotiation on the specified interface
+ethtool -s eth0 autoneg off
+
+# Get the driver information for a specific interface
+ethtool -i eth0
+
+# Display statistics for a specific interface
+ethtool -S eth0
+
+# Display the current pause parameter for a specific interface
+ethtool -a eth0
+
+# Enable or disable Wake-on-LAN (WoL)
+ethtool -s eth0 wol g    # Enable
+ethtool -s eth0 wol d    # Disable
+
+# Change the ring buffer settings
+ethtool -G eth0 rx 4096 tx 4096
+
+# Display all transceiver information for an interface
+ethtool -m eth0
+
+# Display supported features and their statuses
+ethtool -k eth0
+
+# Change an offload parameter for a specific interface
+ethtool -K eth0 tso off

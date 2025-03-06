@@ -1,0 +1,41 @@
+# iperf3
+# Updated version of iperf with improved features and performance measurements.
+
+# Start an iperf3 server on the default port (5201)
+iperf3 -s
+
+# Run a basic iperf3 client test to a server located at [server IP]
+iperf3 -c [server IP]
+
+# Run a client test with a specified duration (e.g., 10 seconds) to a server
+iperf3 -c [server IP] -t 10
+
+# Run a client test with a specified bandwidth limit (e.g., 1Mbps) to a server
+iperf3 -c [server IP] -b 1M
+
+# Run a client test on a specified port (e.g., port 5001) of the server
+iperf3 -c [server IP] -p 5001
+
+# Run a client test with a specified number of parallel streams (e.g., 5 streams) to a server
+iperf3 -c [server IP] -P 5
+
+# Run a client test to a server using UDP (instead of the default TCP)
+iperf3 -c [server IP] -u
+
+# Run a reverse test where the server sends data to the client
+iperf3 -c [server IP] -R
+
+# Run a bidirectional test where data is exchanged in both directions
+iperf3 -c [server IP] --bidir
+
+# Display results in JSON format for easier parsing and scripting
+iperf3 -c [server IP] -J
+
+# Set the server to log connections, errors, and results to a file
+iperf3 -s --logfile /path/to/logfile.txt
+
+# Use a specific protocol version (e.g., IPv4) for testing
+iperf3 -c [server IP] -4
+
+# Use a specific protocol version (e.g., IPv6) for testing
+iperf3 -c [server IP] -6

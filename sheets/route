@@ -1,0 +1,26 @@
+# route
+# Display or modify the IP routing table.
+
+# Display the IP routing table
+route
+
+# Add a new route to a specific network
+route add -net {network} netmask {netmask} gw {gateway} {interface}
+
+# Add a default gateway
+route add default gw {gateway} {interface}
+
+# Delete a route to a specific network
+route del -net {network} netmask {netmask} gw {gateway} {interface}
+
+# Delete the default gateway
+route del default
+
+# Add a route to a host
+route add -host {destination-host} gw {gateway} {interface}
+
+# Change the metric of a route
+route change -net {network} netmask {netmask} gw {gateway} {interface} metric {metric}
+
+# Show the routing table continuously with a delay
+watch -n 1 route -n

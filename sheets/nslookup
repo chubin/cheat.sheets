@@ -1,0 +1,28 @@
+# nslookup
+# Query Internet domain name servers.
+
+# Perform a basic DNS lookup for a domain
+nslookup example.com
+
+# Perform a reverse DNS lookup using an IP address
+nslookup 192.168.1.1
+
+# Specify a particular DNS server for the query
+nslookup example.com 8.8.8.8
+
+# Query a specific type of DNS record (e.g., MX for mail exchange)
+nslookup -query=mx example.com
+
+# Set the timeout duration for waiting for a server response
+nslookup -timeout=5 example.com
+
+# Specify the type of DNS record, here for acquiring the NS records
+nslookup -query=ns example.com
+
+# Use debug mode to show detailed diagnostic information
+nslookup -debug example.com
+
+# Change to interactive mode to issue multiple queries
+nslookup
+# In interactive mode, type `server 8.8.8.8` to use a specific DNS server
+# Then, type the domain you want to look up, like `example.com`

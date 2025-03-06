@@ -1,0 +1,32 @@
+# iperf
+# Network bandwidth measurement tool with client-server functionalities.
+
+# Start an iperf server on the default port (5001)
+iperf -s
+
+# Start an iperf server on a specific port (for example, 5201)
+iperf -s -p 5201
+
+# Run an iperf client to connect to a server at a specific IP address
+iperf -c <server_ip>
+
+# Run an iperf client with a specific bandwidth limit (1 Mbps)
+iperf -c <server_ip> -b 1M
+
+# Run an iperf test for a specific duration (10 seconds)
+iperf -c <server_ip> -t 10
+
+# Run an iperf test using UDP instead of TCP
+iperf -c <server_ip> -u
+
+# Run an iperf test with a specific port (e.g., 5201)
+iperf -c <server_ip> -p 5201
+
+# Run a bi-directional bandwidth test (client and then server directions)
+iperf -c <server_ip> -d
+
+# Run an iperf test using IPv6
+iperf -c <server_ipv6_address> -V
+
+# Generate test report format as JSON
+iperf -c <server_ip> --reportstyle C

@@ -1,0 +1,26 @@
+# telnet
+# User interface to the TELNET protocol for bidirectional text communication.
+
+# Connect to a remote host on a specified port
+telnet hostname port
+
+# Open a telnet session without specifying a port (default to port 23)
+telnet hostname
+
+# Open a telnet session with option for terminal type
+telnet -l username hostname
+
+# Interrupt a running command or return to the telnet prompt
+Ctrl + ] (Escape sequence, type this combo while in a telnet session)
+
+# Display telnet’s internal help
+telnet help
+
+# Telnet quit command to exit the session
+quit (Type this command within the telnet session to exit)
+
+# Set or show telnet options
+telnet set option (Enter this within the telnet command line to configure options)
+
+# Send special telnet sequence to the host
+send set_sequence_name (Enter this within a telnet session to send specific sequences such as break)

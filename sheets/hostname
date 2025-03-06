@@ -1,0 +1,23 @@
+# hostname
+# Show or set the system's host name.
+
+# Display the current hostname of the system
+hostname
+
+# Set a new hostname for the system (requires administrative privileges)
+sudo hostname new-hostname
+
+# Display the short hostname (without any domain information)
+hostname -s
+
+# Display the domain name of the system
+hostname -d
+
+# Display the fully qualified domain name (FQDN) of the system
+hostname -f
+
+# Display the IP address(es) of the host
+hostname -I
+
+# Display all network addresses of the host
+hostname -A

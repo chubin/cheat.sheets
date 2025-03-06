@@ -1,0 +1,146 @@
+[
+  {
+    "command": "arp",
+    "description": "Display or manipulate the ARP cache."
+  },
+  {
+    "command": "arpwatch",
+    "description": "Monitor Ethernet/IP address pairings on the network."
+  },
+  {
+    "command": "bmon",
+    "description": "Visualize and monitor network bandwidth utilization."
+  },
+  {
+    "command": "curl",
+    "description": "Transfer data from or to a server using various protocols."
+  },
+  {
+    "command": "dig",
+    "description": "Query DNS servers for information about host addresses and other DNS records."
+  },
+  {
+    "command": "ethtool",
+    "description": "Display or change Ethernet device settings."
+  },
+  {
+    "command": "fping",
+    "description": "Send ICMP echo requests to network hosts, similar to ping, but supports multiple targets."
+  },
+  {
+    "command": "host",
+    "description": "Look up DNS records for a given host."
+  },
+  {
+    "command": "hostname",
+    "description": "Show or set the system's host name."
+  },
+  {
+    "command": "ifconfig",
+    "description": "Configure a network interface (deprecated, replaced by ip command)."
+  },
+  {
+    "command": "iftop",
+    "description": "Display bandwidth usage on an interface by host."
+  },
+  {
+    "command": "ip",
+    "description": "Show/manipulate routing, devices, policy routing and tunnels."
+  },
+  {
+    "command": "iperf",
+    "description": "Network bandwidth measurement tool with client-server functionalities."
+  },
+  {
+    "command": "iperf3",
+    "description": "Updated version of iperf with improved features and performance measurements."
+  },
+  {
+    "command": "iptraf",
+    "description": "Interactive, colorful IP LAN monitor."
+  },
+  {
+    "command": "iwconfig",
+    "description": "Configure wireless network interfaces in Linux."
+  },
+  {
+    "command": "mtr",
+    "description": "Network diagnostic tool that combines the functions of traceroute and ping."
+  },
+  {
+    "command": "nc",
+    "description": "Versatile networking utility to read and write data across networks."
+  },
+  {
+    "command": "netcat",
+    "description": "Versatile networking utility to read and write data across networks."
+  },
+  {
+    "command": "netstat",
+    "description": "Print network connections, routing tables, interface statistics, and more (deprecated)."
+  },
+  {
+    "command": "nload",
+    "description": "View network traffic and bandwidth usage in real time."
+  },
+  {
+    "command": "nmap",
+    "description": "Network scanning tool for network discovery and security auditing."
+  },
+  {
+    "command": "nslookup",
+    "description": "Query Internet domain name servers."
+  },
+  {
+    "command": "ping",
+    "description": "Send ICMP echo requests to network hosts."
+  },
+  {
+    "command": "route",
+    "description": "Display or modify the IP routing table."
+  },
+  {
+    "command": "ss",
+    "description": "Dump socket statistics for network connections."
+  },
+  {
+    "command": "ssh",
+    "description": "OpenSSH SSH client to connect to remote hosts securely."
+  },
+  {
+    "command": "tcpdump",
+    "description": "Network packet analyzer that captures and displays packet headers."
+  },
+  {
+    "command": "telnet",
+    "description": "User interface to the TELNET protocol for bidirectional text communication."
+  },
+  {
+    "command": "traceroute",
+    "description": "Trace the route packets take to a network host."
+  },
+  {
+    "command": "tracert",
+    "description": "Windows utility equivalent to traceroute for tracking packet paths (Windows only)."
+  },
+  {
+    "command": "tshark",
+    "description": "Packet capture program with extensive features, part of Wireshark project."
+  },
+  {
+    "command": "vnstat",
+    "description": "Network traffic monitor that keeps a log of daily network traffic."
+  },
+  {
+    "command": "wget",
+    "description": "Retrieve files from the web using HTTP, HTTPS, and FTP."
+  },
+  {
+    "command": "whois",
+    "description": "Query databases to obtain domain name registration information."
+  },
+  {
+    "command": "wireshark",
+    "description": "Graphical network protocol analyzer for troubleshooting and analysis."
+  }
+]

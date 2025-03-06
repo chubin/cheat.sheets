@@ -1,0 +1,41 @@
+# tshark
+# Packet capture program with extensive features, part of Wireshark project.
+
+# Basic packet capture on interface
+tshark -i eth0 
+
+# Capture packets and save to a file
+tshark -i eth0 -w capturefile.pcap
+
+# Capture packets with a specific duration (e.g., 10 seconds)
+tshark -a duration:10 -i eth0
+
+# Capture packets with a specific packet count (e.g., 100 packets)
+tshark -c 100 -i eth0
+
+# Display packets captured in real-time in human-readable form
+tshark -i eth0 
+
+# Read packets from a file
+tshark -r capturefile.pcap 
+
+# Capture packets with a specific filter (e.g., HTTP traffic)
+tshark -i eth0 -f "tcp port 80"
+
+# Capture packets and display only specific fields
+tshark -i eth0 -T fields -e ip.src -e ip.dst
+
+# Capture packets and display with time format in seconds since the Unix epoch
+tshark -i eth0 -t e
+
+# Display a summary of packets, rather than detailed packet information
+tshark -q -z io,stat,1 -r capturefile.pcap
+
+# Decode specific port traffic as a specific protocol (e.g., decode traffic on port 9999 as HTTP)
+tshark -d tcp.port==9999,http -r capturefile.pcap
+
+# Capture packets and include packet timestamp in a specific format (ISO 8601)
+tshark -i eth0 -t a
+
+# Use a specific configuration profile when capturing or reading packets
+tshark -C <profile_name> -i eth0

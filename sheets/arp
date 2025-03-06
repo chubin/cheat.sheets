@@ -1,0 +1,17 @@
+# arp
+# Display or manipulate the ARP cache.
+
+# Display the current ARP cache
+arp -a
+
+# Display the ARP entry for a specific host
+arp -a <hostname_or_ip>
+
+# Add a static ARP entry
+sudo arp -s <ip_address> <mac_address>
+
+# Delete a specific ARP entry
+sudo arp -d <hostname_or_ip>
+
+# Set the ARP timeout value
+sudo arp -v -t <seconds>

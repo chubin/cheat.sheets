@@ -1,0 +1,56 @@
+# tcpdump
+# Network packet analyzer that captures and displays packet headers.
+
+# Capture packets from a specific network interface
+tcpdump -i eth0 
+
+# Capture only a certain number of packets
+tcpdump -c 10
+
+# Capture and write packets to a file for later analysis
+tcpdump -w capture.pcap
+
+# Read packets from a file
+tcpdump -r capture.pcap
+
+# Capture packets from a specific host
+tcpdump host 192.168.1.1
+
+# Capture packets from a specific port
+tcpdump port 80
+
+# Capture packets based on a specific protocol (e.g., TCP)
+tcpdump tcp
+
+# Capture packets and filter for HTTP traffic
+tcpdump 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+
+# Capture packets from a specific source IP
+tcpdump src 192.168.1.1
+
+# Capture packets to a specific destination IP
+tcpdump dst 192.168.1.2
+
+# Display captured packets with timestamp
+tcpdump -tttt
+
+# Capture packets and display with verbose output
+tcpdump -v
+
+# Capture packets and display with extra verbose output
+tcpdump -vv
+
+# Capture packets and resolve hostnames
+tcpdump -n
+
+# Capture packets and disable resolving hostnames
+tcpdump -nn
+
+# Capture packets and show link-layer headers
+tcpdump -e
+
+# Capture IPv6 packets
+tcpdump ip6
+
+# Capture packets larger than a specific size
+tcpdump greater 1024
