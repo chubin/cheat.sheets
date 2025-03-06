@@ -1,0 +1,23 @@
+# sipcmd
+# A command-line SIP client and testing tool for initiating SIP calls and messages.
+
+# Making a SIP call to a specific number
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -x "c123456;w5000;r"
+
+# Sending a SIP message
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -x "m123456 'Hello, this is a message'"
+
+# Receiving a SIP call and responding with a wave file
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -x "ack;w response.wav"
+
+# Playing a wave file in an ongoing SIP call
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -x "c123456;w500;r;w message.wav"
+
+# Sending a SIP call and hanging up after a set duration
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -x "c123456;w5000;h"
+
+# Registering to a SIP server
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -r
+
+# Unregistering from a SIP server
+sipcmd -P sip -u username -c password -w sip.server.address -a callerID -u

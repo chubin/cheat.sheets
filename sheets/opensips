@@ -1,0 +1,32 @@
+# openSIPS
+# A powerful open-source SIP server for handling multimedia communications.
+
+# Start OpenSIPS with a specific configuration file
+opensips -f /path/to/opensips.cfg
+
+# Run OpenSIPS in debug mode, level 3
+opensips -f /path/to/opensips.cfg -D 3
+
+# Enable a specific module for debugging
+opensips -f /path/to/opensips.cfg -m core
+
+# Verify the configuration file for syntax errors
+opensips -c -f /path/to/opensips.cfg
+
+# Show the version of OpenSIPS
+opensips -V
+
+# Run OpenSIPS in foreground for testing
+opensips -f /path/to/opensips.cfg -F
+
+# Check OpenSIPS compilation options
+opensips -V -K
+
+# Enable debug logs and run in the foreground for troubleshooting
+opensips -f /path/to/opensips.cfg -F -D 3 -E
+
+# Start OpenSIPS with increased memory allocation
+opensips -f /path/to/opensips.cfg -m 256
+
+# Start OpenSIPS with a specified PID file
+opensips -f /path/to/opensips.cfg -P /path/to/opensips.pid

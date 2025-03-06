@@ -1,0 +1,38 @@
+[
+  {
+    "command": "asterisk",
+    "description": "An open-source framework for building communications applications."
+  },
+  {
+    "command": "baresip",
+    "description": "A portable and modular SIP user agent with audio and video support."
+  },
+  {
+    "command": "fs_cli",
+    "description": "Command-line interface commands for managing FreeSWITCH SIP sessions."
+  },
+  {
+    "command": "kamailio",
+    "description": "A robust open-source SIP server for building scalable communication services."
+  },
+  {
+    "command": "opensips",
+    "description": "A powerful open-source SIP server for handling multimedia communications."
+  },
+  {
+    "command": "pjsua",
+    "description": "A collection of open-source libraries and utilities for SIP, media, and NAT traversal."
+  },
+  {
+    "command": "sipcmd",
+    "description": "A command-line SIP client and testing tool for initiating SIP calls and messages."
+  },
+  {
+    "command": "sipp",
+    "description": "A performance testing tool for SIP protocol, with message and sequence customization."
+  },
+  {
+    "command": "sngrep",
+    "description": "A tool for analyzing and capturing SIP packets in a user-friendly interface."
+  }
+]

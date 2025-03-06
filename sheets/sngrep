@@ -1,0 +1,29 @@
+# sngrep
+# A tool for analyzing and capturing SIP packets in a user-friendly interface.
+
+# Start capturing SIP packets on all available network interfaces
+sngrep
+
+# Start capturing SIP packets on a specific network interface (e.g., eth0)
+sngrep -I eth0
+
+# Capture SIP packets and save them to a file for later analysis
+sngrep -w capture_file.sng
+
+# Load a previously saved SIP packet capture file for analysis
+sngrep -r capture_file.sng
+
+# Filter captured SIP packets by a specific SIP method (e.g., INVITE)
+sngrep method INVITE
+
+# Exclude a specific host (e.g., 192.168.1.10) from the packet capture
+sngrep -X 192.168.1.10
+
+# Capture SIP packets in a specific port (e.g., 5060)
+sngrep -d 5060
+
+# Capture SIP packets with a specified BPF (Berkeley Packet Filter) expression
+sngrep -f 'host 192.168.1.20'
+
+# Display a different color scheme for terminal display
+sngrep --color 5

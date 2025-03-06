@@ -1,0 +1,32 @@
+# kamailio (commands for managing the SIP server)
+# Command-line tools for managing and configuring a Kamailio SIP server.
+
+# Reload the Kamailio configuration without restarting the server
+kamctl fifo cfg_reload
+
+# Add a new SIP user into the Kamailio database
+kamctl add username password
+
+# Remove a SIP user from the Kamailio database
+kamctl rm username
+
+# Show the list of active registered SIP users
+kamctl ul show
+
+# Check the current status and statistics of SIP server
+kamctl stats
+
+# Get detailed server statistics filtered by a keyword
+kamctl stats get keyword
+
+# Start Kamailio SIP server
+kamailio -f /etc/kamailio/kamailio.cfg -D -E
+
+# Stop Kamailio SIP server gracefully
+kamctl stop
+
+# Monitor Kamailio log file in real-time (assuming default log path)
+tail -f /var/log/kamailio.log
+
+# Display Kamailio version
+kamailio -v

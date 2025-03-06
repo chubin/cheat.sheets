@@ -1,0 +1,32 @@
+# baresip
+# A portable and modular SIP user agent with audio and video support.
+
+# Start baresip with a specific configuration file
+baresip -f /path/to/config
+
+# Start baresip with logging enabled at debug level
+baresip -v -d
+
+# Start baresip with a specific account
+baresip -a sip:user@domain.com
+
+# Enable video support for a call
+baresip -V
+
+# Use a specific audio device for input
+baresip -i alsa,input_device
+
+# Use a specific audio device for output
+baresip -I alsa,output_device
+
+# Start baresip in debug mode for troubleshooting
+baresip -D
+
+# Start baresip with a custom network interface
+baresip -n eth0
+
+# Display help information for baresip
+baresip -h
+
+# Show version information for baresip
+baresip -V

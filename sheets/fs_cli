@@ -1,0 +1,32 @@
+# freeswitch (SIP functionality)
+# FreeSWITCH's support for SIP communication protocols and functionalities.
+
+# Start FreeSWITCH with a specific configuration, useful when testing SIP configurations
+freeswitch -conf /path/to/configuration
+
+# Connect to FreeSWITCH console, a useful method to interact directly with FreeSWITCH for debugging and monitoring SIP sessions
+fs_cli
+
+# Reload SIP configurations without restarting the entire FreeSWITCH service
+fs_cli -x "reload mod_sofia"
+
+# List all registered SIP endpoints, useful for verifying which users are currently registered
+fs_cli -x "sofia status profile <profile_name> reg"
+
+# Show active SIP calls, useful for monitoring SIP session activity
+fs_cli -x "show calls"
+
+# Hang up a specific SIP call, useful for call management or troubleshooting
+fs_cli -x "uuid_kill <call_uuid>"
+
+# Start a SIP trace for a specific profile, useful for debugging SIP messages
+fs_cli -x "sofia tracelevel <profile_name> 9"
+
+# List all SIP profiles, useful for checking which profiles are active
+fs_cli -x "sofia status"
+
+# Disable a specific SIP profile, useful for maintenance or troubleshooting
+fs_cli -x "sofia profile <profile_name> shutdown"
+
+# Enable a specific SIP profile, useful for bringing a profile back into service after maintenance
+fs_cli -x "sofia profile <profile_name> start"

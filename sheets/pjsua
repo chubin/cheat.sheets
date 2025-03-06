@@ -1,0 +1,26 @@
+# pjproject (utilities like pjsua)
+# A collection of open-source libraries and utilities for SIP, media, and NAT traversal.
+
+# Basic use case to start a SIP user agent
+pjsua --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass
+
+# Make an outbound SIP call
+pjsua --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass sip:destination@sipserver.com
+
+# Enable logging for troubleshooting
+pjsua --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass --log-file pjsua.log --log-level 5
+
+# Use a specific transport (e.g., TCP) for SIP connections
+pjsua --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass --use-tcp
+
+# Call without registration (directly to the SIP address)
+pjsua sip:destination@sipserver.com
+
+# Set a different audio device
+pjsua --capture-dev 1 --playback-dev 2 --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass
+
+# Advanced configuration through a configuration file
+pjsua --config-file myconfig.cfg
+
+# Enable IPv6 for SIP communications
+pjsua --ipv6 --id sip:user@sipserver.com --registrar sip:sipserver.com --realm '*' --username user --password pass
