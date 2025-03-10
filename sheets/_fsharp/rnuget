@@ -1,0 +1,4 @@
+// reference a nuget package in interactive mode! and open its declaring namespace
+
+#r "nuget: FSharp.Data"
+open FSharp.Data
