@@ -13,7 +13,7 @@ tar -czvpf "$(printf '/media/%s/%s/%d:%d_%(%F)T.tgz' "$USER" 'DEVICE' ${UID:-`id
 # Delete file 'xdm' from the archive given to the `-f` flag. This only works on
 # non-compressed archives, unfortunately, but those can always be uncompressed
 # first, then altered with the `--delete` flag, after which you can recompress.
-tar --delete -f xdm_edited.tar.gz xdm
+tar --delete -f xdm_edited.tar xdm
 
 # Extract the contents of the given archive (which is not compressed) to the
 # destination given to the `-C` flag; not many seem to know of this flag.
