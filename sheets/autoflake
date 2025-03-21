@@ -1,0 +1,26 @@
+# autoflake
+# Removes unused imports and variables in Python code.
+
+# Remove all unused imports and variables in a Python file
+autoflake --in-place --remove-unused-variables script.py
+
+# Remove unused imports only (keep unused variables) in a Python file
+autoflake --in-place script.py
+
+# Remove unused imports and variables in multiple Python files recursively in a directory
+autoflake --in-place --remove-unused-variables --recursive directory_path
+
+# Remove unused imports and variables in a Python file and display the changes without modifying the file
+autoflake --remove-unused-variables script.py
+
+# Remove unused imports while ignoring the 'os' module
+autoflake --in-place --ignore-init-module-imports=os script.py
+
+# Specify max line length when reformatting lines while removing unused imports
+autoflake --in-place --remove-unused-variables --max-line-length=120 script.py
+
+# Combine with 'find' to process multiple files in different subdirectories
+find . -name "*.py" | xargs autoflake --in-place --remove-unused-variables
+
+# Combine with 'git' to clean up Python files changed in the last commit
+autoflake --in-place --remove-unused-variables $(git diff --name-only HEAD | grep '.py')

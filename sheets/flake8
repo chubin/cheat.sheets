@@ -1,0 +1,35 @@
+# flake8
+# A wrapper tool that combines Pylint, pyflakes, and pycodestyle for checking Python code against coding standards.
+
+# Check a single Python file for code style issues
+flake8 script.py
+
+# Recursively check all Python files in a directory
+flake8 path/to/directory/
+
+# Exclude specific files or directories from being checked
+flake8 --exclude=dir1,dir2,file.py
+
+# Check Python code and limit the maximum line length
+flake8 --max-line-length=100 script.py
+
+# Use a custom configuration file for linting settings
+flake8 --config=path/to/config-file script.py
+
+# Display only errors and warnings (suppress other output)
+flake8 --quiet script.py
+
+# Enable additional error codes, such as all E and W codes
+flake8 --select=E,W script.py
+
+# Ignore specific error codes, such as E123 and W504
+flake8 --ignore=E123,W504 script.py
+
+# Show statistics on the types of violations found
+flake8 --statistics script.py
+
+# Show detailed information about each error
+flake8 --format=html script.py
+
+# Output results to a file instead of the console
+flake8 script.py --output-file=report.txt

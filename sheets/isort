@@ -1,0 +1,32 @@
+# isort
+# A Python utility to sort imports alphabetically and automatically separates them into sections.
+
+# Sort imports in a single file
+isort my_script.py
+
+# Sort imports in all Python files in the current directory recursively
+isort .
+
+# Sort imports and show the diff without making changes
+isort my_script.py --diff
+
+# Sort imports in place and print changes made to the console
+isort my_script.py --verbose
+
+# Sort imports and enforce a specific style, such as the black style
+isort my_script.py --profile black
+
+# Check if imports are sorted and return an error code if not
+isort my_script.py --check
+
+# Ignore specific files or directories when sorting imports
+isort . --skip some_directory --skip some_file.py
+
+# Use a custom configuration file for complex setups
+isort . --settings-path path/to/.isort.cfg
+
+# Sort imports for all files in the current git repository, respecting gitignore
+isort --git
+
+# Sort imports and filter by file extension (e.g., only .py files)
+isort . --ext py

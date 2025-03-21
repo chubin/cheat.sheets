@@ -1,0 +1,29 @@
+# pydocstyle
+# A documentation style checker for Python docstrings, based on PEP 257.
+
+# Check all Python files in the current directory for PEP 257 violations
+pydocstyle .
+
+# Check a specific file for PEP 257 violations
+pydocstyle example.py
+
+# Check specific directories and/or files for PEP 257 violations
+pydocstyle src/ tests/
+
+# Show violations for a specific convention only (e.g., D100)
+pydocstyle --convention=pep257 --add-ignore=D100 .
+
+# Ignore specific error codes while checking
+pydocstyle --add-ignore=D100,D101 .
+
+# Run without checking for specified error codes (ignoring them)
+pydocstyle --add-select=D101,D102,D103 .
+
+# Use the configuration file to specify options
+pydocstyle --config=.pydocstyle.cfg
+
+# Display the version of pydocstyle
+pydocstyle --version
+
+# Show help text with available options for pydocstyle
+pydocstyle --help

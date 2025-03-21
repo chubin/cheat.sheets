@@ -1,0 +1,35 @@
+# pylint
+# A static code analyzer and linting tool for Python that looks for programming errors, helps enforce coding standards, and checks for code smells.
+
+# Run pylint on a specific Python file
+pylint my_script.py
+
+# Run pylint on a directory containing multiple Python files
+pylint my_project/
+
+# Run pylint with only specific message types enabled (e.g., convention, warning, error)
+pylint --enable=C,W,E my_script.py
+
+# Run pylint with specified message types disabled (e.g., information, refactoring)
+pylint --disable=R,I my_script.py
+
+# Run pylint and generate an output report in JSON format
+pylint --output-format=json my_script.py
+
+# Run pylint and output the results to a file
+pylint my_script.py > pylint_report.txt
+
+# Run pylint using a specific configuration file
+pylint --rcfile=pylintrc my_script.py
+
+# Run pylint and generate a report that includes only errors
+pylint --errors-only my_script.py
+
+# Display information about warnings individually with verbose output
+pylint --msg-template='{msg_id}:{line:3d},{column}: {obj}: {msg}' my_script.py
+
+# Run pylint with a maximum number of allowed messages reported
+pylint --max-line-length=100 my_script.py
+
+# Specify additional directories to add to the Python module search path
+pylint --init-hook='import sys; sys.path.append("additional_dir")' my_script.py

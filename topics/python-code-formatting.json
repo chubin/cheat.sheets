@@ -1,0 +1,58 @@
+[
+  {
+    "command": "autoflake",
+    "description": "Removes unused imports and variables in Python code."
+  },
+  {
+    "command": "autopep8",
+    "description": "Automatically formats Python code to conform to the PEP 8 style guide."
+  },
+  {
+    "command": "bandit",
+    "description": "A tool designed to find security issues in Python code."
+  },
+  {
+    "command": "black",
+    "description": "The uncompromising code formatter for Python that reformats entire files in place."
+  },
+  {
+    "command": "flake8",
+    "description": "A wrapper tool that combines Pylint, pyflakes, and pycodestyle for checking Python code against coding standards."
+  },
+  {
+    "command": "isort",
+    "description": "A Python utility to sort imports alphabetically and automatically separates them into sections."
+  },
+  {
+    "command": "mypy",
+    "description": "An optional static type checker for Python that aims to combine the benefits of dynamic and static typing."
+  },
+  {
+    "command": "pycodestyle",
+    "description": "A tool to check Python code against the PEP 8 style conventions."
+  },
+  {
+    "command": "pydocstyle",
+    "description": "A documentation style checker for Python docstrings, based on PEP 257."
+  },
+  {
+    "command": "pylama",
+    "description": "A code audit tool for Python and JavaScript to check code for errors and style issues."
+  },
+  {
+    "command": "pylint",
+    "description": "A static code analyzer and linting tool for Python that looks for programming errors, helps enforce coding standards, and checks for code smells."
+  },
+  {
+    "command": "pylint-exit",
+    "description": "A tool to convert Pylint messages into exit codes for use in CI pipelines."
+  },
+  {
+    "command": "reorder-python-imports",
+    "description": "Automatically reorganizes and sorts Python imports, powered by isort with additional features."
+  },
+  {
+    "command": "yapf",
+    "description": "Yet another Python formatter that reformats Python code to make it more readable."
+  }
+]

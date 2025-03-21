@@ -1,0 +1,29 @@
+# pycodestyle
+# A tool to check Python code against the PEP 8 style conventions.
+
+# Check a specific file for PEP 8 compliance
+pycodestyle file.py
+
+# Check all Python files in a directory for PEP 8 compliance
+pycodestyle directory/
+
+# Show specific error codes when checking files
+pycodestyle --select=E,W file.py
+
+# Exclude specific error codes from the check
+pycodestyle --ignore=E123,W503 file.py
+
+# Set the maximum allowed line length (default is 79)
+pycodestyle --max-line-length=100 file.py
+
+# Show how many occurrences of each error/warning type were found
+pycodestyle --statistics file.py
+
+# Show error count and lines where violations occur in a detailed table
+pycodestyle --show-source file.py
+
+# Enable verbose mode to get more information while running checks
+pycodestyle --verbose file.py
+
+# Check PEP 8 compliance but only show a report and nothing else
+pycodestyle --quiet file.py
