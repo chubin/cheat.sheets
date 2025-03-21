@@ -1,0 +1,35 @@
+# tslint
+# Linting utility for TypeScript code.
+
+# Run tslint on a specified file
+tslint path/to/file.ts
+
+# Run tslint with a specific configuration file
+tslint -c tslint.json path/to/file.ts
+
+# Lint all '.ts' files in a specified directory
+tslint 'src/**/*.ts'
+
+# Enable the built-in fix functionality to automatically fix certain linting errors
+tslint --fix path/to/file.ts
+
+# Output the results in a specific format (e.g., stylish, verbose, json)
+tslint --format stylish path/to/file.ts
+
+# Use a different custom rules directory
+tslint --rules-dir ./custom-rules path/to/file.ts
+
+# Exclude specific files or directories from linting
+tslint -e '**/exclude-directory/**' '**/exclude-file.ts' 'src/**/*.ts'
+
+# Specify a project configuration file (tsconfig.json) which specifies the root files and compiler options
+tslint -p tsconfig.json
+
+# Run tslint with type-checking, leveraging the TypeScript program from a particular project file
+tslint -p tsconfig.json --type-check
+
+# Display version information about tslint
+tslint --version
+
+# Display help information about tslint and its usage
+tslint --help

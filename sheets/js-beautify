@@ -1,0 +1,26 @@
+# js-beautify
+# Beautify JavaScript, JSON, CSS, and HTML code.
+
+# Beautify a JavaScript file in place
+js-beautify file.js -r
+
+# Beautify a JavaScript file and output to a new file
+js-beautify file.js -o beautified-file.js
+
+# Beautify all JavaScript files in a directory and replace them
+js-beautify *.js -r
+
+# Beautify a JSON file in place
+js-beautify file.json -r
+
+# Beautify HTML content from standard input and output to standard output
+cat file.html | js-beautify
+
+# Beautify CSS content from standard input and output to a new file
+cat file.css | js-beautify -o beautified-file.css
+
+# Beautify a file with specific indentation size of 4 spaces
+js-beautify file.js -r --indent-size 4
+
+# Convert tabs to spaces when beautifying a file
+js-beautify file.js -r --replace-tabs

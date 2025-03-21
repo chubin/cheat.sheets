@@ -1,0 +1,26 @@
+# jscs
+# Code style checker for JavaScript.
+
+# Check a single JavaScript file for code style issues
+jscs path/to/file.js
+
+# Check all JavaScript files in a directory for code style issues
+jscs path/to/directory
+
+# Check multiple JavaScript files for code style issues
+jscs file1.js file2.js file3.js
+
+# Use a specific configuration file
+jscs --config path/to/.jscsrc path/to/file.js
+
+# Fix as many style violations as possible automatically
+jscs --fix path/to/directory
+
+# Display output in a custom reporter format
+jscs --reporter path/to/custom-reporter.js path/to/file.js
+
+# List all available rules
+jscs --help
+
+# Show the version of JSCS installed
+jscs --version

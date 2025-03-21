@@ -1,0 +1,86 @@
+[
+  {
+    "command": "aliyun-code",
+    "description": "Manage and deploy code to Alibaba Cloud services."
+  },
+  {
+    "command": "babel-eslint",
+    "description": "Lint JavaScript code using ESLint with Babel parsing support."
+  },
+  {
+    "command": "cleancss",
+    "description": "Minify and optimize CSS files."
+  },
+  {
+    "command": "deno fmt",
+    "description": "Format Deno code using the built-in formatter."
+  },
+  {
+    "command": "eslint",
+    "description": "Pluggable linting utility for JavaScript and JSX."
+  },
+  {
+    "command": "eslint-config-airbnb",
+    "description": "Shareable ESLint configuration for Airbnb's JavaScript style guide."
+  },
+  {
+    "command": "grunt-contrib-jshint",
+    "description": "Grunt plugin for linting JavaScript code with JSHint."
+  },
+  {
+    "command": "gulp-eslint",
+    "description": "Gulp plugin for linting JavaScript code using ESLint."
+  },
+  {
+    "command": "htmllint",
+    "description": "Command-line tool to lint and validate HTML code."
+  },
+  {
+    "command": "husky",
+    "description": "Tool to manage and run git hooks easily."
+  },
+  {
+    "command": "js-beautify",
+    "description": "Beautify JavaScript, JSON, CSS, and HTML code."
+  },
+  {
+    "command": "jscs",
+    "description": "Code style checker for JavaScript."
+  },
+  {
+    "command": "jsfmt",
+    "description": "Format and pretty-print JavaScript code."
+  },
+  {
+    "command": "jshint",
+    "description": "Tool to detect errors and potential problems in JavaScript code."
+  },
+  {
+    "command": "jsonlint",
+    "description": "Validate and format JSON data."
+  },
+  {
+    "command": "prettier",
+    "description": "Opinionated code formatter for consistent code styling."
+  },
+  {
+    "command": "semistandard",
+    "description": "JavaScript Standard Style with semicolons."
+  },
+  {
+    "command": "standard",
+    "description": "JavaScript style guide, linter, and formatter in one."
+  },
+  {
+    "command": "stylelint",
+    "description": "Modern linter to help you avoid errors in your stylesheets."
+  },
+  {
+    "command": "tslint",
+    "description": "Linting utility for TypeScript code."
+  },
+  {
+    "command": "xo",
+    "description": "Opinionated and minimal code linter and formatter for JavaScript and TypeScript."
+  }
+]

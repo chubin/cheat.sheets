@@ -1,0 +1,41 @@
+# xo
+# Opinionated and minimal code linter and formatter for JavaScript and TypeScript.
+
+# Initialize XO in a JavaScript project, installing it as a development dependency
+npm install --save-dev xo
+
+# Lint files in the current directory
+xo
+
+# Lint files in a specific directory
+xo ./src
+
+# Fix issues automatically
+xo --fix
+
+# Fix issues and format files
+xo --fix --space
+
+# Lint files based on specific environment settings (like Node.js or browser)
+xo --env=node
+
+# Use a specific linter configuration file
+xo --config=path/to/.xoconfig
+
+# Lint files that match a specific pattern
+xo "src/**/*.js"
+
+# Customize rules directly in command line
+xo --rule="semi: ['error', 'always']"
+
+# Ignore a specific file or pattern
+xo --ignore="ignored-file.js"
+
+# Check specific file extensions
+xo --extension=jsx
+
+# Display the help and available options
+xo --help
+
+# Display the version number of XO
+xo --version
