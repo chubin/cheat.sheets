@@ -1,0 +1,26 @@
+# json_xs
+# JSON conversion tool that leverages C libraries for speed in Perl.
+
+# Convert a JSON string to a pretty-printed JSON format
+json_xs < input.json > pretty_output.json
+
+# Convert a JSON string to a compact JSON format
+json_xs -c < input.json > compact_output.json
+
+# Convert a JSON string to a yaml format
+json_xs -t yaml < input.json > output.yaml
+
+# Convert JSON to Perl data structure and pretty-print it
+json_xs -t dumper < input.json
+
+# Validate JSON and print it unchanged if valid
+json_xs -t null < input.json
+
+# Convert JSON from STDIN to a pretty-printed JSON format
+echo '{"key":"value"}' | json_xs > pretty_output.json
+
+# Slurp up all input and concatenate them into a single array
+json_xs -a < multi_json_input.json > array_output.json 
+
+# De-duplicate keys while keeping the last value for a key
+json_xs -D < input.json > deduped_output.json

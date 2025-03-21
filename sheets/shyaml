@@ -1,0 +1,32 @@
+# shyaml
+# Shell script to parse YAML and execute queries.
+
+# Parse and extract a single value from a YAML file by specifying the key
+shyaml get-value <key> < file.yaml
+
+# Parse and extract a nested value from a YAML file by specifying the nested key path
+shyaml get-value <nested_key1.nested_key2> < file.yaml
+
+# Extract keys at a specific level from a YAML file
+shyaml keys < file.yaml
+
+# Extract all keys and values as a flat list for quick overview
+shyaml keys-0 < file.yaml
+
+# Extract all keys and values from a specific section
+shyaml keys <section> < file.yaml
+
+# Output the list of values for a given key
+shyaml values <key> < file.yaml
+
+# Check if a key exists in the YAML file
+shyaml key-exists <key> < file.yaml
+
+# Extract the type of a value for a given key
+shyaml get-type <key> < file.yaml
+
+# Set a value for a key and regenerate the YAML structure
+shyaml set-value <key> <new_value> < file.yaml > new_file.yaml
+
+# Delete a key and its value from a YAML structure
+shyaml delete-key <key> < file.yaml > new_file.yaml

@@ -8,6 +8,66 @@ jq
 # (or all key-value pairs from objects) in a JSON file:
 jq .[]
 
+# Use jq to pretty-print JSON
+jq '.' file.json
+
+# Filter JSON object by extracting a specific field
+jq '.fieldName' file.json
+
+# Filter JSON array to extract specific element by index
+jq '.[index]' file.json
+
+# Select multiple fields from JSON
+jq '{field1: .field1, field2: .field2}' file.json
+
+# Use jq to count the number of elements in an array
+jq '.arrayName | length' file.json
+
+# Apply a function to each element in a JSON array
+jq '.arrayName[] | .fieldName' file.json
+
+# Parse JSON from stdin
+cat file.json | jq '.fieldName'
+
+# Use jq to filter JSON objects by condition
+jq 'select(.fieldName == "value")' file.json
+
+# Modify JSON field value
+jq '.fieldName = "newValue"' file.json
+
+# Load JSON from URL
+curl -s "http://example.com/file.json" | jq '.fieldName'
+
+# Combine operations and select elements from different levels
+jq '.[] | {id: .id, name: .info.name}' file.json
+
+# Query nested JSON data
+jq '.outerField.innerField' file.json
+
+# Concatenate fields
+jq '.field1 + " " + .field2' file.json
+
+# Group by a particular field
+jq 'group_by(.fieldName)' file.json
+
+# Sort JSON objects by field
+jq 'sort_by(.fieldName)' file.json
+
+# Use jq to find unique values
+jq 'unique' file.json
+
+# Print keys and values of a JSON object
+jq 'to_entries | .[] | "\(.key): \(.value)"' file.json
+
+# Output compact JSON without whitespace
+jq -c '.' file.json
+
+# Use jq to delete a field
+jq 'del(.fieldName)' file.json
+
+# Combine data from two JSON files
+jq -s '.[0] + .[1]' file1.json file2.json
+
 # Read JSON objects from a file into an array, and output it
 # (inverse of jq .[]):
 jq --slurp

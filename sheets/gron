@@ -1,0 +1,26 @@
+# gron
+# Flatten JSON into discrete assignments, making it greppable.
+
+# Convert a JSON file to gron format (flatten JSON)
+gron input.json > output.gron
+
+# Convert a JSON response from a URL to gron format
+curl -s http://example.com/api/data | gron
+
+# Search for a specific key/value in a JSON file using grep after flattening
+gron input.json | grep 'specificKey'
+
+# Convert gron format back to JSON
+gron --ungron < output.gron > output.json
+
+# Pretty-print a JSON file using gron
+cat input.json | gron | gron --ungron | jq .
+
+# Compare two JSON files by comparing their gron outputs
+diff <(gron file1.json) <(gron file2.json)
+
+# Use gron to quickly verify structure in a large JSON file
+gron large_input.json | less
+
+# Handle JSON with comments by stripping comments and then gron the file
+grep -v '^//' input_with_comments.json | gron

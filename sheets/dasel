@@ -1,0 +1,20 @@
+# dasel
+# Query and update data structures from the command line.
+
+# Retrieve a value from a JSON file
+dasel select -f data.json -p json -r string .path.to.value
+
+# Update a value in a YAML file
+dasel put string -f data.yaml -p yaml .path.to.value "newValue"
+
+# Convert a JSON file to YAML
+dasel convert -f data.json -p json -t yaml
+
+# Query nested data in a TOML file
+dasel select -f data.toml -p toml .section.key
+
+# Delete a key from a JSON file
+dasel delete -f data.json -p json .path.to.remove
+
+# Extract a specific list item from an XML file
+dasel select -f data.xml -p xml .parent.child[0]

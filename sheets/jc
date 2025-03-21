@@ -1,0 +1,29 @@
+# jc
+# JSON CLI output parsing tool.
+
+# Convert the output of a command to JSON
+some_command | jc --some_command
+
+# Parse file contents into JSON
+jc --some_command -i somefile
+
+# Use with sudo to parse command output that requires elevated permissions
+sudo some_command | jc --some_command
+
+# Parse system command outputs (e.g., `ls`, `df`, `ps`) into JSON
+ls -l | jc --ls
+
+# Use jc with various supported commands directly
+jc --ls <<< "$(ls -l)"
+
+# Parse file outputs by specifying input and output
+jc -i ls somefile.txt
+
+# Chain with other commands for JSON processing
+ls -l | jc --ls | jq '.'
+
+# Help command for specific parsers
+jc -h ls
+
+# Get version of jc
+jc --version

@@ -1,0 +1,18 @@
+# y2j
+# Convert YAML to JSON on the command line.
+
+I'm not familiar with a specific command 'y2j' for converting YAML to JSON directly from the command line. It is possible this is a custom script or a command from a less widespread tool or package. Here are ways to perform similar tasks using common tools:
+
+# Convert a YAML file to JSON using yq (a popular YAML processor)
+yq eval -j input.yaml > output.json
+
+# Convert YAML from standard input to JSON and output to standard output using yq
+cat input.yaml | yq eval -j -
+
+# Convert a YAML file to JSON in Python using PyYAML and json modules in a short script
+python -c "import sys, yaml, json; print(json.dumps(yaml.safe_load(sys.stdin.read()), indent=2))" < input.yaml > output.json
+
+# Convert YAML to JSON using a custom y2j script if available
+y2j input.yaml > output.json
+
+If the 'y2j' command is not directly callable on the command line or its specifics are not known, consider using the Python-based method or installing 'yq' for YAML processing, which is a very flexible and powerful tool for handling such conversions. If this response does not align with your needs, please provide additional context or clarify the tool or environment involving 'y2j'.

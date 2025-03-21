@@ -1,0 +1,29 @@
+# yamllint
+# Linter and format checker for YAML files.
+
+# Lint a single YAML file
+yamllint example.yaml
+
+# Lint all YAML files in a directory
+yamllint /path/to/directory
+
+# Specify a custom configuration file
+yamllint -c .yamllint-config example.yaml
+
+# Ignore specific YAML file patterns
+yamllint example.yaml --ignore-globals *.yaml
+
+# Use yamllint with increased verbosity
+yamllint -v example.yaml
+
+# Show output in parsable format for tooling integration
+yamllint -f parsable example.yaml
+
+# Lint files with a specific level of format issues
+yamllint -d "{extends: default, rules: {line-length: disable}}" example.yaml
+
+# Only display issues above a certain severity
+yamllint --strict example.yaml
+
+# Check a YAML string directly from the command line
+echo "key: value" | yamllint -

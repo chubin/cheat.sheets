@@ -1,0 +1,118 @@
+[
+  {
+    "command": "dasel",
+    "description": "Query and update data structures from the command line."
+  },
+  {
+    "command": "fx",
+    "description": "Command-line JSON processing tool."
+  },
+  {
+    "command": "gron",
+    "description": "Flatten JSON into discrete assignments, making it greppable."
+  },
+  {
+    "command": "jc",
+    "description": "JSON CLI output parsing tool."
+  },
+  {
+    "command": "jo",
+    "description": "Build JSON objects from the shell."
+  },
+  {
+    "command": "jq",
+    "description": "Command-line JSON processor."
+  },
+  {
+    "command": "jqnpm",
+    "description": "Node.js implementation of jq for JSON data processing."
+  },
+  {
+    "command": "jshon",
+    "description": "JSON parsing utility for shell scripting."
+  },
+  {
+    "command": "json2yaml",
+    "description": "Convert JSON to YAML format."
+  },
+  {
+    "command": "json5",
+    "description": "JSON5 command-line tool for working with JSON5 data."
+  },
+  {
+    "command": "jsonlint",
+    "description": "Validate and pretty-print JSON."
+  },
+  {
+    "command": "json_pp",
+    "description": "Perl script to pretty-print JSON data."
+  },
+  {
+    "command": "json-query",
+    "description": "Utility to query JSON data with a simple syntax."
+  },
+  {
+    "command": "json_xs",
+    "description": "JSON conversion tool that leverages C libraries for speed in Perl."
+  },
+  {
+    "command": "kwalify",
+    "description": "YAML and JSON schema validator."
+  },
+  {
+    "command": "oko",
+    "description": "Object query language for JSON data."
+  },
+  {
+    "command": "pyjq",
+    "description": "Python interface to the jq JSON processor."
+  },
+  {
+    "command": "pyyaml",
+    "description": "Python library for parsing and emitting YAML."
+  },
+  {
+    "command": "rtoml",
+    "description": "Rust tool for working with TOML data on the command line."
+  },
+  {
+    "command": "shyaml",
+    "description": "Shell script to parse YAML and execute queries."
+  },
+  {
+    "command": "syck",
+    "description": "YAML 1.0 parser for Ruby, Python, and PHP."
+  },
+  {
+    "command": "underscore-cli",
+    "description": "Command-line utility for text processing with lodash-style syntax."
+  },
+  {
+    "command": "y2j",
+    "description": "Convert YAML to JSON on the command line."
+  },
+  {
+    "command": "yaml2json",
+    "description": "Convert YAML data to JSON format from the command line."
+  },
+  {
+    "command": "yamldown",
+    "description": "Tool for managing Markdown files with YAML front-matter."
+  },
+  {
+    "command": "yamllint",
+    "description": "Linter and format checker for YAML files."
+  },
+  {
+    "command": "yaml-lint",
+    "description": "Command-line YAML syntax checker."
+  },
+  {
+    "command": "yaml-tools",
+    "description": "Toolkit for analyzing and processing YAML files."
+  },
+  {
+    "command": "yq",
+    "description": "Command-line YAML processor using jq syntax."
+  }
+]

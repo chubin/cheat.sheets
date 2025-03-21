@@ -1,0 +1,32 @@
+# underscore-cli
+# Command-line utility for text processing with lodash-style syntax.
+
+# Transform JSON input using lodash-style syntax
+underscore select 'map(array, "property")' < input.json
+
+# Apply lodash functions on a JSON array
+underscore select 'filter(array, { "active": true })' < input.json
+
+# Sorting a JSON array by a property value
+underscore select 'sortBy(array, "age")' < input.json
+
+# Pick specific properties from objects in a JSON array
+underscore select 'map(array, pick(["name", "age"]))' < input.json
+
+# Summarize values in a JSON array
+underscore select 'reduce(array, (sum, n) => sum + n.value, 0)' < input.json
+
+# Group elements of a JSON array by a property
+underscore select 'groupBy(array, "category")' < input.json
+
+# Count elements in a collection based on a condition
+underscore select 'countBy(array, item => item.completed ? "completed" : "pending")' < input.json
+
+# Pluck a single property from each object in a JSON array
+underscore select 'pluck(array, "name")' < input.json
+
+# Find an object in a JSON array based on a condition
+underscore select 'find(array, { "id": 1 })' < input.json
+
+# Remove falsy values from a JSON array
+underscore select 'compact(array)' < input.json

@@ -1,0 +1,48 @@
+# jo
+# Build JSON objects from the shell.
+
+# Basic usage for creating a simple JSON object
+jo name=John age=30
+
+# Creating JSON objects with nested objects
+jo person=$(jo name=Jane age=25) city=NewYork
+
+# Creating a JSON array
+jo -a apple banana cherry
+
+# Creating a JSON object with an array
+jo fruits=$(jo -a apple banana cherry) type=food
+
+# Creating JSON objects with special characters or spaces
+jo "name=John Doe" "occupation=Software Engineer"
+
+# Creating JSON objects with numeric values
+jo height=170 weight=60.5
+
+# Handling JSON null values
+jo name=null
+
+# Creating a JSON object from a shell variable
+name=John
+age=30
+jo name=$name age=$age
+
+# Combining static strings and variables in JSON
+color=blue
+jo item=car color=$color
+
+# Pretty printing JSON output
+jo -- "-p" name=Emily age=40
+
+# Creating JSON objects with boolean values
+jo married=true
+
+# Creating a JSON array with objects inside
+jo -a $(jo name=Alice) $(jo name=Bob)
+
+# Using jo with environment variables
+export COUNTRY=USA
+jo country=$COUNTRY
+
+# JSON object with multiple nested levels
+jo user=$(jo name=Chris details=$(jo email=chris@example.com age=28)) status=active
