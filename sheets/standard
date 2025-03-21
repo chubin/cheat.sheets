@@ -1,0 +1,20 @@
+# standard
+# JavaScript style guide, linter, and formatter in one.
+
+# Explanation of the use case: Install Standard as a dev dependency in your project.
+npm install standard --save-dev
+
+# Explanation of the use case: Check JavaScript files in your project for style errors.
+standard
+
+# Explanation of the use case: Automatically fix problems in your JavaScript code.
+standard --fix
+
+# Explanation of the use case: Standard doesn't lint files matching the patterns in a .gitignore file by default. Use this option to lint them regardless.
+standard --no-ignore
+
+# Explanation of the use case: Display help information about Standard.
+standard --help
+
+# Explanation of the use case: Show the version of Standard being used.
+standard --version

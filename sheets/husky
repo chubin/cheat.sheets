@@ -1,0 +1,23 @@
+# husky
+# Tool to manage and run git hooks easily.
+
+# Initialize husky for a project
+npx husky-init && npm install
+
+# Add a new hook
+npx husky add .husky/pre-commit "npm test"
+
+# Enable Git hooks
+git config core.hooksPath .husky
+
+# Uninstall hooks created by Husky
+npx husky uninstall
+
+# Upgrade husky configuration from v4 to v7+
+npx husky-upgrade
+
+# Remove a specific hook
+rm .husky/pre-commit
+
+# Run a specific hook manually for testing
+npm run .husky/pre-commit

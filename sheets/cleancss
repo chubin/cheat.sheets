@@ -1,0 +1,20 @@
+# cleancss
+# Minify and optimize CSS files.
+
+# Minify a CSS file and output to a new file
+cleancss -o output.min.css input.css
+
+# Minify multiple CSS files and concatenate them into a single file
+cleancss -o combined.min.css file1.css file2.css file3.css
+
+# Minify CSS file and enable source maps for easier debugging
+cleancss --source-map -o output.min.css input.css
+
+# Minify a CSS file with advanced optimizations
+cleancss --advanced -o output.min.css input.css
+
+# Minify a CSS file with compatibility mode for older browsers (e.g., IE9)
+cleancss --compatibility 'ie9' -o output.min.css input.css
+
+# Minify a CSS file while adding a timestamp to the output for cache busting
+cleancss -o output.min.css --source-map input.css && touch output.min.css

@@ -1,0 +1,35 @@
+# eslint
+# Pluggable linting utility for JavaScript and JSX.
+
+# Initialize a new ESLint configuration file
+eslint --init
+
+# Lint files with default configuration
+eslint yourfile.js
+
+# Lint files with autofix option
+eslint yourfile.js --fix
+
+# Lint all JavaScript files in a directory
+eslint src/
+
+# Lint with a specific configuration file
+eslint -c custom-config.json yourfile.js
+
+# Output results in a specific format (e.g., JSON, stylish)
+eslint yourfile.js -f json
+
+# Ignore patterns defined in a specific ignore file
+eslint yourfile.js --ignore-path .eslintignore
+
+# Use a given parser
+eslint yourfile.js --parser babel-eslint
+
+# Lint files and write output to a file
+eslint yourfile.js -o output.txt
+
+# Check for syntax and style errors in current project
+eslint .
+
+# Lint with only errors displayed
+eslint yourfile.js --quiet

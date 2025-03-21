@@ -1,4 +1,6 @@
 # jshint
+# Tool to detect errors and potential problems in JavaScript code.
+#
 # JSHint is a fork of JSLint. The reasons for the fork is basically that
 # the author disagrees in some points with Douglas Crockford
 # on JavaScript coding style.
@@ -8,10 +10,34 @@
 # If you want to be a bit more flexible, or have some old pros on your team
 # that don't buy into JSLint's opinions, try JSHint.
 
-# to install jshint
+# To install jshint
 sudo npm install jshint -g
 
-# lint all the JavaScript files in the current directory:
+# Running JSHint on a single JavaScript file
+jshint filename.js
+
+# Running JSHint on all JavaScript files in a directory
+jshint dirname/
+
+# Running JSHint with a custom configuration file
+jshint filename.js --config path/to/config.json
+
+# Ignoring specific files or directories
+jshint . --exclude path/to/ignore.js
+
+# Using JSHint to display a report with only undefined variables and functions
+jshint filename.js --undef
+
+# Running JSHint and producing a verbose output
+jshint filename.js --verbose
+
+# Running JSHint and outputting results in JSON format
+jshint filename.js --reporter json
+
+# Check JavaScript files that are stored remotely via a URL
+curl http://example.com/filename.js | jshint --filename=stdin
+
+# Lint all the JavaScript files in the current directory:
 find . -name '*.js' -print0 | xargs -0 jshint
 
 # lint all the JavaScript files in a targeted directory:
@@ -20,4 +46,3 @@ find ./public/javascripts/ -name '*.js' -print0 | xargs -0 jshint
 # Parameter-less options passed to jslint are all set to true by default,
 # if you want to set it false, just specify 'false' after the option
 jshint --bitwise false hello.js
-

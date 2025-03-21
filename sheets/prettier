@@ -1,0 +1,26 @@
+# prettier
+# Opinionated code formatter for consistent code styling.
+
+# Format a single file with default Prettier settings
+prettier --write path/to/file.js
+
+# Format all files in a directory recursively with default settings
+prettier --write "path/to/directory/**/*"
+
+# Check files for formatting issues without changing them
+prettier --check path/to/file.js
+
+# Format a file using a specific config file
+prettier --config path/to/custom/.prettierrc --write path/to/file.js
+
+# Specify a particular parser (e.g. babel, html, markdown)
+prettier --parser html --write path/to/file.html
+
+# Output the formatted code to stdout without changing the file
+prettier path/to/file.js
+
+# Use specific plugin(s) while formatting
+prettier --plugin=path/to/plugin.js --write path/to/file.js
+
+# Format all files except those in node_modules or ignored by .prettierignore
+prettier --write .

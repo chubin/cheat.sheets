@@ -1,0 +1,35 @@
+# stylelint
+# Modern linter to help you avoid errors in your stylesheets.
+
+# Install Stylelint globally
+npm install -g stylelint
+
+# Initialize a Stylelint configuration file in your project
+stylelint --init
+
+# Lint a single CSS file
+stylelint styles.css
+
+# Lint multiple CSS files in a directory
+stylelint "src/**/*.css"
+
+# Lint CSS files and automatically fix errors
+stylelint "src/**/*.css" --fix
+
+# Lint and use a specific Stylelint configuration file
+stylelint "src/**/*.css" --config custom-config.json
+
+# Enable verbose output
+stylelint "src/**/*.css" --verbose
+
+# Lint files and ignore specific paths using .stylelintignore
+stylelint "src/**/*.css"
+
+# Lint files in quiet mode (only report errors)
+stylelint "src/**/*.css" --quiet
+
+# Output results in a different format (e.g., JSON)
+stylelint "src/**/*.css" --formatter json
+
+# Output results to a file
+stylelint "src/**/*.css" --formatter json > results.json

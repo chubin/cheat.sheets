@@ -1,0 +1,26 @@
+# deno fmt
+# Format Deno code using the built-in formatter.
+
+# Format all JavaScript, TypeScript, and JSON files in the current directory recursively
+deno fmt
+
+# Format a specific file
+deno fmt path/to/file.ts
+
+# Check if files are formatted without changing them
+deno fmt --check
+
+# Format files within a specific directory
+deno fmt path/to/directory
+
+# Format a file with a specific line width
+deno fmt --options-line-width=80 path/to/file.ts
+
+# Format files with specific indentation (2 spaces)
+deno fmt --options-indent-width=2 path/to/file.ts
+
+# Format files and output the result to stdout instead of modifying the files
+deno fmt --stdout path/to/file.ts
+
+# Format files and log the operations performed
+deno fmt --log-level=debug path/to/file.ts
