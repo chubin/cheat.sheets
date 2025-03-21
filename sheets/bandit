@@ -1,0 +1,32 @@
+# bandit
+# A tool designed to find security issues in Python code.
+
+# Run Bandit on a Python file to check for security issues
+bandit -r path/to/your/python_file.py
+
+# Run Bandit on a directory recursively to find security issues in all Python files
+bandit -r path/to/your/directory
+
+# Specify output format (e.g., JSON)
+bandit -f json -r path/to/your/directory
+
+# Generate a report and save it to a file
+bandit -r path/to/your/directory -o report.txt
+
+# Run Bandit with a specific severity level (e.g., low, medium, high)
+bandit -r path/to/your/directory -ll
+
+# Only show results for specific test plugins (e.g., B101, B102)
+bandit -s B101,B102 -r path/to/your/directory
+
+# Exclude specific test plugins from the scan
+bandit -x B403,B404 -r path/to/your/directory
+
+# Skip scanning code with known, safe issues using a configuration file
+bandit --configfile path/to/config.yaml -r path/to/your/directory
+
+# Display more verbose output
+bandit -v -r path/to/your/directory
+
+# Run Bandit with a custom profile
+bandit -p custom_profile.yml -r path/to/your/directory

@@ -1,0 +1,32 @@
+# yapf
+# Yet another Python formatter that reformats Python code to make it more readable.
+
+# Format a single Python file in place
+yapf -i <file_name.py>
+
+# Preview the formatting changes without altering the file
+yapf <file_name.py>
+
+# Format all Python files in a directory in place
+yapf -i -r <directory_name>
+
+# Preview formatting changes for all Python files in a directory
+yapf -r <directory_name>
+
+# Format a Python file using a specific style (e.g., pep8, google)
+yapf -i --style=<style_name> <file_name.py>
+
+# Preview changes using a specific style
+yapf --style=<style_name> <file_name.py>
+
+# Format a file and save the changes to another file
+yapf <file_name.py> > <output_file_name.py>
+
+# Run yapf with a custom configuration file
+yapf --style=<config_file_path> <file_name.py>
+
+# Show diff of what would be changed
+yapf --diff <file_name.py>
+
+# Display help message with all available options
+yapf --help

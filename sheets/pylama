@@ -1,0 +1,35 @@
+# pylama
+# A code audit tool for Python and JavaScript to check code for errors and style issues.
+
+# Lint a single Python file using default settings
+pylama script.py
+
+# Lint all Python files in the current directory
+pylama .
+
+# Lint Python files in a specific directory
+pylama /path/to/directory
+
+# Lint files using a specific configuration file
+pylama --config pylama.ini
+
+# Lint files and include only specific error codes (e.g., E101, E203)
+pylama --ignore W --select=E101,E203 script.py
+
+# Lint files and ignore specific error codes (e.g., E501)
+pylama --ignore E501 script.py
+
+# Lint files and enable verbose output
+pylama -v script.py
+
+# Lint files and output results in JSON format
+pylama --format json script.py
+
+# Lint a combination of Python and JavaScript files
+pylama script.py script.js
+
+# Lint files with specified linters (e.g., pylint, flake8)
+pylama --linters=pylint,flake8 script.py
+
+# Perform linting while explicitly disabling a linter
+pylama --linters=+mypy,-pylint script.py

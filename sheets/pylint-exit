@@ -1,0 +1,16 @@
+# pylint-exit
+# A tool to convert Pylint messages into exit codes for use in CI pipelines.
+
+# Use `pylint-exit` to convert Pylint messages into exit codes
+pylint-exit --error-exit-code=1 --warning-exit-code=2 --refactor-exit-code=3 --convention-exit-code=4 --usage-exit-code=5 --fatal-exit-code=6 pylint_output.txt
+
+# Simple usage to trigger a specific exit code for errors only
+pylint-exit --error-exit-code=1 pylint_output.txt
+
+# Setting custom exit codes for different message categories
+pylint-exit --error-exit-code=10 --warning-exit-code=20 --refactor-exit-code=30 pylint_output.txt
+
+# Using `pylint-exit` with a Pylint run and chaining commands; exit if there are errors
+pylint module_or_package | tee pylint_output.txt && pylint-exit --error-exit-code=1 pylint_output.txt
+
+# **Note**: In these examples, `pylint_output.txt` represents the file where you might have saved the output of a Pylint run if not directly chaining commands.

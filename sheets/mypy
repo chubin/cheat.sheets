@@ -1,0 +1,35 @@
+# mypy
+# An optional static type checker for Python that aims to combine the benefits of dynamic and static typing.
+
+# Check the type annotations of a single Python file
+mypy file.py
+
+# Check the type annotations of all Python files in the current directory
+mypy .
+
+# Check the type annotations including files in subdirectories (recursively)
+mypy --recursive .
+
+# Specify a configuration file to use during the check
+mypy --config-file mypy.ini file.py
+
+# Ignore any errors encountered in missing imports
+mypy --ignore-missing-imports file.py
+
+# Show only error messages without warnings or notes
+mypy --error-only file.py
+
+# Enable strict optional checking
+mypy --strict file.py
+
+# Check Python files with a specific Python version
+mypy --python-version 3.8 file.py
+
+# Run mypy with incremental checking disabled (for a complete check)
+mypy --no-incremental file.py
+
+# Specify a custom cache directory
+mypy --cache-dir /path/to/cache file.py
+
+# Display detailed information about the types of all expressions
+mypy --show-error-codes --show-column-numbers file.py
