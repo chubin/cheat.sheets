@@ -44,3 +44,36 @@ yq merge data1.yaml data2.yaml
 
 # Shell completion
 yq shell-completion
+
+# Select a specific field from a YAML file
+yq e '.path.to.field' file.yaml
+
+# Select a specific field from a YAML file and output in JSON
+yq e -j '.path.to.field' file.yaml
+
+# Update a field's value in a YAML file
+yq e '.path.to.field = "new value"' file.yaml -i
+
+# Delete a field from a YAML file
+yq e 'del(.path.to.field)' file.yaml -i
+
+# Merge two YAML files
+yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' file1.yaml file2.yaml
+
+# Convert YAML to JSON
+yq e -o=json . file.yaml
+
+# Convert JSON to YAML
+yq e -o=yaml '.' file.json
+
+# Transpose YAML into environment variables
+yq e -o=props . file.yaml | sed 's/\'/\\\'/' | envsubst
+
+# Display the structure of the YAML file (keys only)
+yq e 'keys' file.yaml
+
+# Use multi-document processing to apply filter to each document separately
+yq ea '.[] | .key' file.yaml
+
+# Checking existence of a key in a YAML file
+yq e 'has("key")' file.yaml

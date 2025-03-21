@@ -1,0 +1,20 @@
+# json_pp
+# Perl script to pretty-print JSON data.
+
+# Pretty-print JSON data from a file
+json_pp < input.json
+
+# Pretty-print JSON data from a file and output to another file
+json_pp < input.json > output.json
+
+# Pretty-print JSON data and read from a pipeline
+cat input.json | json_pp
+
+# Pretty-print JSON data with sorted keys
+json_pp -s < input.json
+
+# Minimize JSON data (remove unnecessary whitespace)
+json_pp -json_opt=canonical,space_before => input.json
+
+# Enable colored output for pretty-printed JSON
+json_pp -json_opt=color < input.json

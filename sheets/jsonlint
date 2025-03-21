@@ -1,0 +1,23 @@
+# jsonlint
+# Validate and pretty-print JSON.
+
+# Validate a JSON file
+jsonlint filename.json
+
+# Pretty-print a JSON file
+jsonlint -p filename.json
+
+# Validate JSON from standard input and pretty-print
+cat filename.json | jsonlint -p
+
+# Validate JSON and display errors with line numbers
+jsonlint -c filename.json
+
+# Validate JSON from a URL
+curl -s http://example.com/data.json | jsonlint
+
+# Validate and pretty-print JSON with specific indent level
+jsonlint -p -i 4 filename.json
+
+# Validate JSON and suppress error messages
+jsonlint -q filename.json

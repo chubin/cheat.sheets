@@ -1,0 +1,32 @@
+# jshon
+# JSON parsing utility for shell scripting.
+
+# Extract a value from a JSON object for a key
+jshon -e "key" < input.json
+
+# Extract a nested value from a JSON object
+jshon -e "outerKey" -e "innerKey" < input.json
+
+# Extract a value from JSON, specifying path with multiple keys
+jshon -e "key1" -e "key2" < input.json
+
+# Output entire JSON content back
+cat input.json | jshon
+
+# Modify a value in a JSON object
+jshon -e "key" -s "newValue" < input.json
+
+# Delete a key-value pair from a JSON object
+jshon -n -e "keyToRemove" < input.json
+
+# Convert a JSON array to a shell array
+myArray=($(jshon -a -e "arrayKey" < input.json))
+
+# Pretty-print JSON data
+jshon -p < input.json
+
+# Creating a new JSON object
+echo '["key","value"]' | jshon -n
+
+# Convert JSON to shell-friendly output
+jshon -e "key" -u < input.json
